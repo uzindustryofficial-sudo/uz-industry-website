@@ -207,6 +207,201 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
     bottom:12px;
   }
 }
+/* ===== PREMIUM FABRICS SECTION ===== */
+
+.fabricSection{
+  padding:100px 0;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(239,27,36,.10), transparent 28%),
+    linear-gradient(180deg,#080808 0%,#0d0d0f 100%);
+  border-top:1px solid #242429;
+  border-bottom:1px solid #242429;
+}
+
+.fabricTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:45px;
+}
+
+.fabricTitle{
+  font-size:clamp(42px,6vw,82px);
+  line-height:.95;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+  margin:12px 0 18px;
+}
+
+.fabricTitle span{
+  color:#ef1b24;
+}
+
+.fabricIntro{
+  max-width:680px;
+  color:#aaaab0;
+  font-size:17px;
+  line-height:1.7;
+}
+
+.moqBadge{
+  width:145px;
+  min-width:145px;
+  height:145px;
+  border:1px solid rgba(239,27,36,.65);
+  background:rgba(239,27,36,.06);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-shadow:0 0 35px rgba(239,27,36,.08);
+}
+
+.moqBadge small{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
+  color:#aaaab0;
+}
+
+.moqBadge strong{
+  font-size:52px;
+  line-height:1;
+  color:#ef1b24;
+  margin:4px 0;
+}
+
+.moqBadge span{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.15em;
+}
+
+.fabricGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.fabricCard{
+  position:relative;
+  min-height:210px;
+  padding:28px 24px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+  border:1px solid #242429;
+  overflow:hidden;
+  transition:.35s ease;
+}
+
+.fabricCard::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:3px;
+  height:0;
+  background:#ef1b24;
+  transition:.35s ease;
+}
+
+.fabricCard:hover{
+  transform:translateY(-7px);
+  border-color:rgba(239,27,36,.55);
+  background:
+    linear-gradient(145deg,rgba(239,27,36,.08),rgba(255,255,255,.015));
+}
+
+.fabricCard:hover::before{
+  height:100%;
+}
+
+.fabricNo{
+  display:block;
+  color:#ef1b24;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+  margin-bottom:30px;
+}
+
+.fabricCard h3{
+  margin:0 0 12px;
+  font-size:19px;
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+}
+
+.fabricCard p{
+  margin:0;
+  color:#929299;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.fabricBottom{
+  margin-top:32px;
+  padding:24px 0 0;
+  border-top:1px solid #242429;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.fabricBottom p{
+  margin:0;
+  color:#c5c5ca;
+  font-size:15px;
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .fabricGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .fabricTop{
+    align-items:flex-start;
+  }
+}
+
+/* Mobile */
+@media(max-width:560px){
+  .fabricSection{
+    padding:70px 0;
+  }
+
+  .fabricTop{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .moqBadge{
+    width:115px;
+    min-width:115px;
+    height:115px;
+  }
+
+  .moqBadge strong{
+    font-size:42px;
+  }
+
+  .fabricGrid{
+    grid-template-columns:1fr;
+  }
+
+  .fabricCard{
+    min-height:170px;
+  }
+
+  .fabricBottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
 </style>
 </head>
 <body>
@@ -219,6 +414,109 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
   <a class="processCard embroidery" href="#embroidery"><span>Embroidery</span></a>
   <a class="processCard factory" href="#factory"><span>Factory</span></a>
 </div></div></header>
+  <section class="fabricSection" id="fabrics">
+  <div class="wrap">
+
+    <div class="fabricTop">
+      <div>
+        <div class="eyebrow">Performance Materials</div>
+        <h2 class="fabricTitle">CHOOSE YOUR <span>FABRIC.</span></h2>
+        <p class="fabricIntro">
+          Select from performance-focused fabrics for custom teamwear,
+          training apparel and sports uniforms.
+        </p>
+      </div>
+
+      <div class="moqBadge">
+        <small>LOW MOQ</small>
+        <strong>10</strong>
+        <span>PIECES</span>
+      </div>
+    </div>
+
+    <div class="fabricGrid">
+
+      <div class="fabricCard">
+        <span class="fabricNo">01</span>
+        <h3>Performance Polyester</h3>
+        <p>Lightweight, durable and ideal for custom sports uniforms.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">02</span>
+        <h3>Bird Eye Mesh</h3>
+        <p>Breathable mesh structure designed for airflow and active performance.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">03</span>
+        <h3>Micro Mesh</h3>
+        <p>Fine ventilation with a lightweight feel for high-intensity sportswear.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">04</span>
+        <h3>Interlock Polyester</h3>
+        <p>Smooth, strong construction with excellent shape retention.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">05</span>
+        <h3>Dri-Fit Fabric</h3>
+        <p>Moisture-management performance fabric for training and teamwear.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">06</span>
+        <h3>Lycra / Spandex</h3>
+        <p>Flexible stretch fabric for compression, wrestling, cycling and fitness wear.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">07</span>
+        <h3>Tricot</h3>
+        <p>Durable knitted fabric suitable for performance uniforms and tracksuits.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">08</span>
+        <h3>Polyester Fleece</h3>
+        <p>Warm and comfortable choice for hoodies, sweatshirts and winter teamwear.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">09</span>
+        <h3>French Terry</h3>
+        <p>Soft and comfortable fabric for premium casual and training apparel.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">10</span>
+        <h3>Cotton / Poly-Cotton</h3>
+        <p>Comfort-focused option for polos, tees and lifestyle apparel.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">11</span>
+        <h3>Taslon / Nylon</h3>
+        <p>Strong lightweight material suitable for outerwear and training garments.</p>
+      </div>
+
+      <div class="fabricCard">
+        <span class="fabricNo">12</span>
+        <h3>Rib Fabric</h3>
+        <p>Stretchable finishing fabric for collars, cuffs and premium sportswear details.</p>
+      </div>
+
+    </div>
+
+    <div class="fabricBottom">
+      <p>Not sure which fabric fits your product?</p>
+      <a href="#contact" class="btn primary">GET FABRIC ADVICE</a>
+    </div>
+
+  </div>
+</section>
 <section class="section" id="products"><div class="wrap"><div class="eyebrow">Our Products</div><h2 class="title">Wear it. Own it. Win it.</h2><p class="sub">Premium custom sportswear categories built for teams and brands worldwide.</p><div class="products">
 <div class="product"><span class="code">AF</span><div><h3>American Football</h3><p>Custom uniforms & team sets</p></div></div>
 <div class="product"><span class="code">SB</span><div><h3>Softball Uniforms</h3><p>Performance team apparel</p></div></div>
