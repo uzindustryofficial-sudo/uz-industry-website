@@ -421,6 +421,49 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
     font-size:11px;
   }
 }
+/* ===== FINAL DESKTOP NAV FIX ===== */
+
+.nav{
+  gap:20px;
+}
+
+.brand{
+  flex-shrink:0;
+}
+
+.links{
+  margin-left:auto;
+  display:flex !important;
+  align-items:center;
+  justify-content:flex-end;
+  gap:18px !important;
+  white-space:nowrap;
+  flex-shrink:0;
+  font-size:11px !important;
+}
+
+.links > a{
+  display:block !important;
+  flex:none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.links > a.cta{
+  padding:11px 14px !important;
+  margin-left:5px !important;
+}
+
+@media (max-width:1100px){
+  .links{
+    gap:12px !important;
+    font-size:10px !important;
+  }
+
+  .links > a.cta{
+    padding:10px 11px !important;
+  }
+}
 </style>
 </head>
 <body>
