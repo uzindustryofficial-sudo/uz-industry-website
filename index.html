@@ -654,6 +654,139 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
     font-size:38px;
   }
 }
+/* ===== PREMIUM PRODUCTS SECTION ===== */
+
+#products{
+  padding:100px 0;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(239,27,36,.08),transparent 28%),
+    #070708;
+}
+
+#products .title{
+  max-width:850px;
+}
+
+#products .sub{
+  margin-bottom:45px;
+}
+
+#products .products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+#products .product{
+  position:relative;
+  min-height:390px;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:#0d0d0f;
+  border:1px solid #242429;
+  transition:.35s ease;
+}
+
+/* Product Image Area */
+#products .product::before{
+  content:"";
+  display:block;
+  width:100%;
+  height:230px;
+  flex-shrink:0;
+  background-image:
+    linear-gradient(to top,rgba(0,0,0,.55),transparent 55%),
+    var(--product-image,linear-gradient(135deg,#161619,#0a0a0c));
+  background-size:cover;
+  background-position:center;
+  transition:.4s ease;
+}
+
+#products .product:hover{
+  transform:translateY(-7px);
+  border-color:rgba(239,27,36,.65);
+  box-shadow:0 20px 45px rgba(0,0,0,.35);
+}
+
+#products .product:hover::before{
+  transform:scale(1.04);
+}
+
+#products .product .code{
+  position:absolute;
+  top:16px;
+  left:16px;
+  z-index:3;
+  min-width:40px;
+  height:30px;
+  padding:0 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ef1b24;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+#products .product > div{
+  padding:22px 20px 24px;
+}
+
+#products .product h3{
+  margin:0 0 10px;
+  color:#fff;
+  font-size:18px;
+  line-height:1.15;
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+}
+
+#products .product p{
+  margin:0;
+  color:#929299;
+  font-size:13px;
+  line-height:1.6;
+}
+
+#products .product > div::after{
+  content:"VIEW DETAILS  →";
+  display:block;
+  margin-top:18px;
+  color:#ef1b24;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+/* Tablet */
+@media(max-width:1000px){
+  #products .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:560px){
+  #products{
+    padding:70px 0;
+  }
+
+  #products .products{
+    grid-template-columns:1fr;
+  }
+
+  #products .product{
+    min-height:380px;
+  }
+
+  #products .product::before{
+    height:240px;
+  }
+}
 </style>
 </head>
 <body>
@@ -777,21 +910,34 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
 
   </div>
 </section>
-<section class="section" id="products"><div class="wrap"><div class="eyebrow">Our Products</div><h2 class="title">Wear it. Own it. Win it.</h2><p class="sub">Premium custom sportswear categories built for teams and brands worldwide.</p><div class="products">
-<div class="product"><span class="code">AF</span><div><h3>American Football</h3><p>Custom uniforms & team sets</p></div></div>
-<div class="product"><span class="code">SB</span><div><h3>Softball Uniforms</h3><p>Performance team apparel</p></div></div>
-<div class="product"><span class="code">BB</span><div><h3>Basketball</h3><p>Game-ready custom kits</p></div></div>
-<div class="product"><span class="code">CK</span><div><h3>Cricket Kits</h3><p>Match & training wear</p></div></div>
-<div class="product"><span class="code">RG</span><div><h3>Rugby Uniforms</h3><p>Durable performance sets</p></div></div>
-<div class="product"><span class="code">IH</span><div><h3>Ice Hockey</h3><p>Custom jerseys & shells</p></div></div>
-<div class="product"><span class="code">WS</span><div><h3>Wrestling Singlets</h3><p>Competition-ready fit</p></div></div>
-<div class="product"><span class="code">BX</span><div><h3>Boxing Uniforms</h3><p>Ring wear & training kits</p></div></div>
-<div class="product"><span class="code">MMA</span><div><h3>MMA Wear</h3><p>Fight & training apparel</p></div></div>
-<div class="product"><span class="code">GF</span><div><h3>Gym & Fitness</h3><p>Performance activewear</p></div></div>
-<div class="product"><span class="code">CY</span><div><h3>Cycling Wear</h3><p>Technical cycling apparel</p></div></div>
-<div class="product"><span class="code">TN</span><div><h3>Tennis Wear</h3><p>Clean court performance</p></div></div>
-</div></div></section>
-<section class="section band" id="custom"><div class="wrap"><div class="eyebrow">Customization</div><h2 class="title">From idea to final kit.</h2><div class="steps"><div class="step"><b>01</b><h4>Share Your Idea</h4><p>Send references, colors, logo and requirements.</p></div><div class="step"><b>02</b><h4>Design & Approval</h4><p>Refine your custom concept and approve it.</p></div><div class="step"><b>03</b><h4>Production</h4><p>Cutting, stitching, printing, branding and QC.</p></div><div class="step"><b>04</b><h4>Worldwide Delivery</h4><p>Secure packing and shipment to your destination.</p></div></div></div></section>
+<section class="section" id="products">
+  <div class="wrap">
+    <div class="eyebrow">Our Products</div>
+    <h2 class="title">Explore Our Premium Sportswear Range</h2>
+    <p class="sub">
+      We manufacture premium custom sportswear, uniforms, and team apparel for clubs, schools, brands, and organizations worldwide.
+    </p>
+
+    <div class="products">
+      <div class="product"><span class="code">AF</span><div><h3>American Football Uniforms</h3><p>Custom uniforms & team sets for American football.</p></div></div>
+      <div class="product"><span class="code">SB</span><div><h3>Softball Uniforms</h3><p>Performance team apparel for softball teams.</p></div></div>
+      <div class="product"><span class="code">BB</span><div><h3>Basketball Uniforms</h3><p>Game-ready custom basketball kits.</p></div></div>
+      <div class="product"><span class="code">CK</span><div><h3>Cricket Kits</h3><p>Match and training wear for cricket teams.</p></div></div>
+      <div class="product"><span class="code">RG</span><div><h3>Rugby Uniforms</h3><p>Durable performance rugby uniforms.</p></div></div>
+      <div class="product"><span class="code">IH</span><div><h3>Ice Hockey Uniforms</h3><p>Custom hockey jerseys and shells.</p></div></div>
+      <div class="product"><span class="code">WS</span><div><h3>Wrestling Singlets</h3><p>Competition-ready wrestling singlets.</p></div></div>
+      <div class="product"><span class="code">BX</span><div><h3>Boxing Uniforms</h3><p>Ring wear and training kits for boxing.</p></div></div>
+      <div class="product"><span class="code">MMA</span><div><h3>MMA Wear</h3><p>Fight and training apparel for MMA athletes.</p></div></div>
+      <div class="product"><span class="code">GF</span><div><h3>Gym & Fitness Wear</h3><p>Performance activewear for gym and fitness.</p></div></div>
+      <div class="product"><span class="code">CY</span><div><h3>Cycling Wear</h3><p>Technical cycling jerseys and shorts.</p></div></div>
+      <div class="product"><span class="code">TN</span><div><h3>Tennis Wear</h3><p>Comfortable and stylish tennis apparel.</p></div></div>
+      <div class="product"><span class="code">FB</span><div><h3>Football Kits</h3><p>Custom football kits for clubs and academies.</p></div></div>
+      <div class="product"><span class="code">VB</span><div><h3>Volleyball Uniforms</h3><p>Lightweight performance volleyball uniforms.</p></div></div>
+      <div class="product"><span class="code">TS</span><div><h3>Tracksuits</h3><p>Premium tracksuits for training and travel.</p></div></div>
+      <div class="product"><span class="code">CT</span><div><h3>Custom Team Wear</h3><p>Fully customized teamwear for all sports.</p></div></div>
+    </div>
+  </div>
+</section> id="custom"><div class="wrap"><div class="eyebrow">Customization</div><h2 class="title">From idea to final kit.</h2><div class="steps"><div class="step"><b>01</b><h4>Share Your Idea</h4><p>Send references, colors, logo and requirements.</p></div><div class="step"><b>02</b><h4>Design & Approval</h4><p>Refine your custom concept and approve it.</p></div><div class="step"><b>03</b><h4>Production</h4><p>Cutting, stitching, printing, branding and QC.</p></div><div class="step"><b>04</b><h4>Worldwide Delivery</h4><p>Secure packing and shipment to your destination.</p></div></div></div></section>
 <section class="section" id="about"><div class="wrap"><div class="eyebrow">About UZ Industry</div><h2 class="title">Built in Sialkot. Made for the world.</h2><p class="sub">A clean, bold and performance-led website designed to feel premium on desktop, tablet and mobile.</p></div></section>
 <section class="section band" id="contact"><div class="wrap quote"><div><div class="eyebrow">Get a Quote</div><h2 class="title">Tell us what you want to build.</h2><p class="sub">We will connect your final email, WhatsApp and social links before launch.</p></div><form class="form" onsubmit="event.preventDefault();alert('Form layout ready — contact connection comes next.')"><input required placeholder="Your name"><input required type="email" placeholder="Email address"><input placeholder="Team / Company"><textarea required placeholder="Tell us about your custom order"></textarea><button class="btn primary">Send Inquiry</button></form></div></section>
 <footer><div class="wrap foot"><b>UZ INDUSTRY</b><span>© 2026 Custom Sportswear Manufacturer & Exporter</span></div></footer>
