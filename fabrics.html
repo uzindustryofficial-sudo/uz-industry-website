@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sportswear Fabrics | UZ Industry</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#08090b;
+  color:#ffffff;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+header{
+  background:#0d0e11;
+  border-bottom:1px solid #222;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.headerWrap{
+  max-width:1250px;
+  margin:auto;
+  padding:12px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo img{
+  height:65px;
+  width:auto;
+  display:block;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+nav a{
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+nav a:hover{
+  color:#ef1b24;
+}
+
+.quoteBtn{
+  background:#ef1b24;
+  padding:13px 20px;
+  border-radius:5px;
+  color:#fff !important;
+}
+
+/* HERO */
+.fabricHero{
+  text-align:center;
+  padding:85px 20px 55px;
+  background:
+    radial-gradient(circle at center,#1b1c21 0%,#090a0c 65%);
+}
+
+.eyebrow{
+  color:#ef1b24;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+
+.fabricHero h1{
+  font-size:48px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+.fabricHero p{
+  color:#aaa;
+  max-width:720px;
+  margin:auto;
+  line-height:1.7;
+}
+
+/* FABRICS */
+.fabricSection{
+  max-width:1250px;
+  margin:auto;
+  padding:60px 25px 90px;
+}
+
+.fabricGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.fabricCard{
+  background:#101115;
+  border:1px solid #25262b;
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.fabricCard:hover{
+  transform:translateY(-5px);
+  border-color:#ef1b24;
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.fabricImage{
+  height:250px;
+  width:100%;
+  background:#15161a;
+  overflow:hidden;
+}
+
+.fabricImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.fabricInfo{
+  padding:22px;
+}
+
+.fabricNo{
+  color:#ef1b24;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.fabricInfo h3{
+  font-size:21px;
+  margin:8px 0 10px;
+  text-transform:uppercase;
+}
+
+.fabricInfo p{
+  color:#aaa;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.viewDetails{
+  display:inline-block;
+  margin-top:15px;
+  color:#ef1b24;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+/* POPUP */
+.fabricModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  z-index:9999;
+  padding:25px;
+  overflow-y:auto;
+  align-items:center;
+  justify-content:center;
+}
+
+.fabricModal.active{
+  display:flex;
+}
+
+.modalBox{
+  width:min(1000px,100%);
+  background:#101115;
+  border:1px solid #303136;
+  border-radius:16px;
+  display:grid;
+  grid-template-columns:45% 55%;
+  position:relative;
+  overflow:hidden;
+}
+
+.modalImage{
+  background:#08090b;
+  min-height:520px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.modalImage img{
+  width:100%;
+  height:100%;
+  max-height:600px;
+  object-fit:contain;
+  display:block;
+}
+
+.modalContent{
+  padding:45px;
+}
+
+.modalContent h2{
+  font-size:34px;
+  text-transform:uppercase;
+  margin:8px 0 15px;
+}
+
+.modalDescription{
+  color:#b5b5b5;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+.detailBox{
+  background:#17181c;
+  border:1px solid #292a30;
+  padding:15px 17px;
+  margin-bottom:10px;
+  border-radius:7px;
+  color:#ddd;
+  line-height:1.5;
+  font-size:14px;
+}
+
+.detailBox strong{
+  color:#fff;
+}
+
+.closeBtn{
+  position:absolute;
+  right:16px;
+  top:14px;
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:50%;
+  background:#ef1b24;
+  color:white;
+  font-size:25px;
+  cursor:pointer;
+  z-index:20;
+}
+
+.modalQuote{
+  display:inline-block;
+  background:#ef1b24;
+  color:#fff;
+  padding:14px 25px;
+  margin-top:15px;
+  border-radius:5px;
+  font-weight:900;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid #222;
+  padding:35px 20px;
+  text-align:center;
+  color:#777;
+  font-size:13px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .fabricGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  nav{
+    display:none;
+  }
+
+  .modalBox{
+    grid-template-columns:1fr;
+  }
+
+  .modalImage{
+    min-height:300px;
+    height:330px;
+  }
+
+  .modalContent{
+    padding:30px 22px;
+  }
+}
+
+@media(max-width:600px){
+  .fabricHero{
+    padding:60px 18px 40px;
+  }
+
+  .fabricHero h1{
+    font-size:34px;
+  }
+
+  .fabricGrid{
+    grid-template-columns:1fr;
+  }
+
+  .fabricImage{
+    height:270px;
+  }
+
+  .fabricModal{
+    padding:12px;
+    align-items:flex-start;
+  }
+
+  .modalImage{
+    height:280px;
+    min-height:280px;
+  }
+
+  .modalContent h2{
+    font-size:27px;
+    padding-right:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="headerWrap">
+
+    <a class="logo" href="./">
+      <img src="uz-logo.png.PNG" alt="UZ Industry">
+    </a>
+
+    <nav>
+      <a href="./">Home</a>
+      <a href="products.html">Products</a>
+      <a href="fabrics.html" style="color:#ef1b24;">Fabrics</a>
+      <a href="./#custom">Customization</a>
+      <a href="./#about">About</a>
+      <a href="./#contact">Contact</a>
+      <a class="quoteBtn" href="./#contact">Get a Quote</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="fabricHero">
+
+  <div class="eyebrow">UZ INDUSTRY • PREMIUM MATERIALS</div>
+
+  <h1>Our Fabrics</h1>
+
+  <p>
+    Explore performance fabrics used by UZ Industry for custom sportswear,
+    team uniforms, training wear and athletic apparel. Select any fabric
+    to learn about its properties, benefits and recommended applications.
+  </p>
+
+</section>
+
+
+<section class="fabricSection">
+
+<div class="fabricGrid">
+
+<!-- 01 -->
+<div class="fabricCard" onclick="openFabric('performance')">
+  <div class="fabricImage">
+    <img src="performance-polyester.jpg.jpeg" alt="Performance Polyester">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">01</span>
+    <h3>Performance Polyester</h3>
+    <p>Lightweight and durable fabric developed for performance sportswear.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 02 -->
+<div class="fabricCard" onclick="openFabric('bird')">
+  <div class="fabricImage">
+    <img src="bird-eye-mesh.jpg.jpeg" alt="Bird Eye Mesh">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">02</span>
+    <h3>Bird Eye Mesh</h3>
+    <p>Breathable mesh structure designed for airflow and active performance.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 03 -->
+<div class="fabricCard" onclick="openFabric('micro')">
+  <div class="fabricImage">
+    <img src="micro-mesh.jpg.jpeg" alt="Micro Mesh">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">03</span>
+    <h3>Micro Mesh</h3>
+    <p>Fine mesh ventilation for lightweight high-intensity sportswear.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 04 -->
+<div class="fabricCard" onclick="openFabric('interlock')">
+  <div class="fabricImage">
+    <img src="interlock-polyester.jpg.jpeg" alt="Interlock Polyester">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">04</span>
+    <h3>Interlock Polyester</h3>
+    <p>Smooth and strong construction with excellent shape retention.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 05 -->
+<div class="fabricCard" onclick="openFabric('drifit')">
+  <div class="fabricImage">
+    <img src="dri-fit-fabric.jpg.jpeg" alt="Dri-Fit Fabric">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">05</span>
+    <h3>Dri-Fit Fabric</h3>
+    <p>Moisture-management performance fabric for training and teamwear.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 06 -->
+<div class="fabricCard" onclick="openFabric('lycra')">
+  <div class="fabricImage">
+    <img src="lycra-spandex.jpg.jpeg" alt="Lycra Spandex">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">06</span>
+    <h3>Lycra / Spandex</h3>
+    <p>Highly flexible stretch fabric for fitted performance garments.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 07 -->
+<div class="fabricCard" onclick="openFabric('tricot')">
+  <div class="fabricImage">
+    <img src="tricot-polyester.jpg.jpeg" alt="Tricot Polyester">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">07</span>
+    <h3>Tricot</h3>
+    <p>Durable knitted fabric suitable for uniforms and tracksuits.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 08 -->
+<div class="fabricCard" onclick="openFabric('fleece')">
+  <div class="fabricImage">
+    <img src="polyester-fleece.jpg.jpeg" alt="Polyester Fleece">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">08</span>
+    <h3>Polyester Fleece</h3>
+    <p>Warm and comfortable fabric for hoodies and winter teamwear.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 09 -->
+<div class="fabricCard" onclick="openFabric('terry')">
+  <div class="fabricImage">
+    <img src="french-terry.jpg.jpeg" alt="French Terry">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">09</span>
+    <h3>French Terry</h3>
+    <p>Soft loop-back fabric offering comfort and everyday versatility.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="fabricCard" onclick="openFabric('cotton')">
+  <div class="fabricImage">
+    <img src="cotton-poly-cotton.jpg.jpeg" alt="Cotton Poly Cotton">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">10</span>
+    <h3>Cotton / Poly-Cotton</h3>
+    <p>Comfort-focused fabric with a soft natural feel and practical durability.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="fabricCard" onclick="openFabric('taslon')">
+  <div class="fabricImage">
+    <img src="taslon-nylon.jpg.jpeg" alt="Taslon Nylon">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">11</span>
+    <h3>Taslon / Nylon</h3>
+    <p>Tough lightweight woven material suitable for outerwear and sports shorts.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+<!-- 12 -->
+<div class="fabricCard" onclick="openFabric('rib')">
+  <div class="fabricImage">
+    <img src="rib-fabric.jpg.jpeg" alt="Rib Fabric">
+  </div>
+  <div class="fabricInfo">
+    <span class="fabricNo">12</span>
+    <h3>Rib Fabric</h3>
+    <p>Stretchable knitted construction ideal for collars, cuffs and trims.</p>
+    <span class="viewDetails">View Fabric Details →</span>
+  </div>
+</div>
+
+</div>
+</section>
+
+
+<!-- FABRIC DETAILS POPUP -->
+
+<div id="fabricModal" class="fabricModal">
+
+  <div class="modalBox">
+
+    <button class="closeBtn" onclick="closeFabric()">×</button>
+
+    <div class="modalImage">
+      <img id="modalFabricImage" src="" alt="Fabric">
+    </div>
+
+    <div class="modalContent">
+
+      <div class="eyebrow">UZ INDUSTRY • FABRIC DETAILS</div>
+
+      <h2 id="modalFabricTitle"></h2>
+
+      <p class="modalDescription" id="modalFabricDescription"></p>
+
+      <div class="detailBox" id="modalFabricType"></div>
+      <div class="detailBox" id="modalFabricProperties"></div>
+      <div class="detailBox" id="modalFabricUses"></div>
+      <div class="detailBox" id="modalFabricBenefits"></div>
+
+      <a class="modalQuote" href="./#contact">GET A QUOTE</a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  © UZ INDUSTRY • SIALKOT, PAKISTAN • CUSTOM SPORTSWEAR MANUFACTURER
+</footer>
+
+
+<script>
+
+const fabricData = {
+
+performance:{
+ title:"Performance Polyester",
+ image:"performance-polyester.jpg.jpeg",
+ description:"A lightweight synthetic performance fabric designed for durability, easy maintenance and repeated athletic use.",
+ type:"<strong>Fabric Type:</strong> Performance-grade polyester",
+ properties:"<strong>Key Properties:</strong> Lightweight, durable, quick-drying and shape-retaining.",
+ uses:"<strong>Recommended For:</strong> Football kits, basketball uniforms, volleyball uniforms, cricket kits and general teamwear.",
+ benefits:"<strong>Why Choose It:</strong> Excellent all-round sportswear fabric suitable for sublimation printing and regular competition use."
+},
+
+bird:{
+ title:"Bird Eye Mesh",
+ image:"bird-eye-mesh.jpg.jpeg",
+ description:"A breathable polyester fabric featuring a distinctive bird-eye knitted structure that improves airflow during physical activity.",
+ type:"<strong>Fabric Type:</strong> Polyester bird-eye mesh",
+ properties:"<strong>Key Properties:</strong> Breathable, lightweight, moisture-friendly and ventilated.",
+ uses:"<strong>Recommended For:</strong> Football jerseys, basketball uniforms, training shirts, running wear and team uniforms.",
+ benefits:"<strong>Why Choose It:</strong> Enhanced airflow helps athletes remain comfortable during high-intensity performance."
+},
+
+micro:{
+ title:"Micro Mesh",
+ image:"micro-mesh.jpg.jpeg",
+ description:"A fine lightweight mesh fabric engineered to provide ventilation without the appearance of a large open mesh.",
+ type:"<strong>Fabric Type:</strong> Fine polyester micro mesh",
+ properties:"<strong>Key Properties:</strong> Lightweight, breathable, flexible and quick-drying.",
+ uses:"<strong>Recommended For:</strong> Jerseys, training wear, basketball uniforms, football kits and activewear.",
+ benefits:"<strong>Why Choose It:</strong> Provides excellent ventilation while maintaining a clean professional uniform appearance."
+},
+
+interlock:{
+ title:"Interlock Polyester",
+ image:"interlock-polyester.jpg.jpeg",
+ description:"A smooth double-knit polyester fabric widely used in professional sportswear because of its strength, clean surface and dimensional stability.",
+ type:"<strong>Fabric Type:</strong> Double-knit polyester interlock",
+ properties:"<strong>Key Properties:</strong> Smooth, strong, durable, shape-retaining and comfortable.",
+ uses:"<strong>Recommended For:</strong> Football kits, cricket uniforms, basketball wear, volleyball uniforms, tracksuits and training apparel.",
+ benefits:"<strong>Why Choose It:</strong> Its smooth surface provides excellent results for sublimation printing and custom graphics."
+},
+
+drifit:{
+ title:"Dri-Fit Fabric",
+ image:"dri-fit-fabric.jpg.jpeg",
+ description:"A moisture-management performance fabric designed to move perspiration away from the body during sports and training.",
+ type:"<strong>Fabric Type:</strong> Moisture-wicking performance polyester",
+ properties:"<strong>Key Properties:</strong> Quick-drying, breathable, lightweight and moisture-managing.",
+ uses:"<strong>Recommended For:</strong> Gym wear, training shirts, running apparel, football jerseys and fitness clothing.",
+ benefits:"<strong>Why Choose It:</strong> Helps improve comfort during demanding workouts and prolonged athletic activity."
+},
+
+lycra:{
+ title:"Lycra / Spandex",
+ image:"lycra-spandex.jpg.jpeg",
+ description:"A highly stretchable performance material designed for garments requiring flexibility, body movement and close athletic fitting.",
+ type:"<strong>Fabric Type:</strong> Polyester/nylon stretch blend with spandex",
+ properties:"<strong>Key Properties:</strong> High stretch, flexibility, recovery, smooth fit and freedom of movement.",
+ uses:"<strong>Recommended For:</strong> Compression wear, wrestling singlets, cycling wear, gym wear, leggings and fitted sportswear.",
+ benefits:"<strong>Why Choose It:</strong> Excellent elasticity allows garments to move naturally with the athlete while maintaining their shape."
+},
+
+tricot:{
+ title:"Tricot",
+ image:"tricot-polyester.jpg.jpeg",
+ description:"A durable warp-knitted polyester fabric with a smooth face and strong construction suitable for sports and training apparel.",
+ type:"<strong>Fabric Type:</strong> Polyester tricot knit",
+ properties:"<strong>Key Properties:</strong> Durable, smooth, flexible, lightweight and abrasion-resistant.",
+ uses:"<strong>Recommended For:</strong> Tracksuits, training wear, sports shorts, teamwear and athletic outer layers.",
+ benefits:"<strong>Why Choose It:</strong> Combines durability and flexibility for garments designed for regular athletic use."
+},
+
+fleece:{
+ title:"Polyester Fleece",
+ image:"polyester-fleece.jpg.jpeg",
+ description:"A soft insulating polyester fabric developed to provide warmth while remaining practical for sports and casual teamwear.",
+ type:"<strong>Fabric Type:</strong> Brushed polyester fleece",
+ properties:"<strong>Key Properties:</strong> Warm, soft, comfortable, insulating and durable.",
+ uses:"<strong>Recommended For:</strong> Hoodies, sweatshirts, winter tracksuits, warm-up wear and team apparel.",
+ benefits:"<strong>Why Choose It:</strong> Provides warmth and comfort for cold-weather training, travel and casual team clothing."
+},
+
+terry:{
+ title:"French Terry",
+ image:"french-terry.jpg.jpeg",
+ description:"A comfortable knitted fabric with a smooth outer face and soft looped interior, offering a balance between breathability and warmth.",
+ type:"<strong>Fabric Type:</strong> French terry knit",
+ properties:"<strong>Key Properties:</strong> Soft, breathable, comfortable, absorbent and moderately warm.",
+ uses:"<strong>Recommended For:</strong> Sweatshirts, joggers, hoodies, training sets and casual sportswear.",
+ benefits:"<strong>Why Choose It:</strong> A versatile choice for premium leisurewear and comfortable training apparel."
+},
+
+cotton:{
+ title:"Cotton / Poly-Cotton",
+ image:"cotton-poly-cotton.jpg.jpeg",
+ description:"A comfortable fabric option combining softness with practical durability for casual and training garments.",
+ type:"<strong>Fabric Type:</strong> Cotton or polyester-cotton blend",
+ properties:"<strong>Key Properties:</strong> Soft, breathable, comfortable and easy to wear.",
+ uses:"<strong>Recommended For:</strong> Polo shirts, T-shirts, casual teamwear, staff apparel and lifestyle sportswear.",
+ benefits:"<strong>Why Choose It:</strong> Offers a natural comfortable feel, while poly-cotton blends provide improved durability and easier maintenance."
+},
+
+taslon:{
+ title:"Taslon / Nylon",
+ image:"taslon-nylon.jpg.jpeg",
+ description:"A strong lightweight woven fabric frequently selected for sports outerwear where durability and practical protection are important.",
+ type:"<strong>Fabric Type:</strong> Taslon nylon woven fabric",
+ properties:"<strong>Key Properties:</strong> Tough, lightweight, abrasion-resistant and fast-drying.",
+ uses:"<strong>Recommended For:</strong> Windbreakers, sports shorts, tracksuit shells, jackets and outdoor teamwear.",
+ benefits:"<strong>Why Choose It:</strong> Provides excellent durability for active outer garments while remaining relatively lightweight."
+},
+
+rib:{
+ title:"Rib Fabric",
+ image:"rib-fabric.jpg.jpeg",
+ description:"A knitted stretch fabric commonly used to create secure, comfortable finishing areas on sports garments.",
+ type:"<strong>Fabric Type:</strong> Rib-knit fabric",
+ properties:"<strong>Key Properties:</strong> Stretchable, resilient, comfortable and shape-retaining.",
+ uses:"<strong>Recommended For:</strong> Polo collars, jersey collars, cuffs, waistbands and sportswear trims.",
+ benefits:"<strong>Why Choose It:</strong> Provides flexible structured finishing that helps collars and cuffs maintain their shape."
+}
+
+};
+
+
+function openFabric(key){
+
+ const fabric = fabricData[key];
+
+ document.getElementById("modalFabricImage").src = fabric.image;
+ document.getElementById("modalFabricTitle").innerText = fabric.title;
+ document.getElementById("modalFabricDescription").innerText = fabric.description;
+ document.getElementById("modalFabricType").innerHTML = fabric.type;
+ document.getElementById("modalFabricProperties").innerHTML = fabric.properties;
+ document.getElementById("modalFabricUses").innerHTML = fabric.uses;
+ document.getElementById("modalFabricBenefits").innerHTML = fabric.benefits;
+
+ document.getElementById("fabricModal").classList.add("active");
+
+ document.body.style.overflow="hidden";
+}
+
+
+function closeFabric(){
+
+ document.getElementById("fabricModal").classList.remove("active");
+
+ document.body.style.overflow="";
+}
+
+
+document.getElementById("fabricModal").addEventListener("click",function(e){
+
+ if(e.target === this){
+   closeFabric();
+ }
+
+});
+
+
+document.addEventListener("keydown",function(e){
+
+ if(e.key === "Escape"){
+   closeFabric();
+ }
+
+});
+
+</script>
+
+</body>
+</html>
