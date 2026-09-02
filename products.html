@@ -592,7 +592,7 @@ footer{
 
 </footer>
 
-<!-- ===== ALL PRODUCTS POPUP ===== -->
+<!-- ===== SMART PRODUCT DETAILS POPUP ===== -->
 <style>
 .productCard{
   cursor:pointer;
@@ -601,7 +601,7 @@ footer{
 #catalogProductModal{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.88);
+  background:rgba(0,0,0,.90);
   z-index:99999;
   display:none;
   align-items:center;
@@ -614,7 +614,7 @@ footer{
 }
 
 .catalogModalBox{
-  width:min(950px,95%);
+  width:min(1000px,96%);
   max-height:92vh;
   overflow:auto;
   background:#111;
@@ -626,11 +626,11 @@ footer{
 }
 
 .catalogModalImage{
+  min-height:520px;
   background:#080809;
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:500px;
 }
 
 .catalogModalImage img{
@@ -641,27 +641,49 @@ footer{
 }
 
 .catalogModalContent{
-  padding:55px 40px;
+  padding:48px 40px;
+}
+
+.catalogBrand{
+  color:#e31b23;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:10px;
 }
 
 .catalogModalContent h2{
-  font-size:38px;
-  margin:0 0 18px;
   color:#fff;
+  font-size:38px;
+  margin:0 0 14px;
 }
 
-.catalogModalContent p{
-  color:#bbb;
+.catalogDescription{
+  color:#aaa;
+  font-size:15px;
   line-height:1.7;
-  font-size:16px;
+  margin-bottom:25px;
 }
 
-.catalogCode{
-  color:#e31b23;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:2px;
-  margin-bottom:12px;
+.detailBox{
+  background:#181818;
+  border:1px solid #292929;
+  border-radius:10px;
+  padding:16px 18px;
+  margin-bottom:11px;
+}
+
+.detailBox strong{
+  color:#fff;
+  display:block;
+  margin-bottom:5px;
+  font-size:14px;
+}
+
+.detailBox span{
+  color:#bcbcbc;
+  line-height:1.55;
+  font-size:14px;
 }
 
 .catalogClose{
@@ -674,19 +696,19 @@ footer{
   border-radius:50%;
   background:#fff;
   color:#000;
-  font-size:28px;
+  font-size:27px;
   cursor:pointer;
-  z-index:5;
+  z-index:10;
 }
 
 .catalogQuote{
   display:inline-block;
-  margin-top:22px;
-  padding:14px 24px;
+  margin-top:16px;
+  padding:14px 25px;
   background:#e31b23;
   color:#fff;
   text-decoration:none;
-  font-weight:700;
+  font-weight:800;
   border-radius:6px;
 }
 
@@ -696,12 +718,12 @@ footer{
   }
 
   .catalogModalImage{
-    min-height:350px;
-    height:350px;
+    min-height:330px;
+    height:360px;
   }
 
   .catalogModalContent{
-    padding:30px 24px 35px;
+    padding:28px 22px 35px;
   }
 
   .catalogModalContent h2{
@@ -712,81 +734,384 @@ footer{
 
 <div id="catalogProductModal">
   <div class="catalogModalBox">
+
     <button class="catalogClose" id="catalogClose">×</button>
 
     <div class="catalogModalImage">
-      <img id="catalogImage" src="" alt="">
+      <img id="catalogImage" src="" alt="Product">
     </div>
 
     <div class="catalogModalContent">
-      <div class="catalogCode" id="catalogCode"></div>
-      <h2 id="catalogTitle"></h2>
-      <p id="catalogDescription"></p>
 
-      <p>
-        ✓ Fully Customizable Design<br>
-        ✓ Custom Colors, Sizes & Branding<br>
-        ✓ Premium Sportswear Manufacturing<br>
-        ✓ MOQ: 10 Pieces
-      </p>
+      <div class="catalogBrand">
+        UZ INDUSTRY • CUSTOM SPORTSWEAR
+      </div>
+
+      <h2 id="catalogTitle"></h2>
+
+      <p class="catalogDescription" id="catalogDescription"></p>
+
+      <div class="detailBox">
+        <strong>Recommended Fabric</strong>
+        <span id="catalogFabric"></span>
+      </div>
+
+      <div class="detailBox">
+        <strong>Why This Fabric?</strong>
+        <span id="catalogBenefit"></span>
+      </div>
+
+      <div class="detailBox">
+        <strong>Construction & Performance</strong>
+        <span id="catalogConstruction"></span>
+      </div>
+
+      <div class="detailBox">
+        <strong>Customization</strong>
+        <span id="catalogCustomization"></span>
+      </div>
+
+      <div class="detailBox">
+        <strong>Minimum Order Quantity</strong>
+        <span>10 Pieces</span>
+      </div>
 
       <a href="index.html#contact" class="catalogQuote">
         GET A QUOTE
       </a>
+
     </div>
   </div>
 </div>
 
 <script>
+
+const productDetails = [
+
+{
+match:["american football"],
+fabric:"Heavyweight Performance Polyester + Stretch Mesh",
+benefit:"Durable, breathable and suitable for high-contact competitive play.",
+construction:"Reinforced stitching, breathable mesh zones and strong game-ready construction.",
+customization:"Team colors, numbers, player names, sublimation graphics and size specifications."
+},
+
+{
+match:["7v7"],
+fabric:"Lightweight Dri-Fit Polyester",
+benefit:"Lightweight, breathable and designed for speed and unrestricted movement.",
+construction:"Athletic fit with moisture-management fabric and durable performance stitching.",
+customization:"Custom colors, numbers, names, logos and complete team designs."
+},
+
+{
+match:["basketball dragon","dragon jersey"],
+fabric:"Bird Eye Mesh / Interlock Polyester",
+benefit:"Breathable fabric with excellent airflow for fast indoor and outdoor play.",
+construction:"Lightweight sleeveless construction with durable seams and performance fit.",
+customization:"Full sublimation, custom artwork, colors, numbers, names and sizing."
+},
+
+{
+match:["basketball"],
+fabric:"Bird Eye Mesh / Interlock Polyester",
+benefit:"Excellent breathability, moisture management and comfortable movement.",
+construction:"Lightweight jersey and shorts with reinforced stitching and athletic fit.",
+customization:"Full sublimation, team colors, player numbers, names and logos."
+},
+
+{
+match:["cricket"],
+fabric:"Performance Interlock Polyester / Dri-Fit",
+benefit:"Breathable, lightweight and comfortable for long-duration matches.",
+construction:"Moisture-managing fabric with reinforced seams and unrestricted movement.",
+customization:"Team colors, sublimation, logos, player names, numbers and sizing."
+},
+
+{
+match:["football uniform","soccer"],
+fabric:"Dri-Fit Polyester / Bird Eye Mesh",
+benefit:"Quick-drying, breathable and ideal for continuous movement on the field.",
+construction:"Lightweight athletic construction with ventilation and durable stitching.",
+customization:"Team colors, numbers, names, club logos and full sublimation."
+},
+
+{
+match:["volleyball"],
+fabric:"Lightweight Interlock Polyester / Dri-Fit",
+benefit:"Soft, breathable and flexible for jumping, diving and quick movement.",
+construction:"Performance fit with moisture management and reinforced seams.",
+customization:"Custom team artwork, colors, numbers, names and logos."
+},
+
+{
+match:["rugby"],
+fabric:"Heavyweight Polyester + Stretch Panels",
+benefit:"Strong abrasion resistance with flexibility for physical contact sports.",
+construction:"Reinforced seams, durable panels and strong athletic construction.",
+customization:"Team colors, logos, numbers, names and custom panel designs."
+},
+
+{
+match:["baseball"],
+fabric:"Double-Knit Polyester",
+benefit:"Durable, structured and comfortable for professional baseball uniforms.",
+construction:"Strong stitching, breathable construction and game-ready fit.",
+customization:"Custom jerseys, pants, piping, numbers, names and embroidered or printed logos."
+},
+
+{
+match:["softball"],
+fabric:"Performance Polyester / Polyester-Spandex Blend",
+benefit:"Provides durability, breathability and extra flexibility during movement.",
+construction:"Athletic cut with stretch zones and reinforced stitching.",
+customization:"Custom patterns, colors, team logos, numbers and player names."
+},
+
+{
+match:["ice hockey","hockey"],
+fabric:"Heavyweight Polyester Mesh / Air-Knit",
+benefit:"Highly breathable while remaining strong enough for demanding hockey use.",
+construction:"Roomy athletic construction designed to fit comfortably over protective equipment.",
+customization:"Team colors, numbers, names, logos and sublimated or stitched graphics."
+},
+
+{
+match:["wrestling"],
+fabric:"Polyester-Spandex 4-Way Stretch",
+benefit:"Close-fitting, flexible and designed to stretch naturally with body movement.",
+construction:"Compression-style fit with flat seams for comfort and mobility.",
+customization:"Custom colors, sublimation designs, team logos and wrestler names."
+},
+
+{
+match:["boxing"],
+fabric:"Premium Polyester Satin",
+benefit:"Lightweight, smooth and ideal for traditional boxing shorts and uniforms.",
+construction:"Comfortable loose fit with durable stitching and elastic waistband.",
+customization:"Custom colors, waistband designs, logos, names and embroidery."
+},
+
+{
+match:["mma"],
+fabric:"Polyester-Spandex Rashguard + Micro-Stretch Polyester Shorts",
+benefit:"Flexible, quick-drying and durable for grappling, striking and intensive training.",
+construction:"Compression top with stretch fight shorts and reinforced stress-point stitching.",
+customization:"Full sublimation, fighter names, gym logos, colors and custom artwork."
+},
+
+{
+match:["gym","fitness"],
+fabric:"Dri-Fit Polyester / Polyester-Spandex",
+benefit:"Breathable, lightweight and flexible for strength training and fitness workouts.",
+construction:"Athletic cut with stretch capability and moisture-management performance.",
+customization:"Colors, logos, panel designs, sizing and private-label branding."
+},
+
+{
+match:["cycling"],
+fabric:"Polyester-Spandex Performance Lycra",
+benefit:"Aerodynamic, breathable and highly flexible for cycling movement.",
+construction:"Close athletic fit with stretch panels and moisture-management properties.",
+customization:"Full sublimation, club graphics, sponsor logos, colors and rider names."
+},
+
+{
+match:["tennis"],
+fabric:"Dri-Fit Polyester / Polyester-Spandex",
+benefit:"Lightweight, quick-drying and comfortable for fast court movement.",
+construction:"Flexible athletic construction with breathable performance fabric.",
+customization:"Custom colors, panel designs, club logos and sizing."
+},
+
+{
+match:["cheer"],
+fabric:"Polyester-Spandex 4-Way Stretch",
+benefit:"Strong stretch and shape recovery for jumps, routines and dynamic movement.",
+construction:"Secure performance fit with reinforced seams and optional rhinestone detailing.",
+customization:"Custom colors, rhinestones, team names, logos and sublimation."
+},
+
+{
+match:["polo"],
+fabric:"Polyester Piqué / Cotton-Poly Piqué",
+benefit:"Premium textured appearance, breathable comfort and professional presentation.",
+construction:"Structured collar, reinforced placket and clean premium stitching.",
+customization:"Embroidery, screen print, logos, colors, contrast panels and private labels."
+},
+
+{
+match:["hoodie","sweatshirt"],
+fabric:"Cotton-Polyester Fleece",
+benefit:"Soft, warm and durable while maintaining good shape after repeated wear.",
+construction:"Brushed interior, ribbed cuffs and reinforced premium stitching.",
+customization:"Embroidery, screen printing, puff print, rhinestones, colors and private labels."
+},
+
+{
+match:["sports shorts","shorts"],
+fabric:"Performance Polyester / Micro-Stretch Polyester",
+benefit:"Lightweight, quick-drying and suitable for training and competitive sports.",
+construction:"Comfortable athletic fit with elastic waistband and reinforced seams.",
+customization:"Custom colors, prints, side panels, logos and sizing."
+},
+
+{
+match:["compression"],
+fabric:"Polyester-Spandex 4-Way Stretch",
+benefit:"Excellent stretch, body support and moisture management during intense activity.",
+construction:"Second-skin athletic fit with flexible flatlock-style seam construction.",
+customization:"Full sublimation, custom patterns, team branding, colors and sizing."
+},
+
+{
+match:["training"],
+fabric:"Dri-Fit Polyester / Interlock Polyester",
+benefit:"Durable, breathable and comfortable for regular team training.",
+construction:"Performance athletic cut with moisture-management fabric and reinforced seams.",
+customization:"Team colors, logos, panel designs, names, numbers and sizing."
+},
+
+{
+match:["custom team"],
+fabric:"Fabric Selected According to Sport & Performance Requirements",
+benefit:"Material can be selected specifically for breathability, stretch, durability or warmth.",
+construction:"Made according to the team's sport, fit, climate and performance requirements.",
+customization:"Complete custom design including fabrics, colors, logos, names, numbers, sizing and private labels."
+},
+
+{
+match:["tracksuit"],
+fabric:"Polyester Tricot / Interlock / Cotton-Poly Fleece",
+benefit:"Comfortable, durable and suitable for training, travel and team presentation.",
+construction:"Premium jacket and trouser construction with reinforced seams and athletic fit.",
+customization:"Custom colors, panels, stripes, embroidery, printing and team branding."
+},
+
+{
+match:["sports bag","bag"],
+fabric:"600D Heavy-Duty Polyester",
+benefit:"Strong, abrasion-resistant and suitable for repeated team and travel use.",
+construction:"Reinforced handles, durable zippers, strong seams and practical storage compartments.",
+customization:"Custom colors, team logos, embroidery, printing, dimensions and private labels."
+},
+
+{
+match:["sports socks","socks"],
+fabric:"Polyester-Nylon-Elastane Performance Blend",
+benefit:"Provides stretch, moisture management, durability and secure fit.",
+construction:"Reinforced heel and toe, ribbed cuff, arch support and breathable knit zones.",
+customization:"Custom colors, knitted patterns, team logos, sizing and packaging."
+}
+
+];
+
+function findProductDetails(title){
+
+  const name = title.toLowerCase();
+
+  for(const product of productDetails){
+
+    if(product.match.some(keyword => name.includes(keyword))){
+      return product;
+    }
+
+  }
+
+  return {
+    fabric:"Premium Performance Fabric Selected According to Your Requirements",
+    benefit:"Selected for comfort, durability, breathability and sports performance.",
+    construction:"Professional manufacturing with durable stitching and performance-focused construction.",
+    customization:"Custom colors, logos, sizes, printing, embroidery and private-label options."
+  };
+}
+
+
 document.querySelectorAll(".productCard").forEach(function(card){
 
   card.addEventListener("click", function(){
 
     const img = card.querySelector("img");
-    const title = card.querySelector("h3");
+    const titleElement = card.querySelector("h3");
     const description = card.querySelector("p");
-    const code = card.querySelector(".productCode");
+
+    const title = titleElement
+      ? titleElement.textContent.trim()
+      : "Custom Sportswear";
+
+    const details = findProductDetails(title);
 
     if(img){
       document.getElementById("catalogImage").src = img.src;
-      document.getElementById("catalogImage").alt =
-        title ? title.textContent : "Product";
+      document.getElementById("catalogImage").alt = title;
     }
 
-    document.getElementById("catalogTitle").textContent =
-      title ? title.textContent : "Custom Sportswear";
+    document.getElementById("catalogTitle").textContent = title;
 
     document.getElementById("catalogDescription").textContent =
-      description ? description.textContent : "";
+      description
+      ? description.textContent
+      : "Premium custom sportswear manufactured according to your team requirements.";
 
-    document.getElementById("catalogCode").textContent =
-      code ? "UZ INDUSTRY • " + code.textContent : "UZ INDUSTRY";
+    document.getElementById("catalogFabric").textContent =
+      details.fabric;
 
-    document.getElementById("catalogProductModal").classList.add("show");
+    document.getElementById("catalogBenefit").textContent =
+      details.benefit;
+
+    document.getElementById("catalogConstruction").textContent =
+      details.construction;
+
+    document.getElementById("catalogCustomization").textContent =
+      details.customization;
+
+    document
+      .getElementById("catalogProductModal")
+      .classList.add("show");
+
     document.body.style.overflow = "hidden";
+
   });
 
 });
 
+
 function closeCatalogProduct(){
-  document.getElementById("catalogProductModal").classList.remove("show");
+
+  document
+    .getElementById("catalogProductModal")
+    .classList.remove("show");
+
   document.body.style.overflow = "";
+
 }
 
-document.getElementById("catalogClose").onclick = closeCatalogProduct;
 
-document.getElementById("catalogProductModal").addEventListener("click", function(e){
+document.getElementById("catalogClose").onclick =
+  closeCatalogProduct;
+
+
+document
+.getElementById("catalogProductModal")
+.addEventListener("click",function(e){
+
   if(e.target === this){
     closeCatalogProduct();
   }
+
 });
 
-document.addEventListener("keydown", function(e){
+
+document.addEventListener("keydown",function(e){
+
   if(e.key === "Escape"){
     closeCatalogProduct();
   }
+
 });
+
 </script>
-<!-- ===== END ALL PRODUCTS POPUP ===== -->
+
+<!-- ===== END SMART PRODUCT DETAILS POPUP ===== -->
 </body>
 </html>
