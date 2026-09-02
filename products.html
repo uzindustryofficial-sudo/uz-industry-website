@@ -592,5 +592,201 @@ footer{
 
 </footer>
 
+<!-- ===== ALL PRODUCTS POPUP ===== -->
+<style>
+.productCard{
+  cursor:pointer;
+}
+
+#catalogProductModal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  z-index:99999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+#catalogProductModal.show{
+  display:flex;
+}
+
+.catalogModalBox{
+  width:min(950px,95%);
+  max-height:92vh;
+  overflow:auto;
+  background:#111;
+  border:1px solid #2a2a2a;
+  border-radius:18px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+}
+
+.catalogModalImage{
+  background:#080809;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:500px;
+}
+
+.catalogModalImage img{
+  width:100%;
+  height:100%;
+  max-height:650px;
+  object-fit:contain;
+}
+
+.catalogModalContent{
+  padding:55px 40px;
+}
+
+.catalogModalContent h2{
+  font-size:38px;
+  margin:0 0 18px;
+  color:#fff;
+}
+
+.catalogModalContent p{
+  color:#bbb;
+  line-height:1.7;
+  font-size:16px;
+}
+
+.catalogCode{
+  color:#e31b23;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+.catalogClose{
+  position:absolute;
+  right:15px;
+  top:12px;
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  color:#000;
+  font-size:28px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.catalogQuote{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 24px;
+  background:#e31b23;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:6px;
+}
+
+@media(max-width:800px){
+  .catalogModalBox{
+    grid-template-columns:1fr;
+  }
+
+  .catalogModalImage{
+    min-height:350px;
+    height:350px;
+  }
+
+  .catalogModalContent{
+    padding:30px 24px 35px;
+  }
+
+  .catalogModalContent h2{
+    font-size:30px;
+  }
+}
+</style>
+
+<div id="catalogProductModal">
+  <div class="catalogModalBox">
+    <button class="catalogClose" id="catalogClose">×</button>
+
+    <div class="catalogModalImage">
+      <img id="catalogImage" src="" alt="">
+    </div>
+
+    <div class="catalogModalContent">
+      <div class="catalogCode" id="catalogCode"></div>
+      <h2 id="catalogTitle"></h2>
+      <p id="catalogDescription"></p>
+
+      <p>
+        ✓ Fully Customizable Design<br>
+        ✓ Custom Colors, Sizes & Branding<br>
+        ✓ Premium Sportswear Manufacturing<br>
+        ✓ MOQ: 10 Pieces
+      </p>
+
+      <a href="index.html#contact" class="catalogQuote">
+        GET A QUOTE
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".productCard").forEach(function(card){
+
+  card.addEventListener("click", function(){
+
+    const img = card.querySelector("img");
+    const title = card.querySelector("h3");
+    const description = card.querySelector("p");
+    const code = card.querySelector(".productCode");
+
+    if(img){
+      document.getElementById("catalogImage").src = img.src;
+      document.getElementById("catalogImage").alt =
+        title ? title.textContent : "Product";
+    }
+
+    document.getElementById("catalogTitle").textContent =
+      title ? title.textContent : "Custom Sportswear";
+
+    document.getElementById("catalogDescription").textContent =
+      description ? description.textContent : "";
+
+    document.getElementById("catalogCode").textContent =
+      code ? "UZ INDUSTRY • " + code.textContent : "UZ INDUSTRY";
+
+    document.getElementById("catalogProductModal").classList.add("show");
+    document.body.style.overflow = "hidden";
+  });
+
+});
+
+function closeCatalogProduct(){
+  document.getElementById("catalogProductModal").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("catalogClose").onclick = closeCatalogProduct;
+
+document.getElementById("catalogProductModal").addEventListener("click", function(e){
+  if(e.target === this){
+    closeCatalogProduct();
+  }
+});
+
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    closeCatalogProduct();
+  }
+});
+</script>
+<!-- ===== END ALL PRODUCTS POPUP ===== -->
 </body>
 </html>
