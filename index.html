@@ -694,12 +694,14 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
   content:"";
   display:block;
   width:100%;
-  height:230px;
+ height:340px;
   flex-shrink:0;
   background-image:
     linear-gradient(to top,rgba(0,0,0,.55),transparent 55%),
     var(--product-image,linear-gradient(135deg,#161619,#0a0a0c));
-  background-size:cover;
+  background-size:contain;
+background-repeat:no-repeat;
+background-position:center;
   background-position:center;
   transition:.4s ease;
 }
@@ -784,7 +786,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
   }
 
   #products .product::before{
-    height:240px;
+   height:300px;
   }
 }
 </style>
@@ -826,7 +828,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
     <div class="products">
 
       <!-- American Football -->
-      <div class="product" style="--product-image:url('american-football.jpg.jpeg');cursor:pointer;" onclick="window.location.href='products.html'">
+      <div class="product" style="--product-image:url('american-football.jpg.jpeg');cursor:pointer;" onclick="openProduct('american')">
         <span class="code">AF</span>
         <div>
           <h3>American Football Uniform</h3>
@@ -837,7 +839,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
       </div>
 
       <!-- 7v7 -->
-     <div class="product" style="--product-image:url('7v7-uniform.jpg.jpeg');cursor:pointer;" onclick="window.location.href='products.html'">
+     <div class="product" style="--product-image:url('7v7-uniform.jpg.jpeg');cursor:pointer;" onclick="openProduct('seven')"
         <span class="code">7V7</span>
         <div>
           <h3>7v7 Uniform</h3>
@@ -849,7 +851,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
 
       <!-- Basketball -->
     
-      <div class="product" style="--product-image:url('basketball-uniform.jpg.jpeg');cursor:pointer;" onclick="window.location.href='products.html'">
+      <div class="product" style="--product-image:url('basketball-uniform.jpg.jpeg');cursor:pointer;" onclick="openProduct('basketball')"
         <span class="code">BB</span>
         <div>
           <h3>Basketball Uniform</h3>
@@ -860,7 +862,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#888}.foot{display:
       </div>
 
       <!-- Tracksuit -->
-     <div class="product" style="--product-image:url('tracksuit.jpg.jpeg');cursor:pointer;" onclick="window.location.href='products.html'">
+     <div class="product" style="--product-image:url('tracksuit.jpg.jpeg');cursor:pointer;" onclick="openProduct('tracksuit')"
         <span class="code">TS</span>
         <div>
           <h3>Tracksuit</h3>
@@ -1219,5 +1221,127 @@ document.addEventListener("keydown", function(e){
 
 });
 </script>
+<!-- ===== PRODUCT DETAILS POPUP ===== -->
+
+<div id="productModal" class="processModal">
+  <div class="processModalBox">
+
+    <button class="processClose" id="productClose" aria-label="Close">×</button>
+
+    <div class="processModalImage">
+      <img id="productImage" src="" alt="Product">
+    </div>
+
+    <div class="processModalContent">
+
+      <div class="eyebrow">UZ INDUSTRY • CUSTOM SPORTSWEAR</div>
+
+      <h2 id="productTitle">Product</h2>
+
+      <p id="productDescription"></p>
+
+      <div class="processPoints">
+        <div class="processPoint" id="productFabric"></div>
+        <div class="processPoint" id="productFeature1"></div>
+        <div class="processPoint" id="productFeature2"></div>
+        <div class="processPoint" id="productFeature3"></div>
+        <div class="processPoint">✓ MOQ: 10 Pieces</div>
+      </div>
+
+      <a class="btn primary processQuote" href="#contact">
+        GET A QUOTE
+      </a>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+const productData = {
+
+  american:{
+    title:"American Football Uniform",
+    image:"american-football.jpg.jpeg",
+    description:"Premium custom American football uniform designed for competitive teams, clubs and organizations. Colors, numbers, sizing and design details can be fully customized.",
+    fabric:"✓ Recommended Fabric: Performance Polyester + Mesh",
+    feature1:"✓ Breathable & moisture-managing construction",
+    feature2:"✓ Custom team colors, numbers and graphics",
+    feature3:"✓ Durable game-ready stitching"
+  },
+
+  seven:{
+    title:"7v7 Uniform",
+    image:"7v7-uniform.jpg.jpeg",
+    description:"Lightweight custom 7v7 uniform developed for speed, movement and competitive performance. Suitable for teams looking for a modern fully customized kit.",
+    fabric:"✓ Recommended Fabric: Lightweight Dri-Fit Polyester",
+    feature1:"✓ Lightweight & breathable feel",
+    feature2:"✓ Fully customizable colors and numbers",
+    feature3:"✓ Performance-focused athletic fit"
+  },
+
+  basketball:{
+    title:"Basketball Uniform",
+    image:"basketball-uniform.jpg.jpeg",
+    description:"Custom basketball jersey and shorts designed for comfort, movement and professional team presentation. Available in custom colors, sizes and designs.",
+    fabric:"✓ Recommended Fabric: Bird Eye Mesh / Interlock Polyester",
+    feature1:"✓ Breathable performance construction",
+    feature2:"✓ Custom numbers, colors and sublimation",
+    feature3:"✓ Comfortable game-ready fit"
+  },
+
+  tracksuit:{
+    title:"Custom Tracksuit",
+    image:"tracksuit.jpg.jpeg",
+    description:"Premium custom tracksuit suitable for teams, training, travel and casual teamwear. Fit, colors, stripe details and design can be customized to your requirements.",
+    fabric:"✓ Recommended Fabric: Cotton-Poly Fleece / Tricot",
+    feature1:"✓ Comfortable premium construction",
+    feature2:"✓ Custom colors, fit and panel design",
+    feature3:"✓ Suitable for training and team travel"
+  }
+
+};
+
+
+function openProduct(product){
+
+  const p = productData[product];
+
+  document.getElementById("productTitle").textContent = p.title;
+  document.getElementById("productImage").src = p.image;
+  document.getElementById("productDescription").textContent = p.description;
+  document.getElementById("productFabric").textContent = p.fabric;
+  document.getElementById("productFeature1").textContent = p.feature1;
+  document.getElementById("productFeature2").textContent = p.feature2;
+  document.getElementById("productFeature3").textContent = p.feature3;
+
+  document.getElementById("productModal").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+
+function closeProduct(){
+
+  document.getElementById("productModal").classList.remove("show");
+  document.body.style.overflow = "";
+
+}
+
+
+document.getElementById("productClose").onclick = closeProduct;
+
+
+document.getElementById("productModal").addEventListener("click", function(e){
+
+  if(e.target === this){
+    closeProduct();
+  }
+
+});
+
+</script>
+
+<!-- ===== END PRODUCT DETAILS POPUP ===== -->
 </body>
 </html>
