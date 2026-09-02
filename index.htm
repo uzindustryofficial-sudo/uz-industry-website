@@ -845,6 +845,65 @@ background-position:center;
 }
 .code{display:none !important;}
 </style>
+<style>
+/* FINAL FEATURED PRODUCTS LAYOUT FIX */
+
+#products .products{
+  display:grid !important;
+  grid-template-columns:repeat(4, minmax(0,1fr)) !important;
+  gap:18px !important;
+  align-items:stretch !important;
+}
+
+#products .product{
+  display:grid !important;
+  grid-template-rows:340px auto !important;
+  min-height:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  position:relative !important;
+}
+
+#products .product::before{
+  position:static !important;
+  display:block !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  transform:none !important;
+  background-size:contain !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+}
+
+#products .product > div{
+  position:static !important;
+  padding:22px 20px 24px !important;
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+
+@media(max-width:900px){
+  #products .products{
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+  }
+}
+
+@media(max-width:560px){
+  #products .products{
+    grid-template-columns:1fr !important;
+  }
+
+  #products .product{
+    grid-template-rows:300px auto !important;
+  }
+
+  #products .product::before{
+    height:300px !important;
+    min-height:300px !important;
+  }
+}
+</style>
 </head>
 <body>
 <nav id="nav"><div class="wrap nav"><a class="brand" href="#home"><img src="uz-logo.png.PNG" alt="UZ Industry" style="height:65px;width:auto;display:block;"></a><div class="links">
