@@ -844,6 +844,20 @@ background-position:center;
   }
 }
 .code{display:none !important;}
+@media(max-width:768px){
+
+  .founderLayout{
+    grid-template-columns:1fr !important;
+    gap:22px !important;
+  }
+
+  .founderLayout img{
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+    margin:0 auto !important;
+  }
+}
 </style>
 <style>
 /* FINAL FEATURED PRODUCTS LAYOUT FIX */
@@ -1128,7 +1142,7 @@ background-position:center;
       customization and reliable production for every order.
     </p>
 
-    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center;margin-top:28px;">
+    <div class="founderLayout" style="display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center;margin-top:28px;">
       
       <div style="background:#0d0d0f;border:1px solid #242429;border-radius:18px;padding:14px;">
         <img src="founder.png.PNG" alt="Founder Umer"
