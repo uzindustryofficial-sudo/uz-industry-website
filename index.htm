@@ -1075,7 +1075,7 @@ background-position:center;
     <div class="fabricGrid">
 
       
-      <div class="fabricCard">
+      <div class="fabricCard" onclick="openHomeFabric('bird')" style="cursor:pointer;">
         <img src="bird-eye-mesh.jpg.jpeg" alt="Bird Eye Mesh" style="width:100%;height:220px;object-fit:cover;display:block;margin-bottom:18px;border-radius:10px;">
         <span class="fabricNo">02</span>
         <h3>Bird Eye Mesh</h3>
@@ -1084,7 +1084,7 @@ background-position:center;
 
      
 
-      <div class="fabricCard">
+      <div class="fabricCard" onclick="openHomeFabric('interlock')" style="cursor:pointer;">
         <img src="interlock-polyester.jpg.jpeg" alt="Interlock Polyester" style="width:100%;height:220px;object-fit:cover;display:block;margin-bottom:18px;border-radius:10px;">
         <span class="fabricNo">04</span>
         <h3>Interlock Polyester</h3>
@@ -1093,7 +1093,7 @@ background-position:center;
 
      
 
-      <div class="fabricCard">
+     <div class="fabricCard" onclick="openHomeFabric('lycra')" style="cursor:pointer;">
         <img src="lycra-spandex.jpg.jpeg" alt="Lycra Spandex" style="width:100%;height:220px;object-fit:cover;display:block;margin-bottom:18px;border-radius:10px;">
         <span class="fabricNo">06</span>
         <h3>Lycra / Spandex</h3>
@@ -1102,7 +1102,7 @@ background-position:center;
 
     
 
-      <div class="fabricCard">
+      <div class="fabricCard" onclick="openHomeFabric('fleece')" style="cursor:pointer;">
         <img src="polyester-fleece.jpg.jpeg" alt="Polyester Fleece" style="width:100%;height:220px;object-fit:cover;display:block;margin-bottom:18px;border-radius:10px;">
         <span class="fabricNo">08</span>
         <h3>Polyester Fleece</h3>
@@ -1493,5 +1493,255 @@ document.getElementById("productModal").addEventListener("click", function(e){
 </script>
 
 <!-- ===== END PRODUCT DETAILS POPUP ===== -->
+<!-- ===== HOME FABRIC POPUP ===== -->
+
+<style>
+.homeFabricModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  z-index:99999;
+  padding:20px;
+  overflow-y:auto;
+  align-items:center;
+  justify-content:center;
+}
+
+.homeFabricModal.active{
+  display:flex;
+}
+
+.homeFabricBox{
+  width:min(950px,100%);
+  background:#101115;
+  border:1px solid #303136;
+  border-radius:16px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:45% 55%;
+  position:relative;
+}
+
+.homeFabricImage{
+  background:#08090b;
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.homeFabricImage img{
+  width:100%;
+  height:100%;
+  max-height:550px;
+  object-fit:contain;
+  display:block;
+}
+
+.homeFabricContent{
+  padding:40px;
+}
+
+.homeFabricContent h2{
+  font-size:32px;
+  margin:8px 0 15px;
+  text-transform:uppercase;
+}
+
+.homeFabricDesc{
+  color:#aaa;
+  line-height:1.7;
+  margin-bottom:22px;
+}
+
+.homeFabricDetail{
+  background:#18191d;
+  border:1px solid #292a30;
+  border-radius:7px;
+  padding:14px 16px;
+  margin-bottom:10px;
+  color:#ddd;
+  line-height:1.5;
+}
+
+.homeFabricDetail strong{
+  color:#fff;
+}
+
+.homeFabricClose{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:50%;
+  background:#ef1b24;
+  color:#fff;
+  font-size:25px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.homeFabricQuote{
+  display:inline-block;
+  margin-top:15px;
+  padding:14px 24px;
+  background:#ef1b24;
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  border-radius:6px;
+}
+
+@media(max-width:768px){
+  .homeFabricModal{
+    align-items:flex-start;
+    padding:12px;
+  }
+
+  .homeFabricBox{
+    grid-template-columns:1fr;
+  }
+
+  .homeFabricImage{
+    min-height:270px;
+    height:280px;
+  }
+
+  .homeFabricContent{
+    padding:28px 20px;
+  }
+
+  .homeFabricContent h2{
+    font-size:25px;
+    padding-right:30px;
+  }
+}
+</style>
+
+
+<div id="homeFabricModal" class="homeFabricModal">
+
+  <div class="homeFabricBox">
+
+    <button class="homeFabricClose" onclick="closeHomeFabric()">×</button>
+
+    <div class="homeFabricImage">
+      <img id="homeFabricImage" src="" alt="Fabric">
+    </div>
+
+    <div class="homeFabricContent">
+
+      <div style="color:#ef1b24;font-size:12px;font-weight:900;letter-spacing:2px;">
+        UZ INDUSTRY • FABRIC DETAILS
+      </div>
+
+      <h2 id="homeFabricTitle"></h2>
+
+      <p id="homeFabricDescription" class="homeFabricDesc"></p>
+
+      <div id="homeFabricType" class="homeFabricDetail"></div>
+      <div id="homeFabricProperties" class="homeFabricDetail"></div>
+      <div id="homeFabricUses" class="homeFabricDetail"></div>
+      <div id="homeFabricBenefits" class="homeFabricDetail"></div>
+
+      <a href="contact.html" class="homeFabricQuote">
+        GET A QUOTE
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const homeFabricData = {
+
+  interlock:{
+    title:"Interlock Polyester",
+    image:"interlock-polyester.jpg.jpeg",
+    description:"A smooth double-knit polyester fabric widely used for professional custom sportswear.",
+    type:"<strong>Fabric Type:</strong> Double-knit polyester interlock",
+    properties:"<strong>Key Properties:</strong> Smooth, strong, durable and excellent shape retention.",
+    uses:"<strong>Used For:</strong> Football kits, cricket uniforms, basketball wear, volleyball uniforms, tracksuits and training wear.",
+    benefits:"<strong>Why Choose It:</strong> Excellent surface for sublimation printing and long-lasting team uniforms."
+  },
+
+  bird:{
+    title:"Bird Eye Mesh",
+    image:"bird-eye-mesh.jpg.jpeg",
+    description:"A breathable sports fabric with a bird-eye knitted structure designed to improve airflow.",
+    type:"<strong>Fabric Type:</strong> Polyester Bird Eye Mesh",
+    properties:"<strong>Key Properties:</strong> Breathable, lightweight, ventilated and quick-drying.",
+    uses:"<strong>Used For:</strong> Football jerseys, basketball uniforms, training shirts, running wear and teamwear.",
+    benefits:"<strong>Why Choose It:</strong> Helps keep athletes comfortable during high-intensity sports."
+  },
+
+  lycra:{
+    title:"Lycra / Spandex",
+    image:"lycra-spandex.jpg.jpeg",
+    description:"A highly stretchable performance fabric designed for flexibility and close-fitting athletic apparel.",
+    type:"<strong>Fabric Type:</strong> Stretch performance fabric with spandex",
+    properties:"<strong>Key Properties:</strong> High stretch, flexibility, shape recovery and freedom of movement.",
+    uses:"<strong>Used For:</strong> Compression wear, wrestling singlets, cycling wear, gym wear and fitted sportswear.",
+    benefits:"<strong>Why Choose It:</strong> Moves naturally with the athlete while maintaining garment shape."
+  },
+
+  fleece:{
+    title:"Polyester Fleece",
+    image:"polyester-fleece.jpg.jpeg",
+    description:"A soft insulating polyester fabric designed for warmth, comfort and cold-weather sportswear.",
+    type:"<strong>Fabric Type:</strong> Brushed Polyester Fleece",
+    properties:"<strong>Key Properties:</strong> Warm, soft, comfortable, insulating and durable.",
+    uses:"<strong>Used For:</strong> Hoodies, sweatshirts, winter tracksuits, warm-up wear and team apparel.",
+    benefits:"<strong>Why Choose It:</strong> Provides excellent warmth and comfort for training and casual teamwear."
+  }
+
+};
+
+
+function openHomeFabric(key){
+
+  const fabric = homeFabricData[key];
+
+  if(!fabric) return;
+
+  document.getElementById("homeFabricImage").src = fabric.image;
+  document.getElementById("homeFabricTitle").textContent = fabric.title;
+  document.getElementById("homeFabricDescription").textContent = fabric.description;
+
+  document.getElementById("homeFabricType").innerHTML = fabric.type;
+  document.getElementById("homeFabricProperties").innerHTML = fabric.properties;
+  document.getElementById("homeFabricUses").innerHTML = fabric.uses;
+  document.getElementById("homeFabricBenefits").innerHTML = fabric.benefits;
+
+  document.getElementById("homeFabricModal").classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function closeHomeFabric(){
+
+  document.getElementById("homeFabricModal").classList.remove("active");
+
+  document.body.style.overflow = "";
+}
+
+
+document.getElementById("homeFabricModal").addEventListener("click",function(e){
+
+  if(e.target === this){
+    closeHomeFabric();
+  }
+
+});
+
+</script>
 </body>
 </html>
