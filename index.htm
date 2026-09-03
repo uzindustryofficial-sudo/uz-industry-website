@@ -903,6 +903,47 @@ background-position:center;
     min-height:300px !important;
   }
 }
+.mobileMenuBtn{
+  display:none;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:30px;
+  cursor:pointer;
+  padding:10px;
+}
+
+@media(max-width:768px){
+
+  #nav .mobileMenuBtn{
+    display:block;
+  }
+
+  #nav .links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:#0b0b0d;
+    padding:20px;
+    flex-direction:column;
+    gap:8px;
+    border-top:1px solid #262626;
+    z-index:9999;
+  }
+
+  #nav .links.mobileOpen{
+    display:flex;
+  }
+
+  #nav .links a{
+    display:block;
+    width:100%;
+    padding:14px 10px;
+    font-size:14px;
+  }
+}
 </style>
 </head>
 <body>
@@ -914,7 +955,7 @@ background-position:center;
   <a href="#about">About</a>
  <a href="contact.html">Contact</a>
  <a class="cta" href="contact.html">Get a Quote</a>
-</div>☰</button></div></nav>
+</div><button type="button" class="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" onclick="document.querySelector('#nav .links').classList.toggle('mobileOpen');this.setAttribute('aria-expanded',document.querySelector('#nav .links').classList.contains('mobileOpen'));">☰</button></div></nav>
 <header class="hero" id="home"><div class="wrap heroGrid"><div><div class="eyebrow">Custom Sportswear Manufacturer & Exporter</div><h1>Made for <span>teams.</span><br>Built to perform.</h1><p class="lead">Premium custom uniforms, teamwear and performance apparel for clubs, schools, brands and organizations worldwide.</p><div class="actions"><a class="btn primary" href="#products">Explore Products</a><a class="btn" href="#contact">Get Custom Design</a></div></div><div class="art">
   <a class="processCard cutting" href="#cutting"><span>Cutting</span></a>
   <a class="processCard sublimation" href="#sublimation"><span>Sublimation</span></a>
