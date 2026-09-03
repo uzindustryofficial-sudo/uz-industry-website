@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,21 @@
 <title>Contact UZ Industry | Custom Sportswear Manufacturer</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
   background:#08090b;
-  color:#fff;
+  color:#ffffff;
 }
 
 a{
@@ -24,7 +30,8 @@ a{
   color:inherit;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
   background:#0d0e11;
   border-bottom:1px solid #222;
@@ -55,16 +62,15 @@ nav{
 }
 
 nav a{
+  color:#fff;
   font-size:13px;
   font-weight:800;
   text-transform:uppercase;
+  transition:.2s;
 }
 
-nav a:hover{
-  color:#ef1b24;
-}
-
-.active{
+nav a:hover,
+nav a.active{
   color:#ef1b24;
 }
 
@@ -72,64 +78,69 @@ nav a:hover{
   background:#ef1b24;
   color:#fff !important;
   padding:13px 20px;
-  border-radius:5px;
+  border-radius:6px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .contactHero{
+  padding:90px 20px 65px;
   text-align:center;
-  padding:85px 20px 55px;
   background:
-  radial-gradient(circle at center,#1c1d22 0%,#08090b 68%);
+    radial-gradient(circle at center,#1c1d22 0%,#08090b 68%);
 }
 
 .eyebrow{
   color:#ef1b24;
   font-size:13px;
-  letter-spacing:2px;
   font-weight:900;
-  margin-bottom:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:15px;
 }
 
 .contactHero h1{
-  font-size:48px;
+  font-size:50px;
+  line-height:1.1;
   text-transform:uppercase;
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 
 .contactHero p{
-  max-width:720px;
+  max-width:760px;
   margin:auto;
   color:#aaa;
+  font-size:16px;
   line-height:1.7;
 }
 
-/* MAIN */
+/* ================= CONTACT SECTION ================= */
+
 .contactSection{
   max-width:1150px;
   margin:auto;
-  padding:60px 25px 90px;
+  padding:70px 25px 90px;
 }
 
 .contactIntro{
+  max-width:750px;
+  margin:0 auto 45px;
   text-align:center;
-  margin-bottom:40px;
 }
 
 .contactIntro h2{
   font-size:34px;
   text-transform:uppercase;
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
 .contactIntro p{
   color:#aaa;
-  max-width:650px;
-  margin:auto;
   line-height:1.7;
 }
 
-/* CONTACT CARDS */
+/* ================= CARDS ================= */
+
 .contactGrid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -138,20 +149,28 @@ nav a:hover{
 
 .contactCard{
   background:#101115;
-  border:1px solid #25262b;
-  border-radius:12px;
-  padding:28px;
+  border:1px solid #27282e;
+  border-radius:14px;
+  padding:30px;
   transition:.25s;
 }
 
 .contactCard:hover{
-  transform:translateY(-4px);
   border-color:#ef1b24;
+  transform:translateY(-4px);
 }
 
 .contactIcon{
-  font-size:34px;
-  margin-bottom:18px;
+  width:58px;
+  height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#18191e;
+  border:1px solid #292a30;
+  border-radius:50%;
+  font-size:28px;
+  margin-bottom:20px;
 }
 
 .contactCard h3{
@@ -163,66 +182,476 @@ nav a:hover{
 .contactCard p{
   color:#999;
   font-size:14px;
-  line-height:1.6;
-  margin-bottom:20px;
+  line-height:1.7;
+  min-height:72px;
+}
+
+.contactValue{
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  margin:15px 0 20px;
+  word-break:break-word;
 }
 
 .contactButton{
   display:inline-block;
+  padding:13px 20px;
   background:#ef1b24;
   color:#fff;
-  padding:13px 20px;
-  border-radius:5px;
+  border-radius:6px;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  transition:.2s;
+}
+
+.contactButton:hover{
+  opacity:.88;
+}
+
+/* ================= BUSINESS INFO ================= */
+
+.businessInfo{
+  margin-top:50px;
+  padding:40px;
+  text-align:center;
+  background:#101115;
+  border:1px solid #27282e;
+  border-radius:15px;
+}
+
+.businessInfo h2{
+  font-size:30px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+.infoGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.infoItem{
+  padding:20px;
+  background:#15161a;
+  border-radius:10px;
+}
+
+.infoItem strong{
+  display:block;
+  color:#ef1b24;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.infoItem span{
+  color:#ddd;
+  font-size:14px;
+}
+
+/* ================= CTA ================= */
+
+.finalCTA{
+  margin-top:50px;
+  padding:55px 30px;
+  text-align:center;
+  background:
+    radial-gradient(circle at top,#202126 0%,#111216 70%);
+  border:1px solid #292a30;
+  border-radius:16px;
+}
+
+.finalCTA h2{
+  font-size:36px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.finalCTA p{
+  max-width:670px;
+  margin:0 auto 25px;
+  color:#aaa;
+  line-height:1.7;
+}
+
+.bigWhatsapp{
+  display:inline-block;
+  background:#ef1b24;
+  color:#fff;
+  padding:16px 28px;
+  border-radius:6px;
   font-size:13px;
   font-weight:900;
   text-transform:uppercase;
 }
 
-/* BUSINESS INFO */
-.businessInfo{
-  margin-top:45px;
-  background:#101115;
-  border:1px solid #25262b;
-  border-radius:14px;
-  padding:35px;
+/* ================= FOOTER ================= */
+
+footer{
+  border-top:1px solid #222;
+  padding:35px 20px;
   text-align:center;
+  color:#777;
+  font-size:13px;
 }
 
-.businessInfo h2{
-  text-transform:uppercase;
-  font-size:28px;
-  margin-bottom:22px;
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .contactGrid{
+    grid-template-columns:1fr;
+  }
+
+  .infoGrid{
+    grid-template-columns:1fr;
+  }
+
 }
 
-.infoRow{
-  margin:10px 0;
-  color:#bbb;
-  line-height:1.6;
+@media(max-width:600px){
+
+  .headerWrap{
+    padding:10px 18px;
+  }
+
+  .logo img{
+    height:55px;
+  }
+
+  .contactHero{
+    padding:65px 18px 45px;
+  }
+
+  .contactHero h1{
+    font-size:35px;
+  }
+
+  .contactHero p{
+    font-size:14px;
+  }
+
+  .contactSection{
+    padding:50px 18px 70px;
+  }
+
+  .contactIntro h2{
+    font-size:27px;
+  }
+
+  .contactCard{
+    padding:24px;
+  }
+
+  .contactCard p{
+    min-height:auto;
+  }
+
+  .businessInfo{
+    padding:28px 18px;
+  }
+
+  .businessInfo h2{
+    font-size:25px;
+  }
+
+  .finalCTA{
+    padding:40px 20px;
+  }
+
+  .finalCTA h2{
+    font-size:27px;
+  }
+
 }
 
-.infoRow strong{
-  color:#fff;
-}
+</style>
+</head>
 
-/* CTA */
-.finalCTA{
-  text-align:center;
-  margin-top:50px;
-  padding:55px 25px;
-  background:#111216;
-  border:1px solid #292a30;
-  border-radius:15px;
-}
+<body>
 
-.finalCTA h2{
-  font-size:34px;
-  text-transform:uppercase;
-  margin-bottom:13px;
-}
+<!-- ================= HEADER ================= -->
 
-.finalCTA p{
-  color:#aaa;
-  line-height:1.7;
-  max-width:650px;
-  margin:0 auto 25px;
-}
+<header>
+
+  <div class="headerWrap">
+
+    <a class="logo" href="./">
+      <img src="uz-logo.png.PNG" alt="UZ Industry">
+    </a>
+
+    <nav>
+
+      <a href="./">Home</a>
+
+      <a href="products.html">Products</a>
+
+      <a href="fabrics.html">Fabrics</a>
+
+      <a href="./#custom">Customization</a>
+
+      <a href="./#about">About</a>
+
+      <a href="contact.html" class="active">Contact</a>
+
+      <a href="contact.html" class="quoteBtn">Get a Quote</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="contactHero">
+
+  <div class="eyebrow">
+    UZ INDUSTRY • SIALKOT, PAKISTAN
+  </div>
+
+  <h1>Let's Work Together</h1>
+
+  <p>
+    Looking for custom sportswear, team uniforms or private label production?
+    Share your requirements with UZ Industry and let us help turn your idea
+    into a finished product.
+  </p>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contactSection">
+
+  <div class="contactIntro">
+
+    <div class="eyebrow">
+      CONTACT UZ INDUSTRY
+    </div>
+
+    <h2>Start Your Custom Order</h2>
+
+    <p>
+      Send us your design, reference image, quantity, colors, sizes, logos
+      and other requirements. We can discuss customization, pricing,
+      production and worldwide delivery.
+    </p>
+
+  </div>
+
+
+  <div class="contactGrid">
+
+
+    <!-- WHATSAPP -->
+
+    <div class="contactCard">
+
+      <div class="contactIcon">💬</div>
+
+      <h3>WhatsApp Inquiry</h3>
+
+      <p>
+        The fastest way to discuss your custom sportswear order,
+        pricing, designs, MOQ and production requirements.
+      </p>
+
+      <div class="contactValue">
+        +92 316 0797211
+      </div>
+
+      <a
+        class="contactButton"
+        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20inquire%20about%20custom%20sportswear."
+        target="_blank"
+        rel="noopener">
+        Send Inquiry on WhatsApp
+      </a>
+
+    </div>
+
+
+    <!-- EMAIL -->
+
+    <div class="contactCard">
+
+      <div class="contactIcon">✉️</div>
+
+      <h3>Email Us</h3>
+
+      <p>
+        Email your order details, artwork, product specifications
+        or business inquiry directly to UZ Industry.
+      </p>
+
+      <div class="contactValue">
+        uzindustryofficial@gmail.com
+      </div>
+
+      <a
+        class="contactButton"
+        href="mailto:uzindustryofficial@gmail.com?subject=Custom%20Sportswear%20Inquiry%20-%20UZ%20Industry">
+        Send Email
+      </a>
+
+    </div>
+
+
+    <!-- INSTAGRAM -->
+
+    <div class="contactCard">
+
+      <div class="contactIcon">📸</div>
+
+      <h3>Instagram</h3>
+
+      <p>
+        Follow our Instagram profile for sportswear designs,
+        product updates and custom manufacturing work.
+      </p>
+
+      <div class="contactValue">
+        @uzindustry.official
+      </div>
+
+      <a
+        class="contactButton"
+        href="https://www.instagram.com/uzindustry.official/"
+        target="_blank"
+        rel="noopener">
+        Visit Instagram
+      </a>
+
+    </div>
+
+
+    <!-- FACEBOOK -->
+
+    <div class="contactCard">
+
+      <div class="contactIcon">ⓕ</div>
+
+      <h3>Facebook</h3>
+
+      <p>
+        Connect with UZ Industry on Facebook and stay updated
+        with our custom sportswear products and services.
+      </p>
+
+      <div class="contactValue">
+        UZ Industry
+      </div>
+
+      <a
+        class="contactButton"
+        href="https://www.facebook.com/share/1DcVmiJLuF/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener">
+        Visit Facebook
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- ================= BUSINESS INFO ================= -->
+
+  <div class="businessInfo">
+
+    <div class="eyebrow">
+      MANUFACTURING BASE
+    </div>
+
+    <h2>UZ Industry</h2>
+
+    <div class="infoGrid">
+
+      <div class="infoItem">
+
+        <strong>Location</strong>
+
+        <span>
+          Sialkot, Pakistan
+        </span>
+
+      </div>
+
+
+      <div class="infoItem">
+
+        <strong>Specialization</strong>
+
+        <span>
+          Custom Sportswear & Teamwear
+        </span>
+
+      </div>
+
+
+      <div class="infoItem">
+
+        <strong>Service</strong>
+
+        <span>
+          Worldwide Client Support
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= FINAL CTA ================= -->
+
+  <div class="finalCTA">
+
+    <div class="eyebrow">
+      READY TO START?
+    </div>
+
+    <h2>Send Us Your Requirements</h2>
+
+    <p>
+      Have a product idea or custom teamwear design?
+      Send us your reference, quantity and requirements on WhatsApp
+      and start discussing your project with UZ Industry.
+    </p>
+
+    <a
+      class="bigWhatsapp"
+      href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+      target="_blank"
+      rel="noopener">
+      Send Inquiry on WhatsApp →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  © UZ INDUSTRY • SIALKOT, PAKISTAN • CUSTOM SPORTSWEAR MANUFACTURER
+
+</footer>
+
+</body>
+</html>
