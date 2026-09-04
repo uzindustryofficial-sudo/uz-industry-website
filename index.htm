@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UZ Industry | Premium Custom Sportswear Manufacturer</title>
+<title>UZ Industry | Custom Sportswear & Private Label Manufacturer</title>
 
-<meta name="description" content="UZ Industry is a custom sportswear and teamwear manufacturer based in Sialkot, Pakistan. Custom uniforms, performance apparel, fabrics and worldwide client support.">
+<meta name="description" content="UZ Industry is a custom sportswear, teamwear and private label apparel manufacturer based in Sialkot, Pakistan. Custom uniforms, performance apparel, fabrics, branding and worldwide inquiry support.">
 
 <style>
 
@@ -70,9 +69,7 @@ img{
   color:var(--red);
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* HEADER */
 
 .siteHeader{
   position:fixed;
@@ -91,10 +88,6 @@ img{
   display:flex;
   align-items:center;
   gap:28px;
-}
-
-.logo{
-  flex-shrink:0;
 }
 
 .logo img{
@@ -117,7 +110,6 @@ img{
   font-weight:900;
   letter-spacing:.09em;
   text-transform:uppercase;
-  transition:.25s;
 }
 
 .mainNav a:not(.navCta)::after{
@@ -174,9 +166,7 @@ img{
   background:#fff;
 }
 
-/* =========================================================
-   COMMON
-   ========================================================= */
+/* COMMON */
 
 .eyebrow{
   display:flex;
@@ -248,9 +238,7 @@ img{
   border-color:var(--red2);
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* HERO */
 
 .hero{
   position:relative;
@@ -333,8 +321,6 @@ img{
   text-transform:uppercase;
 }
 
-/* HERO COLLAGE */
-
 .heroVisual{
   position:relative;
   min-height:590px;
@@ -412,7 +398,6 @@ img{
   text-align:center;
   background:var(--red);
   border:7px solid #08080a;
-  box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
 
 .moqBadge strong{
@@ -430,9 +415,7 @@ img{
   text-transform:uppercase;
 }
 
-/* =========================================================
-   TRUST STRIP
-   ========================================================= */
+/* TRUST */
 
 .trust{
   background:#09090b;
@@ -476,9 +459,7 @@ img{
   line-height:1.45;
 }
 
-/* =========================================================
-   FEATURED PRODUCTS
-   ========================================================= */
+/* PRODUCTS */
 
 .productsSection{
   padding:95px 0;
@@ -501,7 +482,6 @@ img{
 .productCard:hover{
   transform:translateY(-7px);
   border-color:rgba(239,27,36,.7);
-  box-shadow:0 25px 60px rgba(0,0,0,.35);
 }
 
 .productImage{
@@ -580,9 +560,7 @@ img{
   text-align:center;
 }
 
-/* =========================================================
-   MANUFACTURING
-   ========================================================= */
+/* MANUFACTURING */
 
 .manufacturing{
   padding:95px 0;
@@ -605,7 +583,6 @@ img{
   height:390px;
   border:1px solid var(--line);
   background:#09090b;
-  cursor:pointer;
 }
 
 .processCard img{
@@ -659,9 +636,7 @@ img{
   line-height:1.6;
 }
 
-/* =========================================================
-   WHY UZ
-   ========================================================= */
+/* WHY UZ */
 
 .whySection{
   padding:95px 0;
@@ -737,13 +712,173 @@ img{
 }
 
 /* =========================================================
-   FABRICS
+   PRIVATE LABEL
    ========================================================= */
+
+.privateLabel{
+  position:relative;
+  overflow:hidden;
+  padding:105px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(circle at 84% 30%,rgba(239,27,36,.16),transparent 31%),
+    linear-gradient(135deg,#08080a,#101014 70%,#070708);
+}
+
+.privateLabel::before{
+  content:"PRIVATE";
+  position:absolute;
+  right:-4%;
+  top:3%;
+  color:rgba(255,255,255,.018);
+  font-size:15vw;
+  font-weight:900;
+  line-height:1;
+  pointer-events:none;
+}
+
+.privateGrid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:60px;
+  align-items:center;
+}
+
+.privateVisual{
+  position:relative;
+  min-height:625px;
+}
+
+.privateMain{
+  position:absolute;
+  left:0;
+  top:0;
+  width:67%;
+  height:100%;
+  overflow:hidden;
+  border:1px solid #303037;
+  background:#09090b;
+}
+
+.privateMain img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:15px;
+}
+
+.privateMini{
+  position:absolute;
+  right:0;
+  width:29%;
+  height:47.5%;
+  overflow:hidden;
+  border:1px solid #303037;
+  background:#09090b;
+}
+
+.privateMini.top{
+  top:0;
+}
+
+.privateMini.bottom{
+  bottom:0;
+}
+
+.privateMini img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:10px;
+}
+
+.privateBadge{
+  position:absolute;
+  right:20%;
+  top:45%;
+  z-index:4;
+  width:120px;
+  height:120px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  border-radius:50%;
+  background:var(--red);
+  border:7px solid #09090b;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.1em;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+
+.privateContent h2{
+  margin:15px 0 20px;
+  font-size:clamp(48px,6vw,82px);
+  line-height:.9;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+}
+
+.privateLead{
+  max-width:650px;
+  color:#a1a1a8;
+  font-size:15px;
+  line-height:1.78;
+}
+
+.capabilityGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin-top:28px;
+}
+
+.capability{
+  min-height:108px;
+  padding:18px;
+  border:1px solid #29292f;
+  background:rgba(10,10,12,.76);
+}
+
+.capability strong{
+  display:block;
+  margin-bottom:7px;
+  font-size:11px;
+  text-transform:uppercase;
+}
+
+.capability p{
+  color:#85858d;
+  font-size:11px;
+  line-height:1.55;
+}
+
+.privateNote{
+  margin-top:20px;
+  padding:18px 19px;
+  border-left:3px solid var(--red);
+  background:#0a0a0d;
+  color:#96969d;
+  font-size:12px;
+  line-height:1.65;
+}
+
+.privateActions{
+  margin-top:25px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* FABRICS */
 
 .fabricsSection{
   padding:95px 0;
   background:#08080a;
-  border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
 
@@ -757,7 +892,6 @@ img{
   overflow:hidden;
   border:1px solid var(--line);
   background:#0d0d10;
-  cursor:pointer;
   transition:.35s;
 }
 
@@ -808,9 +942,7 @@ img{
   line-height:1.6;
 }
 
-/* =========================================================
-   CUSTOM PROCESS
-   ========================================================= */
+/* CUSTOM ORDER PROCESS */
 
 .customSection{
   padding:95px 0;
@@ -872,9 +1004,7 @@ img{
   font-size:12px;
 }
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
+/* ABOUT */
 
 .aboutSection{
   padding:95px 0;
@@ -975,9 +1105,7 @@ img{
   text-transform:uppercase;
 }
 
-/* =========================================================
-   FINAL CTA
-   ========================================================= */
+/* FINAL CTA */
 
 .finalCta{
   position:relative;
@@ -1035,9 +1163,7 @@ img{
   gap:10px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 
 footer{
   border-top:1px solid var(--line);
@@ -1101,9 +1227,7 @@ footer{
   font-size:11px;
 }
 
-/* =========================================================
-   WHATSAPP
-   ========================================================= */
+/* WHATSAPP */
 
 .whatsappFloat{
   position:fixed;
@@ -1125,126 +1249,7 @@ footer{
   fill:#fff;
 }
 
-/* =========================================================
-   MODAL
-   ========================================================= */
-
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:5000;
-  padding:22px;
-  align-items:center;
-  justify-content:center;
-  background:rgba(0,0,0,.92);
-  backdrop-filter:blur(11px);
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modalBox{
-  position:relative;
-  width:min(1030px,100%);
-  max-height:92vh;
-  overflow:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  background:#0c0c0f;
-  border:1px solid #303037;
-}
-
-.modalImage{
-  min-height:590px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#080809;
-}
-
-.modalImage img{
-  width:100%;
-  height:100%;
-  max-height:670px;
-  object-fit:contain;
-  padding:14px;
-}
-
-.modalContent{
-  padding:45px 39px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.modalLabel{
-  color:var(--red);
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-}
-
-.modalContent h2{
-  margin:11px 0 16px;
-  font-size:clamp(33px,4vw,50px);
-  line-height:.95;
-  text-transform:uppercase;
-}
-
-.modalDescription{
-  margin-bottom:20px;
-  color:#aaaab1;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.detail{
-  margin-bottom:9px;
-  padding:13px 14px;
-  border:1px solid #29292f;
-  background:#111114;
-}
-
-.detail strong{
-  display:block;
-  margin-bottom:5px;
-  font-size:10px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-
-.detail span{
-  color:#b2b2b8;
-  font-size:13px;
-  line-height:1.55;
-}
-
-.modalActions{
-  margin-top:17px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-}
-
-.modalClose{
-  position:absolute;
-  top:13px;
-  right:13px;
-  z-index:10;
-  width:42px;
-  height:42px;
-  border:1px solid #34343a;
-  background:#0b0b0d;
-  color:#fff;
-  font-size:27px;
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* RESPONSIVE */
 
 @media(max-width:1050px){
 
@@ -1324,12 +1329,14 @@ footer{
     padding:120px 0 65px;
   }
 
-  .heroGrid{
+  .heroGrid,
+  .privateGrid{
     grid-template-columns:1fr;
     gap:40px;
   }
 
-  .heroVisual{
+  .heroVisual,
+  .privateVisual{
     min-height:520px;
   }
 
@@ -1339,10 +1346,6 @@ footer{
 
   .trustItem:nth-child(2){
     border-right:0;
-  }
-
-  .trustItem:nth-child(-n+2){
-    border-bottom:1px solid var(--line);
   }
 
   .sectionHeader{
@@ -1367,21 +1370,8 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .founderVisual{
-    min-height:520px;
-  }
-
   .footerGrid{
     grid-template-columns:1fr 1fr;
-  }
-
-  .modalBox{
-    grid-template-columns:1fr;
-  }
-
-  .modalImage{
-    min-height:410px;
-    height:410px;
   }
 
 }
@@ -1392,53 +1382,55 @@ footer{
     width:calc(100% - 26px);
   }
 
-  .hero{
-    padding:106px 0 55px;
-  }
-
   .hero h1{
     font-size:50px;
   }
 
-  .heroLead{
-    font-size:15px;
-  }
-
-  .heroActions{
+  .heroActions,
+  .privateActions,
+  .finalActions{
     flex-direction:column;
   }
 
-  .heroActions .btn{
+  .heroActions .btn,
+  .privateActions .btn,
+  .finalActions .btn{
     width:100%;
   }
 
-  .heroVisual{
+  .heroVisual,
+  .privateVisual{
     min-height:520px;
   }
 
-  .heroMainProduct{
+  .heroMainProduct,
+  .privateMain{
     width:100%;
     height:68%;
   }
 
-  .heroSide{
+  .heroSide,
+  .privateMini{
     top:auto;
     bottom:0;
     width:48.5%;
     height:29%;
   }
 
-  .heroSide.one{
+  .heroSide.one,
+  .privateMini.top{
     left:0;
     top:auto;
     bottom:0;
   }
 
-  .heroSide.two{
+  .heroSide.two,
+  .privateMini.bottom{
     right:0;
   }
 
-  .moqBadge{
+  .moqBadge,
+  .privateBadge{
     right:12px;
     top:58%;
     width:88px;
@@ -1454,23 +1446,6 @@ footer{
     border-bottom:1px solid var(--line);
   }
 
-  .trustItem:last-child{
-    border-bottom:0;
-  }
-
-  .productsSection,
-  .manufacturing,
-  .whySection,
-  .fabricsSection,
-  .customSection,
-  .aboutSection{
-    padding:70px 0;
-  }
-
-  .sectionTitle{
-    font-size:42px;
-  }
-
   .productGrid,
   .fabricGrid,
   .processGrid,
@@ -1478,12 +1453,8 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .productImage{
-    height:330px;
-  }
-
-  .processCard{
-    height:350px;
+  .capabilityGrid{
+    grid-template-columns:1fr;
   }
 
   .whyIntro{
@@ -1495,21 +1466,8 @@ footer{
   }
 
   .whyCard{
-    min-height:210px;
     border-right:0;
     border-bottom:1px solid var(--line)!important;
-  }
-
-  .whyCard:last-child{
-    border-bottom:0!important;
-  }
-
-  .customStep{
-    min-height:220px;
-  }
-
-  .customStep h3{
-    margin-top:30px;
   }
 
   .customCta{
@@ -1526,22 +1484,6 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .founderVisual{
-    min-height:470px;
-  }
-
-  .finalCta{
-    padding:85px 0;
-  }
-
-  .finalActions{
-    flex-direction:column;
-  }
-
-  .finalActions .btn{
-    width:100%;
-  }
-
   .footerGrid{
     grid-template-columns:1fr;
     gap:28px;
@@ -1552,53 +1494,14 @@ footer{
     align-items:flex-start;
   }
 
-  .modal{
-    padding:10px;
-    align-items:flex-start;
-  }
-
-  .modalBox{
-    margin-top:7px;
-  }
-
-  .modalImage{
-    min-height:300px;
-    height:310px;
-  }
-
-  .modalContent{
-    padding:30px 21px;
-  }
-
-  .modalActions{
-    flex-direction:column;
-  }
-
-  .modalActions .btn{
-    width:100%;
-  }
-
-  .whatsappFloat{
-    right:14px;
-    bottom:14px;
-    width:50px;
-    height:50px;
-  }
-
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- =========================================================
-     HEADER
-     ========================================================= -->
-
 <header class="siteHeader">
-
   <div class="wrap navWrap">
 
     <a class="logo" href="./">
@@ -1606,7 +1509,6 @@ footer{
     </a>
 
     <nav class="mainNav" id="mainNav">
-
       <a href="./" class="active">Home</a>
       <a href="products.html">Products</a>
       <a href="fabrics.html">Fabrics</a>
@@ -1614,37 +1516,22 @@ footer{
       <a href="#custom">Customization</a>
       <a href="#about">About</a>
       <a href="contact.html">Contact</a>
-
-      <a href="custom-order.html" class="navCta">
-        Get a Quote
-      </a>
-
+      <a href="custom-order.html" class="navCta">Get a Quote</a>
     </nav>
 
-    <button
-      class="menuBtn"
-      id="menuBtn"
-      aria-label="Open navigation">
-
+    <button class="menuBtn" id="menuBtn" aria-label="Open navigation">
       <span class="menuIcon">
         <span></span>
         <span></span>
         <span></span>
       </span>
-
     </button>
 
   </div>
-
 </header>
 
 
-<!-- =========================================================
-     HERO
-     ========================================================= -->
-
 <section class="hero">
-
   <div class="wrap heroGrid">
 
     <div>
@@ -1660,9 +1547,9 @@ footer{
       </h1>
 
       <p class="heroLead">
-        UZ Industry manufactures custom uniforms, performance apparel
-        and teamwear for teams, clubs, academies, organizations and
-        brands worldwide.
+        UZ Industry manufactures custom uniforms, performance apparel,
+        teamwear and private label products for teams, clubs,
+        organizations and emerging brands.
       </p>
 
       <div class="heroActions">
@@ -1678,11 +1565,10 @@ footer{
       </div>
 
       <div class="heroMeta">
-
         <span class="metaChip">MOQ 10 Pieces</span>
         <span class="metaChip">Full Customization</span>
+        <span class="metaChip">Private Label Ready</span>
         <span class="metaChip">Worldwide Support</span>
-
       </div>
 
     </div>
@@ -1691,65 +1577,39 @@ footer{
     <div class="heroVisual">
 
       <div class="heroMainProduct">
-
-        <img
-          src="american-football.jpg.jpeg"
-          alt="Custom American Football Uniform">
-
-        <span class="heroLabel">
-          Custom American Football
-        </span>
-
+        <img src="american-football.jpg.jpeg" alt="Custom American Football Uniform">
+        <span class="heroLabel">Custom American Football</span>
       </div>
-
 
       <div class="heroSide one">
-
-        <img
-          src="basketball-uniform.jpg.jpeg"
-          alt="Custom Basketball Uniform">
-
+        <img src="basketball-uniform.jpg.jpeg" alt="Custom Basketball Uniform">
       </div>
-
 
       <div class="heroSide two">
-
-        <img
-          src="cheer-uniform.jpg.jpeg"
-          alt="Custom Cheer Uniform">
-
+        <img src="cheer-uniform.jpg.jpeg" alt="Custom Cheer Uniform">
       </div>
 
-
       <div class="moqBadge">
-
         <div>
           <strong>10</strong>
           <span>Pieces MOQ</span>
         </div>
-
       </div>
 
     </div>
 
   </div>
-
 </section>
 
 
-<!-- =========================================================
-     TRUST
-     ========================================================= -->
-
 <section class="trust">
-
   <div class="wrap trustGrid">
 
     <div class="trustItem">
       <div class="trustNo">01</div>
       <div>
         <strong>Custom Manufacturing</strong>
-        <span>Built around your team requirements.</span>
+        <span>Built around your requirements.</span>
       </div>
     </div>
 
@@ -1764,8 +1624,8 @@ footer{
     <div class="trustItem">
       <div class="trustNo">03</div>
       <div>
-        <strong>Fabric Options</strong>
-        <span>Performance materials for different sports.</span>
+        <strong>Private Label</strong>
+        <span>Branding, labels and packaging options.</span>
       </div>
     </div>
 
@@ -1778,31 +1638,21 @@ footer{
     </div>
 
   </div>
-
 </section>
 
 
-<!-- =========================================================
-     FEATURED PRODUCTS
-     ========================================================= -->
-
 <section class="productsSection">
-
   <div class="wrap">
 
     <div class="sectionHeader">
 
       <div>
-
-        <div class="eyebrow">
-          Featured Sportswear
-        </div>
+        <div class="eyebrow">Featured Sportswear</div>
 
         <h2 class="sectionTitle">
           Built around your
           <span class="red">team.</span>
         </h2>
-
       </div>
 
       <p class="sectionText">
@@ -1816,326 +1666,174 @@ footer{
 
     <div class="productGrid">
 
-      <article
-        class="productCard"
-        onclick="openModal('american')">
-
+      <article class="productCard">
         <div class="productImage">
-
-          <span class="productTag">
-            Team Sports
-          </span>
-
-          <img
-            src="american-football.jpg.jpeg"
-            alt="American Football Uniform">
-
+          <span class="productTag">Team Sports</span>
+          <img src="american-football.jpg.jpeg" alt="American Football Uniform">
         </div>
-
         <div class="productInfo">
-
           <small>Custom Game Uniform</small>
-
           <h3>American Football</h3>
-
-          <p>
-            Durable custom football uniforms for teams, clubs and organizations.
-          </p>
-
-          <span class="viewLink">
-            View Details →
-          </span>
-
+          <p>Durable custom football uniforms for teams, clubs and organizations.</p>
+          <a href="products.html" class="viewLink">View Details →</a>
         </div>
-
       </article>
 
 
-      <article
-        class="productCard"
-        onclick="openModal('cheer')">
-
+      <article class="productCard">
         <div class="productImage">
-
-          <span class="productTag">
-            Performance
-          </span>
-
-          <img
-            src="cheer-uniform.jpg.jpeg"
-            alt="Cheer Uniform">
-
+          <span class="productTag">Performance</span>
+          <img src="cheer-uniform.jpg.jpeg" alt="Cheer Uniform">
         </div>
-
         <div class="productInfo">
-
           <small>Competition Uniform</small>
-
           <h3>Cheer Uniforms</h3>
-
-          <p>
-            Flexible custom uniforms designed for coordinated team performance.
-          </p>
-
-          <span class="viewLink">
-            View Details →
-          </span>
-
+          <p>Flexible custom uniforms designed for coordinated team performance.</p>
+          <a href="products.html" class="viewLink">View Details →</a>
         </div>
-
       </article>
 
 
-      <article
-        class="productCard"
-        onclick="openModal('basketball')">
-
+      <article class="productCard">
         <div class="productImage">
-
-          <span class="productTag">
-            Team Sports
-          </span>
-
-          <img
-            src="basketball-uniform.jpg.jpeg"
-            alt="Basketball Uniform">
-
+          <span class="productTag">Team Sports</span>
+          <img src="basketball-uniform.jpg.jpeg" alt="Basketball Uniform">
         </div>
-
         <div class="productInfo">
-
           <small>Jersey & Shorts</small>
-
           <h3>Basketball Uniforms</h3>
-
-          <p>
-            Lightweight custom basketball sets with complete team customization.
-          </p>
-
-          <span class="viewLink">
-            View Details →
-          </span>
-
+          <p>Lightweight custom basketball sets with complete team customization.</p>
+          <a href="products.html" class="viewLink">View Details →</a>
         </div>
-
       </article>
 
 
-      <article
-        class="productCard"
-        onclick="openModal('tracksuit')">
-
+      <article class="productCard">
         <div class="productImage">
-
-          <span class="productTag">
-            Teamwear
-          </span>
-
-          <img
-            src="tracksuit.jpg.jpeg"
-            alt="Custom Tracksuit">
-
+          <span class="productTag">Teamwear</span>
+          <img src="tracksuit.jpg.jpeg" alt="Custom Tracksuit">
         </div>
-
         <div class="productInfo">
-
           <small>Premium Teamwear</small>
-
           <h3>Custom Tracksuits</h3>
-
-          <p>
-            Coordinated tracksuits for training, travel and team presentation.
-          </p>
-
-          <span class="viewLink">
-            View Details →
-          </span>
-
+          <p>Coordinated tracksuits for training, travel and team presentation.</p>
+          <a href="products.html" class="viewLink">View Details →</a>
         </div>
-
       </article>
 
     </div>
 
-
     <div class="sectionAction">
-
       <a href="products.html" class="btn btnPrimary">
         Explore Full Product Range →
       </a>
-
     </div>
 
   </div>
-
 </section>
 
 
-<!-- =========================================================
-     MANUFACTURING
-     ========================================================= -->
-
-<section
-  class="manufacturing"
-  id="manufacturing">
+<section class="manufacturing" id="manufacturing">
 
   <div class="wrap">
 
     <div class="sectionHeader">
-
       <div>
-
-        <div class="eyebrow">
-          Manufacturing Process
-        </div>
-
+        <div class="eyebrow">Manufacturing Process</div>
         <h2 class="sectionTitle">
           From fabric to
           <span class="red">final kit.</span>
         </h2>
-
       </div>
 
       <p class="sectionText">
         Explore the key stages involved in converting fabric,
         graphics and specifications into finished custom sportswear.
       </p>
-
     </div>
 
 
     <div class="processGrid">
 
-
-      <article
-        class="processCard"
-        onclick="openModal('cutting')">
-
+      <article class="processCard">
         <img src="cutting.jpg.jpeg" alt="Sportswear Cutting">
-
         <div class="processOverlay">
           <span class="processNo">01</span>
           <small>Manufacturing</small>
           <h3>Cutting</h3>
-          <p>
-            Fabric panels are prepared according to garment patterns and sizing.
-          </p>
+          <p>Fabric panels are prepared according to garment patterns and sizing.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="processCard"
-        onclick="openModal('sublimation')">
-
+      <article class="processCard">
         <img src="sublimation.jpg.jpeg" alt="Sportswear Sublimation">
-
         <div class="processOverlay">
           <span class="processNo">02</span>
           <small>Customization</small>
           <h3>Sublimation</h3>
-          <p>
-            Full-color graphics are transferred into suitable polyester fabrics.
-          </p>
+          <p>Full-color graphics are transferred into suitable polyester fabrics.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="processCard"
-        onclick="openModal('stitching')">
-
+      <article class="processCard">
         <img src="stitching.jpg.jpeg" alt="Sportswear Stitching">
-
         <div class="processOverlay">
           <span class="processNo">03</span>
           <small>Construction</small>
           <h3>Stitching</h3>
-          <p>
-            Garment panels are assembled into the finished sportswear structure.
-          </p>
+          <p>Garment panels are assembled into the finished sportswear structure.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="processCard"
-        onclick="openModal('printing')">
-
+      <article class="processCard">
         <img src="printing.jpg.jpeg" alt="Sportswear Printing">
-
         <div class="processOverlay">
           <span class="processNo">04</span>
           <small>Branding</small>
           <h3>Printing</h3>
-          <p>
-            Logos, graphics and details can be applied using suitable techniques.
-          </p>
+          <p>Logos, graphics and details can be applied using suitable techniques.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="processCard"
-        onclick="openModal('embroidery')">
-
+      <article class="processCard">
         <img src="embroidery.jpg.jpeg" alt="Sportswear Embroidery">
-
         <div class="processOverlay">
           <span class="processNo">05</span>
           <small>Branding</small>
           <h3>Embroidery</h3>
-          <p>
-            Embroidered logos and branding provide a premium stitched finish.
-          </p>
+          <p>Embroidered logos and branding provide a premium stitched finish.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="processCard"
-        onclick="openModal('factory')">
-
+      <article class="processCard">
         <img src="factory.jpg.jpeg" alt="UZ Industry Manufacturing">
-
         <div class="processOverlay">
           <span class="processNo">06</span>
           <small>Production</small>
           <h3>Manufacturing</h3>
-          <p>
-            Complete production brings design, materials and construction together.
-          </p>
+          <p>Complete production brings design, materials and construction together.</p>
         </div>
-
       </article>
 
     </div>
 
   </div>
-
 </section>
 
 
-<!-- =========================================================
-     WHY UZ
-     ========================================================= -->
-
 <section class="whySection">
-
   <div class="wrap">
 
     <div class="whyShell">
 
       <div class="whyIntro">
 
-        <div class="eyebrow">
-          Why UZ Industry
-        </div>
+        <div class="eyebrow">Why UZ Industry</div>
 
         <h2>
           Built for custom
@@ -2143,10 +1841,9 @@ footer{
         </h2>
 
         <p>
-          Custom sportswear is not one-size-fits-all. Different teams
-          require different fabrics, fits, graphics and branding.
-          UZ Industry is focused on giving buyers room to build products
-          around their own identity.
+          Different teams and brands require different fabrics, fits,
+          graphics and branding. UZ Industry is focused on helping buyers
+          build products around their own requirements and identity.
         </p>
 
       </div>
@@ -2155,55 +1852,160 @@ footer{
       <div class="whyCards">
 
         <div class="whyCard">
-
           <div class="whyNo">01</div>
-
           <h3>Custom Design</h3>
-
-          <p>
-            Build around your own colors, graphics and visual identity.
-          </p>
-
+          <p>Build around your own colors, graphics and visual identity.</p>
         </div>
 
-
         <div class="whyCard">
-
           <div class="whyNo">02</div>
-
           <h3>Fabric Choice</h3>
-
-          <p>
-            Choose materials according to sport and performance requirements.
-          </p>
-
+          <p>Choose materials according to sport and performance requirements.</p>
         </div>
 
-
         <div class="whyCard">
-
           <div class="whyNo">03</div>
-
-          <h3>Multiple Techniques</h3>
-
-          <p>
-            Sublimation, printing and embroidery options according to the product.
-          </p>
-
+          <h3>Branding Options</h3>
+          <p>Sublimation, printing, embroidery and private label options.</p>
         </div>
-
 
         <div class="whyCard">
-
           <div class="whyNo">04</div>
-
           <h3>Direct Support</h3>
-
-          <p>
-            Discuss requirements directly through WhatsApp or email.
-          </p>
-
+          <p>Discuss product and order requirements directly through WhatsApp or email.</p>
         </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRIVATE LABEL SECTION -->
+
+<section class="privateLabel" id="private-label">
+
+  <div class="wrap privateGrid">
+
+    <div class="privateVisual">
+
+      <div class="privateMain">
+        <img src="hoodies-sweatshirts.jpg.jpeg" alt="Private Label Apparel">
+      </div>
+
+      <div class="privateMini top">
+        <img src="polo-shirt.jpg.jpeg" alt="Private Label Polo Shirt">
+      </div>
+
+      <div class="privateMini bottom">
+        <img src="custom-team-wear.jpg.jpeg" alt="Private Label Teamwear">
+      </div>
+
+      <div class="privateBadge">
+        Private<br>
+        Label<br>
+        Ready
+      </div>
+
+    </div>
+
+
+    <div class="privateContent">
+
+      <div class="eyebrow">
+        Private Label Manufacturing
+      </div>
+
+      <h2>
+        Your brand.<br>
+        Your identity.<br>
+        <span class="red">Our production.</span>
+      </h2>
+
+      <p class="privateLead">
+        UZ Industry supports private label sportswear and teamwear
+        production for teams, clubs and emerging apparel brands.
+        Build products around your own branding, colors, graphics,
+        labeling and packaging requirements.
+      </p>
+
+
+      <div class="capabilityGrid">
+
+        <div class="capability">
+          <strong>Brand Logo Application</strong>
+          <p>
+            Add your own team or brand identity through suitable
+            printing, sublimation or embroidery techniques.
+          </p>
+        </div>
+
+
+        <div class="capability">
+          <strong>Neck Labels</strong>
+          <p>
+            Custom woven or printed neck-label options can be
+            discussed according to product requirements.
+          </p>
+        </div>
+
+
+        <div class="capability">
+          <strong>Size & Care Labels</strong>
+          <p>
+            Add garment size and care information for a more
+            complete branded product presentation.
+          </p>
+        </div>
+
+
+        <div class="capability">
+          <strong>Hang Tags</strong>
+          <p>
+            Custom hang-tag requirements can be included in
+            private label order discussions.
+          </p>
+        </div>
+
+
+        <div class="capability">
+          <strong>Custom Packaging</strong>
+          <p>
+            Discuss branded or customized packaging requirements
+            according to your order specifications.
+          </p>
+        </div>
+
+
+        <div class="capability">
+          <strong>Custom Product Identity</strong>
+          <p>
+            Select colors, graphics, fabrics, sizing and branding
+            around your own product concept.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="privateNote">
+        Built for teams, clubs and emerging brands that want their
+        own identity on the finished product — without relying on
+        exaggerated customer counts or unsupported claims.
+      </div>
+
+
+      <div class="privateActions">
+
+        <a href="custom-order.html" class="btn btnPrimary">
+          Start Private Label Order →
+        </a>
+
+        <a href="contact.html" class="btn">
+          Discuss Your Brand
+        </a>
 
       </div>
 
@@ -2213,10 +2015,6 @@ footer{
 
 </section>
 
-
-<!-- =========================================================
-     FABRICS
-     ========================================================= -->
 
 <section class="fabricsSection">
 
@@ -2225,20 +2023,16 @@ footer{
     <div class="sectionHeader">
 
       <div>
-
-        <div class="eyebrow">
-          Performance Materials
-        </div>
+        <div class="eyebrow">Performance Materials</div>
 
         <h2 class="sectionTitle">
           Choose the right
           <span class="red">fabric.</span>
         </h2>
-
       </div>
 
       <p class="sectionText">
-        Different sports require different levels of airflow,
+        Different sports and products require different levels of airflow,
         stretch, durability, structure and warmth.
       </p>
 
@@ -2247,99 +2041,60 @@ footer{
 
     <div class="fabricGrid">
 
-
-      <article
-        class="fabricCard"
-        onclick="openModal('bird')">
-
+      <article class="fabricCard">
         <div class="fabricImage">
-          <img
-            src="bird-eye-mesh.jpg.jpeg"
-            alt="Bird Eye Mesh">
+          <img src="bird-eye-mesh.jpg.jpeg" alt="Bird Eye Mesh">
         </div>
-
         <div class="fabricInfo">
           <small>Breathable Performance</small>
           <h3>Bird Eye Mesh</h3>
-          <p>
-            Lightweight mesh structure designed to improve airflow.
-          </p>
+          <p>Lightweight mesh structure designed to improve airflow.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="fabricCard"
-        onclick="openModal('interlock')">
-
+      <article class="fabricCard">
         <div class="fabricImage">
-          <img
-            src="interlock-polyester.jpg.jpeg"
-            alt="Interlock Polyester">
+          <img src="interlock-polyester.jpg.jpeg" alt="Interlock Polyester">
         </div>
-
         <div class="fabricInfo">
           <small>Professional Sportswear</small>
           <h3>Interlock Polyester</h3>
-          <p>
-            Smooth double-knit material with structure and durability.
-          </p>
+          <p>Smooth double-knit material with structure and durability.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="fabricCard"
-        onclick="openModal('lycra')">
-
+      <article class="fabricCard">
         <div class="fabricImage">
-          <img
-            src="lycra-spandex.jpg.jpeg"
-            alt="Lycra Spandex">
+          <img src="lycra-spandex.jpg.jpeg" alt="Lycra Spandex">
         </div>
-
         <div class="fabricInfo">
           <small>4-Way Stretch</small>
           <h3>Lycra / Spandex</h3>
-          <p>
-            Stretch-focused material for fitted and flexible sportswear.
-          </p>
+          <p>Stretch-focused material for fitted and flexible sportswear.</p>
         </div>
-
       </article>
 
 
-      <article
-        class="fabricCard"
-        onclick="openModal('fleece')">
-
+      <article class="fabricCard">
         <div class="fabricImage">
-          <img
-            src="polyester-fleece.jpg.jpeg"
-            alt="Polyester Fleece">
+          <img src="polyester-fleece.jpg.jpeg" alt="Polyester Fleece">
         </div>
-
         <div class="fabricInfo">
           <small>Warm Teamwear</small>
           <h3>Polyester Fleece</h3>
-          <p>
-            Soft insulating material for hoodies, warm-ups and teamwear.
-          </p>
+          <p>Soft insulating material for hoodies, warm-ups and teamwear.</p>
         </div>
-
       </article>
 
     </div>
 
 
     <div class="sectionAction">
-
       <a href="fabrics.html" class="btn">
         Explore All Fabrics →
       </a>
-
     </div>
 
   </div>
@@ -2347,29 +2102,19 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     CUSTOMIZATION
-     ========================================================= -->
-
-<section
-  class="customSection"
-  id="custom">
+<section class="customSection" id="custom">
 
   <div class="wrap">
 
     <div class="sectionHeader">
 
       <div>
-
-        <div class="eyebrow">
-          Custom Order Process
-        </div>
+        <div class="eyebrow">Custom Order Process</div>
 
         <h2 class="sectionTitle">
           Your idea.
           <span class="red">Our process.</span>
         </h2>
-
       </div>
 
       <p class="sectionText">
@@ -2383,54 +2128,27 @@ footer{
     <div class="customSteps">
 
       <div class="customStep">
-
         <div class="customStepNo">01</div>
-
         <h3>Share Requirements</h3>
-
-        <p>
-          Tell us the product, quantity, colors, logos and reference design.
-        </p>
-
+        <p>Tell us the product, quantity, colors, logos and reference design.</p>
       </div>
 
-
       <div class="customStep">
-
         <div class="customStepNo">02</div>
-
         <h3>Design & Specifications</h3>
-
-        <p>
-          Define fabric, sizing, customization and important garment details.
-        </p>
-
+        <p>Define fabric, sizing, customization and important garment details.</p>
       </div>
 
-
       <div class="customStep">
-
         <div class="customStepNo">03</div>
-
         <h3>Production</h3>
-
-        <p>
-          The approved specifications move through the manufacturing process.
-        </p>
-
+        <p>The approved specifications move through the manufacturing process.</p>
       </div>
 
-
       <div class="customStep">
-
         <div class="customStepNo">04</div>
-
         <h3>Order Completion</h3>
-
-        <p>
-          Finished products are prepared according to the agreed order requirements.
-        </p>
-
+        <p>Finished products are prepared according to the agreed order requirements.</p>
       </div>
 
     </div>
@@ -2439,23 +2157,12 @@ footer{
     <div class="customCta">
 
       <div>
-
-        <h3>
-          Ready to build your custom sportswear?
-        </h3>
-
-        <p>
-          Use our dedicated order builder to organize your requirements.
-        </p>
-
+        <h3>Ready to build your custom sportswear?</h3>
+        <p>Use our dedicated order builder to organize your requirements.</p>
       </div>
 
-      <a
-        href="custom-order.html"
-        class="btn btnPrimary">
-
+      <a href="custom-order.html" class="btn btnPrimary">
         Start Your Custom Order →
-
       </a>
 
     </div>
@@ -2465,21 +2172,13 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     ABOUT
-     ========================================================= -->
-
-<section
-  class="aboutSection"
-  id="about">
+<section class="aboutSection" id="about">
 
   <div class="wrap aboutGrid">
 
     <div class="founderVisual">
 
-      <img
-        src="founder.png.PNG"
-        alt="Founder of UZ Industry">
+      <img src="founder.png.PNG" alt="Founder of UZ Industry">
 
       <div class="founderTag">
         <small>Founder</small>
@@ -2513,8 +2212,9 @@ footer{
       </p>
 
       <p>
-        The goal is simple: give buyers a clear way to turn their
-        sportswear concept into a structured custom production inquiry.
+        Private label options also allow emerging brands and teams
+        to discuss custom branding, garment labels, packaging and
+        product specifications under their own identity.
       </p>
 
 
@@ -2544,10 +2244,6 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     FINAL CTA
-     ========================================================= -->
-
 <section class="finalCta">
 
   <div class="wrap finalInner">
@@ -2557,35 +2253,28 @@ footer{
     </div>
 
     <h2>
-      Turn your concept into
-      <span class="red">custom sportswear.</span>
+      Build sportswear under
+      <span class="red">your identity.</span>
     </h2>
 
     <p>
-      Build your order brief or contact UZ Industry directly
-      to discuss your sportswear requirements.
+      Whether you need team uniforms, performance apparel or a
+      private label product, start with a structured custom order brief.
     </p>
 
 
     <div class="finalActions">
 
-      <a
-        href="custom-order.html"
-        class="btn btnPrimary">
-
+      <a href="custom-order.html" class="btn btnPrimary">
         Start Custom Order →
-
       </a>
 
-
       <a
-        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20or%20private%20label%20order."
         target="_blank"
         rel="noopener"
         class="btn">
-
         WhatsApp Us
-
       </a>
 
     </div>
@@ -2595,23 +2284,17 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-
 <footer>
 
   <div class="wrap footerGrid">
 
     <div class="footerBrand">
 
-      <img
-        src="uz-logo.png.PNG"
-        alt="UZ Industry">
+      <img src="uz-logo.png.PNG" alt="UZ Industry">
 
       <p>
-        Premium custom sportswear and performance teamwear
-        manufactured in Sialkot, Pakistan.
+        Custom sportswear, performance teamwear and private label
+        manufacturing support from Sialkot, Pakistan.
       </p>
 
     </div>
@@ -2633,10 +2316,10 @@ footer{
 
       <h4>Company</h4>
 
+      <a href="#private-label">Private Label</a>
       <a href="#about">About UZ Industry</a>
       <a href="contact.html">Contact</a>
       <a href="custom-order.html">Custom Order</a>
-      <span>Sialkot, Pakistan</span>
 
     </div>
 
@@ -2645,32 +2328,20 @@ footer{
 
       <h4>Contact</h4>
 
-      <a
-        href="https://wa.me/923160797211"
-        target="_blank">
-
+      <a href="https://wa.me/923160797211" target="_blank" rel="noopener">
         +92 316 0797211
-
       </a>
 
       <a href="mailto:uzindustryofficial@gmail.com">
         uzindustryofficial@gmail.com
       </a>
 
-      <a
-        href="https://www.instagram.com/uzindustry.official/"
-        target="_blank">
-
+      <a href="https://www.instagram.com/uzindustry.official/" target="_blank" rel="noopener">
         Instagram
-
       </a>
 
-      <a
-        href="https://www.facebook.com/share/1DcVmiJLuF/?mibextid=wwXIfr"
-        target="_blank">
-
+      <a href="https://www.facebook.com/share/1DcVmiJLuF/?mibextid=wwXIfr" target="_blank" rel="noopener">
         Facebook
-
       </a>
 
     </div>
@@ -2685,7 +2356,7 @@ footer{
     </span>
 
     <span>
-      Custom Sportswear Manufacturer • Sialkot, Pakistan
+      Custom Sportswear & Private Label • Sialkot, Pakistan
     </span>
 
   </div>
@@ -2693,13 +2364,9 @@ footer{
 </footer>
 
 
-<!-- =========================================================
-     WHATSAPP FLOAT
-     ========================================================= -->
-
 <a
   class="whatsappFloat"
-  href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+  href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20or%20private%20label%20order."
   target="_blank"
   rel="noopener"
   aria-label="WhatsApp UZ Industry">
@@ -2712,118 +2379,10 @@ footer{
 </a>
 
 
-<!-- =========================================================
-     UNIVERSAL MODAL
-     ========================================================= -->
-
-<div class="modal" id="modal">
-
-  <div class="modalBox">
-
-    <button
-      class="modalClose"
-      id="modalClose">
-      ×
-    </button>
-
-
-    <div class="modalImage">
-
-      <img
-        id="modalImage"
-        src=""
-        alt="UZ Industry">
-
-    </div>
-
-
-    <div class="modalContent">
-
-      <div class="modalLabel" id="modalLabel">
-        UZ Industry
-      </div>
-
-      <h2 id="modalTitle"></h2>
-
-      <p
-        class="modalDescription"
-        id="modalDescription">
-      </p>
-
-
-      <div class="detail">
-
-        <strong id="detail1Title">
-          Details
-        </strong>
-
-        <span id="detail1"></span>
-
-      </div>
-
-
-      <div class="detail">
-
-        <strong id="detail2Title">
-          Performance
-        </strong>
-
-        <span id="detail2"></span>
-
-      </div>
-
-
-      <div class="detail">
-
-        <strong id="detail3Title">
-          Customization
-        </strong>
-
-        <span id="detail3"></span>
-
-      </div>
-
-
-      <div class="modalActions">
-
-        <a
-          href="custom-order.html"
-          class="btn btnPrimary">
-
-          Get a Quote →
-
-        </a>
-
-        <a
-          href="products.html"
-          class="btn"
-          id="modalSecondary">
-
-          Explore More
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
 <script>
 
-/* =========================================================
-   MOBILE NAV
-   ========================================================= */
-
-const menuBtn =
-  document.getElementById("menuBtn");
-
-const mainNav =
-  document.getElementById("mainNav");
-
+const menuBtn = document.getElementById("menuBtn");
+const mainNav = document.getElementById("mainNav");
 
 menuBtn.addEventListener("click",function(){
 
@@ -2836,10 +2395,7 @@ menuBtn.addEventListener("click",function(){
 
 });
 
-
-mainNav
-.querySelectorAll("a")
-.forEach(function(link){
+mainNav.querySelectorAll("a").forEach(function(link){
 
   link.addEventListener("click",function(){
 
@@ -2848,353 +2404,6 @@ mainNav
     document.body.classList.remove("lock");
 
   });
-
-});
-
-
-/* =========================================================
-   MODAL DATABASE
-   ========================================================= */
-
-const modalData = {
-
-  american:{
-    label:"Featured Product",
-    title:"American Football Uniform",
-    image:"american-football.jpg.jpeg",
-    description:"Custom American football uniforms developed for teams, clubs and organizations.",
-    d1t:"Recommended Fabric",
-    d1:"Heavyweight Performance Polyester + Breathable Mesh",
-    d2t:"Performance",
-    d2:"Durable construction with breathable areas for demanding team competition.",
-    d3t:"Customization",
-    d3:"Custom colors, graphics, logos, player names, numbers and sizing.",
-    secondary:"products.html",
-    secondaryText:"View All Products"
-  },
-
-  cheer:{
-    label:"Featured Product",
-    title:"Cheer Uniform",
-    image:"cheer-uniform.jpg.jpeg",
-    description:"Custom cheer uniforms designed around coordinated team identity and movement.",
-    d1t:"Recommended Fabric",
-    d1:"Polyester-Spandex 4-Way Stretch",
-    d2t:"Performance",
-    d2:"Flexible construction with strong shape recovery for performance movement.",
-    d3t:"Customization",
-    d3:"Custom colors, graphics, team names, logos and decorative requirements.",
-    secondary:"products.html",
-    secondaryText:"View All Products"
-  },
-
-  basketball:{
-    label:"Featured Product",
-    title:"Basketball Uniform",
-    image:"basketball-uniform.jpg.jpeg",
-    description:"Custom basketball jerseys and shorts for clubs, academies and competitive teams.",
-    d1t:"Recommended Fabric",
-    d1:"Bird Eye Mesh / Interlock Polyester",
-    d2t:"Performance",
-    d2:"Breathable, lightweight material suitable for high-movement team sport.",
-    d3t:"Customization",
-    d3:"Full sublimation, colors, player names, numbers and team logos.",
-    secondary:"products.html",
-    secondaryText:"View All Products"
-  },
-
-  tracksuit:{
-    label:"Featured Teamwear",
-    title:"Custom Tracksuit",
-    image:"tracksuit.jpg.jpeg",
-    description:"Coordinated custom tracksuits for teams, training, travel and presentation.",
-    d1t:"Recommended Fabric",
-    d1:"Polyester Tricot / Interlock / Cotton-Poly Fleece",
-    d2t:"Use",
-    d2:"Suitable for training, warm-up, team travel and casual presentation.",
-    d3t:"Customization",
-    d3:"Custom colors, panel designs, embroidery, printing and logos.",
-    secondary:"products.html",
-    secondaryText:"View All Products"
-  },
-
-  cutting:{
-    label:"Manufacturing Process",
-    title:"Cutting",
-    image:"cutting.jpg.jpeg",
-    description:"The cutting stage prepares garment panels according to the required pattern and size.",
-    d1t:"Purpose",
-    d1:"Convert fabric into correctly shaped garment components.",
-    d2t:"Importance",
-    d2:"Accurate cutting supports correct sizing and cleaner final assembly.",
-    d3t:"Next Stage",
-    d3:"Prepared panels move into printing, sublimation or stitching depending on the product.",
-    secondary:"#manufacturing",
-    secondaryText:"Manufacturing"
-  },
-
-  sublimation:{
-    label:"Customization Process",
-    title:"Sublimation",
-    image:"sublimation.jpg.jpeg",
-    description:"Sublimation is used to create full-color graphics on compatible polyester sportswear.",
-    d1t:"Best For",
-    d1:"Detailed patterns, gradients, team graphics, names and numbers.",
-    d2t:"Benefit",
-    d2:"Graphics become part of the fabric rather than sitting as a thick surface layer.",
-    d3t:"Applications",
-    d3:"Football, basketball, cricket, volleyball, 7v7 and other performance uniforms.",
-    secondary:"products.html",
-    secondaryText:"View Products"
-  },
-
-  stitching:{
-    label:"Manufacturing Process",
-    title:"Stitching",
-    image:"stitching.jpg.jpeg",
-    description:"Stitching joins prepared fabric panels into the complete garment structure.",
-    d1t:"Purpose",
-    d1:"Create the final shape, fit and construction of the garment.",
-    d2t:"Focus",
-    d2:"Strong and consistent seams suited to the intended sportswear application.",
-    d3t:"Applications",
-    d3:"Uniforms, tracksuits, training wear, hoodies, shorts and other custom apparel.",
-    secondary:"products.html",
-    secondaryText:"View Products"
-  },
-
-  printing:{
-    label:"Branding Process",
-    title:"Printing",
-    image:"printing.jpg.jpeg",
-    description:"Printing can be used for logos, graphics, names and branding according to product requirements.",
-    d1t:"Applications",
-    d1:"Team logos, sponsor graphics, names, numbers and decorative elements.",
-    d2t:"Selection",
-    d2:"The suitable printing technique depends on fabric, artwork and garment application.",
-    d3t:"Customization",
-    d3:"Custom placement, size and color can be discussed for each order.",
-    secondary:"custom-order.html",
-    secondaryText:"Start Custom Order"
-  },
-
-  embroidery:{
-    label:"Branding Process",
-    title:"Embroidery",
-    image:"embroidery.jpg.jpeg",
-    description:"Embroidery provides a stitched branding option for selected sportswear and teamwear.",
-    d1t:"Best For",
-    d1:"Logos, badges, initials and premium team branding.",
-    d2t:"Appearance",
-    d2:"Textured stitched finish with a professional look.",
-    d3t:"Applications",
-    d3:"Polo shirts, tracksuits, hoodies, teamwear and selected uniforms.",
-    secondary:"custom-order.html",
-    secondaryText:"Start Custom Order"
-  },
-
-  factory:{
-    label:"UZ Industry",
-    title:"Manufacturing",
-    image:"factory.jpg.jpeg",
-    description:"The production process brings materials, artwork, customization and garment construction together.",
-    d1t:"Production",
-    d1:"Custom sportswear and teamwear manufactured according to order specifications.",
-    d2t:"Location",
-    d2:"Sialkot, Pakistan.",
-    d3t:"Order Support",
-    d3:"Custom requirements can be discussed directly before production.",
-    secondary:"contact.html",
-    secondaryText:"Contact Us"
-  },
-
-  bird:{
-    label:"Performance Fabric",
-    title:"Bird Eye Mesh",
-    image:"bird-eye-mesh.jpg.jpeg",
-    description:"A breathable polyester fabric with a distinctive knitted structure designed for airflow.",
-    d1t:"Key Properties",
-    d1:"Breathable, lightweight, ventilated and quick-drying.",
-    d2t:"Recommended For",
-    d2:"Football, basketball, training shirts and active team uniforms.",
-    d3t:"Why Choose It",
-    d3:"Useful for high-activity garments where improved airflow is important.",
-    secondary:"fabrics.html",
-    secondaryText:"View All Fabrics"
-  },
-
-  interlock:{
-    label:"Performance Fabric",
-    title:"Interlock Polyester",
-    image:"interlock-polyester.jpg.jpeg",
-    description:"A smooth double-knit polyester fabric widely used across professional sportswear.",
-    d1t:"Key Properties",
-    d1:"Smooth, strong, durable and shape-retaining.",
-    d2t:"Recommended For",
-    d2:"Football, cricket, basketball, volleyball, tracksuits and training apparel.",
-    d3t:"Why Choose It",
-    d3:"Provides a clean surface for professional sportswear and sublimation applications.",
-    secondary:"fabrics.html",
-    secondaryText:"View All Fabrics"
-  },
-
-  lycra:{
-    label:"Stretch Fabric",
-    title:"Lycra / Spandex",
-    image:"lycra-spandex.jpg.jpeg",
-    description:"A highly stretchable performance material used for fitted sportswear.",
-    d1t:"Key Properties",
-    d1:"High stretch, flexibility, shape recovery and freedom of movement.",
-    d2t:"Recommended For",
-    d2:"Compression wear, wrestling, cycling, gym wear and fitted sportswear.",
-    d3t:"Why Choose It",
-    d3:"Supports unrestricted movement while helping garments maintain their shape.",
-    secondary:"fabrics.html",
-    secondaryText:"View All Fabrics"
-  },
-
-  fleece:{
-    label:"Teamwear Fabric",
-    title:"Polyester Fleece",
-    image:"polyester-fleece.jpg.jpeg",
-    description:"A soft insulating material used for warmer sports and lifestyle teamwear.",
-    d1t:"Key Properties",
-    d1:"Warm, soft, comfortable and durable.",
-    d2t:"Recommended For",
-    d2:"Hoodies, sweatshirts, tracksuits and warm-up apparel.",
-    d3t:"Why Choose It",
-    d3:"Suitable for colder conditions, travel and casual team presentation.",
-    secondary:"fabrics.html",
-    secondaryText:"View All Fabrics"
-  }
-
-};
-
-
-/* =========================================================
-   MODAL FUNCTIONS
-   ========================================================= */
-
-const modal =
-  document.getElementById("modal");
-
-const modalImage =
-  document.getElementById("modalImage");
-
-const modalTitle =
-  document.getElementById("modalTitle");
-
-const modalLabel =
-  document.getElementById("modalLabel");
-
-const modalDescription =
-  document.getElementById("modalDescription");
-
-const detail1Title =
-  document.getElementById("detail1Title");
-
-const detail1 =
-  document.getElementById("detail1");
-
-const detail2Title =
-  document.getElementById("detail2Title");
-
-const detail2 =
-  document.getElementById("detail2");
-
-const detail3Title =
-  document.getElementById("detail3Title");
-
-const detail3 =
-  document.getElementById("detail3");
-
-const modalSecondary =
-  document.getElementById("modalSecondary");
-
-
-function openModal(key){
-
-  const data =
-    modalData[key];
-
-  if(!data){
-    return;
-  }
-
-  modalImage.src =
-    data.image;
-
-  modalImage.alt =
-    data.title;
-
-  modalLabel.textContent =
-    data.label;
-
-  modalTitle.textContent =
-    data.title;
-
-  modalDescription.textContent =
-    data.description;
-
-  detail1Title.textContent =
-    data.d1t;
-
-  detail1.textContent =
-    data.d1;
-
-  detail2Title.textContent =
-    data.d2t;
-
-  detail2.textContent =
-    data.d2;
-
-  detail3Title.textContent =
-    data.d3t;
-
-  detail3.textContent =
-    data.d3;
-
-  modalSecondary.href =
-    data.secondary;
-
-  modalSecondary.textContent =
-    data.secondaryText;
-
-  modal.classList.add("show");
-
-  document.body.classList.add("lock");
-
-}
-
-
-function closeModal(){
-
-  modal.classList.remove("show");
-
-  document.body.classList.remove("lock");
-
-}
-
-
-document
-.getElementById("modalClose")
-.addEventListener("click",closeModal);
-
-
-modal.addEventListener("click",function(e){
-
-  if(e.target === modal){
-    closeModal();
-  }
-
-});
-
-
-document.addEventListener("keydown",function(e){
-
-  if(e.key === "Escape"){
-    closeModal();
-  }
 
 });
 
