@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Contact UZ Industry | Custom Sportswear Manufacturer</title>
 
+<meta name="description" content="Contact UZ Industry in Sialkot, Pakistan for custom sportswear, team uniforms, performance apparel and private label manufacturing inquiries.">
+
 <style>
 
+/* =========================================================
+   UZ INDUSTRY — PREMIUM CONTACT PAGE
+   ========================================================= */
+
+:root{
+  --bg:#050506;
+  --bg2:#08080a;
+  --panel:#0c0c0f;
+  --panel2:#111115;
+  --red:#ef1b24;
+  --red2:#ff3038;
+  --white:#fff;
+  --text:#f4f4f6;
+  --muted:#96969e;
+  --line:#25252b;
+  --line2:#34343b;
+  --max:1240px;
+}
+
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
 }
 
 html{
@@ -20,638 +41,2594 @@ html{
 }
 
 body{
+  background:var(--bg);
+  color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
-  background:#08090b;
-  color:#ffffff;
+  overflow-x:hidden;
+}
+
+body.lock{
+  overflow:hidden;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
-/* ================= HEADER ================= */
-
-header{
-  background:#0d0e11;
-  border-bottom:1px solid #222;
-  position:sticky;
-  top:0;
-  z-index:1000;
+button,
+input,
+select,
+textarea{
+  font:inherit;
 }
 
-.headerWrap{
-  max-width:1250px;
+img{
+  max-width:100%;
+}
+
+.wrap{
+  width:min(var(--max),calc(100% - 40px));
   margin:auto;
-  padding:12px 25px;
+}
+
+.red{
+  color:var(--red);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.siteHeader{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(5,5,6,.84);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navWrap{
+  height:78px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  gap:28px;
+}
+
+.logo{
+  flex-shrink:0;
 }
 
 .logo img{
-  height:65px;
+  height:58px;
   width:auto;
   display:block;
 }
 
-nav{
+.mainNav{
+  margin-left:auto;
   display:flex;
   align-items:center;
-  gap:24px;
-}
-
-nav a{
-  color:#fff;
-  font-size:13px;
-  font-weight:800;
-  text-transform:uppercase;
-  transition:.2s;
-}
-
-nav a:hover,
-nav a.active{
-  color:#ef1b24;
-}
-
-.quoteBtn{
-  background:#ef1b24;
-  color:#fff !important;
-  padding:13px 20px;
-  border-radius:6px;
-}
-
-/* ================= HERO ================= */
-
-.contactHero{
-  padding:90px 20px 65px;
-  text-align:center;
-  background:
-    radial-gradient(circle at center,#1c1d22 0%,#08090b 68%);
-}
-
-.eyebrow{
-  color:#ef1b24;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:15px;
-}
-
-.contactHero h1{
-  font-size:50px;
-  line-height:1.1;
-  text-transform:uppercase;
-  margin-bottom:18px;
-}
-
-.contactHero p{
-  max-width:760px;
-  margin:auto;
-  color:#aaa;
-  font-size:16px;
-  line-height:1.7;
-}
-
-/* ================= CONTACT SECTION ================= */
-
-.contactSection{
-  max-width:1150px;
-  margin:auto;
-  padding:70px 25px 90px;
-}
-
-.contactIntro{
-  max-width:750px;
-  margin:0 auto 45px;
-  text-align:center;
-}
-
-.contactIntro h2{
-  font-size:34px;
-  text-transform:uppercase;
-  margin-bottom:14px;
-}
-
-.contactIntro p{
-  color:#aaa;
-  line-height:1.7;
-}
-
-/* ================= CARDS ================= */
-
-.contactGrid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
   gap:22px;
 }
 
-.contactCard{
-  background:#101115;
-  border:1px solid #27282e;
-  border-radius:14px;
-  padding:30px;
+.mainNav a{
+  position:relative;
+  color:#d6d6db;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.09em;
+  text-transform:uppercase;
   transition:.25s;
 }
 
-.contactCard:hover{
-  border-color:#ef1b24;
-  transform:translateY(-4px);
+.mainNav a:not(.navCta)::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-9px;
+  width:0;
+  height:2px;
+  background:var(--red);
+  transition:.25s;
 }
 
-.contactIcon{
-  width:58px;
-  height:58px;
-  display:flex;
+.mainNav a:hover,
+.mainNav a.active{
+  color:#fff;
+}
+
+.mainNav a:hover::after,
+.mainNav a.active::after{
+  width:100%;
+}
+
+.navCta{
+  padding:14px 18px;
+  background:var(--red);
+  color:#fff!important;
+}
+
+.navCta:hover{
+  background:var(--red2);
+}
+
+.menuBtn{
+  display:none;
+  margin-left:auto;
+  width:46px;
+  height:46px;
+  border:1px solid #303037;
+  background:#0d0d10;
   align-items:center;
   justify-content:center;
-  background:#18191e;
-  border:1px solid #292a30;
-  border-radius:50%;
-  font-size:28px;
-  margin-bottom:20px;
+  cursor:pointer;
 }
 
-.contactCard h3{
-  font-size:21px;
+.menuIcon{
+  width:22px;
+  display:grid;
+  gap:5px;
+}
+
+.menuIcon span{
+  display:block;
+  height:2px;
+  background:#fff;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:155px 0 92px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 17%,rgba(239,27,36,.18),transparent 30%),
+    radial-gradient(circle at 5% 95%,rgba(239,27,36,.06),transparent 24%),
+    linear-gradient(135deg,#050506,#0b0b0e 60%,#050506);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.7;
+  pointer-events:none;
+  background:
+    linear-gradient(
+      116deg,
+      transparent 67%,
+      rgba(239,27,36,.85) 67.1%,
+      transparent 67.6%
+    ),
+    repeating-linear-gradient(
+      116deg,
+      transparent 0 75px,
+      rgba(255,255,255,.014) 76px 77px
+    );
+}
+
+.hero::after{
+  content:"LET'S TALK";
+  position:absolute;
+  right:-2%;
+  bottom:-3%;
+  color:rgba(255,255,255,.015);
+  font-size:13vw;
+  line-height:.8;
+  font-weight:900;
+  white-space:nowrap;
+  pointer-events:none;
+}
+
+.heroGrid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:70px;
+  align-items:end;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  margin-bottom:10px;
 }
 
-.contactCard p{
-  color:#999;
+.eyebrow::before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:var(--red);
+}
+
+.hero h1{
+  margin:17px 0 24px;
+  max-width:850px;
+  font-size:clamp(58px,7.5vw,104px);
+  line-height:.88;
+  letter-spacing:-.065em;
+  text-transform:uppercase;
+}
+
+.hero p{
+  max-width:700px;
+  color:#b4b4bb;
+  font-size:17px;
+  line-height:1.75;
+}
+
+.heroQuick{
+  display:grid;
+  gap:11px;
+}
+
+.heroQuickItem{
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border:1px solid #2d2d33;
+  background:rgba(12,12,15,.82);
+}
+
+.heroQuickItem small{
+  display:block;
+  margin-bottom:5px;
+  color:#85858d;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.heroQuickItem strong{
   font-size:14px;
-  line-height:1.7;
-  min-height:72px;
+  line-height:1.35;
 }
 
-.contactValue{
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-  margin:15px 0 20px;
-  word-break:break-word;
+.heroQuickItem span{
+  color:var(--red);
+  font-size:18px;
+  font-weight:900;
 }
 
-.contactButton{
-  display:inline-block;
-  padding:13px 20px;
-  background:#ef1b24;
-  color:#fff;
-  border-radius:6px;
+/* =========================================================
+   TRUST STRIP
+   ========================================================= */
+
+.trust{
+  background:#09090b;
+  border-bottom:1px solid var(--line);
+}
+
+.trustGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.trustItem{
+  min-height:105px;
+  padding:22px 24px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  border-right:1px solid var(--line);
+}
+
+.trustItem:last-child{
+  border-right:0;
+}
+
+.trustNo{
+  color:var(--red);
   font-size:12px;
   font-weight:900;
+}
+
+.trustItem strong{
+  display:block;
+  margin-bottom:4px;
+  font-size:11px;
   text-transform:uppercase;
+}
+
+.trustItem span{
+  color:#85858d;
+  font-size:11px;
+  line-height:1.45;
+}
+
+/* =========================================================
+   MAIN CONTACT SECTION
+   ========================================================= */
+
+.contactSection{
+  padding:95px 0 105px;
+}
+
+.sectionHeader{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:end;
+  margin-bottom:43px;
+}
+
+.sectionTitle{
+  margin-top:12px;
+  font-size:clamp(42px,5.5vw,74px);
+  line-height:.94;
+  letter-spacing:-.052em;
+  text-transform:uppercase;
+}
+
+.sectionText{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.75;
+}
+
+.contactLayout{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:22px;
+  align-items:start;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.formPanel{
+  padding:35px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 90% 5%,rgba(239,27,36,.06),transparent 25%),
+    var(--panel);
+}
+
+.formTop{
+  margin-bottom:28px;
+}
+
+.formTop h3{
+  margin:10px 0 8px;
+  font-size:28px;
+  text-transform:uppercase;
+}
+
+.formTop p{
+  color:#929299;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.formGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.fieldFull{
+  grid-column:1/-1;
+}
+
+.field label{
+  color:#bdbdc3;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.field label span{
+  color:var(--red);
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #303037;
+  background:#08080a;
+  color:#fff;
+  outline:none;
+  padding:14px 15px;
   transition:.2s;
 }
 
-.contactButton:hover{
-  opacity:.88;
+.field input,
+.field select{
+  min-height:49px;
 }
 
-/* ================= BUSINESS INFO ================= */
-
-.businessInfo{
-  margin-top:50px;
-  padding:40px;
-  text-align:center;
-  background:#101115;
-  border:1px solid #27282e;
-  border-radius:15px;
+.field textarea{
+  min-height:150px;
+  resize:vertical;
+  line-height:1.6;
 }
 
-.businessInfo h2{
-  font-size:30px;
-  text-transform:uppercase;
-  margin-bottom:25px;
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--red);
 }
 
-.infoGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.infoItem{
-  padding:20px;
-  background:#15161a;
-  border-radius:10px;
-}
-
-.infoItem strong{
-  display:block;
-  color:#ef1b24;
-  font-size:12px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  margin-bottom:8px;
-}
-
-.infoItem span{
-  color:#ddd;
-  font-size:14px;
-}
-
-/* ================= CTA ================= */
-
-.finalCTA{
-  margin-top:50px;
-  padding:55px 30px;
-  text-align:center;
-  background:
-    radial-gradient(circle at top,#202126 0%,#111216 70%);
-  border:1px solid #292a30;
-  border-radius:16px;
-}
-
-.finalCTA h2{
-  font-size:36px;
-  text-transform:uppercase;
-  margin-bottom:14px;
-}
-
-.finalCTA p{
-  max-width:670px;
-  margin:0 auto 25px;
-  color:#aaa;
-  line-height:1.7;
-}
-
-.bigWhatsapp{
-  display:inline-block;
-  background:#ef1b24;
+.field select option{
   color:#fff;
-  padding:16px 28px;
-  border-radius:6px;
+  background:#111;
+}
+
+.fieldHint{
+  color:#717179;
+  font-size:10px;
+  line-height:1.5;
+}
+
+/* UPLOAD */
+
+.uploadBox{
+  position:relative;
+  padding:25px;
+  border:1px dashed #45454d;
+  background:#09090b;
+  text-align:center;
+  transition:.2s;
+}
+
+.uploadBox:hover{
+  border-color:var(--red);
+}
+
+.uploadBox input{
+  width:100%;
+  margin-top:13px;
+  border:0;
+  padding:0;
+  background:transparent;
+}
+
+.uploadBox strong{
+  display:block;
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+.uploadBox p{
+  margin-top:7px;
+  color:#7f7f87;
+  font-size:11px;
+  line-height:1.5;
+}
+
+.fileName{
+  display:none;
+  margin-top:12px;
+  padding:10px;
+  color:#fff;
+  background:#151519;
+  border:1px solid #2d2d33;
+  font-size:11px;
+}
+
+.fileName.show{
+  display:block;
+}
+
+/* FORM ACTIONS */
+
+.formActions{
+  grid-column:1/-1;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+
+.btn{
+  min-height:51px;
+  padding:0 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #34343b;
+  background:#0b0b0d;
+  color:#fff;
+  cursor:pointer;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btnPrimary{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.btnPrimary:hover{
+  background:var(--red2);
+  border-color:var(--red2);
+}
+
+.formNotice{
+  grid-column:1/-1;
+  padding-top:4px;
+  color:#74747c;
+  font-size:10px;
+  line-height:1.55;
+}
+
+/* =========================================================
+   CONTACT SIDEBAR
+   ========================================================= */
+
+.contactSidebar{
+  display:grid;
+  gap:14px;
+}
+
+.quickCard{
+  padding:25px;
+  border:1px solid var(--line);
+  background:#0d0d10;
+  transition:.3s;
+}
+
+.quickCard:hover{
+  border-color:rgba(239,27,36,.65);
+  transform:translateY(-3px);
+}
+
+.quickCardTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:21px;
+}
+
+.quickIcon{
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border:1px solid #303037;
+  color:var(--red);
+  font-size:11px;
+  font-weight:900;
+}
+
+.quickArrow{
+  color:#55555c;
+  font-size:22px;
+}
+
+.quickCard small{
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.quickCard h3{
+  margin:7px 0 8px;
+  font-size:19px;
+  text-transform:uppercase;
+}
+
+.quickCard p{
+  color:#888890;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.quickValue{
+  display:block;
+  margin-top:16px;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  word-break:break-word;
+}
+
+/* BUSINESS CARD */
+
+.businessCard{
+  padding:27px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 85% 0%,rgba(239,27,36,.09),transparent 35%),
+    #0c0c0f;
+}
+
+.businessCard h3{
+  margin:10px 0 21px;
+  font-size:24px;
+  text-transform:uppercase;
+}
+
+.businessRow{
+  padding:13px 0;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid var(--line);
+}
+
+.businessRow:last-child{
+  border-bottom:0;
+}
+
+.businessRow span:first-child{
+  color:#77777f;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.businessRow span:last-child{
+  color:#d8d8dc;
+  font-size:12px;
+  text-align:right;
+}
+
+/* =========================================================
+   WHAT TO SEND
+   ========================================================= */
+
+.prepareSection{
+  padding:95px 0;
+  background:
+    radial-gradient(circle at 10% 0%,rgba(239,27,36,.08),transparent 28%),
+    #08080a;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.prepareGrid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+.prepareCard{
+  min-height:210px;
+  padding:25px 20px;
+  background:#0b0b0d;
+}
+
+.prepareNo{
+  color:#35353c;
+  font-size:34px;
+  font-weight:900;
+}
+
+.prepareCard h3{
+  margin:31px 0 9px;
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+.prepareCard p{
+  color:#85858d;
+  font-size:11px;
+  line-height:1.6;
+}
+
+/* =========================================================
+   CONTACT CHANNELS
+   ========================================================= */
+
+.channelsSection{
+  padding:95px 0;
+}
+
+.channelGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.channelCard{
+  min-height:260px;
+  padding:27px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border:1px solid var(--line);
+  background:#0c0c0f;
+  transition:.3s;
+}
+
+.channelCard:hover{
+  transform:translateY(-5px);
+  border-color:rgba(239,27,36,.65);
+}
+
+.channelIcon{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border:1px solid #303037;
+  color:var(--red);
+  font-size:11px;
+  font-weight:900;
+}
+
+.channelCard h3{
+  margin:22px 0 8px;
+  font-size:18px;
+  text-transform:uppercase;
+}
+
+.channelCard p{
+  color:#898991;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.channelLink{
+  margin-top:25px;
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faqSection{
+  padding:95px 0;
+  background:#08080a;
+  border-top:1px solid var(--line);
+}
+
+.faqWrap{
+  max-width:900px;
+}
+
+.faqList{
+  margin-top:35px;
+  display:grid;
+  gap:10px;
+}
+
+.faqItem{
+  border:1px solid var(--line);
+  background:#0c0c0f;
+}
+
+.faqQuestion{
+  width:100%;
+  padding:20px 21px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border:0;
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  text-align:left;
   font-size:13px;
   font-weight:900;
   text-transform:uppercase;
 }
 
-/* ================= FOOTER ================= */
-
-footer{
-  border-top:1px solid #222;
-  padding:35px 20px;
-  text-align:center;
-  color:#777;
-  font-size:13px;
+.faqQuestion span{
+  color:var(--red);
+  font-size:20px;
+  transition:.25s;
 }
 
-/* ================= MOBILE ================= */
+.faqAnswer{
+  display:none;
+  padding:0 21px 21px;
+  color:#929299;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.faqItem.open .faqAnswer{
+  display:block;
+}
+
+.faqItem.open .faqQuestion span{
+  transform:rotate(45deg);
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.finalCta{
+  position:relative;
+  overflow:hidden;
+  padding:110px 0;
+  text-align:center;
+  border-top:1px solid var(--line);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(239,27,36,.2),transparent 34%),
+    #09090b;
+}
+
+.finalCta::before{
+  content:"UZ";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:rgba(255,255,255,.017);
+  font-size:38vw;
+  font-weight:900;
+  pointer-events:none;
+}
+
+.finalCtaInner{
+  position:relative;
+  z-index:2;
+}
+
+.centerEyebrow{
+  justify-content:center;
+}
+
+.finalCta h2{
+  max-width:900px;
+  margin:16px auto 20px;
+  font-size:clamp(47px,6.2vw,86px);
+  line-height:.9;
+  letter-spacing:-.055em;
+  text-transform:uppercase;
+}
+
+.finalCta p{
+  max-width:670px;
+  margin:auto;
+  color:#9999a0;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.finalActions{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  border-top:1px solid var(--line);
+  background:#050506;
+}
+
+.footerGrid{
+  padding:50px 0;
+  display:grid;
+  grid-template-columns:1.4fr repeat(3,1fr);
+  gap:42px;
+}
+
+.footerBrand img{
+  height:64px;
+  width:auto;
+  margin-bottom:17px;
+}
+
+.footerBrand p{
+  max-width:330px;
+  color:#818188;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.footerCol{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.footerCol h4{
+  margin-bottom:17px;
+  font-size:10px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.footerCol a,
+.footerCol span{
+  margin-bottom:11px;
+  color:#898990;
+  font-size:13px;
+  line-height:1.45;
+}
+
+.footerCol a:hover{
+  color:var(--red);
+}
+
+.footerBottom{
+  min-height:66px;
+  padding:15px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  border-top:1px solid var(--line);
+  color:#707077;
+  font-size:11px;
+}
+
+/* =========================================================
+   FLOAT WHATSAPP
+   ========================================================= */
+
+.whatsappFloat{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:800;
+  width:55px;
+  height:55px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--red);
+  color:#fff;
+  font-size:16px;
+  font-weight:900;
+  box-shadow:0 12px 35px rgba(239,27,36,.35);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1050px){
+
+  .mainNav{
+    gap:14px;
+  }
+
+  .mainNav a{
+    font-size:9px;
+  }
+
+  .prepareGrid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .channelGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
 
 @media(max-width:900px){
 
-  nav{
+  .wrap{
+    width:calc(100% - 30px);
+  }
+
+  .navWrap{
+    height:70px;
+  }
+
+  .logo img{
+    height:51px;
+  }
+
+  .menuBtn{
+    display:flex;
+  }
+
+  .mainNav{
+    position:fixed;
+    top:70px;
+    left:0;
+    right:0;
+    height:calc(100vh - 70px);
     display:none;
+    padding:18px 20px 30px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    background:#050506;
+    overflow:auto;
   }
 
-  .contactGrid{
+  .mainNav.open{
+    display:flex;
+  }
+
+  .mainNav a{
+    width:100%;
+    padding:17px 8px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-size:13px;
+  }
+
+  .mainNav a::after{
+    display:none!important;
+  }
+
+  .navCta{
+    margin-top:14px;
+    text-align:center;
+  }
+
+  .hero{
+    padding:125px 0 70px;
+  }
+
+  .heroGrid{
+    grid-template-columns:1fr;
+    gap:38px;
+  }
+
+  .trustGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .trustItem:nth-child(2){
+    border-right:0;
+  }
+
+  .trustItem:nth-child(-n+2){
+    border-bottom:1px solid var(--line);
+  }
+
+  .sectionHeader{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .contactLayout{
     grid-template-columns:1fr;
   }
 
-  .infoGrid{
-    grid-template-columns:1fr;
+  .footerGrid{
+    grid-template-columns:1fr 1fr;
   }
 
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
 
-  .headerWrap{
-    padding:10px 18px;
+  .wrap{
+    width:calc(100% - 26px);
   }
 
-  .logo img{
-    height:55px;
+  .hero{
+    padding:110px 0 58px;
   }
 
-  .contactHero{
-    padding:65px 18px 45px;
+  .hero h1{
+    font-size:50px;
   }
 
-  .contactHero h1{
-    font-size:35px;
+  .hero p{
+    font-size:15px;
   }
 
-  .contactHero p{
-    font-size:14px;
+  .heroQuickItem{
+    padding:16px;
   }
 
-  .contactSection{
-    padding:50px 18px 70px;
+  .trustGrid{
+    grid-template-columns:1fr;
   }
 
-  .contactIntro h2{
-    font-size:27px;
+  .trustItem{
+    border-right:0;
+    border-bottom:1px solid var(--line);
   }
 
-  .contactCard{
-    padding:24px;
+  .trustItem:last-child{
+    border-bottom:0;
   }
 
-  .contactCard p{
-    min-height:auto;
+  .contactSection,
+  .prepareSection,
+  .channelsSection,
+  .faqSection{
+    padding:70px 0;
   }
 
-  .businessInfo{
-    padding:28px 18px;
+  .sectionTitle{
+    font-size:42px;
   }
 
-  .businessInfo h2{
-    font-size:25px;
+  .formPanel{
+    padding:25px 19px;
   }
 
-  .finalCTA{
-    padding:40px 20px;
+  .formGrid{
+    grid-template-columns:1fr;
   }
 
-  .finalCTA h2{
-    font-size:27px;
+  .fieldFull{
+    grid-column:auto;
+  }
+
+  .formActions{
+    grid-column:auto;
+    flex-direction:column;
+  }
+
+  .formActions .btn{
+    width:100%;
+  }
+
+  .formNotice{
+    grid-column:auto;
+  }
+
+  .prepareGrid{
+    grid-template-columns:1fr;
+  }
+
+  .prepareCard{
+    min-height:180px;
+  }
+
+  .prepareCard h3{
+    margin-top:22px;
+  }
+
+  .channelGrid{
+    grid-template-columns:1fr;
+  }
+
+  .channelCard{
+    min-height:220px;
+  }
+
+  .businessRow{
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .businessRow span:last-child{
+    text-align:left;
+  }
+
+  .footerGrid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .footerBottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .finalCta{
+    padding:85px 0;
+  }
+
+  .finalActions{
+    flex-direction:column;
+  }
+
+  .finalActions .btn{
+    width:100%;
+  }
+
+  .whatsappFloat{
+    right:14px;
+    bottom:14px;
+    width:50px;
+    height:50px;
   }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
-<header>
+<header class="siteHeader">
 
-  <div class="headerWrap">
+  <div class="wrap navWrap">
 
     <a class="logo" href="./">
       <img src="uz-logo.png.PNG" alt="UZ Industry">
     </a>
 
-    <nav>
+    <nav class="mainNav" id="mainNav">
 
       <a href="./">Home</a>
-
       <a href="products.html">Products</a>
-
       <a href="fabrics.html">Fabrics</a>
-
+      <a href="./#manufacturing">Manufacturing</a>
       <a href="./#custom">Customization</a>
-
       <a href="./#about">About</a>
-
       <a href="contact.html" class="active">Contact</a>
 
-      <a href="contact.html" class="quoteBtn">Get a Quote</a>
+      <a href="#inquiry" class="navCta">
+        Start Inquiry
+      </a>
 
     </nav>
+
+    <button
+      class="menuBtn"
+      id="menuBtn"
+      aria-label="Open menu"
+      aria-expanded="false">
+
+      <span class="menuIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+    </button>
 
   </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-<section class="contactHero">
+<section class="hero">
 
-  <div class="eyebrow">
-    UZ INDUSTRY • SIALKOT, PAKISTAN
+  <div class="wrap heroGrid">
+
+    <div>
+
+      <div class="eyebrow">
+        UZ Industry • Sialkot, Pakistan
+      </div>
+
+      <h1>
+        Let's build your
+        <span class="red">sportswear.</span>
+      </h1>
+
+      <p>
+        Tell us what you want to manufacture. Share your product,
+        quantity, colors, logos, sizing and reference designs and
+        start discussing your custom order with UZ Industry.
+      </p>
+
+    </div>
+
+
+    <div class="heroQuick">
+
+      <a
+        class="heroQuickItem"
+        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+        target="_blank"
+        rel="noopener">
+
+        <div>
+          <small>Fastest Contact</small>
+          <strong>WhatsApp Inquiry</strong>
+        </div>
+
+        <span>→</span>
+
+      </a>
+
+
+      <a
+        class="heroQuickItem"
+        href="mailto:uzindustryofficial@gmail.com">
+
+        <div>
+          <small>Business Inquiry</small>
+          <strong>uzindustryofficial@gmail.com</strong>
+        </div>
+
+        <span>→</span>
+
+      </a>
+
+
+      <div class="heroQuickItem">
+
+        <div>
+          <small>Manufacturing Base</small>
+          <strong>Sialkot, Pakistan</strong>
+        </div>
+
+        <span>PK</span>
+
+      </div>
+
+    </div>
+
   </div>
-
-  <h1>Let's Work Together</h1>
-
-  <p>
-    Looking for custom sportswear, team uniforms or private label production?
-    Share your requirements with UZ Industry and let us help turn your idea
-    into a finished product.
-  </p>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =========================================================
+     TRUST
+     ========================================================= -->
 
-<section class="contactSection">
+<section class="trust">
 
-  <div class="contactIntro">
+  <div class="wrap trustGrid">
 
-    <div class="eyebrow">
-      CONTACT UZ INDUSTRY
+    <div class="trustItem">
+      <div class="trustNo">01</div>
+      <div>
+        <strong>Custom Products</strong>
+        <span>Developed around your requirements.</span>
+      </div>
     </div>
 
-    <h2>Start Your Custom Order</h2>
+    <div class="trustItem">
+      <div class="trustNo">02</div>
+      <div>
+        <strong>MOQ 10 Pieces</strong>
+        <span>Suitable for teams and custom orders.</span>
+      </div>
+    </div>
 
-    <p>
-      Send us your design, reference image, quantity, colors, sizes, logos
-      and other requirements. We can discuss customization, pricing,
-      production and worldwide delivery.
-    </p>
+    <div class="trustItem">
+      <div class="trustNo">03</div>
+      <div>
+        <strong>Direct Communication</strong>
+        <span>Discuss requirements via WhatsApp or email.</span>
+      </div>
+    </div>
+
+    <div class="trustItem">
+      <div class="trustNo">04</div>
+      <div>
+        <strong>Worldwide Support</strong>
+        <span>International client inquiry support.</span>
+      </div>
+    </div>
 
   </div>
 
+</section>
 
-  <div class="contactGrid">
 
+<!-- =========================================================
+     INQUIRY
+     ========================================================= -->
 
-    <!-- WHATSAPP -->
+<section class="contactSection" id="inquiry">
 
-    <div class="contactCard">
+  <div class="wrap">
 
-      <div class="contactIcon">💬</div>
+    <div class="sectionHeader">
 
-      <h3>WhatsApp Inquiry</h3>
+      <div>
 
-      <p>
-        The fastest way to discuss your custom sportswear order,
-        pricing, designs, MOQ and production requirements.
-      </p>
+        <div class="eyebrow">
+          Start Your Inquiry
+        </div>
 
-      <div class="contactValue">
-        +92 316 0797211
+        <h2 class="sectionTitle">
+          Tell us about your
+          <span class="red">order.</span>
+        </h2>
+
       </div>
 
+      <p class="sectionText">
+        The more information you share, the easier it is to understand
+        your requirements. Fill in the form below and continue your
+        inquiry directly through WhatsApp or email.
+      </p>
+
+    </div>
+
+
+    <div class="contactLayout">
+
+      <!-- FORM -->
+
+      <div class="formPanel">
+
+        <div class="formTop">
+
+          <div class="eyebrow">
+            Custom Sportswear Inquiry
+          </div>
+
+          <h3>Project Details</h3>
+
+          <p>
+            Required fields are marked with a red asterisk.
+          </p>
+
+        </div>
+
+
+        <form id="inquiryForm" class="formGrid">
+
+
+          <div class="field">
+
+            <label>
+              Full Name <span>*</span>
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              placeholder="Your full name"
+              required>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Email Address <span>*</span>
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              required>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              WhatsApp Number
+            </label>
+
+            <input
+              id="phone"
+              type="text"
+              placeholder="+1 / +44 / +92 ...">
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Country <span>*</span>
+            </label>
+
+            <input
+              id="country"
+              type="text"
+              placeholder="Your country"
+              required>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Team / Company
+            </label>
+
+            <input
+              id="company"
+              type="text"
+              placeholder="Team, club or brand name">
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Product Category <span>*</span>
+            </label>
+
+            <select id="product" required>
+
+              <option value="">
+                Select a product
+              </option>
+
+              <option>American Football Uniform</option>
+              <option>7v7 Uniform</option>
+              <option>Football / Soccer Kit</option>
+              <option>Cricket Kit</option>
+              <option>Basketball Uniform</option>
+              <option>Volleyball Uniform</option>
+              <option>Rugby Uniform</option>
+              <option>Baseball Uniform</option>
+              <option>Softball Uniform</option>
+              <option>Ice Hockey Uniform</option>
+              <option>Wrestling Singlet</option>
+              <option>Boxing Uniform</option>
+              <option>MMA Wear</option>
+              <option>Gym & Fitness Wear</option>
+              <option>Cycling Wear</option>
+              <option>Tennis Wear</option>
+              <option>Cheer Uniform</option>
+              <option>Tracksuit</option>
+              <option>Training Wear</option>
+              <option>Hoodies & Sweatshirts</option>
+              <option>Polo Shirts</option>
+              <option>Sports Shorts</option>
+              <option>Compression Wear</option>
+              <option>Custom Team Wear</option>
+              <option>Sports Bags</option>
+              <option>Sports Socks</option>
+              <option>Other Custom Product</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Estimated Quantity <span>*</span>
+            </label>
+
+            <input
+              id="quantity"
+              type="number"
+              min="10"
+              placeholder="Example: 25"
+              required>
+
+            <div class="fieldHint">
+              Current minimum order quantity: 10 pieces.
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              Preferred Contact
+            </label>
+
+            <select id="preferred">
+
+              <option>WhatsApp</option>
+              <option>Email</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field fieldFull">
+
+            <label>
+              Order Requirements <span>*</span>
+            </label>
+
+            <textarea
+              id="requirements"
+              placeholder="Tell us about colors, sizes, logos, names, numbers, fabric preference, design requirements or anything else..."
+              required></textarea>
+
+          </div>
+
+
+          <div class="field fieldFull">
+
+            <label>
+              Reference / Logo
+            </label>
+
+            <div class="uploadBox">
+
+              <strong>
+                Add Your Reference File
+              </strong>
+
+              <p>
+                Select a logo, sketch or reference image.
+                You can attach the actual file in WhatsApp or email after the inquiry opens.
+              </p>
+
+              <input
+                id="referenceFile"
+                type="file"
+                accept=".jpg,.jpeg,.png,.webp,.pdf">
+
+              <div
+                class="fileName"
+                id="fileName">
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="formActions">
+
+            <button
+              type="submit"
+              class="btn btnPrimary">
+
+              Send Inquiry on WhatsApp →
+
+            </button>
+
+
+            <button
+              type="button"
+              class="btn"
+              id="emailInquiry">
+
+              Prepare Email Inquiry
+
+            </button>
+
+          </div>
+
+
+          <div class="formNotice">
+            This form prepares your inquiry on your device. No information is
+            stored on this website before you choose WhatsApp or email.
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <!-- SIDEBAR -->
+
+      <aside class="contactSidebar">
+
+
+        <a
+          class="quickCard"
+          href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20inquire%20about%20custom%20sportswear."
+          target="_blank"
+          rel="noopener">
+
+          <div class="quickCardTop">
+
+            <div class="quickIcon">WA</div>
+
+            <div class="quickArrow">→</div>
+
+          </div>
+
+          <small>Fastest Way To Reach Us</small>
+
+          <h3>WhatsApp</h3>
+
+          <p>
+            Discuss products, pricing, quantities and custom requirements directly.
+          </p>
+
+          <span class="quickValue">
+            +92 316 0797211
+          </span>
+
+        </a>
+
+
+        <a
+          class="quickCard"
+          href="mailto:uzindustryofficial@gmail.com">
+
+          <div class="quickCardTop">
+
+            <div class="quickIcon">EM</div>
+
+            <div class="quickArrow">→</div>
+
+          </div>
+
+          <small>Business Communication</small>
+
+          <h3>Email</h3>
+
+          <p>
+            Send specifications, order information and business inquiries.
+          </p>
+
+          <span class="quickValue">
+            uzindustryofficial@gmail.com
+          </span>
+
+        </a>
+
+
+        <div class="businessCard">
+
+          <div class="eyebrow">
+            Business Information
+          </div>
+
+          <h3>UZ Industry</h3>
+
+
+          <div class="businessRow">
+            <span>Location</span>
+            <span>Sialkot, Pakistan</span>
+          </div>
+
+
+          <div class="businessRow">
+            <span>Business</span>
+            <span>Custom Sportswear</span>
+          </div>
+
+
+          <div class="businessRow">
+            <span>MOQ</span>
+            <span>10 Pieces</span>
+          </div>
+
+
+          <div class="businessRow">
+            <span>Support</span>
+            <span>Worldwide Clients</span>
+          </div>
+
+
+          <div class="businessRow">
+            <span>Started</span>
+            <span>2024</span>
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHAT TO SEND
+     ========================================================= -->
+
+<section class="prepareSection">
+
+  <div class="wrap">
+
+    <div class="sectionHeader">
+
+      <div>
+
+        <div class="eyebrow">
+          Prepare Your Inquiry
+        </div>
+
+        <h2 class="sectionTitle">
+          What should you
+          <span class="red">send us?</span>
+        </h2>
+
+      </div>
+
+      <p class="sectionText">
+        These details help us understand what you are looking for
+        and make the initial discussion more productive.
+      </p>
+
+    </div>
+
+
+    <div class="prepareGrid">
+
+
+      <div class="prepareCard">
+        <div class="prepareNo">01</div>
+        <h3>Product</h3>
+        <p>
+          Tell us which uniform, garment or accessory you need.
+        </p>
+      </div>
+
+
+      <div class="prepareCard">
+        <div class="prepareNo">02</div>
+        <h3>Quantity</h3>
+        <p>
+          Share your estimated number of pieces or team size.
+        </p>
+      </div>
+
+
+      <div class="prepareCard">
+        <div class="prepareNo">03</div>
+        <h3>Design</h3>
+        <p>
+          Send a reference image, sketch or design idea if available.
+        </p>
+      </div>
+
+
+      <div class="prepareCard">
+        <div class="prepareNo">04</div>
+        <h3>Colors</h3>
+        <p>
+          Tell us your team, club or brand color requirements.
+        </p>
+      </div>
+
+
+      <div class="prepareCard">
+        <div class="prepareNo">05</div>
+        <h3>Branding</h3>
+        <p>
+          Include logos, player names, numbers or branding details.
+        </p>
+      </div>
+
+
+      <div class="prepareCard">
+        <div class="prepareNo">06</div>
+        <h3>Sizes</h3>
+        <p>
+          Share your size range or roster sizing requirements.
+        </p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHANNELS
+     ========================================================= -->
+
+<section class="channelsSection">
+
+  <div class="wrap">
+
+    <div class="sectionHeader">
+
+      <div>
+
+        <div class="eyebrow">
+          Connect With UZ Industry
+        </div>
+
+        <h2 class="sectionTitle">
+          Choose how you want to
+          <span class="red">connect.</span>
+        </h2>
+
+      </div>
+
+      <p class="sectionText">
+        Use whichever communication channel is most convenient
+        for your inquiry.
+      </p>
+
+    </div>
+
+
+    <div class="channelGrid">
+
+
       <a
-        class="contactButton"
-        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20inquire%20about%20custom%20sportswear."
+        class="channelCard"
+        href="https://wa.me/923160797211"
         target="_blank"
         rel="noopener">
-        Send Inquiry on WhatsApp
+
+        <div>
+          <div class="channelIcon">WA</div>
+          <h3>WhatsApp</h3>
+          <p>
+            Direct conversation for custom order requirements and product inquiries.
+          </p>
+        </div>
+
+        <span class="channelLink">
+          Open WhatsApp →
+        </span>
+
       </a>
 
-    </div>
-
-
-    <!-- EMAIL -->
-
-    <div class="contactCard">
-
-      <div class="contactIcon">✉️</div>
-
-      <h3>Email Us</h3>
-
-      <p>
-        Email your order details, artwork, product specifications
-        or business inquiry directly to UZ Industry.
-      </p>
-
-      <div class="contactValue">
-        uzindustryofficial@gmail.com
-      </div>
 
       <a
-        class="contactButton"
-        href="mailto:uzindustryofficial@gmail.com?subject=Custom%20Sportswear%20Inquiry%20-%20UZ%20Industry">
-        Send Email
+        class="channelCard"
+        href="mailto:uzindustryofficial@gmail.com">
+
+        <div>
+          <div class="channelIcon">EM</div>
+          <h3>Email</h3>
+          <p>
+            Suitable for detailed business inquiries, specifications and documents.
+          </p>
+        </div>
+
+        <span class="channelLink">
+          Send Email →
+        </span>
+
       </a>
 
-    </div>
-
-
-    <!-- INSTAGRAM -->
-
-    <div class="contactCard">
-
-      <div class="contactIcon">📸</div>
-
-      <h3>Instagram</h3>
-
-      <p>
-        Follow our Instagram profile for sportswear designs,
-        product updates and custom manufacturing work.
-      </p>
-
-      <div class="contactValue">
-        @uzindustry.official
-      </div>
 
       <a
-        class="contactButton"
+        class="channelCard"
         href="https://www.instagram.com/uzindustry.official/"
         target="_blank"
         rel="noopener">
-        Visit Instagram
+
+        <div>
+          <div class="channelIcon">IG</div>
+          <h3>Instagram</h3>
+          <p>
+            Follow UZ Industry for product designs and sportswear updates.
+          </p>
+        </div>
+
+        <span class="channelLink">
+          Visit Instagram →
+        </span>
+
       </a>
 
-    </div>
-
-
-    <!-- FACEBOOK -->
-
-    <div class="contactCard">
-
-      <div class="contactIcon">ⓕ</div>
-
-      <h3>Facebook</h3>
-
-      <p>
-        Connect with UZ Industry on Facebook and stay updated
-        with our custom sportswear products and services.
-      </p>
-
-      <div class="contactValue">
-        UZ Industry
-      </div>
 
       <a
-        class="contactButton"
+        class="channelCard"
         href="https://www.facebook.com/share/1DcVmiJLuF/?mibextid=wwXIfr"
         target="_blank"
         rel="noopener">
-        Visit Facebook
+
+        <div>
+          <div class="channelIcon">FB</div>
+          <h3>Facebook</h3>
+          <p>
+            Connect with the UZ Industry social profile and business updates.
+          </p>
+        </div>
+
+        <span class="channelLink">
+          Visit Facebook →
+        </span>
+
       </a>
 
-    </div>
-
-
-  </div>
-
-
-  <!-- ================= BUSINESS INFO ================= -->
-
-  <div class="businessInfo">
-
-    <div class="eyebrow">
-      MANUFACTURING BASE
-    </div>
-
-    <h2>UZ Industry</h2>
-
-    <div class="infoGrid">
-
-      <div class="infoItem">
-
-        <strong>Location</strong>
-
-        <span>
-          Sialkot, Pakistan
-        </span>
-
-      </div>
-
-
-      <div class="infoItem">
-
-        <strong>Specialization</strong>
-
-        <span>
-          Custom Sportswear & Teamwear
-        </span>
-
-      </div>
-
-
-      <div class="infoItem">
-
-        <strong>Service</strong>
-
-        <span>
-          Worldwide Client Support
-        </span>
-
-      </div>
 
     </div>
-
-  </div>
-
-
-  <!-- ================= FINAL CTA ================= -->
-
-  <div class="finalCTA">
-
-    <div class="eyebrow">
-      READY TO START?
-    </div>
-
-    <h2>Send Us Your Requirements</h2>
-
-    <p>
-      Have a product idea or custom teamwear design?
-      Send us your reference, quantity and requirements on WhatsApp
-      and start discussing your project with UZ Industry.
-    </p>
-
-    <a
-      class="bigWhatsapp"
-      href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
-      target="_blank"
-      rel="noopener">
-      Send Inquiry on WhatsApp →
-    </a>
 
   </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+
+<section class="faqSection">
+
+  <div class="wrap faqWrap">
+
+    <div class="eyebrow">
+      Frequently Asked Questions
+    </div>
+
+    <h2 class="sectionTitle">
+      Before you
+      <span class="red">contact us.</span>
+    </h2>
+
+
+    <div class="faqList">
+
+
+      <div class="faqItem">
+
+        <button class="faqQuestion">
+          What is the minimum order quantity?
+          <span>+</span>
+        </button>
+
+        <div class="faqAnswer">
+          The current minimum order quantity shown by UZ Industry is
+          10 pieces for custom production.
+        </div>
+
+      </div>
+
+
+      <div class="faqItem">
+
+        <button class="faqQuestion">
+          Can I send my own design or reference?
+          <span>+</span>
+        </button>
+
+        <div class="faqAnswer">
+          Yes. You can share your reference images, colors, logos,
+          graphics and other design requirements during your inquiry.
+        </div>
+
+      </div>
+
+
+      <div class="faqItem">
+
+        <button class="faqQuestion">
+          Can names, numbers and logos be customized?
+          <span>+</span>
+        </button>
+
+        <div class="faqAnswer">
+          Yes. Custom names, numbers, team graphics and logos can be
+          discussed according to the selected product.
+        </div>
+
+      </div>
+
+
+      <div class="faqItem">
+
+        <button class="faqQuestion">
+          Can I choose the fabric?
+          <span>+</span>
+        </button>
+
+        <div class="faqAnswer">
+          Fabric options can be discussed according to the sport,
+          garment type, comfort, stretch, breathability and durability requirements.
+        </div>
+
+      </div>
+
+
+      <div class="faqItem">
+
+        <button class="faqQuestion">
+          Do you support international inquiries?
+          <span>+</span>
+        </button>
+
+        <div class="faqAnswer">
+          Yes. UZ Industry accepts inquiries from teams, clubs,
+          organizations and buyers outside Pakistan.
+        </div>
+
+      </div>
+
+
+      <div class="faqItem">
+
+        <button class="faqQuestion">
+          What information should I send first?
+          <span>+</span>
+        </button>
+
+        <div class="faqAnswer">
+          Start with the product, estimated quantity, country,
+          colors and reference design. You can then discuss sizing,
+          fabric and branding requirements in more detail.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+     ========================================================= -->
+
+<section class="finalCta">
+
+  <div class="wrap finalCtaInner">
+
+    <div class="eyebrow centerEyebrow">
+      Ready To Start?
+    </div>
+
+    <h2>
+      Your next custom kit
+      <span class="red">starts here.</span>
+    </h2>
+
+    <p>
+      Send your requirements and begin discussing your custom
+      sportswear project with UZ Industry.
+    </p>
+
+
+    <div class="finalActions">
+
+      <a
+        href="#inquiry"
+        class="btn btnPrimary">
+
+        Start Your Inquiry →
+
+      </a>
+
+
+      <a
+        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+        target="_blank"
+        rel="noopener"
+        class="btn">
+
+        WhatsApp Us
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
 <footer>
 
-  © UZ INDUSTRY • SIALKOT, PAKISTAN • CUSTOM SPORTSWEAR MANUFACTURER
+  <div class="wrap footerGrid">
+
+    <div class="footerBrand">
+
+      <img
+        src="uz-logo.png.PNG"
+        alt="UZ Industry">
+
+      <p>
+        Premium custom sportswear and performance teamwear
+        manufactured in Sialkot, Pakistan.
+      </p>
+
+    </div>
+
+
+    <div class="footerCol">
+
+      <h4>Explore</h4>
+
+      <a href="./">Home</a>
+      <a href="products.html">Products</a>
+      <a href="fabrics.html">Fabrics</a>
+      <a href="./#manufacturing">Manufacturing</a>
+
+    </div>
+
+
+    <div class="footerCol">
+
+      <h4>Company</h4>
+
+      <a href="./#about">About UZ Industry</a>
+      <a href="contact.html">Contact</a>
+      <span>Sialkot, Pakistan</span>
+
+    </div>
+
+
+    <div class="footerCol">
+
+      <h4>Contact</h4>
+
+      <a
+        href="https://wa.me/923160797211"
+        target="_blank">
+
+        +92 316 0797211
+
+      </a>
+
+
+      <a href="mailto:uzindustryofficial@gmail.com">
+
+        uzindustryofficial@gmail.com
+
+      </a>
+
+
+      <a
+        href="https://www.instagram.com/uzindustry.official/"
+        target="_blank">
+
+        Instagram
+
+      </a>
+
+
+      <a
+        href="https://www.facebook.com/share/1DcVmiJLuF/?mibextid=wwXIfr"
+        target="_blank">
+
+        Facebook
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="wrap footerBottom">
+
+    <span>
+      © 2026 UZ Industry. All rights reserved.
+    </span>
+
+    <span>
+      Custom Sportswear Manufacturer • Sialkot, Pakistan
+    </span>
+
+  </div>
 
 </footer>
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+     ========================================================= -->
+
+<a
+  class="whatsappFloat"
+  href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+  target="_blank"
+  rel="noopener"
+  aria-label="Contact UZ Industry on WhatsApp">
+
+  W
+
+</a>
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const mainNav =
+  document.getElementById("mainNav");
+
+
+menuBtn.addEventListener("click",function(){
+
+  mainNav.classList.toggle("open");
+
+  const open =
+    mainNav.classList.contains("open");
+
+  menuBtn.setAttribute(
+    "aria-expanded",
+    open
+  );
+
+  document.body.classList.toggle(
+    "lock",
+    open
+  );
+
+});
+
+
+mainNav.querySelectorAll("a").forEach(function(link){
+
+  link.addEventListener("click",function(){
+
+    mainNav.classList.remove("open");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    document.body.classList.remove("lock");
+
+  });
+
+});
+
+
+/* =========================================================
+   FILE NAME PREVIEW
+   ========================================================= */
+
+const fileInput =
+  document.getElementById("referenceFile");
+
+const fileName =
+  document.getElementById("fileName");
+
+
+fileInput.addEventListener("change",function(){
+
+  if(this.files && this.files.length){
+
+    fileName.textContent =
+      "Selected file: " +
+      this.files[0].name;
+
+    fileName.classList.add("show");
+
+  }else{
+
+    fileName.textContent = "";
+
+    fileName.classList.remove("show");
+
+  }
+
+});
+
+
+/* =========================================================
+   FORM DATA
+   ========================================================= */
+
+function getInquiryData(){
+
+  return {
+
+    name:
+      document.getElementById("name").value.trim(),
+
+    email:
+      document.getElementById("email").value.trim(),
+
+    phone:
+      document.getElementById("phone").value.trim(),
+
+    country:
+      document.getElementById("country").value.trim(),
+
+    company:
+      document.getElementById("company").value.trim(),
+
+    product:
+      document.getElementById("product").value,
+
+    quantity:
+      document.getElementById("quantity").value.trim(),
+
+    preferred:
+      document.getElementById("preferred").value,
+
+    requirements:
+      document.getElementById("requirements").value.trim(),
+
+    file:
+      fileInput.files.length
+        ? fileInput.files[0].name
+        : "No reference selected"
+
+  };
+
+}
+
+
+function buildInquiryMessage(data){
+
+  return `Hello UZ Industry,
+
+I would like to discuss a custom sportswear order.
+
+Name: ${data.name}
+Email: ${data.email}
+WhatsApp: ${data.phone || "Not provided"}
+Country: ${data.country}
+Team / Company: ${data.company || "Not provided"}
+Product: ${data.product}
+Estimated Quantity: ${data.quantity} pieces
+Preferred Contact Method: ${data.preferred}
+Reference File: ${data.file}
+
+Order Requirements:
+${data.requirements}
+
+Please let me know the next steps.
+
+Thank you.`;
+
+}
+
+
+/* =========================================================
+   WHATSAPP SUBMISSION
+   ========================================================= */
+
+document
+.getElementById("inquiryForm")
+.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+
+  if(!this.checkValidity()){
+
+    this.reportValidity();
+
+    return;
+
+  }
+
+
+  const data =
+    getInquiryData();
+
+
+  const message =
+    buildInquiryMessage(data);
+
+
+  const whatsappUrl =
+    "https://wa.me/923160797211?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    whatsappUrl,
+    "_blank"
+  );
+
+});
+
+
+/* =========================================================
+   EMAIL SUBMISSION
+   ========================================================= */
+
+document
+.getElementById("emailInquiry")
+.addEventListener("click",function(){
+
+  const form =
+    document.getElementById("inquiryForm");
+
+
+  if(!form.checkValidity()){
+
+    form.reportValidity();
+
+    return;
+
+  }
+
+
+  const data =
+    getInquiryData();
+
+
+  const message =
+    buildInquiryMessage(data);
+
+
+  const subject =
+    "Custom Sportswear Inquiry - " +
+    data.product;
+
+
+  const mailto =
+    "mailto:uzindustryofficial@gmail.com" +
+    "?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(message);
+
+
+  window.location.href =
+    mailto;
+
+});
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+document
+.querySelectorAll(".faqQuestion")
+.forEach(function(question){
+
+  question.addEventListener(
+    "click",
+    function(){
+
+      const item =
+        this.parentElement;
+
+      const alreadyOpen =
+        item.classList.contains("open");
+
+
+      document
+      .querySelectorAll(".faqItem")
+      .forEach(function(faq){
+
+        faq.classList.remove("open");
+
+      });
+
+
+      if(!alreadyOpen){
+
+        item.classList.add("open");
+
+      }
+
+    }
+  );
+
+});
+
+</script>
 
 </body>
 </html>
