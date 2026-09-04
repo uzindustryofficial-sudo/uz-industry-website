@@ -7,26 +7,19 @@
 
 <title>Contact UZ Industry | Custom Sportswear Manufacturer</title>
 
-<meta name="description" content="Contact UZ Industry in Sialkot, Pakistan for custom sportswear, team uniforms, performance apparel and private label manufacturing inquiries.">
+<meta name="description" content="Contact UZ Industry in Sialkot, Pakistan for custom sportswear, team uniforms, performance apparel and international manufacturing inquiries.">
 
 <style>
 
-/* =========================================================
-   UZ INDUSTRY — PREMIUM CONTACT PAGE
-   ========================================================= */
-
 :root{
   --bg:#050506;
-  --bg2:#08080a;
   --panel:#0c0c0f;
   --panel2:#111115;
   --red:#ef1b24;
   --red2:#ff3038;
-  --white:#fff;
-  --text:#f4f4f6;
+  --text:#f5f5f7;
   --muted:#96969e;
   --line:#25252b;
-  --line2:#34343b;
   --max:1240px;
 }
 
@@ -61,6 +54,10 @@ input,
 select,
 textarea{
   font:inherit;
+}
+
+button{
+  cursor:pointer;
 }
 
 img{
@@ -123,7 +120,6 @@ img{
   font-weight:900;
   letter-spacing:.09em;
   text-transform:uppercase;
-  transition:.25s;
 }
 
 .mainNav a:not(.navCta)::after{
@@ -162,11 +158,10 @@ img{
   margin-left:auto;
   width:46px;
   height:46px;
-  border:1px solid #303037;
-  background:#0d0d10;
   align-items:center;
   justify-content:center;
-  cursor:pointer;
+  border:1px solid #303037;
+  background:#0d0d10;
 }
 
 .menuIcon{
@@ -182,13 +177,87 @@ img{
 }
 
 /* =========================================================
+   COMMON
+   ========================================================= */
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.eyebrow::before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:var(--red);
+}
+
+.sectionHeader{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:end;
+  margin-bottom:42px;
+}
+
+.sectionTitle{
+  margin-top:12px;
+  font-size:clamp(42px,5.5vw,74px);
+  line-height:.94;
+  letter-spacing:-.052em;
+  text-transform:uppercase;
+}
+
+.sectionText{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.75;
+}
+
+.btn{
+  min-height:51px;
+  padding:0 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #34343b;
+  background:#0b0b0d;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btnPrimary{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.btnPrimary:hover{
+  background:var(--red2);
+  border-color:var(--red2);
+}
+
+/* =========================================================
    HERO
    ========================================================= */
 
 .hero{
   position:relative;
   overflow:hidden;
-  padding:155px 0 92px;
+  padding:155px 0 90px;
   border-bottom:1px solid var(--line);
   background:
     radial-gradient(circle at 82% 17%,rgba(239,27,36,.18),transparent 30%),
@@ -217,15 +286,14 @@ img{
 }
 
 .hero::after{
-  content:"LET'S TALK";
+  content:"CONTACT";
   position:absolute;
-  right:-2%;
-  bottom:-3%;
+  right:-3%;
+  bottom:-4%;
   color:rgba(255,255,255,.015);
-  font-size:13vw;
-  line-height:.8;
+  font-size:16vw;
   font-weight:900;
-  white-space:nowrap;
+  line-height:.8;
   pointer-events:none;
 }
 
@@ -233,27 +301,9 @@ img{
   position:relative;
   z-index:2;
   display:grid;
-  grid-template-columns:1.12fr .88fr;
-  gap:70px;
+  grid-template-columns:1.08fr .92fr;
+  gap:65px;
   align-items:end;
-}
-
-.eyebrow{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--red);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.eyebrow::before{
-  content:"";
-  width:28px;
-  height:2px;
-  background:var(--red);
 }
 
 .hero h1{
@@ -272,19 +322,32 @@ img{
   line-height:1.75;
 }
 
+.heroActions{
+  margin-top:29px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
 .heroQuick{
   display:grid;
   gap:11px;
 }
 
 .heroQuickItem{
-  padding:18px 20px;
+  padding:19px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:20px;
   border:1px solid #2d2d33;
   background:rgba(12,12,15,.82);
+  transition:.25s;
+}
+
+a.heroQuickItem:hover{
+  border-color:rgba(239,27,36,.65);
+  transform:translateY(-2px);
 }
 
 .heroQuickItem small{
@@ -299,7 +362,7 @@ img{
 
 .heroQuickItem strong{
   font-size:14px;
-  line-height:1.35;
+  line-height:1.4;
 }
 
 .heroQuickItem span{
@@ -309,7 +372,7 @@ img{
 }
 
 /* =========================================================
-   TRUST STRIP
+   TRUST
    ========================================================= */
 
 .trust{
@@ -355,45 +418,21 @@ img{
 }
 
 /* =========================================================
-   MAIN CONTACT SECTION
+   CONTACT
    ========================================================= */
 
 .contactSection{
   padding:95px 0 105px;
 }
 
-.sectionHeader{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:45px;
-  align-items:end;
-  margin-bottom:43px;
-}
-
-.sectionTitle{
-  margin-top:12px;
-  font-size:clamp(42px,5.5vw,74px);
-  line-height:.94;
-  letter-spacing:-.052em;
-  text-transform:uppercase;
-}
-
-.sectionText{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.75;
-}
-
 .contactLayout{
   display:grid;
-  grid-template-columns:1.2fr .8fr;
+  grid-template-columns:1.18fr .82fr;
   gap:22px;
   align-items:start;
 }
 
-/* =========================================================
-   FORM
-   ========================================================= */
+/* FORM */
 
 .formPanel{
   padding:35px;
@@ -456,7 +495,6 @@ img{
   color:#fff;
   outline:none;
   padding:14px 15px;
-  transition:.2s;
 }
 
 .field input,
@@ -465,7 +503,7 @@ img{
 }
 
 .field textarea{
-  min-height:150px;
+  min-height:155px;
   resize:vertical;
   line-height:1.6;
 }
@@ -477,7 +515,6 @@ img{
 }
 
 .field select option{
-  color:#fff;
   background:#111;
 }
 
@@ -487,108 +524,22 @@ img{
   line-height:1.5;
 }
 
-/* UPLOAD */
-
-.uploadBox{
-  position:relative;
-  padding:25px;
-  border:1px dashed #45454d;
-  background:#09090b;
-  text-align:center;
-  transition:.2s;
-}
-
-.uploadBox:hover{
-  border-color:var(--red);
-}
-
-.uploadBox input{
-  width:100%;
-  margin-top:13px;
-  border:0;
-  padding:0;
-  background:transparent;
-}
-
-.uploadBox strong{
-  display:block;
-  font-size:13px;
-  text-transform:uppercase;
-}
-
-.uploadBox p{
-  margin-top:7px;
-  color:#7f7f87;
-  font-size:11px;
-  line-height:1.5;
-}
-
-.fileName{
-  display:none;
-  margin-top:12px;
-  padding:10px;
-  color:#fff;
-  background:#151519;
-  border:1px solid #2d2d33;
-  font-size:11px;
-}
-
-.fileName.show{
-  display:block;
-}
-
-/* FORM ACTIONS */
-
 .formActions{
   grid-column:1/-1;
   display:flex;
-  gap:10px;
   flex-wrap:wrap;
+  gap:10px;
   margin-top:6px;
-}
-
-.btn{
-  min-height:51px;
-  padding:0 22px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #34343b;
-  background:#0b0b0d;
-  color:#fff;
-  cursor:pointer;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.11em;
-  text-transform:uppercase;
-  transition:.25s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-.btnPrimary{
-  background:var(--red);
-  border-color:var(--red);
-}
-
-.btnPrimary:hover{
-  background:var(--red2);
-  border-color:var(--red2);
 }
 
 .formNotice{
   grid-column:1/-1;
-  padding-top:4px;
   color:#74747c;
   font-size:10px;
   line-height:1.55;
 }
 
-/* =========================================================
-   CONTACT SIDEBAR
-   ========================================================= */
+/* SIDEBAR */
 
 .contactSidebar{
   display:grid;
@@ -609,10 +560,10 @@ img{
 
 .quickCardTop{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   gap:16px;
-  margin-bottom:21px;
+  margin-bottom:20px;
 }
 
 .quickIcon{
@@ -660,8 +611,6 @@ img{
   word-break:break-word;
 }
 
-/* BUSINESS CARD */
-
 .businessCard{
   padding:27px;
   border:1px solid var(--line);
@@ -703,16 +652,72 @@ img{
 }
 
 /* =========================================================
+   CUSTOM ORDER BRIDGE
+   ========================================================= */
+
+.orderBridge{
+  padding:95px 0;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(239,27,36,.1),transparent 28%),
+    #08080a;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.bridgeBox{
+  position:relative;
+  overflow:hidden;
+  padding:55px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:35px;
+  align-items:center;
+  border:1px solid #303037;
+  background:#0c0c0f;
+}
+
+.bridgeBox::after{
+  content:"ORDER";
+  position:absolute;
+  right:-2%;
+  bottom:-16%;
+  color:rgba(255,255,255,.018);
+  font-size:125px;
+  font-weight:900;
+}
+
+.bridgeBox > *{
+  position:relative;
+  z-index:2;
+}
+
+.bridgeBox h2{
+  max-width:760px;
+  margin:12px 0 14px;
+  font-size:clamp(37px,5vw,63px);
+  line-height:.94;
+  text-transform:uppercase;
+}
+
+.bridgeBox p{
+  max-width:700px;
+  color:#94949c;
+  font-size:14px;
+  line-height:1.75;
+}
+
+.bridgeActions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* =========================================================
    WHAT TO SEND
    ========================================================= */
 
 .prepareSection{
   padding:95px 0;
-  background:
-    radial-gradient(circle at 10% 0%,rgba(239,27,36,.08),transparent 28%),
-    #08080a;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
 }
 
 .prepareGrid{
@@ -748,11 +753,14 @@ img{
 }
 
 /* =========================================================
-   CONTACT CHANNELS
+   CHANNELS
    ========================================================= */
 
 .channelsSection{
   padding:95px 0;
+  background:#08080a;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 
 .channelGrid{
@@ -815,8 +823,6 @@ img{
 
 .faqSection{
   padding:95px 0;
-  background:#08080a;
-  border-top:1px solid var(--line);
 }
 
 .faqWrap{
@@ -838,13 +844,12 @@ img{
   width:100%;
   padding:20px 21px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
   border:0;
   background:transparent;
   color:#fff;
-  cursor:pointer;
   text-align:left;
   font-size:13px;
   font-weight:900;
@@ -897,7 +902,6 @@ img{
   color:rgba(255,255,255,.017);
   font-size:38vw;
   font-weight:900;
-  pointer-events:none;
 }
 
 .finalCtaInner{
@@ -919,7 +923,7 @@ img{
 }
 
 .finalCta p{
-  max-width:670px;
+  max-width:680px;
   margin:auto;
   color:#9999a0;
   font-size:14px;
@@ -1001,7 +1005,7 @@ footer{
 }
 
 /* =========================================================
-   FLOAT WHATSAPP
+   WHATSAPP
    ========================================================= */
 
 .whatsappFloat{
@@ -1009,16 +1013,19 @@ footer{
   right:22px;
   bottom:22px;
   z-index:800;
-  width:55px;
-  height:55px;
+  width:56px;
+  height:56px;
   display:grid;
   place-items:center;
   border-radius:50%;
   background:var(--red);
-  color:#fff;
-  font-size:16px;
-  font-weight:900;
   box-shadow:0 12px 35px rgba(239,27,36,.35);
+}
+
+.whatsappFloat svg{
+  width:27px;
+  height:27px;
+  fill:#fff;
 }
 
 /* =========================================================
@@ -1128,6 +1135,16 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .bridgeBox{
+    grid-template-columns:1fr;
+    padding:40px 30px;
+  }
+
+  .bridgeActions{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
   .footerGrid{
     grid-template-columns:1fr 1fr;
   }
@@ -1152,8 +1169,12 @@ footer{
     font-size:15px;
   }
 
-  .heroQuickItem{
-    padding:16px;
+  .heroActions{
+    flex-direction:column;
+  }
+
+  .heroActions .btn{
+    width:100%;
   }
 
   .trustGrid{
@@ -1170,6 +1191,7 @@ footer{
   }
 
   .contactSection,
+  .orderBridge,
   .prepareSection,
   .channelsSection,
   .faqSection{
@@ -1188,12 +1210,13 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .fieldFull{
+  .fieldFull,
+  .formActions,
+  .formNotice{
     grid-column:auto;
   }
 
   .formActions{
-    grid-column:auto;
     flex-direction:column;
   }
 
@@ -1201,8 +1224,25 @@ footer{
     width:100%;
   }
 
-  .formNotice{
-    grid-column:auto;
+  .businessRow{
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .businessRow span:last-child{
+    text-align:left;
+  }
+
+  .bridgeBox{
+    padding:34px 22px;
+  }
+
+  .bridgeActions{
+    flex-direction:column;
+  }
+
+  .bridgeActions .btn{
+    width:100%;
   }
 
   .prepareGrid{
@@ -1225,25 +1265,6 @@ footer{
     min-height:220px;
   }
 
-  .businessRow{
-    flex-direction:column;
-    gap:5px;
-  }
-
-  .businessRow span:last-child{
-    text-align:left;
-  }
-
-  .footerGrid{
-    grid-template-columns:1fr;
-    gap:28px;
-  }
-
-  .footerBottom{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
   .finalCta{
     padding:85px 0;
   }
@@ -1254,6 +1275,16 @@ footer{
 
   .finalActions .btn{
     width:100%;
+  }
+
+  .footerGrid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .footerBottom{
+    flex-direction:column;
+    align-items:flex-start;
   }
 
   .whatsappFloat{
@@ -1293,8 +1324,8 @@ footer{
       <a href="./#about">About</a>
       <a href="contact.html" class="active">Contact</a>
 
-      <a href="#inquiry" class="navCta">
-        Start Inquiry
+      <a href="custom-order.html" class="navCta">
+        Get a Quote
       </a>
 
     </nav>
@@ -1302,7 +1333,7 @@ footer{
     <button
       class="menuBtn"
       id="menuBtn"
-      aria-label="Open menu"
+      aria-label="Open navigation"
       aria-expanded="false">
 
       <span class="menuIcon">
@@ -1333,15 +1364,27 @@ footer{
       </div>
 
       <h1>
-        Let's build your
-        <span class="red">sportswear.</span>
+        Let's talk about
+        <span class="red">your project.</span>
       </h1>
 
       <p>
-        Tell us what you want to manufacture. Share your product,
-        quantity, colors, logos, sizing and reference designs and
-        start discussing your custom order with UZ Industry.
+        Contact UZ Industry for custom sportswear, teamwear,
+        product questions or business inquiries. For a detailed
+        quotation, use our dedicated Custom Order Builder.
       </p>
+
+      <div class="heroActions">
+
+        <a href="#inquiry" class="btn">
+          Send Quick Inquiry →
+        </a>
+
+        <a href="custom-order.html" class="btn btnPrimary">
+          Start Custom Order →
+        </a>
+
+      </div>
 
     </div>
 
@@ -1350,7 +1393,7 @@ footer{
 
       <a
         class="heroQuickItem"
-        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+        href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20custom%20sportswear."
         target="_blank"
         rel="noopener">
 
@@ -1369,7 +1412,7 @@ footer{
         href="mailto:uzindustryofficial@gmail.com">
 
         <div>
-          <small>Business Inquiry</small>
+          <small>Business Email</small>
           <strong>uzindustryofficial@gmail.com</strong>
         </div>
 
@@ -1405,35 +1448,50 @@ footer{
   <div class="wrap trustGrid">
 
     <div class="trustItem">
+
       <div class="trustNo">01</div>
+
       <div>
-        <strong>Custom Products</strong>
-        <span>Developed around your requirements.</span>
+        <strong>Custom Manufacturing</strong>
+        <span>Products built around your requirements.</span>
       </div>
+
     </div>
 
+
     <div class="trustItem">
+
       <div class="trustNo">02</div>
+
       <div>
         <strong>MOQ 10 Pieces</strong>
-        <span>Suitable for teams and custom orders.</span>
+        <span>Custom production starting from 10 pieces.</span>
       </div>
+
     </div>
 
+
     <div class="trustItem">
+
       <div class="trustNo">03</div>
+
       <div>
         <strong>Direct Communication</strong>
-        <span>Discuss requirements via WhatsApp or email.</span>
+        <span>WhatsApp and email inquiry support.</span>
       </div>
+
     </div>
 
+
     <div class="trustItem">
+
       <div class="trustNo">04</div>
+
       <div>
         <strong>Worldwide Support</strong>
-        <span>International client inquiry support.</span>
+        <span>International buyer communication.</span>
       </div>
+
     </div>
 
   </div>
@@ -1442,7 +1500,7 @@ footer{
 
 
 <!-- =========================================================
-     INQUIRY
+     QUICK INQUIRY
      ========================================================= -->
 
 <section class="contactSection" id="inquiry">
@@ -1454,26 +1512,27 @@ footer{
       <div>
 
         <div class="eyebrow">
-          Start Your Inquiry
+          Quick Inquiry
         </div>
 
         <h2 class="sectionTitle">
-          Tell us about your
-          <span class="red">order.</span>
+          Tell us what you
+          <span class="red">need.</span>
         </h2>
 
       </div>
 
       <p class="sectionText">
-        The more information you share, the easier it is to understand
-        your requirements. Fill in the form below and continue your
-        inquiry directly through WhatsApp or email.
+        Use this form for a quick discussion. If you already know
+        your product, sizing, fabric, colors and detailed customization,
+        use the Custom Order Builder instead.
       </p>
 
     </div>
 
 
     <div class="contactLayout">
+
 
       <!-- FORM -->
 
@@ -1482,13 +1541,13 @@ footer{
         <div class="formTop">
 
           <div class="eyebrow">
-            Custom Sportswear Inquiry
+            Contact UZ Industry
           </div>
 
-          <h3>Project Details</h3>
+          <h3>Quick Project Inquiry</h3>
 
           <p>
-            Required fields are marked with a red asterisk.
+            Fill in the required information and send it directly on WhatsApp or email.
           </p>
 
         </div>
@@ -1565,7 +1624,7 @@ footer{
             <input
               id="company"
               type="text"
-              placeholder="Team, club or brand name">
+              placeholder="Team, club or business name">
 
           </div>
 
@@ -1573,7 +1632,7 @@ footer{
           <div class="field">
 
             <label>
-              Product Category <span>*</span>
+              Product <span>*</span>
             </label>
 
             <select id="product" required>
@@ -1618,15 +1677,14 @@ footer{
           <div class="field">
 
             <label>
-              Estimated Quantity <span>*</span>
+              Estimated Quantity
             </label>
 
             <input
               id="quantity"
               type="number"
               min="10"
-              placeholder="Example: 25"
-              required>
+              placeholder="Example: 25">
 
             <div class="fieldHint">
               Current minimum order quantity: 10 pieces.
@@ -1642,10 +1700,8 @@ footer{
             </label>
 
             <select id="preferred">
-
               <option>WhatsApp</option>
               <option>Email</option>
-
             </select>
 
           </div>
@@ -1654,45 +1710,13 @@ footer{
           <div class="field fieldFull">
 
             <label>
-              Order Requirements <span>*</span>
+              Message / Requirements <span>*</span>
             </label>
 
             <textarea
               id="requirements"
-              placeholder="Tell us about colors, sizes, logos, names, numbers, fabric preference, design requirements or anything else..."
+              placeholder="Tell us about your product, colors, design, quantity or any questions..."
               required></textarea>
-
-          </div>
-
-
-          <div class="field fieldFull">
-
-            <label>
-              Reference / Logo
-            </label>
-
-            <div class="uploadBox">
-
-              <strong>
-                Add Your Reference File
-              </strong>
-
-              <p>
-                Select a logo, sketch or reference image.
-                You can attach the actual file in WhatsApp or email after the inquiry opens.
-              </p>
-
-              <input
-                id="referenceFile"
-                type="file"
-                accept=".jpg,.jpeg,.png,.webp,.pdf">
-
-              <div
-                class="fileName"
-                id="fileName">
-              </div>
-
-            </div>
 
           </div>
 
@@ -1703,7 +1727,7 @@ footer{
               type="submit"
               class="btn btnPrimary">
 
-              Send Inquiry on WhatsApp →
+              Send on WhatsApp →
 
             </button>
 
@@ -1713,7 +1737,7 @@ footer{
               class="btn"
               id="emailInquiry">
 
-              Prepare Email Inquiry
+              Prepare Email
 
             </button>
 
@@ -1721,8 +1745,9 @@ footer{
 
 
           <div class="formNotice">
-            This form prepares your inquiry on your device. No information is
-            stored on this website before you choose WhatsApp or email.
+            This quick form prepares a message on your device.
+            For detailed sizes, colors, fabric choices and reference files,
+            use the Custom Order Builder.
           </div>
 
         </form>
@@ -1743,18 +1768,26 @@ footer{
 
           <div class="quickCardTop">
 
-            <div class="quickIcon">WA</div>
+            <div class="quickIcon">
+              WA
+            </div>
 
-            <div class="quickArrow">→</div>
+            <div class="quickArrow">
+              →
+            </div>
 
           </div>
 
-          <small>Fastest Way To Reach Us</small>
+          <small>
+            Fastest Contact
+          </small>
 
-          <h3>WhatsApp</h3>
+          <h3>
+            WhatsApp
+          </h3>
 
           <p>
-            Discuss products, pricing, quantities and custom requirements directly.
+            Discuss product questions, quantities and custom requirements directly.
           </p>
 
           <span class="quickValue">
@@ -1770,18 +1803,26 @@ footer{
 
           <div class="quickCardTop">
 
-            <div class="quickIcon">EM</div>
+            <div class="quickIcon">
+              EM
+            </div>
 
-            <div class="quickArrow">→</div>
+            <div class="quickArrow">
+              →
+            </div>
 
           </div>
 
-          <small>Business Communication</small>
+          <small>
+            Business Communication
+          </small>
 
-          <h3>Email</h3>
+          <h3>
+            Email
+          </h3>
 
           <p>
-            Send specifications, order information and business inquiries.
+            Send detailed specifications, documents and business inquiries.
           </p>
 
           <span class="quickValue">
@@ -1797,7 +1838,9 @@ footer{
             Business Information
           </div>
 
-          <h3>UZ Industry</h3>
+          <h3>
+            UZ Industry
+          </h3>
 
 
           <div class="businessRow">
@@ -1805,33 +1848,86 @@ footer{
             <span>Sialkot, Pakistan</span>
           </div>
 
-
           <div class="businessRow">
             <span>Business</span>
-            <span>Custom Sportswear</span>
+            <span>Custom Sportswear & Teamwear</span>
           </div>
-
 
           <div class="businessRow">
             <span>MOQ</span>
             <span>10 Pieces</span>
           </div>
 
-
           <div class="businessRow">
             <span>Support</span>
             <span>Worldwide Clients</span>
           </div>
 
-
           <div class="businessRow">
-            <span>Started</span>
+            <span>Founded</span>
             <span>2024</span>
           </div>
 
         </div>
 
       </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CUSTOM ORDER BRIDGE
+     ========================================================= -->
+
+<section class="orderBridge">
+
+  <div class="wrap">
+
+    <div class="bridgeBox">
+
+      <div>
+
+        <div class="eyebrow">
+          Need A Detailed Quote?
+        </div>
+
+        <h2>
+          Build a complete
+          <span class="red">order brief.</span>
+        </h2>
+
+        <p>
+          Our dedicated Custom Order Builder lets you select your
+          product, quantity, fabric, colors, customization, size breakdown,
+          design notes and reference files before contacting UZ Industry.
+        </p>
+
+      </div>
+
+
+      <div class="bridgeActions">
+
+        <a
+          href="custom-order.html"
+          class="btn btnPrimary">
+
+          Start Custom Order →
+
+        </a>
+
+        <a
+          href="products.html"
+          class="btn">
+
+          View Products
+
+        </a>
+
+      </div>
 
     </div>
 
@@ -1864,8 +1960,8 @@ footer{
       </div>
 
       <p class="sectionText">
-        These details help us understand what you are looking for
-        and make the initial discussion more productive.
+        Providing these details makes it easier to understand
+        your custom sportswear requirements.
       </p>
 
     </div>
@@ -1875,58 +1971,105 @@ footer{
 
 
       <div class="prepareCard">
-        <div class="prepareNo">01</div>
-        <h3>Product</h3>
+
+        <div class="prepareNo">
+          01
+        </div>
+
+        <h3>
+          Product
+        </h3>
+
         <p>
           Tell us which uniform, garment or accessory you need.
         </p>
+
       </div>
 
 
       <div class="prepareCard">
-        <div class="prepareNo">02</div>
-        <h3>Quantity</h3>
+
+        <div class="prepareNo">
+          02
+        </div>
+
+        <h3>
+          Quantity
+        </h3>
+
         <p>
           Share your estimated number of pieces or team size.
         </p>
+
       </div>
 
 
       <div class="prepareCard">
-        <div class="prepareNo">03</div>
-        <h3>Design</h3>
+
+        <div class="prepareNo">
+          03
+        </div>
+
+        <h3>
+          Design
+        </h3>
+
         <p>
-          Send a reference image, sketch or design idea if available.
+          Send a reference image, sketch or design concept if available.
         </p>
+
       </div>
 
 
       <div class="prepareCard">
-        <div class="prepareNo">04</div>
-        <h3>Colors</h3>
+
+        <div class="prepareNo">
+          04
+        </div>
+
+        <h3>
+          Colors
+        </h3>
+
         <p>
-          Tell us your team, club or brand color requirements.
+          Tell us your required team, club or brand colors.
         </p>
+
       </div>
 
 
       <div class="prepareCard">
-        <div class="prepareNo">05</div>
-        <h3>Branding</h3>
+
+        <div class="prepareNo">
+          05
+        </div>
+
+        <h3>
+          Branding
+        </h3>
+
         <p>
           Include logos, player names, numbers or branding details.
         </p>
+
       </div>
 
 
       <div class="prepareCard">
-        <div class="prepareNo">06</div>
-        <h3>Sizes</h3>
-        <p>
-          Share your size range or roster sizing requirements.
-        </p>
-      </div>
 
+        <div class="prepareNo">
+          06
+        </div>
+
+        <h3>
+          Sizes
+        </h3>
+
+        <p>
+          Share your size range or team roster sizing if available.
+        </p>
+
+      </div>
 
     </div>
 
@@ -1976,11 +2119,19 @@ footer{
         rel="noopener">
 
         <div>
-          <div class="channelIcon">WA</div>
-          <h3>WhatsApp</h3>
+
+          <div class="channelIcon">
+            WA
+          </div>
+
+          <h3>
+            WhatsApp
+          </h3>
+
           <p>
-            Direct conversation for custom order requirements and product inquiries.
+            Direct communication for products, quantities and custom order questions.
           </p>
+
         </div>
 
         <span class="channelLink">
@@ -1995,11 +2146,19 @@ footer{
         href="mailto:uzindustryofficial@gmail.com">
 
         <div>
-          <div class="channelIcon">EM</div>
-          <h3>Email</h3>
+
+          <div class="channelIcon">
+            EM
+          </div>
+
+          <h3>
+            Email
+          </h3>
+
           <p>
-            Suitable for detailed business inquiries, specifications and documents.
+            Send specifications, business inquiries and detailed project information.
           </p>
+
         </div>
 
         <span class="channelLink">
@@ -2016,11 +2175,19 @@ footer{
         rel="noopener">
 
         <div>
-          <div class="channelIcon">IG</div>
-          <h3>Instagram</h3>
+
+          <div class="channelIcon">
+            IG
+          </div>
+
+          <h3>
+            Instagram
+          </h3>
+
           <p>
-            Follow UZ Industry for product designs and sportswear updates.
+            Follow UZ Industry for sportswear designs and product updates.
           </p>
+
         </div>
 
         <span class="channelLink">
@@ -2037,11 +2204,19 @@ footer{
         rel="noopener">
 
         <div>
-          <div class="channelIcon">FB</div>
-          <h3>Facebook</h3>
+
+          <div class="channelIcon">
+            FB
+          </div>
+
+          <h3>
+            Facebook
+          </h3>
+
           <p>
-            Connect with the UZ Industry social profile and business updates.
+            Connect with UZ Industry and follow business updates.
           </p>
+
         </div>
 
         <span class="channelLink">
@@ -2049,7 +2224,6 @@ footer{
         </span>
 
       </a>
-
 
     </div>
 
@@ -2082,13 +2256,13 @@ footer{
       <div class="faqItem">
 
         <button class="faqQuestion">
-          What is the minimum order quantity?
+          What is your minimum order quantity?
           <span>+</span>
         </button>
 
         <div class="faqAnswer">
-          The current minimum order quantity shown by UZ Industry is
-          10 pieces for custom production.
+          The current minimum order quantity shown by UZ Industry
+          is 10 pieces for custom production.
         </div>
 
       </div>
@@ -2102,8 +2276,8 @@ footer{
         </button>
 
         <div class="faqAnswer">
-          Yes. You can share your reference images, colors, logos,
-          graphics and other design requirements during your inquiry.
+          Yes. You can share reference images, logos, sketches,
+          screenshots, graphics and other design requirements.
         </div>
 
       </div>
@@ -2117,7 +2291,7 @@ footer{
         </button>
 
         <div class="faqAnswer">
-          Yes. Custom names, numbers, team graphics and logos can be
+          Yes. Names, numbers, team graphics and logos can be
           discussed according to the selected product.
         </div>
 
@@ -2132,8 +2306,8 @@ footer{
         </button>
 
         <div class="faqAnswer">
-          Fabric options can be discussed according to the sport,
-          garment type, comfort, stretch, breathability and durability requirements.
+          Yes. Fabric options can be selected according to the sport,
+          garment type, stretch, breathability, durability and comfort requirements.
         </div>
 
       </div>
@@ -2148,7 +2322,7 @@ footer{
 
         <div class="faqAnswer">
           Yes. UZ Industry accepts inquiries from teams, clubs,
-          organizations and buyers outside Pakistan.
+          organizations, brands and buyers outside Pakistan.
         </div>
 
       </div>
@@ -2157,18 +2331,18 @@ footer{
       <div class="faqItem">
 
         <button class="faqQuestion">
-          What information should I send first?
+          Should I use Contact or Custom Order?
           <span>+</span>
         </button>
 
         <div class="faqAnswer">
-          Start with the product, estimated quantity, country,
-          colors and reference design. You can then discuss sizing,
-          fabric and branding requirements in more detail.
+          Use Contact for quick questions or initial communication.
+          Use the Custom Order Builder when you want to organize
+          product, quantity, fabric, colors, sizes and customization
+          into a detailed order brief.
         </div>
 
       </div>
-
 
     </div>
 
@@ -2190,23 +2364,23 @@ footer{
     </div>
 
     <h2>
-      Your next custom kit
-      <span class="red">starts here.</span>
+      Turn your idea into a
+      <span class="red">custom order.</span>
     </h2>
 
     <p>
-      Send your requirements and begin discussing your custom
-      sportswear project with UZ Industry.
+      Use the Custom Order Builder for a structured project brief,
+      or contact UZ Industry directly on WhatsApp.
     </p>
 
 
     <div class="finalActions">
 
       <a
-        href="#inquiry"
+        href="custom-order.html"
         class="btn btnPrimary">
 
-        Start Your Inquiry →
+        Start Custom Order →
 
       </a>
 
@@ -2252,7 +2426,9 @@ footer{
 
     <div class="footerCol">
 
-      <h4>Explore</h4>
+      <h4>
+        Explore
+      </h4>
 
       <a href="./">Home</a>
       <a href="products.html">Products</a>
@@ -2264,10 +2440,13 @@ footer{
 
     <div class="footerCol">
 
-      <h4>Company</h4>
+      <h4>
+        Company
+      </h4>
 
       <a href="./#about">About UZ Industry</a>
       <a href="contact.html">Contact</a>
+      <a href="custom-order.html">Custom Order</a>
       <span>Sialkot, Pakistan</span>
 
     </div>
@@ -2275,11 +2454,14 @@ footer{
 
     <div class="footerCol">
 
-      <h4>Contact</h4>
+      <h4>
+        Contact
+      </h4>
 
       <a
         href="https://wa.me/923160797211"
-        target="_blank">
+        target="_blank"
+        rel="noopener">
 
         +92 316 0797211
 
@@ -2295,7 +2477,8 @@ footer{
 
       <a
         href="https://www.instagram.com/uzindustry.official/"
-        target="_blank">
+        target="_blank"
+        rel="noopener">
 
         Instagram
 
@@ -2304,7 +2487,8 @@ footer{
 
       <a
         href="https://www.facebook.com/share/1DcVmiJLuF/?mibextid=wwXIfr"
-        target="_blank">
+        target="_blank"
+        rel="noopener">
 
         Facebook
 
@@ -2331,17 +2515,23 @@ footer{
 
 
 <!-- =========================================================
-     FLOATING WHATSAPP
+     WHATSAPP FLOAT
      ========================================================= -->
 
 <a
   class="whatsappFloat"
-  href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+  href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20custom%20sportswear."
   target="_blank"
   rel="noopener"
-  aria-label="Contact UZ Industry on WhatsApp">
+  aria-label="WhatsApp UZ Industry">
 
-  W
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+
+    <path d="M19.11 17.31c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/>
+
+    <path d="M16.03 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.25.59 4.46 1.71 6.4L3.12 29l6.75-1.77A12.74 12.74 0 0 0 16.03 28.8c7.06 0 12.8-5.74 12.8-12.8s-5.74-12.8-12.8-12.8zm0 23.44c-1.92 0-3.8-.52-5.44-1.5l-.39-.23-4 .99 1.07-3.9-.25-.4A10.6 10.6 0 1 1 16.03 26.64z"/>
+
+  </svg>
 
 </a>
 
@@ -2363,13 +2553,16 @@ menuBtn.addEventListener("click",function(){
 
   mainNav.classList.toggle("open");
 
+
   const open =
     mainNav.classList.contains("open");
+
 
   menuBtn.setAttribute(
     "aria-expanded",
     open
   );
+
 
   document.body.classList.toggle(
     "lock",
@@ -2379,7 +2572,9 @@ menuBtn.addEventListener("click",function(){
 });
 
 
-mainNav.querySelectorAll("a").forEach(function(link){
+mainNav
+.querySelectorAll("a")
+.forEach(function(link){
 
   link.addEventListener("click",function(){
 
@@ -2398,39 +2593,7 @@ mainNav.querySelectorAll("a").forEach(function(link){
 
 
 /* =========================================================
-   FILE NAME PREVIEW
-   ========================================================= */
-
-const fileInput =
-  document.getElementById("referenceFile");
-
-const fileName =
-  document.getElementById("fileName");
-
-
-fileInput.addEventListener("change",function(){
-
-  if(this.files && this.files.length){
-
-    fileName.textContent =
-      "Selected file: " +
-      this.files[0].name;
-
-    fileName.classList.add("show");
-
-  }else{
-
-    fileName.textContent = "";
-
-    fileName.classList.remove("show");
-
-  }
-
-});
-
-
-/* =========================================================
-   FORM DATA
+   QUICK INQUIRY
    ========================================================= */
 
 function getInquiryData(){
@@ -2462,12 +2625,7 @@ function getInquiryData(){
       document.getElementById("preferred").value,
 
     requirements:
-      document.getElementById("requirements").value.trim(),
-
-    file:
-      fileInput.files.length
-        ? fileInput.files[0].name
-        : "No reference selected"
+      document.getElementById("requirements").value.trim()
 
   };
 
@@ -2478,7 +2636,7 @@ function buildInquiryMessage(data){
 
   return `Hello UZ Industry,
 
-I would like to discuss a custom sportswear order.
+I would like to make a custom sportswear inquiry.
 
 Name: ${data.name}
 Email: ${data.email}
@@ -2486,11 +2644,10 @@ WhatsApp: ${data.phone || "Not provided"}
 Country: ${data.country}
 Team / Company: ${data.company || "Not provided"}
 Product: ${data.product}
-Estimated Quantity: ${data.quantity} pieces
+Estimated Quantity: ${data.quantity ? data.quantity + " pieces" : "Not specified"}
 Preferred Contact Method: ${data.preferred}
-Reference File: ${data.file}
 
-Order Requirements:
+Requirements / Message:
 ${data.requirements}
 
 Please let me know the next steps.
@@ -2499,10 +2656,6 @@ Thank you.`;
 
 }
 
-
-/* =========================================================
-   WHATSAPP SUBMISSION
-   ========================================================= */
 
 document
 .getElementById("inquiryForm")
@@ -2528,22 +2681,14 @@ document
     buildInquiryMessage(data);
 
 
-  const whatsappUrl =
-    "https://wa.me/923160797211?text=" +
-    encodeURIComponent(message);
-
-
   window.open(
-    whatsappUrl,
+    "https://wa.me/923160797211?text=" +
+    encodeURIComponent(message),
     "_blank"
   );
 
 });
 
-
-/* =========================================================
-   EMAIL SUBMISSION
-   ========================================================= */
 
 document
 .getElementById("emailInquiry")
@@ -2566,25 +2711,21 @@ document
     getInquiryData();
 
 
-  const message =
-    buildInquiryMessage(data);
-
-
   const subject =
     "Custom Sportswear Inquiry - " +
     data.product;
 
 
-  const mailto =
+  const body =
+    buildInquiryMessage(data);
+
+
+  window.location.href =
     "mailto:uzindustryofficial@gmail.com" +
     "?subject=" +
     encodeURIComponent(subject) +
     "&body=" +
-    encodeURIComponent(message);
-
-
-  window.location.href =
-    mailto;
+    encodeURIComponent(body);
 
 });
 
@@ -2597,34 +2738,32 @@ document
 .querySelectorAll(".faqQuestion")
 .forEach(function(question){
 
-  question.addEventListener(
-    "click",
-    function(){
+  question.addEventListener("click",function(){
 
-      const item =
-        this.parentElement;
-
-      const alreadyOpen =
-        item.classList.contains("open");
+    const item =
+      this.parentElement;
 
 
-      document
-      .querySelectorAll(".faqItem")
-      .forEach(function(faq){
-
-        faq.classList.remove("open");
-
-      });
+    const wasOpen =
+      item.classList.contains("open");
 
 
-      if(!alreadyOpen){
+    document
+    .querySelectorAll(".faqItem")
+    .forEach(function(faq){
 
-        item.classList.add("open");
+      faq.classList.remove("open");
 
-      }
+    });
+
+
+    if(!wasOpen){
+
+      item.classList.add("open");
 
     }
-  );
+
+  });
 
 });
 
