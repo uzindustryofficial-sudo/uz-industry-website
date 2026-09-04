@@ -1,0 +1,2852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Start Custom Order | UZ Industry</title>
+
+<meta name="description" content="Start your custom sportswear order with UZ Industry. Select your product, quantity, fabric, colors, sizes, customization and design requirements.">
+
+<style>
+
+:root{
+  --bg:#050506;
+  --bg2:#08080a;
+  --panel:#0c0c0f;
+  --panel2:#111115;
+  --red:#ef1b24;
+  --red2:#ff3038;
+  --white:#fff;
+  --text:#f4f4f6;
+  --muted:#92929a;
+  --line:#25252b;
+  --line2:#36363e;
+  --max:1240px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+}
+
+body.lock{
+  overflow:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.wrap{
+  width:min(var(--max),calc(100% - 40px));
+  margin:auto;
+}
+
+.red{
+  color:var(--red);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.siteHeader{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(5,5,6,.84);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navWrap{
+  height:78px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.logo img{
+  height:58px;
+  width:auto;
+  display:block;
+}
+
+.mainNav{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.mainNav a{
+  position:relative;
+  color:#d6d6db;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+.mainNav a:not(.navCta)::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-9px;
+  width:0;
+  height:2px;
+  background:var(--red);
+  transition:.25s;
+}
+
+.mainNav a:hover{
+  color:#fff;
+}
+
+.mainNav a:hover::after{
+  width:100%;
+}
+
+.navCta{
+  padding:14px 18px;
+  background:var(--red);
+  color:#fff!important;
+}
+
+.navCta:hover{
+  background:var(--red2);
+}
+
+.menuBtn{
+  display:none;
+  margin-left:auto;
+  width:46px;
+  height:46px;
+  border:1px solid #303037;
+  background:#0d0d10;
+  align-items:center;
+  justify-content:center;
+}
+
+.menuIcon{
+  width:22px;
+  display:grid;
+  gap:5px;
+}
+
+.menuIcon span{
+  height:2px;
+  display:block;
+  background:#fff;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:145px 0 78px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 15%,rgba(239,27,36,.18),transparent 31%),
+    radial-gradient(circle at 8% 92%,rgba(239,27,36,.06),transparent 25%),
+    linear-gradient(135deg,#050506,#0b0b0e 60%,#050506);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.7;
+  background:
+    linear-gradient(
+      116deg,
+      transparent 68%,
+      rgba(239,27,36,.82) 68.1%,
+      transparent 68.6%
+    ),
+    repeating-linear-gradient(
+      116deg,
+      transparent 0 75px,
+      rgba(255,255,255,.014) 76px 77px
+    );
+}
+
+.hero::after{
+  content:"BUILD";
+  position:absolute;
+  right:-3%;
+  bottom:-10%;
+  color:rgba(255,255,255,.017);
+  font-size:26vw;
+  line-height:.8;
+  font-weight:900;
+}
+
+.heroGrid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:end;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.eyebrow::before{
+  content:"";
+  width:28px;
+  height:2px;
+  background:var(--red);
+}
+
+.hero h1{
+  max-width:850px;
+  margin:17px 0 22px;
+  font-size:clamp(55px,7.2vw,100px);
+  line-height:.88;
+  letter-spacing:-.065em;
+  text-transform:uppercase;
+}
+
+.hero p{
+  max-width:700px;
+  color:#b3b3ba;
+  font-size:17px;
+  line-height:1.75;
+}
+
+.heroFacts{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.heroFact{
+  padding:19px;
+  border:1px solid #2d2d33;
+  background:rgba(12,12,15,.82);
+}
+
+.heroFact strong{
+  display:block;
+  color:var(--red);
+  font-size:21px;
+}
+
+.heroFact span{
+  display:block;
+  margin-top:6px;
+  color:#8c8c94;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   ORDER AREA
+   ========================================================= */
+
+.orderSection{
+  padding:80px 0 110px;
+}
+
+.orderLayout{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:24px;
+  align-items:start;
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progressPanel{
+  margin-bottom:18px;
+  padding:22px;
+  border:1px solid var(--line);
+  background:#0b0b0d;
+}
+
+.progressTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:16px;
+}
+
+.progressTop strong{
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.progressTop span{
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+.progressBar{
+  height:4px;
+  background:#202026;
+  overflow:hidden;
+}
+
+.progressFill{
+  width:25%;
+  height:100%;
+  background:var(--red);
+  transition:.35s ease;
+}
+
+.stepLabels{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.stepLabel{
+  color:#626269;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.stepLabel.active{
+  color:#fff;
+}
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.formPanel{
+  padding:36px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 92% 3%,rgba(239,27,36,.06),transparent 25%),
+    var(--panel);
+}
+
+.formStep{
+  display:none;
+}
+
+.formStep.active{
+  display:block;
+}
+
+.stepHead{
+  margin-bottom:30px;
+}
+
+.stepNumber{
+  display:inline-flex;
+  margin-bottom:13px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.stepHead h2{
+  margin-bottom:10px;
+  font-size:clamp(31px,4vw,46px);
+  line-height:.96;
+  letter-spacing:-.04em;
+  text-transform:uppercase;
+}
+
+.stepHead p{
+  max-width:680px;
+  color:#929299;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field{
+  margin-bottom:16px;
+}
+
+.fieldFull{
+  grid-column:1/-1;
+}
+
+label.fieldLabel{
+  display:block;
+  margin-bottom:8px;
+  color:#c3c3c8;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+label.fieldLabel .required{
+  color:var(--red);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea{
+  width:100%;
+  min-height:49px;
+  padding:14px 15px;
+  border:1px solid #303037;
+  background:#08080a;
+  color:#fff;
+  outline:none;
+}
+
+textarea{
+  min-height:145px;
+  resize:vertical;
+  line-height:1.6;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--red);
+}
+
+select option{
+  background:#111;
+  color:#fff;
+}
+
+.hint{
+  margin-top:7px;
+  color:#717179;
+  font-size:10px;
+  line-height:1.5;
+}
+
+/* =========================================================
+   PRODUCT CHOICE
+   ========================================================= */
+
+.productChoices{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.choice input{
+  display:none;
+}
+
+.choice span{
+  min-height:70px;
+  padding:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border:1px solid #303037;
+  background:#09090b;
+  color:#aaaab1;
+  cursor:pointer;
+  font-size:10px;
+  line-height:1.4;
+  font-weight:900;
+  text-transform:uppercase;
+  transition:.2s;
+}
+
+.choice span:hover{
+  border-color:#62626b;
+  color:#fff;
+}
+
+.choice input:checked + span{
+  background:rgba(239,27,36,.12);
+  border-color:var(--red);
+  color:#fff;
+}
+
+/* =========================================================
+   COLORS
+   ========================================================= */
+
+.colorGrid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.colorChoice input{
+  display:none;
+}
+
+.colorChoice span{
+  width:48px;
+  height:48px;
+  display:block;
+  border-radius:50%;
+  border:4px solid #25252b;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.colorChoice input:checked + span{
+  border-color:var(--red);
+  transform:scale(1.08);
+}
+
+.cBlack{background:#111}
+.cWhite{background:#fff}
+.cRed{background:#e6202c}
+.cBlue{background:#215fcb}
+.cSky{background:#6ec6eb}
+.cNavy{background:#14274a}
+.cGreen{background:#228c4c}
+.cYellow{background:#f1c928}
+.cOrange{background:#ed7b24}
+.cPurple{background:#834bc5}
+.cPink{background:#e866a5}
+.cGrey{background:#777}
+.cMaroon{background:#701d2d}
+
+/* =========================================================
+   CUSTOMIZATION OPTIONS
+   ========================================================= */
+
+.optionGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.optionChoice input{
+  display:none;
+}
+
+.optionChoice span{
+  min-height:58px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#09090b;
+  border:1px solid #303037;
+  color:#aaaab1;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+.optionChoice input:checked + span{
+  border-color:var(--red);
+  background:rgba(239,27,36,.12);
+  color:#fff;
+}
+
+/* =========================================================
+   SIZE TABLE
+   ========================================================= */
+
+.sizeTable{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:5px;
+}
+
+.sizeTable th,
+.sizeTable td{
+  padding:11px 8px;
+  border:1px solid #29292f;
+  text-align:center;
+}
+
+.sizeTable th{
+  color:#9b9ba3;
+  background:#0a0a0c;
+  font-size:9px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.sizeTable td{
+  background:#0d0d10;
+}
+
+.sizeTable input{
+  width:70px;
+  min-height:38px;
+  padding:8px;
+  text-align:center;
+}
+
+/* =========================================================
+   UPLOAD
+   ========================================================= */
+
+.uploadArea{
+  padding:27px;
+  text-align:center;
+  border:1px dashed #484850;
+  background:#09090b;
+}
+
+.uploadArea strong{
+  display:block;
+  margin-bottom:7px;
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+.uploadArea p{
+  color:#797981;
+  font-size:11px;
+  line-height:1.6;
+}
+
+.uploadArea input{
+  width:100%;
+  margin-top:15px;
+}
+
+.fileList{
+  margin-top:13px;
+  display:grid;
+  gap:7px;
+}
+
+.fileItem{
+  padding:10px 12px;
+  text-align:left;
+  border:1px solid #29292f;
+  background:#111114;
+  color:#c7c7cc;
+  font-size:11px;
+}
+
+/* =========================================================
+   REVIEW
+   ========================================================= */
+
+.reviewGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.reviewBox{
+  padding:17px;
+  border:1px solid #29292f;
+  background:#0a0a0c;
+}
+
+.reviewBox.full{
+  grid-column:1/-1;
+}
+
+.reviewBox small{
+  display:block;
+  margin-bottom:7px;
+  color:var(--red);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.reviewBox strong,
+.reviewBox p{
+  color:#d6d6da;
+  font-size:12px;
+  line-height:1.65;
+}
+
+.finalNotice{
+  margin-top:20px;
+  padding:16px;
+  border-left:3px solid var(--red);
+  background:#111114;
+  color:#929299;
+  font-size:11px;
+  line-height:1.6;
+}
+
+/* =========================================================
+   NAV BUTTONS
+   ========================================================= */
+
+.formNavigation{
+  margin-top:30px;
+  padding-top:22px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  border-top:1px solid var(--line);
+}
+
+.btn{
+  min-height:51px;
+  padding:0 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #34343b;
+  background:#0b0b0d;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btnPrimary{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.btnPrimary:hover{
+  background:var(--red2);
+  border-color:var(--red2);
+}
+
+.btn:disabled{
+  opacity:.35;
+  cursor:not-allowed;
+  transform:none;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.orderSidebar{
+  position:sticky;
+  top:100px;
+  display:grid;
+  gap:14px;
+}
+
+.sideCard{
+  padding:25px;
+  border:1px solid var(--line);
+  background:#0c0c0f;
+}
+
+.sideCard h3{
+  margin:10px 0 17px;
+  font-size:20px;
+  text-transform:uppercase;
+}
+
+.sideRow{
+  padding:12px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid var(--line);
+}
+
+.sideRow:last-child{
+  border-bottom:0;
+}
+
+.sideRow span{
+  color:#77777f;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.sideRow strong{
+  color:#d9d9dd;
+  font-size:11px;
+  text-align:right;
+}
+
+.helpCard{
+  padding:25px;
+  border:1px solid rgba(239,27,36,.35);
+  background:
+    radial-gradient(circle at 90% 0%,rgba(239,27,36,.12),transparent 40%),
+    #0d0d10;
+}
+
+.helpCard h3{
+  margin:10px 0 10px;
+  font-size:20px;
+  text-transform:uppercase;
+}
+
+.helpCard p{
+  margin-bottom:19px;
+  color:#898991;
+  font-size:12px;
+  line-height:1.65;
+}
+
+.helpCard .btn{
+  width:100%;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  border-top:1px solid var(--line);
+  background:#050506;
+}
+
+.footerGrid{
+  padding:50px 0;
+  display:grid;
+  grid-template-columns:1.4fr repeat(3,1fr);
+  gap:42px;
+}
+
+.footerBrand img{
+  height:64px;
+  width:auto;
+  margin-bottom:17px;
+}
+
+.footerBrand p{
+  max-width:330px;
+  color:#818188;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.footerCol{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.footerCol h4{
+  margin-bottom:17px;
+  font-size:10px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.footerCol a,
+.footerCol span{
+  margin-bottom:11px;
+  color:#898990;
+  font-size:13px;
+}
+
+.footerCol a:hover{
+  color:var(--red);
+}
+
+.footerBottom{
+  min-height:66px;
+  padding:15px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  border-top:1px solid var(--line);
+  color:#707077;
+  font-size:11px;
+}
+
+/* =========================================================
+   FLOATING WHATSAPP
+   ========================================================= */
+
+.whatsapp{
+  position:fixed;
+  z-index:800;
+  right:22px;
+  bottom:22px;
+  width:55px;
+  height:55px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--red);
+  color:#fff;
+  font-weight:900;
+  box-shadow:0 12px 35px rgba(239,27,36,.35);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1050px){
+
+  .mainNav{
+    gap:14px;
+  }
+
+  .mainNav a{
+    font-size:9px;
+  }
+
+  .orderLayout{
+    grid-template-columns:1fr 280px;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .wrap{
+    width:calc(100% - 30px);
+  }
+
+  .navWrap{
+    height:70px;
+  }
+
+  .logo img{
+    height:51px;
+  }
+
+  .menuBtn{
+    display:flex;
+  }
+
+  .mainNav{
+    position:fixed;
+    top:70px;
+    left:0;
+    right:0;
+    height:calc(100vh - 70px);
+    display:none;
+    padding:18px 20px 30px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    background:#050506;
+    overflow:auto;
+  }
+
+  .mainNav.open{
+    display:flex;
+  }
+
+  .mainNav a{
+    width:100%;
+    padding:17px 8px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-size:13px;
+  }
+
+  .mainNav a::after{
+    display:none!important;
+  }
+
+  .navCta{
+    margin-top:14px;
+    text-align:center;
+  }
+
+  .hero{
+    padding:125px 0 68px;
+  }
+
+  .heroGrid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .orderLayout{
+    grid-template-columns:1fr;
+  }
+
+  .orderSidebar{
+    position:static;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .productChoices{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footerGrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:620px){
+
+  .wrap{
+    width:calc(100% - 26px);
+  }
+
+  .hero{
+    padding:108px 0 55px;
+  }
+
+  .hero h1{
+    font-size:49px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .heroFacts{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .orderSection{
+    padding:55px 0 75px;
+  }
+
+  .progressPanel{
+    padding:17px;
+  }
+
+  .stepLabels{
+    display:none;
+  }
+
+  .formPanel{
+    padding:25px 18px;
+  }
+
+  .grid2,
+  .reviewGrid{
+    grid-template-columns:1fr;
+  }
+
+  .fieldFull,
+  .reviewBox.full{
+    grid-column:auto;
+  }
+
+  .productChoices{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .optionGrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .sizeScroll{
+    overflow-x:auto;
+  }
+
+  .sizeTable{
+    min-width:620px;
+  }
+
+  .formNavigation{
+    flex-direction:column;
+  }
+
+  .formNavigation .btn{
+    width:100%;
+  }
+
+  .orderSidebar{
+    grid-template-columns:1fr;
+  }
+
+  .footerGrid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .footerBottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .whatsapp{
+    right:14px;
+    bottom:14px;
+    width:50px;
+    height:50px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="siteHeader">
+
+  <div class="wrap navWrap">
+
+    <a class="logo" href="./">
+      <img src="uz-logo.png.PNG" alt="UZ Industry">
+    </a>
+
+    <nav class="mainNav" id="mainNav">
+
+      <a href="./">Home</a>
+      <a href="products.html">Products</a>
+      <a href="fabrics.html">Fabrics</a>
+      <a href="./#manufacturing">Manufacturing</a>
+      <a href="./#custom">Customization</a>
+      <a href="./#about">About</a>
+      <a href="contact.html">Contact</a>
+
+      <a href="custom-order.html" class="navCta">
+        Start Custom Order
+      </a>
+
+    </nav>
+
+    <button class="menuBtn" id="menuBtn" aria-label="Open menu">
+      <span class="menuIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero">
+
+  <div class="wrap heroGrid">
+
+    <div>
+
+      <div class="eyebrow">
+        UZ Industry • Custom Order Builder
+      </div>
+
+      <h1>
+        Build your
+        <span class="red">custom kit.</span>
+      </h1>
+
+      <p>
+        Tell us exactly what your team needs. Choose your product,
+        quantity, fabric, colors, customization, sizing and design
+        requirements in one structured order brief.
+      </p>
+
+    </div>
+
+
+    <div class="heroFacts">
+
+      <div class="heroFact">
+        <strong>10</strong>
+        <span>Pieces Minimum Order</span>
+      </div>
+
+      <div class="heroFact">
+        <strong>26+</strong>
+        <span>Product Categories</span>
+      </div>
+
+      <div class="heroFact">
+        <strong>12</strong>
+        <span>Fabric Options</span>
+      </div>
+
+      <div class="heroFact">
+        <strong>100%</strong>
+        <span>Customizable</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ORDER BUILDER
+     ========================================================= -->
+
+<section class="orderSection">
+
+  <div class="wrap orderLayout">
+
+    <div>
+
+
+      <!-- PROGRESS -->
+
+      <div class="progressPanel">
+
+        <div class="progressTop">
+
+          <strong id="progressTitle">
+            Contact Information
+          </strong>
+
+          <span id="progressCount">
+            STEP 1 OF 4
+          </span>
+
+        </div>
+
+
+        <div class="progressBar">
+          <div class="progressFill" id="progressFill"></div>
+        </div>
+
+
+        <div class="stepLabels">
+
+          <div class="stepLabel active">
+            Contact
+          </div>
+
+          <div class="stepLabel">
+            Product
+          </div>
+
+          <div class="stepLabel">
+            Customize
+          </div>
+
+          <div class="stepLabel">
+            Review
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+
+      <div class="formPanel">
+
+        <form id="orderForm">
+
+
+          <!-- =============================================
+               STEP 1
+               ============================================= -->
+
+          <div class="formStep active" data-step="1">
+
+            <div class="stepHead">
+
+              <span class="stepNumber">
+                Step 01 • Contact
+              </span>
+
+              <h2>
+                Who are we building
+                <span class="red">for?</span>
+              </h2>
+
+              <p>
+                Start with your contact and team information.
+              </p>
+
+            </div>
+
+
+            <div class="grid2">
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Full Name <span class="required">*</span>
+                </label>
+
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Your full name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Email Address <span class="required">*</span>
+                </label>
+
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  WhatsApp Number
+                </label>
+
+                <input
+                  id="phone"
+                  type="text"
+                  placeholder="+1 / +44 / +92 ...">
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Country <span class="required">*</span>
+                </label>
+
+                <input
+                  id="country"
+                  type="text"
+                  placeholder="Your country"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Team / Club / Company
+                </label>
+
+                <input
+                  id="company"
+                  type="text"
+                  placeholder="Team, club or business name">
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Preferred Contact
+                </label>
+
+                <select id="preferred">
+                  <option>WhatsApp</option>
+                  <option>Email</option>
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               STEP 2
+               ============================================= -->
+
+          <div class="formStep" data-step="2">
+
+            <div class="stepHead">
+
+              <span class="stepNumber">
+                Step 02 • Product
+              </span>
+
+              <h2>
+                What are we
+                <span class="red">making?</span>
+              </h2>
+
+              <p>
+                Choose your main product and order requirements.
+              </p>
+
+            </div>
+
+
+            <label class="fieldLabel">
+              Select Product <span class="required">*</span>
+            </label>
+
+
+            <div class="productChoices">
+
+              <label class="choice">
+                <input type="radio" name="product" value="American Football Uniform">
+                <span>American Football</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="7v7 Uniform">
+                <span>7v7 Uniform</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Football / Soccer Kit">
+                <span>Football / Soccer</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Cricket Kit">
+                <span>Cricket Kit</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Basketball Uniform">
+                <span>Basketball</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Volleyball Uniform">
+                <span>Volleyball</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Rugby Uniform">
+                <span>Rugby</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Baseball Uniform">
+                <span>Baseball</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Softball Uniform">
+                <span>Softball</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Ice Hockey Uniform">
+                <span>Ice Hockey</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Wrestling Singlet">
+                <span>Wrestling</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Boxing Uniform">
+                <span>Boxing</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="MMA Wear">
+                <span>MMA Wear</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Gym & Fitness Wear">
+                <span>Gym & Fitness</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Cycling Wear">
+                <span>Cycling</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Tennis Wear">
+                <span>Tennis</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Cheer Uniform">
+                <span>Cheer</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Tracksuit">
+                <span>Tracksuit</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Training Wear">
+                <span>Training Wear</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Hoodies & Sweatshirts">
+                <span>Hoodies</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Polo Shirts">
+                <span>Polo Shirts</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Sports Shorts">
+                <span>Sports Shorts</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Compression Wear">
+                <span>Compression</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Custom Team Wear">
+                <span>Custom Teamwear</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Sports Bags">
+                <span>Sports Bags</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Sports Socks">
+                <span>Sports Socks</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="product" value="Other Custom Product">
+                <span>Other Product</span>
+              </label>
+
+            </div>
+
+
+            <div class="grid2">
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Estimated Quantity <span class="required">*</span>
+                </label>
+
+                <input
+                  id="quantity"
+                  type="number"
+                  min="10"
+                  placeholder="Example: 25"
+                  required>
+
+                <div class="hint">
+                  Minimum order quantity: 10 pieces.
+                </div>
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Preferred Fabric
+                </label>
+
+                <select id="fabric">
+
+                  <option>Not Sure — Recommend One</option>
+                  <option>Performance Polyester</option>
+                  <option>Bird Eye Mesh</option>
+                  <option>Micro Mesh</option>
+                  <option>Interlock Polyester</option>
+                  <option>Dri-Fit Fabric</option>
+                  <option>Lycra / Spandex</option>
+                  <option>Tricot Polyester</option>
+                  <option>Polyester Fleece</option>
+                  <option>French Terry</option>
+                  <option>Cotton / Poly-Cotton</option>
+                  <option>Taslon / Nylon</option>
+                  <option>Rib Fabric</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Target / Needed Date
+                </label>
+
+                <input
+                  id="deadline"
+                  type="date">
+
+              </div>
+
+
+              <div class="field">
+
+                <label class="fieldLabel">
+                  Order Type
+                </label>
+
+                <select id="orderType">
+                  <option>Team / Club Order</option>
+                  <option>School / Academy</option>
+                  <option>Brand / Private Label</option>
+                  <option>Organization</option>
+                  <option>Other</option>
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               STEP 3
+               ============================================= -->
+
+          <div class="formStep" data-step="3">
+
+            <div class="stepHead">
+
+              <span class="stepNumber">
+                Step 03 • Customize
+              </span>
+
+              <h2>
+                Make it
+                <span class="red">yours.</span>
+              </h2>
+
+              <p>
+                Choose colors, branding, sizing and design requirements.
+              </p>
+
+            </div>
+
+
+            <div class="field">
+
+              <label class="fieldLabel">
+                Main Colors
+              </label>
+
+              <div class="colorGrid">
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Black">
+                  <span class="cBlack"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="White">
+                  <span class="cWhite"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Red">
+                  <span class="cRed"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Blue">
+                  <span class="cBlue"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Sky Blue">
+                  <span class="cSky"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Navy">
+                  <span class="cNavy"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Green">
+                  <span class="cGreen"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Yellow">
+                  <span class="cYellow"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Orange">
+                  <span class="cOrange"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Purple">
+                  <span class="cPurple"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Pink">
+                  <span class="cPink"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Grey">
+                  <span class="cGrey"></span>
+                </label>
+
+                <label class="colorChoice">
+                  <input type="checkbox" name="colors" value="Maroon">
+                  <span class="cMaroon"></span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <div class="field" style="margin-top:25px;">
+
+              <label class="fieldLabel">
+                Customization Required
+              </label>
+
+              <div class="optionGrid">
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Full Sublimation">
+                  <span>Full Sublimation</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Embroidery">
+                  <span>Embroidery</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Printing">
+                  <span>Printing</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Team Logo">
+                  <span>Team Logo</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Player Names">
+                  <span>Player Names</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Player Numbers">
+                  <span>Player Numbers</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Private Label">
+                  <span>Private Label</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Custom Packaging">
+                  <span>Custom Packaging</span>
+                </label>
+
+                <label class="optionChoice">
+                  <input type="checkbox" name="customization" value="Need Design Help">
+                  <span>Need Design Help</span>
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <div class="field" style="margin-top:25px;">
+
+              <label class="fieldLabel">
+                Size Breakdown
+              </label>
+
+              <div class="sizeScroll">
+
+                <table class="sizeTable">
+
+                  <thead>
+                    <tr>
+                      <th>Size</th>
+                      <th>YS</th>
+                      <th>YM</th>
+                      <th>YL</th>
+                      <th>XS</th>
+                      <th>S</th>
+                      <th>M</th>
+                      <th>L</th>
+                      <th>XL</th>
+                      <th>2XL</th>
+                      <th>3XL</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>Qty</td>
+
+                      <td><input class="sizeQty" data-size="YS" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="YM" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="YL" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="XS" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="S" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="M" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="L" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="XL" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="2XL" type="number" min="0" value="0"></td>
+                      <td><input class="sizeQty" data-size="3XL" type="number" min="0" value="0"></td>
+
+                    </tr>
+                  </tbody>
+
+                </table>
+
+              </div>
+
+              <div class="hint">
+                If you do not know the size breakdown yet, you can leave this at zero and discuss sizing later.
+              </div>
+
+            </div>
+
+
+            <div class="field" style="margin-top:25px;">
+
+              <label class="fieldLabel">
+                Design / Order Notes
+              </label>
+
+              <textarea
+                id="notes"
+                placeholder="Describe your design, colors, fit, logo placement, player names/numbers, special requirements or anything else..."></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label class="fieldLabel">
+                Reference Images / Logo / Artwork
+              </label>
+
+              <div class="uploadArea">
+
+                <strong>
+                  Add Reference Files
+                </strong>
+
+                <p>
+                  Choose logos, sketches, screenshots or reference files.
+                  Selected file names will be included in your inquiry.
+                </p>
+
+                <input
+                  id="files"
+                  type="file"
+                  multiple
+                  accept=".jpg,.jpeg,.png,.webp,.pdf">
+
+                <div
+                  class="fileList"
+                  id="fileList">
+                </div>
+
+              </div>
+
+              <div class="hint">
+                Because this website runs on GitHub Pages, files are not uploaded automatically.
+                After WhatsApp or email opens, attach the selected files there.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               STEP 4
+               ============================================= -->
+
+          <div class="formStep" data-step="4">
+
+            <div class="stepHead">
+
+              <span class="stepNumber">
+                Step 04 • Review
+              </span>
+
+              <h2>
+                Review your
+                <span class="red">order brief.</span>
+              </h2>
+
+              <p>
+                Confirm your information before sending the inquiry.
+              </p>
+
+            </div>
+
+
+            <div class="reviewGrid" id="reviewGrid"></div>
+
+
+            <div class="finalNotice">
+              Clicking WhatsApp will prepare your complete order brief and open
+              a conversation with UZ Industry. If you selected reference files,
+              attach them manually in WhatsApp after the conversation opens.
+            </div>
+
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;">
+
+              <button
+                type="button"
+                class="btn btnPrimary"
+                id="sendWhatsapp">
+
+                Send Order on WhatsApp →
+
+              </button>
+
+
+              <button
+                type="button"
+                class="btn"
+                id="sendEmail">
+
+                Prepare Email Inquiry
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- NAVIGATION -->
+
+          <div class="formNavigation">
+
+            <button
+              type="button"
+              class="btn"
+              id="backBtn"
+              disabled>
+
+              ← Back
+
+            </button>
+
+
+            <button
+              type="button"
+              class="btn btnPrimary"
+              id="nextBtn">
+
+              Continue →
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="orderSidebar">
+
+
+      <div class="sideCard">
+
+        <div class="eyebrow">
+          Order Information
+        </div>
+
+        <h3>Before You Start</h3>
+
+
+        <div class="sideRow">
+          <span>MOQ</span>
+          <strong>10 Pieces</strong>
+        </div>
+
+        <div class="sideRow">
+          <span>Location</span>
+          <strong>Sialkot, Pakistan</strong>
+        </div>
+
+        <div class="sideRow">
+          <span>Products</span>
+          <strong>26+ Categories</strong>
+        </div>
+
+        <div class="sideRow">
+          <span>Fabrics</span>
+          <strong>Multiple Options</strong>
+        </div>
+
+        <div class="sideRow">
+          <span>Customization</span>
+          <strong>Full Custom</strong>
+        </div>
+
+        <div class="sideRow">
+          <span>Support</span>
+          <strong>Worldwide</strong>
+        </div>
+
+      </div>
+
+
+      <div class="helpCard">
+
+        <div class="eyebrow">
+          Need Help?
+        </div>
+
+        <h3>Prefer To Talk?</h3>
+
+        <p>
+          If you are not ready to complete the order builder,
+          discuss your requirements directly on WhatsApp.
+        </p>
+
+        <a
+          class="btn btnPrimary"
+          href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20need%20help%20with%20a%20custom%20sportswear%20order."
+          target="_blank">
+
+          WhatsApp UZ Industry
+
+        </a>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="wrap footerGrid">
+
+    <div class="footerBrand">
+
+      <img
+        src="uz-logo.png.PNG"
+        alt="UZ Industry">
+
+      <p>
+        Premium custom sportswear and performance teamwear
+        manufactured in Sialkot, Pakistan.
+      </p>
+
+    </div>
+
+
+    <div class="footerCol">
+
+      <h4>Explore</h4>
+
+      <a href="./">Home</a>
+      <a href="products.html">Products</a>
+      <a href="fabrics.html">Fabrics</a>
+      <a href="./#manufacturing">Manufacturing</a>
+
+    </div>
+
+
+    <div class="footerCol">
+
+      <h4>Company</h4>
+
+      <a href="./#about">About UZ Industry</a>
+      <a href="contact.html">Contact</a>
+      <a href="custom-order.html">Custom Order</a>
+      <span>Sialkot, Pakistan</span>
+
+    </div>
+
+
+    <div class="footerCol">
+
+      <h4>Contact</h4>
+
+      <a
+        href="https://wa.me/923160797211"
+        target="_blank">
+
+        +92 316 0797211
+
+      </a>
+
+      <a href="mailto:uzindustryofficial@gmail.com">
+        uzindustryofficial@gmail.com
+      </a>
+
+      <a
+        href="https://www.instagram.com/uzindustry.official/"
+        target="_blank">
+
+        Instagram
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="wrap footerBottom">
+
+    <span>
+      © 2026 UZ Industry. All rights reserved.
+    </span>
+
+    <span>
+      Custom Sportswear Manufacturer • Sialkot, Pakistan
+    </span>
+
+  </div>
+
+</footer>
+
+
+<a
+  class="whatsapp"
+  href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+  target="_blank"
+  aria-label="WhatsApp UZ Industry">
+
+  W
+
+</a>
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const mainNav =
+  document.getElementById("mainNav");
+
+
+menuBtn.onclick = function(){
+
+  mainNav.classList.toggle("open");
+
+  document.body.classList.toggle(
+    "lock",
+    mainNav.classList.contains("open")
+  );
+
+};
+
+
+mainNav.querySelectorAll("a").forEach(function(link){
+
+  link.onclick = function(){
+
+    mainNav.classList.remove("open");
+
+    document.body.classList.remove("lock");
+
+  };
+
+});
+
+
+/* =========================================================
+   MULTI STEP FORM
+   ========================================================= */
+
+let currentStep = 1;
+
+const totalSteps = 4;
+
+const steps =
+  document.querySelectorAll(".formStep");
+
+const nextBtn =
+  document.getElementById("nextBtn");
+
+const backBtn =
+  document.getElementById("backBtn");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const progressCount =
+  document.getElementById("progressCount");
+
+const progressTitle =
+  document.getElementById("progressTitle");
+
+const stepLabels =
+  document.querySelectorAll(".stepLabel");
+
+
+const stepTitles = [
+  "Contact Information",
+  "Product & Quantity",
+  "Customization",
+  "Review Order"
+];
+
+
+function showStep(step){
+
+  currentStep = step;
+
+
+  steps.forEach(function(item){
+
+    item.classList.toggle(
+      "active",
+      Number(item.dataset.step) === step
+    );
+
+  });
+
+
+  stepLabels.forEach(function(label,index){
+
+    label.classList.toggle(
+      "active",
+      index < step
+    );
+
+  });
+
+
+  progressFill.style.width =
+    (step / totalSteps * 100) + "%";
+
+
+  progressCount.textContent =
+    "STEP " + step + " OF " + totalSteps;
+
+
+  progressTitle.textContent =
+    stepTitles[step - 1];
+
+
+  backBtn.disabled =
+    step === 1;
+
+
+  if(step === totalSteps){
+
+    nextBtn.style.display =
+      "none";
+
+    buildReview();
+
+  }else{
+
+    nextBtn.style.display =
+      "inline-flex";
+
+  }
+
+
+  window.scrollTo({
+    top:
+      document.querySelector(".orderSection").offsetTop - 75,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   VALIDATE STEP
+   ========================================================= */
+
+function validateCurrentStep(){
+
+  if(currentStep === 1){
+
+    const required = [
+      document.getElementById("name"),
+      document.getElementById("email"),
+      document.getElementById("country")
+    ];
+
+
+    for(const field of required){
+
+      if(!field.checkValidity()){
+
+        field.reportValidity();
+
+        return false;
+
+      }
+
+    }
+
+  }
+
+
+  if(currentStep === 2){
+
+    const product =
+      document.querySelector(
+        'input[name="product"]:checked'
+      );
+
+
+    if(!product){
+
+      alert(
+        "Please select a product before continuing."
+      );
+
+      return false;
+
+    }
+
+
+    const quantity =
+      document.getElementById("quantity");
+
+
+    if(
+      !quantity.value ||
+      Number(quantity.value) < 10
+    ){
+
+      alert(
+        "Minimum order quantity is 10 pieces."
+      );
+
+      quantity.focus();
+
+      return false;
+
+    }
+
+  }
+
+
+  return true;
+
+}
+
+
+nextBtn.onclick = function(){
+
+  if(!validateCurrentStep()){
+
+    return;
+
+  }
+
+
+  if(currentStep < totalSteps){
+
+    showStep(currentStep + 1);
+
+  }
+
+};
+
+
+backBtn.onclick = function(){
+
+  if(currentStep > 1){
+
+    showStep(currentStep - 1);
+
+  }
+
+};
+
+
+/* =========================================================
+   FILE DISPLAY
+   ========================================================= */
+
+const fileInput =
+  document.getElementById("files");
+
+const fileList =
+  document.getElementById("fileList");
+
+
+fileInput.onchange = function(){
+
+  fileList.innerHTML = "";
+
+
+  Array.from(this.files).forEach(function(file){
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "fileItem";
+
+    item.textContent =
+      file.name;
+
+    fileList.appendChild(item);
+
+  });
+
+};
+
+
+/* =========================================================
+   GET ORDER DATA
+   ========================================================= */
+
+function selectedValues(name){
+
+  return Array.from(
+    document.querySelectorAll(
+      'input[name="' +
+      name +
+      '"]:checked'
+    )
+  ).map(function(item){
+
+    return item.value;
+
+  });
+
+}
+
+
+function getSizes(){
+
+  const sizes = [];
+
+
+  document
+  .querySelectorAll(".sizeQty")
+  .forEach(function(input){
+
+    const qty =
+      Number(input.value || 0);
+
+
+    if(qty > 0){
+
+      sizes.push(
+        input.dataset.size +
+        ": " +
+        qty
+      );
+
+    }
+
+  });
+
+
+  return sizes;
+
+}
+
+
+function getFiles(){
+
+  return Array.from(
+    fileInput.files
+  ).map(function(file){
+
+    return file.name;
+
+  });
+
+}
+
+
+function getOrderData(){
+
+  const product =
+    document.querySelector(
+      'input[name="product"]:checked'
+    );
+
+
+  return {
+
+    name:
+      document.getElementById("name").value.trim(),
+
+    email:
+      document.getElementById("email").value.trim(),
+
+    phone:
+      document.getElementById("phone").value.trim(),
+
+    country:
+      document.getElementById("country").value.trim(),
+
+    company:
+      document.getElementById("company").value.trim(),
+
+    preferred:
+      document.getElementById("preferred").value,
+
+    product:
+      product
+        ? product.value
+        : "Not selected",
+
+    quantity:
+      document.getElementById("quantity").value,
+
+    fabric:
+      document.getElementById("fabric").value,
+
+    deadline:
+      document.getElementById("deadline").value,
+
+    orderType:
+      document.getElementById("orderType").value,
+
+    colors:
+      selectedValues("colors"),
+
+    customization:
+      selectedValues("customization"),
+
+    sizes:
+      getSizes(),
+
+    notes:
+      document.getElementById("notes").value.trim(),
+
+    files:
+      getFiles()
+
+  };
+
+}
+
+
+/* =========================================================
+   REVIEW
+   ========================================================= */
+
+function safeValue(value){
+
+  if(
+    !value ||
+    value.length === 0
+  ){
+
+    return "Not provided";
+
+  }
+
+  return Array.isArray(value)
+    ? value.join(", ")
+    : value;
+
+}
+
+
+function reviewBox(label,value,full=false){
+
+  return `
+    <div class="reviewBox ${full ? "full" : ""}">
+      <small>${label}</small>
+      <p>${safeValue(value)}</p>
+    </div>
+  `;
+
+}
+
+
+function buildReview(){
+
+  const data =
+    getOrderData();
+
+
+  document
+  .getElementById("reviewGrid")
+  .innerHTML =
+
+    reviewBox("Customer",data.name) +
+
+    reviewBox("Country",data.country) +
+
+    reviewBox("Email",data.email) +
+
+    reviewBox(
+      "WhatsApp",
+      data.phone
+    ) +
+
+    reviewBox(
+      "Team / Company",
+      data.company
+    ) +
+
+    reviewBox(
+      "Order Type",
+      data.orderType
+    ) +
+
+    reviewBox(
+      "Product",
+      data.product
+    ) +
+
+    reviewBox(
+      "Quantity",
+      data.quantity + " pieces"
+    ) +
+
+    reviewBox(
+      "Fabric",
+      data.fabric
+    ) +
+
+    reviewBox(
+      "Needed Date",
+      data.deadline
+    ) +
+
+    reviewBox(
+      "Colors",
+      data.colors
+    ) +
+
+    reviewBox(
+      "Customization",
+      data.customization
+    ) +
+
+    reviewBox(
+      "Size Breakdown",
+      data.sizes,
+      true
+    ) +
+
+    reviewBox(
+      "Design / Order Notes",
+      data.notes,
+      true
+    ) +
+
+    reviewBox(
+      "Reference Files",
+      data.files,
+      true
+    );
+
+}
+
+
+/* =========================================================
+   CREATE ORDER MESSAGE
+   ========================================================= */
+
+function buildMessage(){
+
+  const data =
+    getOrderData();
+
+
+  return `Hello UZ Industry,
+
+I would like to start a custom sportswear order.
+
+CUSTOMER DETAILS
+Name: ${data.name}
+Email: ${data.email}
+WhatsApp: ${data.phone || "Not provided"}
+Country: ${data.country}
+Team / Company: ${data.company || "Not provided"}
+Preferred Contact: ${data.preferred}
+
+ORDER DETAILS
+Product: ${data.product}
+Order Type: ${data.orderType}
+Estimated Quantity: ${data.quantity} pieces
+Preferred Fabric: ${data.fabric}
+Target / Needed Date: ${data.deadline || "Not specified"}
+
+CUSTOMIZATION
+Colors: ${safeValue(data.colors)}
+Customization: ${safeValue(data.customization)}
+Size Breakdown: ${safeValue(data.sizes)}
+
+DESIGN / ORDER NOTES
+${data.notes || "No additional notes provided."}
+
+REFERENCE FILES
+${safeValue(data.files)}
+
+Please review my requirements and let me know the next steps.
+
+Thank you.`;
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+document
+.getElementById("sendWhatsapp")
+.onclick = function(){
+
+  const message =
+    buildMessage();
+
+
+  const url =
+    "https://wa.me/923160797211?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    url,
+    "_blank"
+  );
+
+};
+
+
+/* =========================================================
+   EMAIL
+   ========================================================= */
+
+document
+.getElementById("sendEmail")
+.onclick = function(){
+
+  const data =
+    getOrderData();
+
+
+  const subject =
+    "Custom Sportswear Order - " +
+    data.product;
+
+
+  const body =
+    buildMessage();
+
+
+  window.location.href =
+    "mailto:uzindustryofficial@gmail.com" +
+    "?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body);
+
+};
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+showStep(1);
+
+</script>
+
+</body>
+</html>
