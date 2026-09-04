@@ -5,34 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Custom Sportswear Products | UZ Industry</title>
-
-<meta name="description" content="Explore UZ Industry custom sportswear including American football, basketball, cricket, football, rugby, baseball, hockey, wrestling, boxing, MMA, teamwear and more.">
+<meta name="description" content="Explore premium custom sportswear by UZ Industry including American football, basketball, football, cricket, rugby, hockey, combat wear, teamwear and more.">
 
 <style>
-
 :root{
   --bg:#050506;
   --bg2:#08080a;
-  --panel:#0c0c0f;
-  --panel2:#111115;
+  --panel:#0d0d10;
   --red:#ef1b24;
   --red2:#ff3038;
   --text:#fff;
-  --muted:#94949c;
-  --line:#24242a;
-  --line2:#34343c;
+  --muted:#92929a;
+  --line:#25252b;
   --max:1240px;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 body{
   background:var(--bg);
@@ -41,36 +30,20 @@ body{
   overflow-x:hidden;
 }
 
-body.lock{
-  overflow:hidden;
-}
+body.lock{overflow:hidden}
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button,
-input{
-  font:inherit;
-}
-
-img{
-  max-width:100%;
-}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+img{max-width:100%}
 
 .wrap{
   width:min(var(--max),calc(100% - 40px));
   margin:auto;
 }
 
-.red{
-  color:var(--red);
-}
+.red{color:var(--red)}
 
-/* ==============================
-   NAV
-   ============================== */
+/* HEADER */
 
 .siteHeader{
   position:fixed;
@@ -78,10 +51,9 @@ img{
   left:0;
   right:0;
   z-index:1000;
-  background:rgba(5,5,6,.83);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+  background:rgba(5,5,6,.84);
   border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
 }
 
 .navWrap{
@@ -89,10 +61,6 @@ img{
   display:flex;
   align-items:center;
   gap:28px;
-}
-
-.logo{
-  flex-shrink:0;
 }
 
 .logo img{
@@ -105,17 +73,16 @@ img{
   margin-left:auto;
   display:flex;
   align-items:center;
-  gap:23px;
+  gap:22px;
 }
 
 .mainNav a{
   position:relative;
-  color:#d7d7dc;
+  color:#d5d5da;
   font-size:11px;
   font-weight:900;
   letter-spacing:.09em;
   text-transform:uppercase;
-  transition:.25s;
 }
 
 .mainNav a:not(.navCta)::after{
@@ -129,25 +96,16 @@ img{
   transition:.25s;
 }
 
-.mainNav a:hover,
-.mainNav a.active{
-  color:#fff;
-}
-
 .mainNav a:hover::after,
-.mainNav a.active::after{
-  width:100%;
-}
+.mainNav a.active::after{width:100%}
+
+.mainNav a:hover,
+.mainNav a.active{color:#fff}
 
 .navCta{
   padding:14px 18px;
   background:var(--red);
-  color:#fff !important;
-  border:1px solid var(--red);
-}
-
-.navCta:hover{
-  background:var(--red2);
+  color:#fff!important;
 }
 
 .menuBtn{
@@ -155,10 +113,10 @@ img{
   margin-left:auto;
   width:46px;
   height:46px;
+  border:1px solid #303037;
+  background:#0d0d10;
   align-items:center;
   justify-content:center;
-  border:1px solid #2d2d34;
-  background:#0d0d10;
   cursor:pointer;
 }
 
@@ -174,56 +132,42 @@ img{
   background:#fff;
 }
 
-/* ==============================
-   HERO
-   ============================== */
+/* HERO */
 
 .hero{
   position:relative;
   overflow:hidden;
   padding:155px 0 90px;
-  background:
-    radial-gradient(circle at 85% 15%,rgba(239,27,36,.16),transparent 30%),
-    radial-gradient(circle at 12% 90%,rgba(239,27,36,.06),transparent 25%),
-    linear-gradient(135deg,#050506,#0a0a0d 58%,#050506);
   border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 15%,rgba(239,27,36,.18),transparent 30%),
+    linear-gradient(135deg,#050506,#0b0b0e 60%,#050506);
 }
 
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(
-      116deg,
-      transparent 0 67%,
-      rgba(239,27,36,.8) 67.1%,
-      transparent 67.6%
-    ),
-    repeating-linear-gradient(
-      116deg,
-      transparent 0 75px,
-      rgba(255,255,255,.014) 76px 77px
-    );
   opacity:.7;
+  background:
+    linear-gradient(116deg,transparent 67%,rgba(239,27,36,.85) 67.1%,transparent 67.6%),
+    repeating-linear-gradient(116deg,transparent 0 75px,rgba(255,255,255,.014) 76px 77px);
 }
 
 .hero::after{
   content:"26+";
   position:absolute;
   right:-1%;
-  bottom:-12%;
-  font-size:29vw;
-  line-height:.8;
-  font-weight:900;
+  bottom:-11%;
   color:rgba(255,255,255,.018);
-  pointer-events:none;
+  font-size:29vw;
+  font-weight:900;
+  line-height:.8;
 }
 
 .heroContent{
   position:relative;
   z-index:2;
-  max-width:930px;
 }
 
 .eyebrow{
@@ -245,6 +189,7 @@ img{
 }
 
 .hero h1{
+  max-width:950px;
   margin:17px 0 24px;
   font-size:clamp(58px,8vw,108px);
   line-height:.88;
@@ -266,67 +211,62 @@ img{
   margin-top:34px;
 }
 
-.heroStat{
-  min-width:150px;
-  padding:16px 19px;
-  border:1px solid #29292f;
-  background:rgba(12,12,15,.78);
+.stat{
+  min-width:155px;
+  padding:17px 19px;
+  border:1px solid #2b2b31;
+  background:rgba(12,12,15,.82);
 }
 
-.heroStat strong{
+.stat strong{
   display:block;
   color:var(--red);
   font-size:25px;
-  line-height:1;
 }
 
-.heroStat span{
+.stat span{
   display:block;
   margin-top:6px;
-  color:#8f8f97;
+  color:#929299;
   font-size:9px;
   font-weight:900;
   letter-spacing:.1em;
   text-transform:uppercase;
 }
 
-/* ==============================
-   TOOL BAR
-   ============================== */
+/* CATALOG */
 
-.catalog{
-  padding:75px 0 105px;
-}
+.catalog{padding:80px 0 105px}
 
-.catalogIntro{
+.catalogHeader{
   display:grid;
   grid-template-columns:1.1fr .9fr;
-  gap:40px;
+  gap:45px;
   align-items:end;
-  margin-bottom:35px;
+  margin-bottom:38px;
 }
 
-.catalogIntro h2{
+.catalogHeader h2{
   margin-top:12px;
-  font-size:clamp(40px,5.5vw,72px);
+  font-size:clamp(42px,5.5vw,74px);
   line-height:.94;
-  letter-spacing:-.05em;
+  letter-spacing:-.052em;
   text-transform:uppercase;
 }
 
-.catalogIntro p{
+.catalogHeader p{
   color:var(--muted);
-  line-height:1.7;
   font-size:15px;
+  line-height:1.75;
 }
 
-.toolBar{
+.toolbar{
   display:flex;
-  gap:12px;
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
-  margin-bottom:28px;
+  gap:14px;
+  margin-bottom:30px;
 }
 
 .filters{
@@ -336,48 +276,42 @@ img{
 }
 
 .filterBtn{
-  min-height:41px;
+  min-height:42px;
   padding:0 15px;
   border:1px solid #2b2b31;
   background:#0b0b0e;
-  color:#a7a7ae;
+  color:#a2a2aa;
   cursor:pointer;
   font-size:9px;
   font-weight:900;
   letter-spacing:.1em;
   text-transform:uppercase;
-  transition:.2s;
 }
 
-.filterBtn:hover,
-.filterBtn.active{
+.filterBtn.active,
+.filterBtn:hover{
   background:var(--red);
   border-color:var(--red);
   color:#fff;
 }
 
-.searchBox{
-  width:min(310px,100%);
-  position:relative;
+.search{
+  width:min(300px,100%);
 }
 
-.searchBox input{
+.search input{
   width:100%;
   height:43px;
   padding:0 16px;
-  color:#fff;
   background:#0b0b0e;
+  color:#fff;
   border:1px solid #2b2b31;
   outline:none;
 }
 
-.searchBox input:focus{
-  border-color:var(--red);
-}
+.search input:focus{border-color:var(--red)}
 
-/* ==============================
-   PRODUCT GRID
-   ============================== */
+/* PRODUCT CARDS */
 
 .productGrid{
   display:grid;
@@ -386,39 +320,26 @@ img{
 }
 
 .productCard{
-  position:relative;
   overflow:hidden;
-  background:var(--panel);
   border:1px solid var(--line);
+  background:var(--panel);
   cursor:pointer;
-  transition:.35s ease;
+  transition:.35s;
 }
 
 .productCard:hover{
   transform:translateY(-7px);
-  border-color:rgba(239,27,36,.72);
-  box-shadow:0 25px 60px rgba(0,0,0,.35);
-}
-
-.productCard.hidden{
-  display:none;
+  border-color:rgba(239,27,36,.7);
+  box-shadow:0 25px 60px rgba(0,0,0,.36);
 }
 
 .productImage{
   position:relative;
   height:330px;
-  overflow:hidden;
   background:
-    radial-gradient(circle at 50% 45%,rgba(239,27,36,.05),transparent 52%),
+    radial-gradient(circle at center,rgba(239,27,36,.06),transparent 53%),
     #09090b;
-}
-
-.productImage::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:linear-gradient(to top,rgba(0,0,0,.15),transparent 50%);
+  overflow:hidden;
 }
 
 .productImage img{
@@ -427,31 +348,27 @@ img{
   object-fit:contain;
   padding:8px;
   display:block;
-  transition:.45s ease;
+  transition:.45s;
 }
 
-.productCard:hover .productImage img{
-  transform:scale(1.045);
-}
+.productCard:hover img{transform:scale(1.045)}
 
-.categoryTag{
+.category{
   position:absolute;
-  z-index:4;
   left:13px;
   top:13px;
+  z-index:3;
   padding:8px 10px;
   background:rgba(5,5,6,.88);
   border:1px solid rgba(255,255,255,.1);
-  color:#fff;
   font-size:8px;
   font-weight:900;
   letter-spacing:.1em;
   text-transform:uppercase;
-  backdrop-filter:blur(8px);
 }
 
 .productInfo{
-  min-height:178px;
+  min-height:180px;
   padding:21px 19px 23px;
   border-top:1px solid var(--line);
 }
@@ -479,7 +396,7 @@ img{
   line-height:1.62;
 }
 
-.viewLink{
+.view{
   display:inline-block;
   margin-top:15px;
   color:var(--red);
@@ -489,80 +406,50 @@ img{
   text-transform:uppercase;
 }
 
-/* ==============================
-   EMPTY SEARCH
-   ============================== */
-
 .noResults{
   display:none;
-  padding:45px 20px;
-  margin-top:20px;
+  margin-top:25px;
+  padding:45px;
   text-align:center;
   border:1px solid var(--line);
   background:#0b0b0d;
 }
 
-.noResults.show{
-  display:block;
-}
-
-.noResults h3{
-  margin-bottom:8px;
-  text-transform:uppercase;
-}
+.noResults.show{display:block}
 
 .noResults p{
+  margin-top:8px;
   color:var(--muted);
 }
 
-/* ==============================
-   CUSTOM CTA
-   ============================== */
+/* CTA */
 
-.customBanner{
-  margin-top:70px;
+.ctaBanner{
   position:relative;
   overflow:hidden;
+  margin-top:70px;
   padding:55px;
   display:grid;
   grid-template-columns:1fr auto;
-  gap:35px;
+  gap:30px;
   align-items:center;
   border:1px solid #303037;
   background:
-    radial-gradient(circle at 90% 30%,rgba(239,27,36,.18),transparent 32%),
+    radial-gradient(circle at 90% 30%,rgba(239,27,36,.18),transparent 30%),
     #0c0c0f;
 }
 
-.customBanner::before{
-  content:"UZ";
-  position:absolute;
-  right:2%;
-  top:50%;
-  transform:translateY(-50%);
-  color:rgba(255,255,255,.025);
-  font-size:180px;
-  font-weight:900;
-}
-
-.customBanner > *{
-  position:relative;
-  z-index:2;
-}
-
-.customBanner h2{
-  max-width:720px;
+.ctaBanner h2{
   margin:10px 0 12px;
-  font-size:clamp(34px,4.7vw,58px);
+  font-size:clamp(35px,4.5vw,58px);
   line-height:.95;
   text-transform:uppercase;
 }
 
-.customBanner p{
-  max-width:650px;
+.ctaBanner p{
+  max-width:670px;
   color:#95959c;
   line-height:1.7;
-  font-size:14px;
 }
 
 .btn{
@@ -571,18 +458,13 @@ img{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  border:1px solid #34343b;
   background:#0b0b0d;
   color:#fff;
+  border:1px solid #34343b;
   font-size:10px;
   font-weight:900;
   letter-spacing:.11em;
   text-transform:uppercase;
-  transition:.25s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
 }
 
 .btnPrimary{
@@ -590,14 +472,7 @@ img{
   border-color:var(--red);
 }
 
-.btnPrimary:hover{
-  background:var(--red2);
-  border-color:var(--red2);
-}
-
-/* ==============================
-   FOOTER
-   ============================== */
+/* FOOTER */
 
 footer{
   border-top:1px solid var(--line);
@@ -642,34 +517,29 @@ footer{
   margin-bottom:11px;
   color:#898990;
   font-size:13px;
-  line-height:1.45;
 }
 
-.footerCol a:hover{
-  color:var(--red);
-}
+.footerCol a:hover{color:var(--red)}
 
 .footerBottom{
   min-height:66px;
   padding:15px 0;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
   border-top:1px solid var(--line);
   color:#707077;
   font-size:11px;
 }
 
-/* ==============================
-   FLOAT WHATSAPP
-   ============================== */
+/* WHATSAPP */
 
-.whatsappFloat{
+.whatsapp{
   position:fixed;
-  z-index:800;
   right:22px;
   bottom:22px;
+  z-index:800;
   width:55px;
   height:55px;
   display:grid;
@@ -677,14 +547,11 @@ footer{
   border-radius:50%;
   background:var(--red);
   color:#fff;
-  font-size:17px;
   font-weight:900;
   box-shadow:0 12px 35px rgba(239,27,36,.35);
 }
 
-/* ==============================
-   PRODUCT MODAL
-   ============================== */
+/* MODAL */
 
 .modal{
   display:none;
@@ -692,26 +559,23 @@ footer{
   inset:0;
   z-index:5000;
   padding:22px;
-  background:rgba(0,0,0,.92);
-  backdrop-filter:blur(11px);
   align-items:center;
   justify-content:center;
+  background:rgba(0,0,0,.92);
+  backdrop-filter:blur(11px);
 }
 
-.modal.show{
-  display:flex;
-}
+.modal.show{display:flex}
 
 .modalBox{
+  position:relative;
   width:min(1040px,100%);
   max-height:92vh;
   overflow:auto;
-  position:relative;
   display:grid;
   grid-template-columns:1fr 1fr;
-  background:#0c0c0f;
   border:1px solid #303037;
-  box-shadow:0 35px 100px rgba(0,0,0,.65);
+  background:#0c0c0f;
 }
 
 .modalImage{
@@ -719,27 +583,25 @@ footer{
   display:flex;
   align-items:center;
   justify-content:center;
-  background:
-    radial-gradient(circle at center,rgba(239,27,36,.07),transparent 55%),
-    #080809;
+  background:#080809;
 }
 
 .modalImage img{
   width:100%;
   height:100%;
   max-height:680px;
-  padding:14px;
   object-fit:contain;
+  padding:14px;
 }
 
 .modalContent{
-  padding:47px 40px;
+  padding:46px 40px;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
 
-.modalEyebrow{
+.modalLabel{
   color:var(--red);
   font-size:9px;
   font-weight:900;
@@ -751,50 +613,48 @@ footer{
   margin:12px 0 16px;
   font-size:clamp(34px,4vw,52px);
   line-height:.95;
-  letter-spacing:-.04em;
   text-transform:uppercase;
 }
 
 .modalDescription{
+  margin-bottom:22px;
   color:#aaaab1;
   font-size:14px;
   line-height:1.7;
-  margin-bottom:22px;
 }
 
-.detailBox{
+.detail{
   margin-bottom:9px;
   padding:13px 14px;
   border:1px solid #29292f;
   background:#111114;
 }
 
-.detailBox strong{
+.detail strong{
   display:block;
   margin-bottom:5px;
-  color:#fff;
   font-size:10px;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
 
-.detailBox span{
+.detail span{
   color:#b2b2b8;
   font-size:13px;
   line-height:1.55;
 }
 
 .modalActions{
-  margin-top:18px;
   display:flex;
-  flex-wrap:wrap;
   gap:9px;
+  flex-wrap:wrap;
+  margin-top:18px;
 }
 
-.modalClose{
+.close{
   position:absolute;
-  right:13px;
   top:13px;
+  right:13px;
   z-index:10;
   width:42px;
   height:42px;
@@ -805,52 +665,21 @@ footer{
   cursor:pointer;
 }
 
-.modalClose:hover{
-  color:var(--red);
-  border-color:var(--red);
-}
-
-/* ==============================
-   TABLET
-   ============================== */
+/* RESPONSIVE */
 
 @media(max-width:1050px){
-
-  .mainNav{
-    gap:14px;
-  }
-
-  .mainNav a{
-    font-size:9px;
-  }
-
-  .productGrid{
-    grid-template-columns:repeat(3,minmax(0,1fr));
-  }
-
+  .mainNav{gap:14px}
+  .mainNav a{font-size:9px}
+  .productGrid{grid-template-columns:repeat(3,1fr)}
 }
-
-/* ==============================
-   MOBILE
-   ============================== */
 
 @media(max-width:900px){
 
-  .wrap{
-    width:calc(100% - 30px);
-  }
+  .wrap{width:calc(100% - 30px)}
 
-  .navWrap{
-    height:70px;
-  }
-
-  .logo img{
-    height:51px;
-  }
-
-  .menuBtn{
-    display:flex;
-  }
+  .navWrap{height:70px}
+  .logo img{height:51px}
+  .menuBtn{display:flex}
 
   .mainNav{
     position:fixed;
@@ -863,13 +692,11 @@ footer{
     flex-direction:column;
     align-items:stretch;
     gap:0;
-    background:rgba(5,5,6,.99);
+    background:#050506;
     overflow:auto;
   }
 
-  .mainNav.open{
-    display:flex;
-  }
+  .mainNav.open{display:flex}
 
   .mainNav a{
     width:100%;
@@ -878,119 +705,78 @@ footer{
     font-size:13px;
   }
 
-  .mainNav a::after{
-    display:none !important;
-  }
+  .mainNav a::after{display:none!important}
 
   .navCta{
     margin-top:14px;
     text-align:center;
   }
 
-  .hero{
-    padding:125px 0 70px;
-  }
+  .hero{padding:125px 0 70px}
 
-  .catalogIntro{
+  .catalogHeader{
     grid-template-columns:1fr;
     gap:18px;
   }
 
-  .productGrid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
+  .productGrid{grid-template-columns:repeat(2,1fr)}
 
-  .customBanner{
+  .ctaBanner{
     grid-template-columns:1fr;
     padding:40px 30px;
   }
 
-  .footerGrid{
-    grid-template-columns:1fr 1fr;
-  }
+  .footerGrid{grid-template-columns:1fr 1fr}
 
-  .modalBox{
-    grid-template-columns:1fr;
-  }
+  .modalBox{grid-template-columns:1fr}
 
   .modalImage{
-    height:430px;
-    min-height:430px;
+    min-height:420px;
+    height:420px;
   }
-
 }
-
-/* ==============================
-   PHONE
-   ============================== */
 
 @media(max-width:600px){
 
-  .wrap{
-    width:calc(100% - 26px);
-  }
+  .wrap{width:calc(100% - 26px)}
 
   .hero{
     padding:110px 0 58px;
   }
 
-  .hero h1{
-    font-size:51px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
+  .hero h1{font-size:51px}
+  .hero p{font-size:15px}
 
   .heroStats{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
   }
 
-  .heroStat{
-    min-width:0;
-  }
+  .stat{min-width:0}
 
-  .catalog{
-    padding:62px 0 75px;
-  }
+  .catalog{padding:65px 0 75px}
 
-  .catalogIntro h2{
-    font-size:42px;
-  }
+  .catalogHeader h2{font-size:42px}
 
-  .toolBar{
-    align-items:stretch;
-  }
+  .toolbar{align-items:stretch}
 
   .filters{
     width:100%;
-    overflow-x:auto;
     flex-wrap:nowrap;
-    padding-bottom:4px;
+    overflow-x:auto;
+    padding-bottom:5px;
   }
 
-  .filterBtn{
-    flex:0 0 auto;
-  }
+  .filterBtn{flex:0 0 auto}
 
-  .searchBox{
-    width:100%;
-  }
+  .search{width:100%}
 
-  .productGrid{
-    grid-template-columns:1fr;
-  }
+  .productGrid{grid-template-columns:1fr}
 
-  .productImage{
-    height:320px;
-  }
+  .productImage{height:320px}
+  .productInfo{min-height:auto}
 
-  .productInfo{
-    min-height:auto;
-  }
-
-  .customBanner{
+  .ctaBanner{
     margin-top:50px;
     padding:34px 22px;
   }
@@ -1010,43 +796,34 @@ footer{
     align-items:flex-start;
   }
 
-  .modalBox{
-    margin-top:8px;
-  }
+  .modalBox{margin-top:8px}
 
   .modalImage{
     min-height:300px;
     height:310px;
   }
 
-  .modalContent{
-    padding:30px 21px;
-  }
+  .modalContent{padding:30px 21px}
 
   .modalActions{
     flex-direction:column;
   }
 
-  .modalActions .btn{
-    width:100%;
-  }
+  .modalActions .btn{width:100%}
 
-  .whatsappFloat{
-    width:50px;
-    height:50px;
+  .whatsapp{
     right:14px;
     bottom:14px;
+    width:50px;
+    height:50px;
   }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <header class="siteHeader">
-
   <div class="wrap navWrap">
 
     <a class="logo" href="./">
@@ -1054,7 +831,6 @@ footer{
     </a>
 
     <nav class="mainNav" id="mainNav">
-
       <a href="./">Home</a>
       <a href="products.html" class="active">Products</a>
       <a href="fabrics.html">Fabrics</a>
@@ -1062,33 +838,23 @@ footer{
       <a href="./#custom">Customization</a>
       <a href="./#about">About</a>
       <a href="contact.html">Contact</a>
-
-      <a href="contact.html" class="navCta">
-        Get a Quote
-      </a>
-
+      <a href="contact.html" class="navCta">Get a Quote</a>
     </nav>
 
-    <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <button class="menuBtn" id="menuBtn" aria-label="Open menu">
       <span class="menuIcon">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </span>
     </button>
 
   </div>
-
 </header>
 
 
 <section class="hero">
-
   <div class="wrap heroContent">
 
-    <div class="eyebrow">
-      UZ Industry • Custom Sportswear
-    </div>
+    <div class="eyebrow">UZ Industry • Custom Sportswear</div>
 
     <h1>
       One manufacturer.<br>
@@ -1097,28 +863,28 @@ footer{
 
     <p>
       Explore custom uniforms, performance apparel, teamwear and accessories
-      manufactured according to your colors, logos, names, numbers, fabrics,
-      sizing and design requirements.
+      manufactured according to your colors, logos, names, numbers,
+      fabrics, sizing and design requirements.
     </p>
 
     <div class="heroStats">
 
-      <div class="heroStat">
+      <div class="stat">
         <strong>26+</strong>
         <span>Product Categories</span>
       </div>
 
-      <div class="heroStat">
+      <div class="stat">
         <strong>10</strong>
         <span>Pieces Minimum Order</span>
       </div>
 
-      <div class="heroStat">
+      <div class="stat">
         <strong>100%</strong>
         <span>Customizable</span>
       </div>
 
-      <div class="heroStat">
+      <div class="stat">
         <strong>Global</strong>
         <span>Client Support</span>
       </div>
@@ -1126,7 +892,6 @@ footer{
     </div>
 
   </div>
-
 </section>
 
 
@@ -1134,287 +899,750 @@ footer{
 
   <div class="wrap">
 
-    <div class="catalogIntro">
+    <div class="catalogHeader">
 
       <div>
-
-        <div class="eyebrow">
-          Complete Product Range
-        </div>
-
-        <h2>
-          Choose your <span class="red">sport.</span>
-        </h2>
-
+        <div class="eyebrow">Complete Product Range</div>
+        <h2>Choose your <span class="red">sport.</span></h2>
       </div>
 
       <p>
-        Browse the full UZ Industry product range. Select any product
-        to view suggested fabric, construction, customization options
-        and minimum order quantity.
+        Select any product to view its recommended material,
+        performance characteristics, construction and available
+        customization options.
       </p>
 
     </div>
 
 
-    <div class="toolBar">
+    <div class="toolbar">
 
       <div class="filters">
-
-        <button class="filterBtn active" data-filter="all">
-          All Products
-        </button>
-
-        <button class="filterBtn" data-filter="team">
-          Team Sports
-        </button>
-
-        <button class="filterBtn" data-filter="combat">
-          Combat
-        </button>
-
-        <button class="filterBtn" data-filter="performance">
-          Performance
-        </button>
-
-        <button class="filterBtn" data-filter="teamwear">
-          Teamwear
-        </button>
-
-        <button class="filterBtn" data-filter="accessories">
-          Accessories
-        </button>
-
+        <button class="filterBtn active" data-filter="all">All</button>
+        <button class="filterBtn" data-filter="team">Team Sports</button>
+        <button class="filterBtn" data-filter="combat">Combat</button>
+        <button class="filterBtn" data-filter="performance">Performance</button>
+        <button class="filterBtn" data-filter="teamwear">Teamwear</button>
+        <button class="filterBtn" data-filter="accessories">Accessories</button>
       </div>
 
-
-      <div class="searchBox">
-
-        <input
-          id="productSearch"
-          type="search"
-          placeholder="Search products..."
-          aria-label="Search products">
-
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search products...">
       </div>
 
     </div>
 
 
-    <div class="productGrid" id="productGrid">
+    <div class="productGrid" id="productGrid"></div>
 
+    <div class="noResults" id="noResults">
+      <h3>No products found</h3>
+      <p>Try another product name or category.</p>
+    </div>
 
-      <article class="productCard" data-category="team" data-name="american football uniforms" onclick="openProduct('american')">
 
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="american-football.jpg.jpeg" alt="American Football Uniform">
-        </div>
+    <div class="ctaBanner">
 
-        <div class="productInfo">
-          <small>Custom Game Uniform</small>
-          <h3>American Football</h3>
-          <p>Durable custom game uniforms for teams, clubs and organizations.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
+      <div>
 
-      </article>
+        <div class="eyebrow">Made For Your Brand</div>
 
+        <h2>
+          Can't find exactly what you need?
+          <span class="red">Build it custom.</span>
+        </h2>
 
-      <article class="productCard" data-category="team" data-name="7v7 uniforms" onclick="openProduct('seven')">
+        <p>
+          Send your reference image, design, quantity, colors and
+          specifications. UZ Industry can discuss a custom product
+          according to your requirements.
+        </p>
 
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="7v7-uniform.jpg.jpeg" alt="7v7 Uniform">
-        </div>
+      </div>
 
-        <div class="productInfo">
-          <small>Lightweight Performance</small>
-          <h3>7v7 Uniforms</h3>
-          <p>Lightweight custom uniforms designed for speed and movement.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
+      <a class="btn btnPrimary" href="contact.html">
+        Start Custom Order →
+      </a>
 
-      </article>
+    </div>
 
+  </div>
 
-      <article class="productCard" data-category="team" data-name="football soccer kits uniforms" onclick="openProduct('football')">
+</main>
 
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="football-uniform.jpg.jpeg" alt="Football Kit">
-        </div>
 
-        <div class="productInfo">
-          <small>Custom Football Kit</small>
-          <h3>Football Kits</h3>
-          <p>Custom football uniforms for clubs, academies and teams.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
+<footer>
 
-      </article>
+  <div class="wrap footerGrid">
 
+    <div class="footerBrand">
+      <img src="uz-logo.png.PNG" alt="UZ Industry">
+      <p>
+        Premium custom sportswear and teamwear manufactured
+        in Sialkot, Pakistan.
+      </p>
+    </div>
 
-      <article class="productCard" data-category="team" data-name="cricket kits uniforms" onclick="openProduct('cricket')">
+    <div class="footerCol">
+      <h4>Explore</h4>
+      <a href="./">Home</a>
+      <a href="products.html">Products</a>
+      <a href="fabrics.html">Fabrics</a>
+      <a href="./#manufacturing">Manufacturing</a>
+    </div>
 
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="cricket-kit.jpg.jpeg" alt="Cricket Kit">
-        </div>
+    <div class="footerCol">
+      <h4>Company</h4>
+      <a href="./#about">About</a>
+      <a href="contact.html">Contact</a>
+      <span>Sialkot, Pakistan</span>
+    </div>
 
-        <div class="productInfo">
-          <small>Match & Training</small>
-          <h3>Cricket Kits</h3>
-          <p>Custom match and training apparel for cricket teams.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
+    <div class="footerCol">
+      <h4>Contact</h4>
+      <a href="https://wa.me/923160797211" target="_blank">
+        +92 316 0797211
+      </a>
+      <a href="mailto:uzindustryofficial@gmail.com">
+        uzindustryofficial@gmail.com
+      </a>
+      <a href="https://www.instagram.com/uzindustry.official/" target="_blank">
+        Instagram
+      </a>
+    </div>
 
-      </article>
+  </div>
 
+  <div class="wrap footerBottom">
+    <span>© 2026 UZ Industry. All rights reserved.</span>
+    <span>Custom Sportswear Manufacturer • Sialkot, Pakistan</span>
+  </div>
 
-      <article class="productCard" data-category="team" data-name="basketball uniforms jerseys shorts" onclick="openProduct('basketball')">
+</footer>
 
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="basketball-uniform.jpg.jpeg" alt="Basketball Uniform">
-        </div>
 
-        <div class="productInfo">
-          <small>Custom Jersey & Shorts</small>
-          <h3>Basketball Uniforms</h3>
-          <p>Performance jerseys and shorts with custom team finishing.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
+<a
+class="whatsapp"
+href="https://wa.me/923160797211?text=Hello%20UZ%20Industry%2C%20I%20would%20like%20to%20discuss%20a%20custom%20sportswear%20order."
+target="_blank"
+aria-label="WhatsApp UZ Industry">W</a>
 
-      </article>
 
+<div class="modal" id="productModal">
 
-      <article class="productCard" data-category="team" data-name="volleyball uniforms" onclick="openProduct('volleyball')">
+  <div class="modalBox">
 
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="volleyball-uniform.jpg.jpeg" alt="Volleyball Uniform">
-        </div>
+    <button class="close" id="closeModal">×</button>
 
-        <div class="productInfo">
-          <small>Performance Uniform</small>
-          <h3>Volleyball Uniforms</h3>
-          <p>Lightweight custom volleyball uniforms for competitive teams.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
+    <div class="modalImage">
+      <img id="modalImage" src="" alt="">
+    </div>
 
-      </article>
+    <div class="modalContent">
 
+      <div class="modalLabel">
+        UZ Industry • Custom Sportswear
+      </div>
 
-      <article class="productCard" data-category="team" data-name="rugby uniforms" onclick="openProduct('rugby')">
+      <h2 id="modalTitle"></h2>
 
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="rugby-uniform.jpg.jpeg" alt="Rugby Uniform">
-        </div>
+      <p class="modalDescription" id="modalDescription"></p>
 
-        <div class="productInfo">
-          <small>Durable Team Uniform</small>
-          <h3>Rugby Uniforms</h3>
-          <p>Strong custom rugby apparel developed for physical competition.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
-
-      </article>
-
-
-      <article class="productCard" data-category="team" data-name="baseball uniforms jerseys pants" onclick="openProduct('baseball')">
-
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="baseball-uniform.jpg.jpeg" alt="Baseball Uniform">
-        </div>
-
-        <div class="productInfo">
-          <small>Complete Team Uniform</small>
-          <h3>Baseball Uniforms</h3>
-          <p>Custom baseball jerseys, pants and coordinated team apparel.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
-
-      </article>
-
-
-      <article class="productCard" data-category="team" data-name="softball uniforms" onclick="openProduct('softball')">
-
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="softball-uniform.jpg.jpeg" alt="Softball Uniform">
-        </div>
-
-        <div class="productInfo">
-          <small>Performance Teamwear</small>
-          <h3>Softball Uniforms</h3>
-          <p>Flexible custom softball apparel with complete team branding.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
-
-      </article>
-
-
-      <article class="productCard" data-category="team" data-name="ice hockey uniforms hockey jerseys" onclick="openProduct('hockey')">
-
-        <div class="productImage">
-          <span class="categoryTag">Team Sports</span>
-          <img src="ice-hockey-uniform.jpg.jpeg" alt="Ice Hockey Uniform">
-        </div>
-
-        <div class="productInfo">
-          <small>Custom Hockey Apparel</small>
-          <h3>Ice Hockey Uniforms</h3>
-          <p>Custom hockey jerseys and team apparel built around your identity.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
-
-      </article>
-
-
-      <article class="productCard" data-category="combat" data-name="wrestling singlets" onclick="openProduct('wrestling')">
-
-        <div class="productImage">
-          <span class="categoryTag">Combat</span>
-          <img src="wrestling-singlet.jpg.jpeg" alt="Wrestling Singlet">
-        </div>
-
-        <div class="productInfo">
-          <small>4-Way Stretch</small>
-          <h3>Wrestling Singlets</h3>
-          <p>Competition-ready stretch singlets for wrestling teams.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
-
-      </article>
-
-
-      <article class="productCard" data-category="combat" data-name="boxing uniforms shorts" onclick="openProduct('boxing')">
-
-        <div class="productImage">
-          <span class="categoryTag">Combat</span>
-          <img src="boxing-uniform.jpg.jpeg" alt="Boxing Uniform">
-        </div>
-
-        <div class="productInfo">
-          <small>Premium Fightwear</small>
-          <h3>Boxing Uniforms</h3>
-          <p>Custom boxing apparel for competition and training.</p>
-          <span class="viewLink">View Details →</span>
-        </div>
-
-      </article>
-
-
-      <article class="productCard" data-category="combat performance" data-name="mma wear fightwear rashguard shorts" onclick="openProduct('mma')">
-
-        <div class="productImage">
-          <span class="categoryTag">Combat</span>
-          <img src="mma-wear.jpg.jpeg" alt="MMA Wear">
-        </div>
-
-        <div class="productInfo">
-          <small>Fight & Training</small>
-          <h3>MMA Wear</h3>
+      <div class="detail">
+        <strong>Recommended Fabric</strong>
+        <span id="modalFabric"></span>
+      </div>
+
+      <div class="detail">
+        <strong>Performance Benefits</strong>
+        <span id="modalBenefit"></span>
+      </div>
+
+      <div class="detail">
+        <strong>Construction</strong>
+        <span id="modalConstruction"></span>
+      </div>
+
+      <div class="detail">
+        <strong>Customization</strong>
+        <span id="modalCustomization"></span>
+      </div>
+
+      <div class="detail">
+        <strong>Minimum Order Quantity</strong>
+        <span>10 Pieces</span>
+      </div>
+
+      <div class="modalActions">
+
+        <a href="contact.html" class="btn btnPrimary">
+          Get a Quote →
+        </a>
+
+        <a
+        id="modalWhatsapp"
+        href="#"
+        target="_blank"
+        class="btn">
+          WhatsApp Inquiry
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const mainNav = document.getElementById("mainNav");
+
+menuBtn.onclick = function(){
+  mainNav.classList.toggle("open");
+  document.body.classList.toggle("lock",mainNav.classList.contains("open"));
+};
+
+mainNav.querySelectorAll("a").forEach(link=>{
+  link.onclick=()=>{
+    mainNav.classList.remove("open");
+    document.body.classList.remove("lock");
+  };
+});
+
+
+/* PRODUCT DATABASE */
+
+const products = [
+
+{
+name:"American Football Uniforms",
+image:"american-football.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Custom Game Uniform",
+description:"Premium custom American football uniforms for competitive teams, clubs and organizations.",
+fabric:"Heavyweight Performance Polyester + Breathable Mesh",
+benefit:"Durable, breathable and suitable for demanding team competition.",
+construction:"Reinforced stitching with performance-focused panel construction.",
+customization:"Full team colors, graphics, numbers, player names, logos and sizing."
+},
+
+{
+name:"7v7 Uniforms",
+image:"7v7-uniform.jpg.jpeg",
+category:"team performance",
+tag:"Team Sports",
+subtitle:"Lightweight Performance",
+description:"Lightweight custom 7v7 uniforms developed for speed, movement and competitive play.",
+fabric:"Lightweight Dri-Fit Performance Polyester",
+benefit:"Breathable, quick-drying and lightweight for fast movement.",
+construction:"Athletic performance fit with durable seams.",
+customization:"Custom graphics, team colors, names, numbers and logos."
+},
+
+{
+name:"Football Kits",
+image:"football-uniform.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Custom Football Kit",
+description:"Custom football kits for clubs, academies, schools and competitive teams.",
+fabric:"Dri-Fit Polyester / Bird Eye Mesh",
+benefit:"Breathable, lightweight and quick-drying.",
+construction:"Athletic jersey and shorts construction for unrestricted movement.",
+customization:"Full sublimation, team colors, names, numbers and club logos."
+},
+
+{
+name:"Cricket Kits",
+image:"cricket-kit.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Match & Training",
+description:"Custom cricket match and training apparel developed for complete team presentation.",
+fabric:"Performance Interlock Polyester / Dri-Fit",
+benefit:"Lightweight and comfortable for long-duration matches.",
+construction:"Performance cut with durable seams and moisture-management fabric.",
+customization:"Team colors, logos, names, numbers and custom designs."
+},
+
+{
+name:"Basketball Uniforms",
+image:"basketball-uniform.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Jersey & Shorts",
+description:"Custom basketball jerseys and shorts for professional team presentation and movement.",
+fabric:"Bird Eye Mesh / Interlock Polyester",
+benefit:"Excellent airflow and lightweight comfort.",
+construction:"Sleeveless athletic jersey with performance shorts.",
+customization:"Sublimation, colors, player names, numbers and team logos."
+},
+
+{
+name:"Volleyball Uniforms",
+image:"volleyball-uniform.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Performance Uniform",
+description:"Lightweight custom volleyball uniforms designed for active competitive teams.",
+fabric:"Lightweight Interlock Polyester / Dri-Fit",
+benefit:"Flexible, breathable and comfortable during fast movement.",
+construction:"Athletic performance cut with reinforced stitching.",
+customization:"Team colors, graphics, numbers, names and logos."
+},
+
+{
+name:"Rugby Uniforms",
+image:"rugby-uniform.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Durable Uniform",
+description:"Strong custom rugby uniforms designed around the demands of physical competition.",
+fabric:"Heavyweight Polyester + Stretch Panels",
+benefit:"Durable with flexibility for contact sport movement.",
+construction:"Strong seams and reinforced performance panels.",
+customization:"Custom colors, panel designs, numbers, names and logos."
+},
+
+{
+name:"Baseball Uniforms",
+image:"baseball-uniform.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Complete Uniform",
+description:"Custom baseball jerseys and coordinated team apparel for clubs and organizations.",
+fabric:"Double-Knit Performance Polyester",
+benefit:"Structured, durable and comfortable for repeated game use.",
+construction:"Professional jersey construction with durable seams.",
+customization:"Colors, piping, names, numbers, embroidery and printing."
+},
+
+{
+name:"Softball Uniforms",
+image:"softball-uniform.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Performance Teamwear",
+description:"Custom softball uniforms with flexible construction and complete team branding.",
+fabric:"Performance Polyester / Polyester-Spandex",
+benefit:"Good durability, breathability and flexible movement.",
+construction:"Athletic construction with stretch capability.",
+customization:"Custom patterns, colors, team logos, names and numbers."
+},
+
+{
+name:"Ice Hockey Uniforms",
+image:"ice-hockey-uniform.jpg.jpeg",
+category:"team",
+tag:"Team Sports",
+subtitle:"Custom Hockey Apparel",
+description:"Custom ice hockey jerseys and coordinated apparel designed around your team identity.",
+fabric:"Heavyweight Polyester Mesh / Air-Knit",
+benefit:"Breathable while providing suitable durability.",
+construction:"Roomy construction suitable for protective equipment.",
+customization:"Team colors, names, numbers, logos and custom graphics."
+},
+
+{
+name:"Wrestling Singlets",
+image:"wrestling-singlet.jpg.jpeg",
+category:"combat performance",
+tag:"Combat",
+subtitle:"4-Way Stretch",
+description:"Competition-focused custom wrestling singlets with flexible body movement.",
+fabric:"Polyester-Spandex 4-Way Stretch",
+benefit:"High stretch, close fit and excellent shape recovery.",
+construction:"Compression-style athletic construction.",
+customization:"Sublimation, colors, team graphics, logos and names."
+},
+
+{
+name:"Boxing Uniforms",
+image:"boxing-uniform.jpg.jpeg",
+category:"combat",
+tag:"Combat",
+subtitle:"Premium Fightwear",
+description:"Custom boxing ring and training apparel with traditional athletic presentation.",
+fabric:"Premium Polyester Satin",
+benefit:"Smooth, lightweight and comfortable.",
+construction:"Loose athletic construction with durable waistband and seams.",
+customization:"Colors, embroidery, logos, names and waistband designs."
+},
+
+{
+name:"MMA Wear",
+image:"mma-wear.jpg.jpeg",
+category:"combat performance",
+tag:"Combat",
+subtitle:"Fight & Training",
+description:"Custom fight and training apparel for MMA athletes, teams and gyms.",
+fabric:"Polyester-Spandex + Micro-Stretch Polyester",
+benefit:"Flexible, quick-drying and suitable for intense movement.",
+construction:"Compression and fightwear construction with reinforced areas.",
+customization:"Full graphics, gym branding, names, colors and logos."
+},
+
+{
+name:"Gym & Fitness Wear",
+image:"gym-fitness-wear.jpg.jpeg",
+category:"performance",
+tag:"Performance",
+subtitle:"Training Apparel",
+description:"Performance activewear developed for gym, training and fitness applications.",
+fabric:"Dri-Fit Polyester / Polyester-Spandex",
+benefit:"Breathable, lightweight and flexible.",
+construction:"Athletic fit designed for training movement.",
+customization:"Colors, logos, panel designs, sizing and private-label options."
+},
+
+{
+name:"Cycling Wear",
+image:"cycling-wear.jpg.jpeg",
+category:"performance",
+tag:"Performance",
+subtitle:"Technical Cycling",
+description:"Custom technical cycling apparel designed for clubs and performance riders.",
+fabric:"Polyester-Spandex Performance Lycra",
+benefit:"Flexible, aerodynamic and moisture-managing.",
+construction:"Close athletic fit with stretch performance panels.",
+customization:"Sublimation, sponsor logos, club graphics, colors and names."
+},
+
+{
+name:"Tennis Wear",
+image:"tennis-wear.jpg.jpeg",
+category:"performance",
+tag:"Performance",
+subtitle:"Court Apparel",
+description:"Clean and lightweight custom tennis apparel for clubs and teams.",
+fabric:"Dri-Fit Polyester / Polyester-Spandex",
+benefit:"Quick-drying, lightweight and flexible.",
+construction:"Comfort-focused athletic cut for court movement.",
+customization:"Custom colors, designs, club logos and sizing."
+},
+
+{
+name:"Cheer Uniforms",
+image:"cheer-uniform.jpg.jpeg",
+category:"performance team",
+tag:"Performance",
+subtitle:"Competition Uniform",
+description:"Custom cheer uniforms designed for coordinated team performance and movement.",
+fabric:"Polyester-Spandex 4-Way Stretch",
+benefit:"Strong flexibility and shape recovery.",
+construction:"Secure performance fit with reinforced stitching.",
+customization:"Colors, graphics, team names, logos and decorative options."
+},
+
+{
+name:"Tracksuits",
+image:"tracksuit.jpg.jpeg",
+category:"teamwear",
+tag:"Teamwear",
+subtitle:"Premium Teamwear",
+description:"Custom tracksuits for training, team travel and coordinated presentation.",
+fabric:"Polyester Tricot / Interlock / Fleece",
+benefit:"Comfortable, durable and suitable for regular team use.",
+construction:"Jacket and trouser construction with athletic fit.",
+customization:"Colors, panels, stripes, embroidery, printing and logos."
+},
+
+{
+name:"Training Wear",
+image:"training-wear.jpg.jpeg",
+category:"performance teamwear",
+tag:"Teamwear",
+subtitle:"Training Collection",
+description:"Custom performance apparel designed for regular team training sessions.",
+fabric:"Dri-Fit / Interlock Polyester",
+benefit:"Breathable, durable and comfortable.",
+construction:"Performance athletic construction for repeated training.",
+customization:"Team colors, logos, names, panel designs and sizing."
+},
+
+{
+name:"Hoodies & Sweatshirts",
+image:"hoodies-sweatshirts.jpg.jpeg",
+category:"teamwear",
+tag:"Teamwear",
+subtitle:"Lifestyle Teamwear",
+description:"Custom hoodies and sweatshirts for teams, clubs and brands.",
+fabric:"Cotton-Polyester Fleece",
+benefit:"Warm, soft and durable.",
+construction:"Brushed interior with ribbed cuffs and strong seams.",
+customization:"Embroidery, printing, graphics, colors and private labels."
+},
+
+{
+name:"Polo Shirts",
+image:"polo-shirt.jpg.jpeg",
+category:"teamwear",
+tag:"Teamwear",
+subtitle:"Professional Apparel",
+description:"Custom polo shirts for teams, staff, clubs and organizations.",
+fabric:"Polyester Piqué / Cotton-Poly Piqué",
+benefit:"Breathable with a professional structured appearance.",
+construction:"Collar and placket construction with clean stitching.",
+customization:"Embroidery, logos, contrast panels, colors and labels."
+},
+
+{
+name:"Sports Shorts",
+image:"sports-shorts.jpg.jpeg",
+category:"performance teamwear",
+tag:"Performance",
+subtitle:"Athletic Shorts",
+description:"Custom sports shorts for competition, training and general athletic use.",
+fabric:"Performance Polyester / Micro-Stretch Polyester",
+benefit:"Lightweight, quick-drying and comfortable.",
+construction:"Elastic waistband with durable performance seams.",
+customization:"Colors, side panels, graphics, logos and sizing."
+},
+
+{
+name:"Compression Wear",
+image:"compression-wear.jpg.jpeg",
+category:"performance",
+tag:"Performance",
+subtitle:"Compression Apparel",
+description:"Custom compression apparel developed for athletic training and performance.",
+fabric:"Polyester-Spandex 4-Way Stretch",
+benefit:"High stretch, support and moisture management.",
+construction:"Close second-skin performance fit.",
+customization:"Sublimation, patterns, colors, logos and sizing."
+},
+
+{
+name:"Custom Team Wear",
+image:"custom-team-wear.jpg.jpeg",
+category:"teamwear",
+tag:"Teamwear",
+subtitle:"Fully Custom",
+description:"Fully customized apparel developed according to your team's specific requirements.",
+fabric:"Selected According to Product Requirements",
+benefit:"Material can be selected for breathability, durability, stretch or warmth.",
+construction:"Developed according to sport, fit and intended application.",
+customization:"Complete fabric, color, sizing, graphic and branding flexibility."
+},
+
+{
+name:"Sports Bags",
+image:"sports-bag.jpg.jpeg",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Team Equipment",
+description:"Custom sports bags for teams, athletes, clubs and organizations.",
+fabric:"600D Heavy-Duty Polyester",
+benefit:"Strong and abrasion-resistant for repeated travel and team use.",
+construction:"Reinforced handles, durable zippers and storage compartments.",
+customization:"Team colors, logos, embroidery, printing and dimensions."
+},
+
+{
+name:"Sports Socks",
+image:"sports-socks.jpg.jpeg",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Performance Accessories",
+description:"Custom team socks designed for athletic performance and coordinated team identity.",
+fabric:"Polyester-Nylon-Elastane Performance Blend",
+benefit:"Stretch, durability, moisture management and secure fit.",
+construction:"Reinforced heel and toe with ribbed performance construction.",
+customization:"Colors, knitted designs, logos, sizing and packaging."
+}
+
+];
+
+
+/* GENERATE PRODUCTS */
+
+const grid = document.getElementById("productGrid");
+
+function renderProducts(){
+
+  grid.innerHTML = products.map((product,index)=>`
+
+    <article
+      class="productCard"
+      data-index="${index}"
+      data-category="${product.category}"
+      data-name="${product.name.toLowerCase()}">
+
+      <div class="productImage">
+
+        <span class="category">
+          ${product.tag}
+        </span>
+
+        <img
+          src="${product.image}"
+          alt="${product.name}">
+
+      </div>
+
+      <div class="productInfo">
+
+        <small>
+          ${product.subtitle}
+        </small>
+
+        <h3>
+          ${product.name}
+        </h3>
+
+        <p>
+          ${product.description}
+        </p>
+
+        <span class="view">
+          View Details →
+        </span>
+
+      </div>
+
+    </article>
+
+  `).join("");
+
+  document.querySelectorAll(".productCard").forEach(card=>{
+
+    card.onclick=function(){
+
+      openProduct(Number(this.dataset.index));
+
+    };
+
+  });
+
+}
+
+renderProducts();
+
+
+/* FILTER + SEARCH */
+
+let activeFilter="all";
+
+const searchInput=document.getElementById("searchInput");
+const noResults=document.getElementById("noResults");
+
+function filterProducts(){
+
+  const search=searchInput.value.toLowerCase().trim();
+
+  let visible=0;
+
+  document.querySelectorAll(".productCard").forEach(card=>{
+
+    const categories=card.dataset.category;
+    const name=card.dataset.name;
+
+    const categoryMatch=
+      activeFilter==="all" ||
+      categories.includes(activeFilter);
+
+    const searchMatch=
+      !search ||
+      name.includes(search);
+
+    const show=categoryMatch && searchMatch;
+
+    card.style.display=show ? "" : "none";
+
+    if(show) visible++;
+
+  });
+
+  noResults.classList.toggle("show",visible===0);
+
+}
+
+document.querySelectorAll(".filterBtn").forEach(button=>{
+
+  button.onclick=function(){
+
+    document.querySelectorAll(".filterBtn")
+      .forEach(btn=>btn.classList.remove("active"));
+
+    this.classList.add("active");
+
+    activeFilter=this.dataset.filter;
+
+    filterProducts();
+
+  };
+
+});
+
+searchInput.addEventListener("input",filterProducts);
+
+
+/* PRODUCT MODAL */
+
+const modal=document.getElementById("productModal");
+
+function openProduct(index){
+
+  const product=products[index];
+
+  document.getElementById("modalImage").src=product.image;
+  document.getElementById("modalImage").alt=product.name;
+
+  document.getElementById("modalTitle").textContent=product.name;
+  document.getElementById("modalDescription").textContent=product.description;
+
+  document.getElementById("modalFabric").textContent=product.fabric;
+  document.getElementById("modalBenefit").textContent=product.benefit;
+  document.getElementById("modalConstruction").textContent=product.construction;
+  document.getElementById("modalCustomization").textContent=product.customization;
+
+  const message=
+    "Hello UZ Industry, I would like to inquire about " +
+    product.name +
+    ".";
+
+  document.getElementById("modalWhatsapp").href=
+    "https://wa.me/923160797211?text="+
+    encodeURIComponent(message);
+
+  modal.classList.add("show");
+  document.body.classList.add("lock");
+
+}
+
+function closeProductModal(){
+
+  modal.classList.remove("show");
+  document.body.classList.remove("lock");
+
+}
+
+document.getElementById("closeModal").onclick=closeProductModal;
+
+modal.onclick=function(e){
+
+  if(e.target===modal){
+    closeProductModal();
+  }
+
+};
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key==="Escape"){
+    closeProductModal();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
