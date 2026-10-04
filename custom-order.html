@@ -7,7 +7,7 @@
 <title>Start Custom Order | UZ Industry</title>
 <link rel="icon" type="image/png" href="./uz-logo.png.PNG">
 <link rel="apple-touch-icon" href="./uz-logo.png.PNG">
-<meta name="description" content="Start your custom sportswear order with UZ Industry. Select your product, quantity, fabric, colors, sizes, customization and design requirements.">
+<meta name="description" content="Start your custom sportswear order with UZ Industry. Select your product, quantity, fabric, colors, unlimited custom sizing, customization and design requirements.">
 
 <style>
 
@@ -347,7 +347,7 @@ button{
 .stepLabels{
   margin-top:14px;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(5,1fr);
   gap:10px;
 }
 
@@ -637,6 +637,153 @@ select option{
   min-height:38px;
   padding:8px;
   text-align:center;
+}
+
+
+/* =========================================================
+   ADVANCED SIZE & QUANTITY
+   ========================================================= */
+
+.sizeSetup{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-bottom:22px;
+}
+
+.sizeModeGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:22px;
+}
+
+.sizeMode{
+  position:relative;
+}
+
+.sizeMode input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.sizeMode span{
+  min-height:58px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border:1px solid #303037;
+  background:#09090b;
+  color:#aaaab1;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.sizeMode input:checked + span{
+  border-color:var(--red);
+  background:rgba(239,27,36,.12);
+  color:#fff;
+}
+
+.sizeBuilder{
+  display:grid;
+  gap:10px;
+}
+
+.sizeRow{
+  display:grid;
+  grid-template-columns:1.2fr .8fr auto;
+  gap:10px;
+  align-items:end;
+  padding:14px;
+  border:1px solid #29292f;
+  background:#0a0a0c;
+}
+
+.sizeRow .field{
+  margin:0;
+}
+
+.removeSize{
+  min-height:49px;
+  padding:0 15px;
+  border:1px solid #3a3a42;
+  background:#111114;
+  color:#c7c7cc;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.removeSize:hover{
+  border-color:var(--red);
+  color:#fff;
+}
+
+.sizeActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.measurementPanel{
+  display:none;
+  margin-top:20px;
+  padding:20px;
+  border:1px solid #29292f;
+  background:#09090b;
+}
+
+.measurementPanel.show{
+  display:block;
+}
+
+.measurementGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.measurementGrid .field{
+  margin:0;
+}
+
+.sizeSummary{
+  margin-top:18px;
+  padding:15px;
+  border-left:3px solid var(--red);
+  background:#111114;
+  color:#9b9ba3;
+  font-size:11px;
+  line-height:1.65;
+}
+
+@media(max-width:620px){
+  .sizeSetup,
+  .measurementGrid{
+    grid-template-columns:1fr;
+  }
+
+  .sizeModeGrid{
+    grid-template-columns:1fr;
+  }
+
+  .sizeRow{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .sizeRow .removeSize{
+    grid-column:1/-1;
+    width:100%;
+  }
 }
 
 /* =========================================================
@@ -1286,6 +1433,10 @@ footer{
           </div>
 
           <div class="stepLabel">
+            Size & Quantity
+          </div>
+
+          <div class="stepLabel">
             Review
           </div>
 
@@ -1688,7 +1839,7 @@ footer{
               </h2>
 
               <p>
-                Choose colors, branding, sizing and design requirements.
+                Choose colors, branding, decoration and design requirements.
               </p>
 
             </div>
@@ -1833,61 +1984,6 @@ footer{
             <div class="field" style="margin-top:25px;">
 
               <label class="fieldLabel">
-                Size Breakdown
-              </label>
-
-              <div class="sizeScroll">
-
-                <table class="sizeTable">
-
-                  <thead>
-                    <tr>
-                      <th>Size</th>
-                      <th>YS</th>
-                      <th>YM</th>
-                      <th>YL</th>
-                      <th>XS</th>
-                      <th>S</th>
-                      <th>M</th>
-                      <th>L</th>
-                      <th>XL</th>
-                      <th>2XL</th>
-                      <th>3XL</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>Qty</td>
-
-                      <td><input class="sizeQty" data-size="YS" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="YM" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="YL" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="XS" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="S" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="M" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="L" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="XL" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="2XL" type="number" min="0" value="0"></td>
-                      <td><input class="sizeQty" data-size="3XL" type="number" min="0" value="0"></td>
-
-                    </tr>
-                  </tbody>
-
-                </table>
-
-              </div>
-
-              <div class="hint">
-                If you do not know the size breakdown yet, you can leave this at zero and discuss sizing later.
-              </div>
-
-            </div>
-
-
-            <div class="field" style="margin-top:25px;">
-
-              <label class="fieldLabel">
                 Design / Order Notes
               </label>
 
@@ -1947,7 +2043,177 @@ footer{
             <div class="stepHead">
 
               <span class="stepNumber">
-                Step 04 • Review
+                Step 04 • Size & Quantity
+              </span>
+
+              <h2>
+                Build your
+                <span class="red">size breakdown.</span>
+              </h2>
+
+              <p>
+                Choose standard sizes, add any custom size you need, or confirm sizing later.
+                UZ Industry can manufacture custom sizing according to your approved requirements.
+              </p>
+
+            </div>
+
+            <div class="sizeSetup">
+
+              <div class="field">
+                <label class="fieldLabel">Size Group</label>
+                <select id="sizeGroup">
+                  <option value="Adult">Adult</option>
+                  <option value="Youth">Youth</option>
+                  <option value="Mixed Adult & Youth">Mixed Adult & Youth</option>
+                  <option value="Custom">Custom / Special Sizing</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="fieldLabel">Market / Region</label>
+                <select id="sizeRegion">
+                  <option value="International">International</option>
+                  <option value="US / Canada">US / Canada</option>
+                  <option value="UK">UK</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Australia / New Zealand">Australia / New Zealand</option>
+                  <option value="Other / Custom">Other / Custom</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="fieldLabel">Measurement Unit</label>
+                <select id="sizeUnit">
+                  <option value="cm">Centimeters (cm)</option>
+                  <option value="in">Inches (in)</option>
+                </select>
+              </div>
+
+            </div>
+
+            <label class="fieldLabel">Sizing Method</label>
+
+            <div class="sizeModeGrid">
+
+              <label class="sizeMode">
+                <input type="radio" name="sizeMode" value="Standard / Custom Size Breakdown" checked>
+                <span>Enter Size Quantities</span>
+              </label>
+
+              <label class="sizeMode">
+                <input type="radio" name="sizeMode" value="Custom Measurements">
+                <span>Custom Measurements</span>
+              </label>
+
+              <label class="sizeMode">
+                <input type="radio" name="sizeMode" value="Confirm Sizes Later">
+                <span>Confirm Sizes Later</span>
+              </label>
+
+            </div>
+
+            <div id="sizeEntryPanel">
+
+              <div class="sizeBuilder" id="sizeBuilder"></div>
+
+              <div class="sizeActions">
+                <button type="button" class="btn" id="addStandardSize">
+                  + Add Standard Size
+                </button>
+
+                <button type="button" class="btn" id="addCustomSize">
+                  + Add Any Custom Size
+                </button>
+              </div>
+
+              <div class="hint">
+                There is no fixed maximum size here. You can enter any required size label,
+                including 4XL, 5XL, 6XL, 7XL or a completely custom size.
+              </div>
+
+            </div>
+
+            <div class="measurementPanel" id="measurementPanel">
+
+              <div class="grid2">
+
+                <div class="field">
+                  <label class="fieldLabel">Player / Size Reference</label>
+                  <input id="measurementName" type="text" placeholder="Example: Player 12 / Custom XL">
+                </div>
+
+                <div class="field">
+                  <label class="fieldLabel">Quantity</label>
+                  <input id="measurementQty" type="number" min="1" placeholder="Example: 1">
+                </div>
+
+              </div>
+
+              <div class="measurementGrid">
+
+                <div class="field">
+                  <label class="fieldLabel">Chest</label>
+                  <input id="measureChest" type="number" min="0" step="0.1" placeholder="Optional">
+                </div>
+
+                <div class="field">
+                  <label class="fieldLabel">Waist</label>
+                  <input id="measureWaist" type="number" min="0" step="0.1" placeholder="Optional">
+                </div>
+
+                <div class="field">
+                  <label class="fieldLabel">Hip</label>
+                  <input id="measureHip" type="number" min="0" step="0.1" placeholder="Optional">
+                </div>
+
+                <div class="field">
+                  <label class="fieldLabel">Height</label>
+                  <input id="measureHeight" type="number" min="0" step="0.1" placeholder="Optional">
+                </div>
+
+                <div class="field">
+                  <label class="fieldLabel">Sleeve Length</label>
+                  <input id="measureSleeve" type="number" min="0" step="0.1" placeholder="Optional">
+                </div>
+
+                <div class="field">
+                  <label class="fieldLabel">Inseam</label>
+                  <input id="measureInseam" type="number" min="0" step="0.1" placeholder="Optional">
+                </div>
+
+              </div>
+
+              <div class="field" style="margin-top:15px;">
+                <label class="fieldLabel">Additional Measurement Notes</label>
+                <textarea id="measurementNotes" placeholder="Add any garment-specific measurements, fit notes or special sizing instructions..."></textarea>
+              </div>
+
+              <div class="hint">
+                Measurements are collected as buyer-provided requirements. Final garment measurements
+                can be confirmed with UZ Industry before production.
+              </div>
+
+            </div>
+
+            <div class="sizeSummary">
+              Size labels are flexible and are not limited to 3XL. If your team needs oversized,
+              youth, mixed, player-specific or special measurements, enter them here or confirm them with us later.
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               STEP 5
+               ============================================= -->
+
+          <div class="formStep" data-step="5">
+
+            <div class="stepHead">
+
+              <span class="stepNumber">
+                Step 05 • Review
               </span>
 
               <h2>
@@ -2256,7 +2522,7 @@ mainNav.querySelectorAll("a").forEach(function(link){
 
 let currentStep = 1;
 
-const totalSteps = 4;
+const totalSteps = 5;
 
 const steps =
   document.querySelectorAll(".formStep");
@@ -2284,6 +2550,7 @@ const stepTitles = [
   "Contact Information",
   "Product & Quantity",
   "Customization",
+  "Size & Quantity",
   "Review Order"
 ];
 
@@ -2513,33 +2780,202 @@ function selectedValues(name){
 }
 
 
+const sizeBuilder =
+  document.getElementById("sizeBuilder");
+
+const sizeEntryPanel =
+  document.getElementById("sizeEntryPanel");
+
+const measurementPanel =
+  document.getElementById("measurementPanel");
+
+const standardAdultSizes =
+  ["XXS","XS","S","M","L","XL","2XL","3XL","4XL","5XL","6XL","7XL"];
+
+const standardYouthSizes =
+  ["YXS","YS","YM","YL","YXL","Y2XL"];
+
+function getStandardSizes(){
+
+  const group =
+    document.getElementById("sizeGroup").value;
+
+  if(group === "Youth"){
+    return standardYouthSizes;
+  }
+
+  if(group === "Mixed Adult & Youth"){
+    return standardYouthSizes.concat(standardAdultSizes);
+  }
+
+  if(group === "Custom"){
+    return [];
+  }
+
+  return standardAdultSizes;
+
+}
+
+function createSizeRow(sizeValue="", qtyValue=0, custom=false){
+
+  const row =
+    document.createElement("div");
+
+  row.className = "sizeRow";
+
+  const options =
+    getStandardSizes()
+    .map(function(size){
+      return `<option value="${size}" ${size === sizeValue ? "selected" : ""}>${size}</option>`;
+    })
+    .join("");
+
+  row.innerHTML = `
+    <div class="field">
+      <label class="fieldLabel">Size</label>
+      ${
+        custom
+        ? `<input class="dynamicSizeLabel" type="text" value="${sizeValue}" placeholder="Any size: 8XL, Tall XL, Custom 01...">`
+        : `<select class="dynamicSizeLabel">
+             <option value="">Select size</option>
+             ${options}
+           </select>`
+      }
+    </div>
+
+    <div class="field">
+      <label class="fieldLabel">Quantity</label>
+      <input class="dynamicSizeQty" type="number" min="0" value="${qtyValue}">
+    </div>
+
+    <button type="button" class="removeSize">Remove</button>
+  `;
+
+  row.querySelector(".removeSize").onclick = function(){
+    row.remove();
+  };
+
+  sizeBuilder.appendChild(row);
+
+}
+
+function resetSizeRows(){
+
+  sizeBuilder.innerHTML = "";
+
+  const defaults =
+    getStandardSizes();
+
+  if(defaults.length){
+    defaults.slice(0,4).forEach(function(size){
+      createSizeRow(size,0,false);
+    });
+  }else{
+    createSizeRow("",0,true);
+  }
+
+}
+
+document.getElementById("addStandardSize").onclick = function(){
+  createSizeRow("",0,false);
+};
+
+document.getElementById("addCustomSize").onclick = function(){
+  createSizeRow("",0,true);
+};
+
+document.getElementById("sizeGroup").onchange = function(){
+  resetSizeRows();
+};
+
+document.querySelectorAll('input[name="sizeMode"]').forEach(function(input){
+
+  input.onchange = function(){
+
+    const mode =
+      document.querySelector('input[name="sizeMode"]:checked').value;
+
+    sizeEntryPanel.style.display =
+      mode === "Standard / Custom Size Breakdown"
+      ? "block"
+      : "none";
+
+    measurementPanel.classList.toggle(
+      "show",
+      mode === "Custom Measurements"
+    );
+
+  };
+
+});
+
 function getSizes(){
+
+  const mode =
+    document.querySelector('input[name="sizeMode"]:checked').value;
+
+  if(mode === "Confirm Sizes Later"){
+    return ["Sizes will be confirmed later"];
+  }
+
+  if(mode === "Custom Measurements"){
+    return ["Custom measurements provided separately"];
+  }
 
   const sizes = [];
 
+  document.querySelectorAll(".sizeRow").forEach(function(row){
 
-  document
-  .querySelectorAll(".sizeQty")
-  .forEach(function(input){
+    const label =
+      row.querySelector(".dynamicSizeLabel").value.trim();
 
     const qty =
-      Number(input.value || 0);
+      Number(row.querySelector(".dynamicSizeQty").value || 0);
 
-
-    if(qty > 0){
-
-      sizes.push(
-        input.dataset.size +
-        ": " +
-        qty
-      );
-
+    if(label && qty > 0){
+      sizes.push(label + ": " + qty);
     }
 
   });
 
-
   return sizes;
+
+}
+
+function getMeasurementData(){
+
+  const mode =
+    document.querySelector('input[name="sizeMode"]:checked').value;
+
+  if(mode !== "Custom Measurements"){
+    return [];
+  }
+
+  const unit =
+    document.getElementById("sizeUnit").value;
+
+  const fields = [
+    ["Reference", "measurementName", ""],
+    ["Quantity", "measurementQty", ""],
+    ["Chest", "measureChest", unit],
+    ["Waist", "measureWaist", unit],
+    ["Hip", "measureHip", unit],
+    ["Height", "measureHeight", unit],
+    ["Sleeve Length", "measureSleeve", unit],
+    ["Inseam", "measureInseam", unit],
+    ["Notes", "measurementNotes", ""]
+  ];
+
+  return fields
+    .map(function(item){
+      const value =
+        document.getElementById(item[1]).value.trim();
+
+      return value
+        ? item[0] + ": " + value + (item[2] ? " " + item[2] : "")
+        : "";
+    })
+    .filter(Boolean);
 
 }
 
@@ -2608,8 +3044,23 @@ function getOrderData(){
     customization:
       selectedValues("customization"),
 
+    sizeGroup:
+      document.getElementById("sizeGroup").value,
+
+    sizeRegion:
+      document.getElementById("sizeRegion").value,
+
+    sizeUnit:
+      document.getElementById("sizeUnit").value,
+
+    sizeMode:
+      document.querySelector('input[name="sizeMode"]:checked').value,
+
     sizes:
       getSizes(),
+
+    measurements:
+      getMeasurementData(),
 
     notes:
       document.getElementById("notes").value.trim(),
@@ -2718,8 +3169,29 @@ function buildReview(){
     ) +
 
     reviewBox(
+      "Size Group",
+      data.sizeGroup
+    ) +
+
+    reviewBox(
+      "Size Region",
+      data.sizeRegion
+    ) +
+
+    reviewBox(
+      "Sizing Method",
+      data.sizeMode
+    ) +
+
+    reviewBox(
       "Size Breakdown",
       data.sizes,
+      true
+    ) +
+
+    reviewBox(
+      "Custom Measurements",
+      data.measurements,
       true
     ) +
 
@@ -2770,7 +3242,12 @@ Target / Needed Date: ${data.deadline || "Not specified"}
 CUSTOMIZATION
 Colors: ${safeValue(data.colors)}
 Customization: ${safeValue(data.customization)}
+Size Group: ${data.sizeGroup}
+Market / Region: ${data.sizeRegion}
+Measurement Unit: ${data.sizeUnit}
+Sizing Method: ${data.sizeMode}
 Size Breakdown: ${safeValue(data.sizes)}
+Custom Measurements: ${safeValue(data.measurements)}
 
 DESIGN / ORDER NOTES
 ${data.notes || "No additional notes provided."}
@@ -2845,6 +3322,7 @@ document
    START
    ========================================================= */
 
+resetSizeRows();
 showStep(1);
 
 </script>
