@@ -48,6 +48,49 @@
   "https://www.youtube.com/@uzindustryofficial"
 ]
 }
+
+/* International size guide — single interactive system */
+const sizeSets={
+ adult:[
+  ["XS","32–34","81–86","66–71","160–168"],
+  ["S","34–36","86–91","71–76","165–173"],
+  ["M","38–40","96–102","81–86","170–178"],
+  ["L","42–44","107–112","91–97","175–183"],
+  ["XL","46–48","117–122","102–107","178–188"],
+  ["2XL","50–52","127–132","112–117","180–190"],
+  ["3XL","54–56","137–142","122–127","183–193"],
+  ["4XL","58–60","147–152","132–137","185–195"],
+  ["5XL","62–64","157–163","142–147","188–198"]
+ ],
+ youth:[
+  ["YXS","4–5","56–61","53–56","104–116"],
+  ["YS","6–7","61–66","56–58","116–128"],
+  ["YM","8–10","66–74","58–64","128–140"],
+  ["YL","12–14","74–84","64–71","140–158"],
+  ["YXL","16–18","84–91","71–76","158–170"]
+ ]
+};
+const regionLabels={US:"US / Canada",UK:"United Kingdom",EU:"Europe",AU:"Australia / NZ",INT:"International"};
+const regionMap={
+ US:s=>s,
+ UK:s=>s,
+ AU:s=>s,
+ INT:s=>s,
+ EU:s=>({"XS":"42–44","S":"44–46","M":"48–50","L":"52–54","XL":"56–58","2XL":"60–62","3XL":"64–66","4XL":"68–70","5XL":"72–74","YXS":"104–110","YS":"116–122","YM":"128–140","YL":"146–158","YXL":"164–170"}[s]||s)
+};
+function renderSizes(){
+ const region=document.getElementById("regionSelect");
+ const fit=document.getElementById("fitSelect");
+ const body=document.getElementById("sizeBody");
+ const head=document.getElementById("regionHead");
+ if(!region||!fit||!body||!head)return;
+ head.textContent=regionLabels[region.value];
+ body.innerHTML=sizeSets[fit.value].map(r=>`<tr><td>${r[0]}</td><td>${regionMap[region.value](r[0])}</td><td>${r[2]} cm</td><td>${r[3]} cm</td><td>${r[4]} cm</td></tr>`).join("");
+}
+document.getElementById("regionSelect")?.addEventListener("change",renderSizes);
+document.getElementById("fitSelect")?.addEventListener("change",renderSizes);
+renderSizes();
+
 </script>
   <style>
 
@@ -1883,6 +1926,51 @@ footer{
 
 }
 
+
+/* =========================================================
+   2026 PREMIUM HOMEPAGE UPGRADE
+   ========================================================= */
+.premiumProof{padding:95px 0;background:#070709;border-bottom:1px solid var(--line)}
+.proofGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.proofVisual{position:relative;min-height:590px;overflow:hidden;border:1px solid var(--line);background:#09090b}
+.proofVisual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.proofStamp{position:absolute;left:18px;bottom:18px;padding:13px 15px;background:rgba(5,5,6,.9);border:1px solid rgba(255,255,255,.12);font-size:9px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.proofContent h2,.mockupContent h2,.sizeContent h2,.faqTitle{margin:14px 0 20px;font-size:clamp(45px,5.7vw,78px);line-height:.91;letter-spacing:-.055em;text-transform:uppercase}
+.proofContent>p,.mockupContent>p,.sizeContent>p{color:#9b9ba3;font-size:14px;line-height:1.78}
+.productionRail{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:26px}
+.productionRail span{padding:15px 11px;border:1px solid var(--line);background:#0d0d10;color:#b8b8bf;font-size:9px;font-weight:900;text-align:center;text-transform:uppercase;letter-spacing:.08em}
+.mockupFeature{padding:105px 0;border-bottom:1px solid var(--line);background:radial-gradient(circle at 18% 10%,rgba(239,27,36,.12),transparent 30%),#09090b}
+.mockupGrid{display:grid;grid-template-columns:.88fr 1.12fr;gap:55px;align-items:center}
+.mockupVisual{min-height:610px;overflow:hidden;border:1px solid #303037;background:#08080a}
+.mockupVisual img{width:100%;height:610px;object-fit:cover}
+.mockupPoints{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:25px 0}
+.mockupPoint{padding:16px;border:1px solid var(--line);background:#0c0c0f}
+.mockupPoint strong{display:block;font-size:10px;text-transform:uppercase}
+.mockupPoint span{display:block;margin-top:5px;color:#818189;font-size:10px;line-height:1.5}
+.sizeGuide{padding:95px 0;background:#08080a;border-bottom:1px solid var(--line)}
+.sizeShell{border:1px solid var(--line);background:#0b0b0e;overflow:hidden}
+.sizeTop{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;padding:50px;border-bottom:1px solid var(--line);align-items:end}
+.sizeControls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.sizeControls label{display:block;color:#7f7f87;font-size:8px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;margin-bottom:7px}
+.sizeControls select{width:100%;height:48px;padding:0 13px;border:1px solid #33333a;background:#08080a;color:#fff;outline:none}
+.sizeTableWrap{overflow-x:auto;padding:25px 30px 34px}
+.sizeTable{width:100%;min-width:760px;border-collapse:collapse}
+.sizeTable th,.sizeTable td{padding:15px 14px;border-bottom:1px solid #29292f;text-align:center;font-size:11px}
+.sizeTable th{color:#fff;background:#101014;text-transform:uppercase;font-size:9px;letter-spacing:.08em}
+.sizeTable td:first-child,.sizeTable th:first-child{text-align:left;font-weight:900}
+.sizeNote{padding:0 30px 30px;color:#7e7e86;font-size:11px;line-height:1.65}
+.faqSection{padding:95px 0;border-bottom:1px solid var(--line)}
+.faqGrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}
+.faqList details{border-top:1px solid var(--line);padding:20px 0}
+.faqList details:last-child{border-bottom:1px solid var(--line)}
+.faqList summary{cursor:pointer;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+.faqList p{padding-top:13px;color:#92929a;font-size:12px;line-height:1.7}
+.socialTrust{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+.socialTrust a{padding:12px 14px;border:1px solid #303037;background:#0b0b0e;color:#c7c7cd;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;transition:.25s}
+.socialTrust a:hover{border-color:var(--red);color:#fff;transform:translateY(-2px)}
+@media(max-width:900px){.proofGrid,.mockupGrid,.sizeTop,.faqGrid{grid-template-columns:1fr}.productionRail{grid-template-columns:repeat(2,1fr)}.proofVisual,.mockupVisual,.mockupVisual img{min-height:480px;height:480px}}
+@media(max-width:620px){.premiumProof,.mockupFeature,.sizeGuide,.faqSection{padding:70px 0}.proofContent h2,.mockupContent h2,.sizeContent h2,.faqTitle{font-size:42px}.productionRail,.mockupPoints,.sizeControls{grid-template-columns:1fr}.sizeTop{padding:32px 22px}.sizeTableWrap{padding:18px 15px 25px}.sizeNote{padding:0 15px 25px}.proofVisual,.mockupVisual,.mockupVisual img{min-height:390px;height:390px}}
+
 </style>
 </head>
 
@@ -1934,19 +2022,19 @@ footer{
     <div>
 
       <div class="eyebrow">
-        Custom Sportswear Manufacturer • Sialkot, Pakistan
+        In-House Sportswear Manufacturing • Sialkot, Pakistan
       </div>
 
       <h1>
-        Your team.<br>
-        Your identity.<br>
-        <span class="red">Built to perform.</span>
+        Custom sportswear.<br>
+        Manufactured <span class="red">in-house.</span><br>
+        Built to perform.
       </h1>
 
       <p class="heroLead">
-        UZ Industry manufactures custom uniforms, performance apparel,
-        teamwear and private label products for teams, clubs,
-        organizations and emerging brands.
+        From concept and customization to cutting, decoration, stitching and quality control,
+        UZ Industry manufactures custom uniforms, teamwear and private-label sportswear
+        in Sialkot, Pakistan for buyers worldwide.
       </p>
 
       <div class="heroActions">
@@ -1956,14 +2044,14 @@ footer{
         </a>
 
         <a href="custom-order.html" class="btn btnPrimary">
-          Start Custom Order →
+          Get Free Mockup →
         </a>
 
       </div>
 
       <div class="heroMeta">
         <span class="metaChip">MOQ 10 Pieces</span>
-        <span class="metaChip">Full Customization</span>
+        <span class="metaChip">Free Digital Mockup</span>
         <span class="metaChip">Private Label Ready</span>
         <span class="metaChip">Worldwide Support</span>
       </div>
@@ -2075,6 +2163,26 @@ footer{
 
 </section>
 
+<section class="premiumProof" id="factory-proof">
+  <div class="wrap proofGrid">
+    <div class="proofVisual">
+      <img src="factory.jpg.jpeg" alt="Inside UZ Industry sportswear manufacturing in Sialkot" loading="lazy">
+      <div class="proofStamp">Inside UZ Industry • Sialkot, Pakistan</div>
+    </div>
+    <div class="proofContent">
+      <div class="eyebrow">Manufacturer, Not A Reseller</div>
+      <h2>Made here.<br><span class="red">Built for you.</span></h2>
+      <p>Your custom order moves through real production stages — from material preparation and cutting to decoration, stitching and final checking. Explore the factory process and see how UZ Industry turns a design into finished teamwear.</p>
+      <div class="productionRail">
+        <span>Cutting</span><span>Sublimation</span><span>Printing</span><span>Stitching</span>
+      </div>
+      <div class="heroActions">
+        <a href="#manufacturing" class="btn btnPrimary">See Manufacturing →</a>
+        <a href="https://www.youtube.com/@uzindustryofficial" target="_blank" rel="noopener" class="btn">Watch Production →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="productsSection">
 
@@ -3012,6 +3120,29 @@ footer{
 </section>
 
 
+<section class="mockupFeature" id="free-mockup">
+  <div class="wrap mockupGrid">
+    <div class="mockupContent">
+      <div class="eyebrow">Free Digital Custom Mockup</div>
+      <h2>See your kit<br><span class="red">before production.</span></h2>
+      <p>Send your logo, team colors, reference or existing concept. We can turn your idea into a digital custom presentation before you move forward with production.</p>
+      <div class="mockupPoints">
+        <div class="mockupPoint"><strong>Your Colors</strong><span>Build the visual around your team or brand identity.</span></div>
+        <div class="mockupPoint"><strong>Your Branding</strong><span>Logo, names, numbers and custom graphic direction.</span></div>
+        <div class="mockupPoint"><strong>No Public Pricing</strong><span>Quotation is prepared around product, quantity and requirements.</span></div>
+        <div class="mockupPoint"><strong>MOQ 10 Pieces</strong><span>Suitable for teams, clubs, academies and growing brands.</span></div>
+      </div>
+      <div class="heroActions">
+        <a href="custom-order.html" class="btn btnPrimary">Get My Free Mockup →</a>
+        <a href="contact.html" class="btn">Request A Quote →</a>
+      </div>
+    </div>
+    <div class="mockupVisual">
+      <img src="free-custom-mockup.png.png" alt="Custom sportswear digital mockup design process" loading="lazy">
+    </div>
+  </div>
+</section>
+
 <section class="customSection" id="custom">
 
   <div class="wrap">
@@ -3214,6 +3345,31 @@ footer{
 </section>
 
 
+<section class="sizeGuide" id="size-guide">
+  <div class="wrap sizeShell">
+    <div class="sizeTop">
+      <div class="sizeContent">
+        <div class="eyebrow">International Size Guide</div>
+        <h2>Choose your<br><span class="red">region & fit.</span></h2>
+      </div>
+      <div class="sizeContent">
+        <p>Select a country/region and age group. The guide updates in one place, keeping international sizing easy to compare. Custom sizing can also be discussed for team and private-label orders.</p>
+        <div class="sizeControls">
+          <div><label for="regionSelect">Country / Region</label><select id="regionSelect"><option value="US">United States / Canada</option><option value="UK">United Kingdom</option><option value="EU">Europe</option><option value="AU">Australia / New Zealand</option><option value="INT">International</option></select></div>
+          <div><label for="fitSelect">Size Group</label><select id="fitSelect"><option value="adult">Adult</option><option value="youth">Youth / Kids</option></select></div>
+        </div>
+      </div>
+    </div>
+    <div class="sizeTableWrap">
+      <table class="sizeTable">
+        <thead><tr><th>UZ Size</th><th id="regionHead">US / Canada</th><th>Chest</th><th>Waist</th><th>Height</th></tr></thead>
+        <tbody id="sizeBody"></tbody>
+      </table>
+    </div>
+    <p class="sizeNote">This guide is a general international reference for custom sportswear. Final garment measurements can be adjusted to the approved product specification, sport, fit and buyer requirements.</p>
+  </div>
+</section>
+
 <section class="aboutSection" id="about">
 
   <div class="wrap aboutGrid">
@@ -3271,7 +3427,14 @@ footer{
       </p>
 
 
-      <div class="aboutStats">
+      <div class="socialTrust" aria-label="UZ Industry social channels">
+          <a href="https://www.instagram.com/uzindustry.official/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="https://www.youtube.com/@uzindustryofficial" target="_blank" rel="noopener">YouTube ↗</a>
+          <a href="https://www.linkedin.com/in/umer-zafar-uzindustry" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://www.facebook.com/umer.zafar.uzindustry" target="_blank" rel="noopener">Facebook ↗</a>
+        </div>
+
+        <div class="aboutStats">
 
 
         <div class="aboutStat">
@@ -3320,6 +3483,24 @@ footer{
 
 </section>
 
+
+<section class="faqSection" id="faq">
+  <div class="wrap faqGrid">
+    <div>
+      <div class="eyebrow">Buyer Questions</div>
+      <h2 class="faqTitle">Before you<br><span class="red">start.</span></h2>
+    </div>
+    <div class="faqList">
+      <details><summary>What is the minimum order quantity?</summary><p>Custom production starts from 10 pieces.</p></details>
+      <details><summary>Are digital custom mockups free?</summary><p>Yes. You can send your logo, colors or reference and discuss a free digital custom mockup before production.</p></details>
+      <details><summary>Are physical samples free?</summary><p>No. Physical samples are paid and are prepared according to the product and project requirements.</p></details>
+      <details><summary>Can I send an existing physical sample or reference?</summary><p>Yes. An existing sample or reference can be used to discuss manufacturing according to your required specifications.</p></details>
+      <details><summary>Do you manufacture private-label sportswear?</summary><p>Yes. Private-label manufacturing can include custom branding, labels, packaging and product development according to your requirements.</p></details>
+      <details><summary>Can you make custom sizes?</summary><p>Yes. The international size guide is a reference; custom measurements and sizing requirements can be discussed for production.</p></details>
+      <details><summary>Where is UZ Industry based?</summary><p>UZ Industry is based in Sialkot, Pakistan and works with international buyers.</p></details>
+    </div>
+  </div>
+</section>
 
 <section class="finalCta">
 
