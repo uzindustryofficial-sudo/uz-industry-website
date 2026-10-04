@@ -7,7 +7,7 @@
 <title>Sportswear Fabrics | UZ Industry</title>
   <link rel="icon" type="image/png" href="./uz-logo.png.PNG">
 <link rel="apple-touch-icon" href="./uz-logo.png.PNG">
-<meta name="description" content="Explore premium sportswear fabrics used by UZ Industry including Performance Polyester, Bird Eye Mesh, Micro Mesh, Interlock, Dri-Fit, Lycra, Tricot, Fleece, French Terry, Cotton, Taslon Nylon and Rib Fabric.">
+<meta name="description" content="Explore sportswear fabric options used by UZ Industry for custom uniforms, teamwear and private-label apparel manufactured in Sialkot, Pakistan. Compare performance polyester, mesh, interlock, stretch, fleece, French Terry, cotton blends, nylon and rib fabrics.">
 
 <style>
 
@@ -951,6 +951,491 @@ footer{
 
 }
 
+
+
+/* =========================================================
+   UZ INDUSTRY — FINAL PREMIUM FABRICS PAGE
+   ========================================================= */
+
+:root{
+  --max:1440px;
+}
+
+body{
+  background:
+    radial-gradient(circle at 78% 8%,rgba(239,27,36,.055),transparent 28%),
+    #050506;
+}
+
+.siteHeader{
+  background:rgba(5,5,6,.78);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  box-shadow:0 10px 40px rgba(0,0,0,.16);
+}
+
+.navWrap{
+  height:82px;
+}
+
+.hero{
+  min-height:720px;
+  display:flex;
+  align-items:center;
+  padding:150px 0 105px;
+  background:
+    radial-gradient(circle at 78% 30%,rgba(239,27,36,.18),transparent 28%),
+    radial-gradient(circle at 8% 90%,rgba(239,27,36,.055),transparent 24%),
+    linear-gradient(135deg,#050506,#0b0b0e 58%,#050506);
+}
+
+.hero::after{
+  content:"FABRIC";
+  right:-2%;
+  bottom:1%;
+  font-size:13vw;
+  letter-spacing:-.07em;
+  opacity:.72;
+}
+
+.heroContent{
+  max-width:1120px;
+}
+
+.hero h1{
+  max-width:1040px;
+  margin:20px 0 27px;
+  font-size:clamp(58px,6.2vw,92px);
+  line-height:.91;
+  letter-spacing:-.055em;
+}
+
+.hero p{
+  max-width:780px;
+  color:#aaaab2;
+  font-size:16px;
+  line-height:1.78;
+}
+
+.heroStats{
+  margin-top:38px;
+  gap:10px;
+}
+
+.stat{
+  min-width:170px;
+  padding:18px 20px;
+  border-color:rgba(255,255,255,.1);
+  background:rgba(13,13,16,.74);
+  backdrop-filter:blur(10px);
+}
+
+.stat strong{
+  font-size:23px;
+}
+
+.fabricSection{
+  padding:105px 0 110px;
+}
+
+.sectionHeader{
+  gap:70px;
+  margin-bottom:54px;
+}
+
+.sectionHeader h2{
+  max-width:820px;
+  font-size:clamp(42px,4.6vw,66px);
+  line-height:.98;
+  letter-spacing:-.04em;
+}
+
+.sectionHeader p{
+  max-width:560px;
+  justify-self:end;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.fabricGrid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+
+.fabricCard{
+  border-color:rgba(255,255,255,.09);
+  background:linear-gradient(180deg,#0d0d10,#09090b);
+  box-shadow:none;
+}
+
+.fabricCard:hover{
+  transform:translateY(-4px);
+  border-color:rgba(239,27,36,.62);
+  box-shadow:0 22px 55px rgba(0,0,0,.32);
+}
+
+.fabricImage{
+  height:330px;
+}
+
+.fabricImage::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:35%;
+  background:linear-gradient(transparent,rgba(0,0,0,.5));
+  pointer-events:none;
+}
+
+.fabricNo{
+  border-color:rgba(255,255,255,.12);
+  background:rgba(5,5,6,.82);
+  backdrop-filter:blur(8px);
+}
+
+.fabricInfo{
+  min-height:205px;
+  padding:25px 23px 27px;
+}
+
+.fabricInfo h3{
+  font-size:20px;
+  letter-spacing:-.015em;
+}
+
+.fabricInfo p{
+  color:#96969e;
+  line-height:1.68;
+}
+
+.view{
+  margin-top:18px;
+}
+
+.ctaBanner{
+  margin-top:78px;
+  padding:58px 60px;
+  border-color:rgba(255,255,255,.11);
+  background:
+    radial-gradient(circle at 88% 30%,rgba(239,27,36,.2),transparent 30%),
+    linear-gradient(135deg,#0d0d10,#09090b);
+}
+
+.ctaBanner h2{
+  max-width:760px;
+  font-size:clamp(38px,4vw,56px);
+  letter-spacing:-.035em;
+}
+
+.selectionGuide{
+  padding:105px 0;
+  border-top:1px solid var(--line);
+  background:#08080a;
+}
+
+.guideShell{
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(520px,1.18fr);
+  gap:80px;
+  align-items:center;
+}
+
+.guideIntro h2{
+  margin:15px 0 22px;
+  max-width:650px;
+  font-size:clamp(42px,4.5vw,64px);
+  line-height:.98;
+  letter-spacing:-.04em;
+  text-transform:uppercase;
+}
+
+.guideIntro p{
+  max-width:620px;
+  color:#97979f;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.guideIntro .btn{
+  margin-top:28px;
+}
+
+.guideMatrix{
+  border:1px solid var(--line);
+  background:var(--line);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+}
+
+.guideItem{
+  min-height:235px;
+  padding:28px 26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:#0b0b0e;
+  transition:.3s ease;
+}
+
+.guideItem:hover{
+  background:#0f0f13;
+}
+
+.guideItem > span{
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+
+.guideItem strong{
+  display:block;
+  margin-bottom:10px;
+  font-size:17px;
+  line-height:1.25;
+  text-transform:uppercase;
+}
+
+.guideItem p{
+  color:#8f8f97;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.fabricWhy{
+  padding:105px 0;
+}
+
+.whyGrid{
+  border-color:rgba(255,255,255,.09);
+}
+
+.whyCard{
+  min-height:245px;
+  padding:30px 26px;
+}
+
+.whyCard strong{
+  color:#2d2d34;
+  font-size:38px;
+}
+
+.whyCard h3{
+  margin-top:34px;
+}
+
+.fabricNote{
+  padding:0 0 105px;
+  background:#08080a;
+}
+
+.noteInner{
+  padding:34px 38px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  border:1px solid rgba(255,255,255,.1);
+  border-left:3px solid var(--red);
+  background:#0b0b0e;
+}
+
+.noteKicker{
+  display:block;
+  margin-bottom:10px;
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.noteInner strong{
+  display:block;
+  max-width:600px;
+  font-size:20px;
+  line-height:1.35;
+  text-transform:uppercase;
+}
+
+.noteInner p{
+  color:#92929a;
+  font-size:13px;
+  line-height:1.75;
+}
+
+.modal{
+  background:rgba(0,0,0,.94);
+}
+
+.modalBox{
+  width:min(1120px,100%);
+  border-color:rgba(255,255,255,.12);
+  background:#0b0b0e;
+  border-radius:2px;
+}
+
+.modalImage{
+  background:
+    radial-gradient(circle at 50% 50%,rgba(239,27,36,.06),transparent 45%),
+    #070708;
+}
+
+.modalContent{
+  padding:50px 44px;
+}
+
+.modalContent h2{
+  font-size:clamp(36px,3.8vw,54px);
+  letter-spacing:-.035em;
+}
+
+.detail{
+  border-color:rgba(255,255,255,.09);
+  background:#0f0f12;
+}
+
+.close{
+  transition:.2s ease;
+}
+
+.close:hover{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+footer{
+  background:#040405;
+}
+
+.footerGrid{
+  padding:58px 0;
+}
+
+@media(max-width:1100px){
+  .guideShell{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .hero{
+    min-height:auto;
+  }
+}
+
+@media(max-width:900px){
+  .navWrap{
+    height:70px;
+  }
+
+  .hero{
+    padding:125px 0 80px;
+  }
+
+  .fabricGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .sectionHeader{
+    gap:20px;
+  }
+
+  .sectionHeader p{
+    justify-self:start;
+  }
+
+  .noteInner{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+}
+
+@media(max-width:600px){
+  .hero{
+    padding:112px 0 68px;
+  }
+
+  .hero h1{
+    font-size:clamp(44px,13vw,58px);
+    line-height:.94;
+  }
+
+  .heroStats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stat{
+    min-width:0;
+  }
+
+  .fabricSection,
+  .selectionGuide,
+  .fabricWhy{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+
+  .sectionHeader{
+    margin-bottom:36px;
+  }
+
+  .sectionHeader h2,
+  .guideIntro h2{
+    font-size:clamp(38px,10vw,48px);
+  }
+
+  .fabricGrid,
+  .guideMatrix,
+  .whyGrid{
+    grid-template-columns:1fr;
+  }
+
+  .fabricImage{
+    height:310px;
+  }
+
+  .fabricInfo{
+    min-height:auto;
+  }
+
+  .ctaBanner{
+    margin-top:55px;
+    padding:36px 24px;
+  }
+
+  .guideItem{
+    min-height:200px;
+  }
+
+  .fabricNote{
+    padding-bottom:72px;
+  }
+
+  .noteInner{
+    padding:28px 24px;
+  }
+
+  .modalImage{
+    height:300px;
+    min-height:300px;
+  }
+
+  .modalContent{
+    padding:31px 22px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
+
 </style>
 </head>
 
@@ -974,7 +1459,7 @@ footer{
       <a href="./#about">About</a>
       <a href="contact.html">Contact</a>
 
-      <a href="contact.html" class="navCta">
+      <a href="custom-order.html" class="navCta">
         Get a Quote
       </a>
 
@@ -1002,15 +1487,15 @@ footer{
     </div>
 
     <h1>
-      Fabric matters.<br>
-      Performance <span class="red">starts here.</span>
+      The right fabric.<br>
+      Built for the <span class="red">right performance.</span>
     </h1>
 
     <p>
-      Explore the core materials used across custom sportswear,
-      uniforms, training apparel and teamwear. Each fabric offers
-      different benefits in breathability, stretch, durability,
-      structure, warmth and comfort.
+      Material selection is part of the product, not an afterthought.
+      Explore the core fabrics used across custom uniforms, teamwear,
+      training apparel and private-label production — selected around
+      the garment, sport, fit and intended use.
     </p>
 
     <div class="heroStats">
@@ -1091,14 +1576,65 @@ footer{
 
       </div>
 
-      <a href="contact.html" class="btn btnPrimary">
-        Discuss Your Order →
+      <a href="custom-order.html" class="btn btnPrimary">
+        Start Your Custom Order →
       </a>
 
     </div>
 
   </div>
 
+</section>
+
+
+
+<section class="selectionGuide">
+  <div class="wrap">
+    <div class="guideShell">
+      <div class="guideIntro">
+        <div class="eyebrow">From Fabric To Finished Garment</div>
+        <h2>Material choice should follow the <span class="red">product.</span></h2>
+        <p>
+          The best option depends on what you are manufacturing, how the garment
+          should fit, where it will be used and what performance characteristics
+          matter most. UZ Industry can discuss fabric direction as part of the
+          custom-order process.
+        </p>
+        <a href="custom-order.html" class="btn btnPrimary">Build Your Order →</a>
+      </div>
+
+      <div class="guideMatrix">
+        <div class="guideItem">
+          <span>01</span>
+          <div>
+            <strong>High-Activity Teamwear</strong>
+            <p>Consider lightweight, breathable and quick-drying constructions for active match and training garments.</p>
+          </div>
+        </div>
+        <div class="guideItem">
+          <span>02</span>
+          <div>
+            <strong>Fitted Performance Wear</strong>
+            <p>Stretch-focused materials are better suited to compression, cycling, wrestling and close-fitting sportswear.</p>
+          </div>
+        </div>
+        <div class="guideItem">
+          <span>03</span>
+          <div>
+            <strong>Warm-Up & Lifestyle</strong>
+            <p>Fleece, French Terry and cotton-blend options suit hoodies, joggers, travel wear and casual team apparel.</p>
+          </div>
+        </div>
+        <div class="guideItem">
+          <span>04</span>
+          <div>
+            <strong>Outer Layers & Trims</strong>
+            <p>Woven nylon, tricot and rib structures support shells, tracksuits, shorts, collars, cuffs and finishing details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1166,6 +1702,24 @@ footer{
 
   </div>
 
+</section>
+
+
+
+<section class="fabricNote">
+  <div class="wrap">
+    <div class="noteInner">
+      <div>
+        <span class="noteKicker">Production Note</span>
+        <strong>Final fabric selection is confirmed against your actual product requirements.</strong>
+      </div>
+      <p>
+        Fabric appearance, weight, hand-feel and construction can vary by specification.
+        Share your reference, intended use and customization requirements before production
+        so the material direction can be discussed for the order.
+      </p>
+    </div>
+  </div>
 </section>
 
 
@@ -1318,8 +1872,8 @@ footer{
 
       <div class="modalActions">
 
-        <a href="contact.html" class="btn btnPrimary">
-          Get a Quote →
+        <a href="custom-order.html" class="btn btnPrimary">
+          Start Custom Order →
         </a>
 
         <a
