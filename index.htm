@@ -7,7 +7,7 @@
 <title>UZ Industry | Custom Sportswear & Private Label Manufacturer</title>
 <link rel="icon" type="image/png" href="./uz-logo.png.PNG">
 <link rel="apple-touch-icon" href="./uz-logo.png.PNG">
-<meta name="description" content="UZ Industry is a custom sportswear, teamwear and private label apparel manufacturer based in Sialkot, Pakistan. Explore uniforms, fabrics, manufacturing, customization and private label production.">
+<meta name="description" content="UZ Industry manufactures custom sportswear, teamwear and private-label apparel in Sialkot, Pakistan. MOQ 10 pieces, free digital mockups, custom sizing and worldwide buyer support.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="UZ Industry | Custom Sportswear & Private Label Manufacturer">
 <meta property="og:description" content="Custom sportswear, teamwear and private label manufacturing from Sialkot, Pakistan.">
@@ -48,49 +48,6 @@
   "https://www.youtube.com/@uzindustryofficial"
 ]
 }
-
-/* International size guide — single interactive system */
-const sizeSets={
- adult:[
-  ["XS","32–34","81–86","66–71","160–168"],
-  ["S","34–36","86–91","71–76","165–173"],
-  ["M","38–40","96–102","81–86","170–178"],
-  ["L","42–44","107–112","91–97","175–183"],
-  ["XL","46–48","117–122","102–107","178–188"],
-  ["2XL","50–52","127–132","112–117","180–190"],
-  ["3XL","54–56","137–142","122–127","183–193"],
-  ["4XL","58–60","147–152","132–137","185–195"],
-  ["5XL","62–64","157–163","142–147","188–198"]
- ],
- youth:[
-  ["YXS","4–5","56–61","53–56","104–116"],
-  ["YS","6–7","61–66","56–58","116–128"],
-  ["YM","8–10","66–74","58–64","128–140"],
-  ["YL","12–14","74–84","64–71","140–158"],
-  ["YXL","16–18","84–91","71–76","158–170"]
- ]
-};
-const regionLabels={US:"US / Canada",UK:"United Kingdom",EU:"Europe",AU:"Australia / NZ",INT:"International"};
-const regionMap={
- US:s=>s,
- UK:s=>s,
- AU:s=>s,
- INT:s=>s,
- EU:s=>({"XS":"42–44","S":"44–46","M":"48–50","L":"52–54","XL":"56–58","2XL":"60–62","3XL":"64–66","4XL":"68–70","5XL":"72–74","YXS":"104–110","YS":"116–122","YM":"128–140","YL":"146–158","YXL":"164–170"}[s]||s)
-};
-function renderSizes(){
- const region=document.getElementById("regionSelect");
- const fit=document.getElementById("fitSelect");
- const body=document.getElementById("sizeBody");
- const head=document.getElementById("regionHead");
- if(!region||!fit||!body||!head)return;
- head.textContent=regionLabels[region.value];
- body.innerHTML=sizeSets[fit.value].map(r=>`<tr><td>${r[0]}</td><td>${regionMap[region.value](r[0])}</td><td>${r[2]} cm</td><td>${r[3]} cm</td><td>${r[4]} cm</td></tr>`).join("");
-}
-document.getElementById("regionSelect")?.addEventListener("change",renderSizes);
-document.getElementById("fitSelect")?.addEventListener("change",renderSizes);
-renderSizes();
-
 </script>
   <style>
 
@@ -1971,6 +1928,391 @@ footer{
 @media(max-width:900px){.proofGrid,.mockupGrid,.sizeTop,.faqGrid{grid-template-columns:1fr}.productionRail{grid-template-columns:repeat(2,1fr)}.proofVisual,.mockupVisual,.mockupVisual img{min-height:480px;height:480px}}
 @media(max-width:620px){.premiumProof,.mockupFeature,.sizeGuide,.faqSection{padding:70px 0}.proofContent h2,.mockupContent h2,.sizeContent h2,.faqTitle{font-size:42px}.productionRail,.mockupPoints,.sizeControls{grid-template-columns:1fr}.sizeTop{padding:32px 22px}.sizeTableWrap{padding:18px 15px 25px}.sizeNote{padding:0 15px 25px}.proofVisual,.mockupVisual,.mockupVisual img{min-height:390px;height:390px}}
 
+
+
+/* =========================================================
+   2026 FINAL PREMIUM HOMEPAGE PASS
+   ========================================================= */
+
+:root{
+  --premium-red:#ef1b24;
+  --premium-red-soft:rgba(239,27,36,.12);
+  --premium-border:rgba(255,255,255,.10);
+  --premium-border-strong:rgba(255,255,255,.17);
+  --premium-glow:0 24px 80px rgba(0,0,0,.42);
+}
+
+body{
+  background:
+    radial-gradient(circle at 78% 7%,rgba(239,27,36,.055),transparent 24%),
+    linear-gradient(180deg,#050506 0%,#070708 42%,#050506 100%);
+}
+
+.siteHeader{
+  background:rgba(5,5,6,.82);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.navWrap{
+  min-height:82px;
+}
+
+.mainNav a{
+  letter-spacing:.04em;
+}
+
+.navCta{
+  box-shadow:0 8px 28px rgba(239,27,36,.18);
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding-top:clamp(115px,11vw,165px);
+  padding-bottom:clamp(85px,9vw,135px);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:540px;
+  height:540px;
+  border-radius:50%;
+  right:-190px;
+  top:40px;
+  background:radial-gradient(circle,rgba(239,27,36,.12),transparent 68%);
+  pointer-events:none;
+}
+
+.heroGrid{
+  position:relative;
+  z-index:1;
+  gap:clamp(45px,7vw,100px);
+  align-items:center;
+}
+
+.hero h1{
+  max-width:820px;
+  font-size:clamp(50px,6.3vw,94px);
+  line-height:.91;
+  letter-spacing:-.052em;
+  text-wrap:balance;
+}
+
+.heroLead{
+  max-width:700px;
+  margin-top:28px;
+  font-size:clamp(15px,1.25vw,18px);
+  line-height:1.8;
+  color:#aaaab1;
+}
+
+.heroActions{
+  margin-top:34px;
+}
+
+.btn{
+  min-height:52px;
+  padding:0 22px;
+  border-radius:2px;
+  letter-spacing:.055em;
+}
+
+.btnPrimary{
+  box-shadow:0 12px 34px rgba(239,27,36,.18);
+}
+
+.heroMeta{
+  margin-top:28px;
+  gap:8px;
+}
+
+.metaChip{
+  background:rgba(255,255,255,.025);
+  border-color:rgba(255,255,255,.10);
+  padding:10px 12px;
+}
+
+.heroVisual{
+  filter:drop-shadow(0 32px 60px rgba(0,0,0,.34));
+}
+
+.heroMainProduct,
+.heroSide{
+  border-color:rgba(255,255,255,.11);
+  background:#0b0b0d;
+}
+
+.heroMainProduct:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.trust{
+  border-top:1px solid rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  background:#08080a;
+}
+
+.trustItem{
+  transition:background .25s ease,transform .25s ease;
+}
+
+.trustItem:hover{
+  background:rgba(255,255,255,.018);
+  transform:translateY(-2px);
+}
+
+section:not(.hero):not(.trust){
+  scroll-margin-top:90px;
+}
+
+.sectionHeader{
+  gap:35px;
+  align-items:end;
+}
+
+.sectionTitle{
+  font-size:clamp(42px,5vw,72px);
+  line-height:.98;
+  letter-spacing:-.04em;
+  text-wrap:balance;
+}
+
+.sectionText{
+  max-width:560px;
+  line-height:1.8;
+}
+
+.premiumProof,
+.productsSection,
+.manufacturingSection,
+.whySection,
+.privateLabelSection,
+.fabricsSection,
+.mockupFeature,
+.customSection,
+.aboutSection,
+.faqSection{
+  position:relative;
+}
+
+.premiumProof:after,
+.privateLabelSection:after,
+.mockupFeature:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent);
+}
+
+.proofShell,
+.mockupFeature,
+.privateLabelSection{
+  overflow:hidden;
+}
+
+.proofVisual img,
+.mockupVisual img,
+.privateVisual img,
+.productImage img,
+.fabricImage img,
+.processImage img{
+  transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s ease;
+}
+
+.proofVisual:hover img,
+.mockupVisual:hover img,
+.productCard:hover .productImage img,
+.fabricCard:hover .fabricImage img,
+.processCard:hover .processImage img{
+  transform:scale(1.035);
+}
+
+.productCard,
+.fabricCard,
+.processCard,
+.whyCard,
+.customStep{
+  border-color:rgba(255,255,255,.09);
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008));
+  box-shadow:0 18px 50px rgba(0,0,0,.14);
+}
+
+.productCard:hover,
+.fabricCard:hover,
+.processCard:hover,
+.whyCard:hover,
+.customStep:hover{
+  border-color:rgba(239,27,36,.34);
+  box-shadow:0 24px 65px rgba(0,0,0,.28);
+}
+
+.productsGrid{
+  gap:18px;
+}
+
+.productContent h3,
+.fabricContent h3,
+.processContent h3{
+  letter-spacing:-.02em;
+}
+
+.privateLabelSection{
+  background:
+    radial-gradient(circle at 80% 30%,rgba(239,27,36,.07),transparent 28%),
+    #08080a;
+}
+
+.mockupFeature{
+  background:
+    radial-gradient(circle at 18% 40%,rgba(239,27,36,.055),transparent 28%),
+    #060607;
+}
+
+.mockupGrid{
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:var(--premium-glow);
+}
+
+.mockupPoint{
+  background:rgba(255,255,255,.018);
+  border-color:rgba(255,255,255,.08);
+}
+
+.premiumOrderFlow{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+}
+
+.premiumOrderFlow .customStep{
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+}
+
+.premiumOrderFlow .stepMeta{
+  margin-top:auto;
+}
+
+.premiumCta{
+  margin-top:22px;
+  background:
+    linear-gradient(115deg,rgba(239,27,36,.13),rgba(255,255,255,.018) 42%,rgba(255,255,255,.008));
+  border:1px solid rgba(255,255,255,.11);
+  box-shadow:0 24px 70px rgba(0,0,0,.24);
+}
+
+.ctaKicker{
+  display:block;
+  margin-bottom:9px;
+  color:var(--premium-red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+
+.aboutGrid{
+  align-items:stretch;
+}
+
+.founderVisual{
+  box-shadow:var(--premium-glow);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.socialTrust a{
+  transition:transform .2s ease,border-color .2s ease,color .2s ease;
+}
+
+.socialTrust a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(239,27,36,.5);
+}
+
+.faqItem{
+  border-color:rgba(255,255,255,.09);
+}
+
+.finalCta{
+  position:relative;
+  overflow:hidden;
+}
+
+.finalCta:before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  right:-120px;
+  top:-190px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(239,27,36,.16),transparent 67%);
+  pointer-events:none;
+}
+
+footer{
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+@media(max-width:1100px){
+  .premiumOrderFlow{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .premiumOrderFlow .customStep:last-child{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:760px){
+  .hero{
+    padding-top:105px;
+  }
+
+  .hero h1{
+    font-size:clamp(46px,13vw,66px);
+  }
+
+  .heroLead{
+    font-size:15px;
+  }
+
+  .sectionHeader{
+    align-items:start;
+  }
+
+  .premiumOrderFlow{
+    grid-template-columns:1fr;
+  }
+
+  .premiumOrderFlow .customStep:last-child{
+    grid-column:auto;
+  }
+
+  .premiumOrderFlow .customStep{
+    min-height:auto;
+  }
+
+  .heroActions .btn{
+    width:100%;
+    justify-content:center;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+
 </style>
 </head>
 
@@ -2026,15 +2368,15 @@ footer{
       </div>
 
       <h1>
-        Custom sportswear.<br>
+        Your team. Your identity.<br>
         Manufactured <span class="red">in-house.</span><br>
         Built to perform.
       </h1>
 
       <p class="heroLead">
-        From concept and customization to cutting, decoration, stitching and quality control,
-        UZ Industry manufactures custom uniforms, teamwear and private-label sportswear
-        in Sialkot, Pakistan for buyers worldwide.
+        Custom uniforms, teamwear and private-label sportswear manufactured in Sialkot, Pakistan.
+        From design direction and material selection to cutting, decoration, stitching and final checking,
+        your order stays connected to the manufacturing process.
       </p>
 
       <div class="heroActions">
@@ -2170,9 +2512,9 @@ footer{
       <div class="proofStamp">Inside UZ Industry • Sialkot, Pakistan</div>
     </div>
     <div class="proofContent">
-      <div class="eyebrow">Manufacturer, Not A Reseller</div>
+      <div class="eyebrow">Real Production. Direct Manufacturer.</div>
       <h2>Made here.<br><span class="red">Built for you.</span></h2>
-      <p>Your custom order moves through real production stages — from material preparation and cutting to decoration, stitching and final checking. Explore the factory process and see how UZ Industry turns a design into finished teamwear.</p>
+      <p>Your order is built through real production stages in Sialkot — material preparation, cutting, decoration, stitching, finishing and final checking. See the process behind the finished teamwear.</p>
       <div class="productionRail">
         <span>Cutting</span><span>Sublimation</span><span>Printing</span><span>Stitching</span>
       </div>
@@ -3150,225 +3492,123 @@ footer{
     <div class="sectionHeader">
 
       <div>
-
-        <div class="eyebrow">
-          Custom Order Process
-        </div>
+        <div class="eyebrow">From Brief To Delivery</div>
 
         <h2 class="sectionTitle">
-          Your idea.
-          <span class="red">Our process.</span>
+          A clear path from
+          <span class="red">idea to finished kit.</span>
         </h2>
-
       </div>
 
       <p class="sectionText">
-        A clear four-step workflow helps organize your product,
-        design and manufacturing requirements before production.
+        Start with your product idea, logo or reference. We organize the design,
+        sizing and production requirements before your order moves through manufacturing.
       </p>
 
     </div>
 
-
-    <div class="orderFlow">
-
+    <div class="orderFlow premiumOrderFlow">
 
       <div class="customStep">
-
         <div class="stepTop">
-
-          <div class="customStepNo">
-            STEP 01
-          </div>
-
+          <div class="customStepNo">STEP 01</div>
           <div class="stepIcon">
-
             <svg viewBox="0 0 24 24">
               <path d="M5 4h14v16H5z"></path>
               <path d="M8 8h8"></path>
               <path d="M8 12h8"></path>
               <path d="M8 16h5"></path>
             </svg>
-
           </div>
-
         </div>
-
-        <h3>
-          Share Requirements
-        </h3>
-
-        <p>
-          Tell us the product, quantity, colors, logos,
-          reference design and intended use.
-        </p>
-
-        <div class="stepMeta">
-          Product • Quantity • Colors • References
-        </div>
-
+        <h3>Share Your Brief</h3>
+        <p>Tell us the sport, product, quantity, colors, branding and reference direction.</p>
+        <div class="stepMeta">Product • Quantity • Reference</div>
       </div>
 
-
       <div class="customStep">
-
         <div class="stepTop">
-
-          <div class="customStepNo">
-            STEP 02
-          </div>
-
+          <div class="customStepNo">STEP 02</div>
           <div class="stepIcon">
-
             <svg viewBox="0 0 24 24">
               <path d="M4 19l5-1 9-9-4-4-9 9-1 5z"></path>
               <path d="M13 6l4 4"></path>
               <path d="M5 21h14"></path>
             </svg>
-
           </div>
-
         </div>
-
-        <h3>
-          Design & Specifications
-        </h3>
-
-        <p>
-          Define fabric, sizes, branding, artwork,
-          customization and important garment details.
-        </p>
-
-        <div class="stepMeta">
-          Fabric • Sizes • Branding • Artwork
-        </div>
-
+        <h3>Mockup & Specifications</h3>
+        <p>Develop the visual direction and confirm fabric, branding and garment details.</p>
+        <div class="stepMeta">Mockup • Fabric • Branding</div>
       </div>
 
+      <div class="customStep">
+        <div class="stepTop">
+          <div class="customStepNo">STEP 03</div>
+          <div class="stepIcon">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 4h12v16H6z"></path>
+              <path d="M9 8h6"></path>
+              <path d="M9 12h6"></path>
+              <path d="M9 16h4"></path>
+            </svg>
+          </div>
+        </div>
+        <h3>Size & Order Details</h3>
+        <p>Set adult, youth, mixed or custom sizing. Special measurements can be discussed without a fixed maximum size.</p>
+        <div class="stepMeta">Sizing • Fit • Order Details</div>
+      </div>
 
       <div class="customStep">
-
         <div class="stepTop">
-
-          <div class="customStepNo">
-            STEP 03
-          </div>
-
+          <div class="customStepNo">STEP 04</div>
           <div class="stepIcon">
-
             <svg viewBox="0 0 24 24">
               <path d="M4 19V9l5 3V8l5 3V5l6 4v10H4z"></path>
               <path d="M8 15h2"></path>
               <path d="M14 15h2"></path>
             </svg>
-
           </div>
-
         </div>
-
-        <h3>
-          Production
-        </h3>
-
-        <p>
-          Approved specifications move through
-          cutting, customization, stitching and finishing.
-        </p>
-
-        <div class="stepMeta">
-          Cutting • Printing • Stitching • Finishing
-        </div>
-
+        <h3>In-House Production</h3>
+        <p>Approved requirements move through cutting, decoration, stitching and finishing in Sialkot.</p>
+        <div class="stepMeta">Cutting • Decoration • Stitching</div>
       </div>
 
-
       <div class="customStep">
-
         <div class="stepTop">
-
-          <div class="customStepNo">
-            STEP 04
-          </div>
-
+          <div class="customStepNo">STEP 05</div>
           <div class="stepIcon">
-
             <svg viewBox="0 0 24 24">
               <path d="M4 7l8-4 8 4-8 4-8-4z"></path>
               <path d="M4 7v10l8 4 8-4V7"></path>
               <path d="M9 15l2 2 4-5"></path>
             </svg>
-
           </div>
-
         </div>
-
-        <h3>
-          Order Completion
-        </h3>
-
-        <p>
-          Finished products are prepared according to
-          the agreed order and branding requirements.
-        </p>
-
-        <div class="stepMeta">
-          Final Product • Packaging • Order Preparation
-        </div>
-
+        <h3>Final Check & Dispatch</h3>
+        <p>Finished goods are checked, prepared and packed according to the agreed order requirements.</p>
+        <div class="stepMeta">QC • Packing • Dispatch</div>
       </div>
 
     </div>
 
-
-    <div class="customCta">
-
+    <div class="customCta premiumCta">
       <div>
-
-        <h3>
-          Ready to build your custom sportswear?
-        </h3>
-
-        <p>
-          Use our dedicated order builder to organize your requirements.
-        </p>
-
+        <span class="ctaKicker">READY WHEN YOU ARE</span>
+        <h3>Build your next custom sportswear order.</h3>
+        <p>Use the dedicated order builder to organize your requirements in one place.</p>
       </div>
 
       <a href="custom-order.html" class="btn btnPrimary">
         Start Your Custom Order →
       </a>
-
     </div>
 
   </div>
 
 </section>
 
-
-<section class="sizeGuide" id="size-guide">
-  <div class="wrap sizeShell">
-    <div class="sizeTop">
-      <div class="sizeContent">
-        <div class="eyebrow">International Size Guide</div>
-        <h2>Choose your<br><span class="red">region & fit.</span></h2>
-      </div>
-      <div class="sizeContent">
-        <p>Select a country/region and age group. The guide updates in one place, keeping international sizing easy to compare. Custom sizing can also be discussed for team and private-label orders.</p>
-        <div class="sizeControls">
-          <div><label for="regionSelect">Country / Region</label><select id="regionSelect"><option value="US">United States / Canada</option><option value="UK">United Kingdom</option><option value="EU">Europe</option><option value="AU">Australia / New Zealand</option><option value="INT">International</option></select></div>
-          <div><label for="fitSelect">Size Group</label><select id="fitSelect"><option value="adult">Adult</option><option value="youth">Youth / Kids</option></select></div>
-        </div>
-      </div>
-    </div>
-    <div class="sizeTableWrap">
-      <table class="sizeTable">
-        <thead><tr><th>UZ Size</th><th id="regionHead">US / Canada</th><th>Chest</th><th>Waist</th><th>Height</th></tr></thead>
-        <tbody id="sizeBody"></tbody>
-      </table>
-    </div>
-    <p class="sizeNote">This guide is a general international reference for custom sportswear. Final garment measurements can be adjusted to the approved product specification, sport, fit and buyer requirements.</p>
-  </div>
-</section>
 
 <section class="aboutSection" id="about">
 
@@ -3496,7 +3736,7 @@ footer{
       <details><summary>Are physical samples free?</summary><p>No. Physical samples are paid and are prepared according to the product and project requirements.</p></details>
       <details><summary>Can I send an existing physical sample or reference?</summary><p>Yes. An existing sample or reference can be used to discuss manufacturing according to your required specifications.</p></details>
       <details><summary>Do you manufacture private-label sportswear?</summary><p>Yes. Private-label manufacturing can include custom branding, labels, packaging and product development according to your requirements.</p></details>
-      <details><summary>Can you make custom sizes?</summary><p>Yes. The international size guide is a reference; custom measurements and sizing requirements can be discussed for production.</p></details>
+      <details><summary>Can you make custom sizes?</summary><p>Yes. Custom sizing and buyer-provided measurements can be discussed for production, including special sizes beyond standard size ranges.</p></details>
       <details><summary>Where is UZ Industry based?</summary><p>UZ Industry is based in Sialkot, Pakistan and works with international buyers.</p></details>
     </div>
   </div>
