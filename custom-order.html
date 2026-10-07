@@ -1282,10 +1282,130 @@ footer{
 
 }
 
+
+/* =========================================================
+   UZ INDUSTRY — CUSTOM ORDER / SIGNATURE PREMIUM EDITION
+   ========================================================= */
+:root{
+  --paper:#f3f1ed;
+  --paper2:#ffffff;
+  --ink:#111115;
+  --mutedLight:#6f6f76;
+  --lightLine:#dedde1;
+}
+::selection{background:var(--red);color:#fff}
+body{background:var(--paper);color:var(--ink)}
+.siteHeader{background:rgba(5,5,6,.90);transition:.3s ease}
+.siteHeader.scrolled{background:rgba(5,5,6,.98);box-shadow:0 12px 38px rgba(0,0,0,.2)}
+
+.hero{
+  min-height:620px;color:#fff;
+  background:
+    radial-gradient(circle at 83% 20%,rgba(239,27,36,.25),transparent 29%),
+    linear-gradient(128deg,#050506 0%,#15151a 64%,#050506 100%);
+}
+.hero::after{opacity:1;color:rgba(255,255,255,.025)}
+.hero p{color:#c4c4ca}
+.heroFact{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.14);backdrop-filter:blur(10px)}
+
+.orderSection{background:var(--paper)}
+.progressPanel{
+  position:sticky;top:90px;z-index:20;
+  background:rgba(255,255,255,.92);border-color:var(--lightLine);
+  box-shadow:0 10px 30px rgba(17,17,20,.055);backdrop-filter:blur(14px)
+}
+.progressTop strong{color:#111}.stepLabel{color:#9a999f}.stepLabel.active{color:#111}
+.progressBar{background:#e3e2e5}
+
+.formPanel{
+  background:#fff;color:#111;border-color:var(--lightLine);
+  box-shadow:0 24px 65px rgba(17,17,20,.09)
+}
+.stepHead p,.hint{color:var(--mutedLight)}
+label.fieldLabel{color:#3f3f45}
+input[type="text"],input[type="email"],input[type="number"],input[type="date"],select,textarea{
+  background:#f8f7f5;color:#111;border-color:#d8d7db;border-radius:2px;
+  transition:border-color .2s,box-shadow .2s,background .2s
+}
+input:focus,select:focus,textarea:focus{
+  background:#fff;border-color:var(--red);box-shadow:0 0 0 3px rgba(239,27,36,.08)
+}
+select option{background:#fff;color:#111}
+
+.choice span,.optionChoice span,.sizeMode span{
+  background:#f7f6f4;color:#5f5f66;border-color:#dbdade;
+  transition:.25s cubic-bezier(.2,.8,.2,1)
+}
+.choice span:hover,.optionChoice span:hover,.sizeMode span:hover{
+  background:#fff;border-color:#a8a7ad;color:#111;transform:translateY(-2px)
+}
+.choice input:checked + span,.optionChoice input:checked + span,.sizeMode input:checked + span{
+  background:#111115;border-color:#111115;color:#fff;
+  box-shadow:inset 3px 0 0 var(--red)
+}
+.colorChoice span{border-color:#dedde1;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+
+.sizeRow,.measurementPanel,.reviewBox,.finalNotice,.sizeSummary,.fileItem{
+  background:#f7f6f4;border-color:#dedde1;color:#111
+}
+.sizeTable th{background:#111115;color:#fff;border-color:#303036}
+.sizeTable td{background:#fff;border-color:#dedde1}
+.reviewBox strong,.reviewBox p{color:#242429}
+.uploadArea{background:#f8f7f5;border-color:#c8c7cc}
+.uploadArea p{color:#707077}
+
+.btn{position:relative;overflow:hidden;transition:.25s}
+.btn:not(.btnPrimary){background:#111115;color:#fff;border-color:#111115}
+.btn::before{
+  content:"";position:absolute;inset:0;transform:translateX(-120%);
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);transition:.55s
+}
+.btn:hover::before{transform:translateX(120%)}
+
+.sideCard{
+  background:#111115;color:#fff;border-color:#111115;
+  box-shadow:0 18px 45px rgba(17,17,20,.11)
+}
+.sideRow{border-color:#2b2b31}.sideRow strong{color:#fff}
+.helpCard{
+  background:radial-gradient(circle at 90% 0%,rgba(239,27,36,.2),transparent 42%),#09090b;
+  color:#fff;border-color:rgba(239,27,36,.35)
+}
+
+.premiumReveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.premiumReveal.inView{opacity:1;transform:none}
+.formStep.active{animation:premiumStep .38s cubic-bezier(.2,.8,.2,1) both}
+@keyframes premiumStep{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+body.intro-lock{overflow:hidden}
+.uzIntro{
+  position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
+  background:#050506;transition:opacity .55s ease,visibility .55s ease
+}
+.uzIntro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.uzIntroInner{text-align:center;animation:uzIntroIn .75s cubic-bezier(.2,.8,.2,1) both}
+.uzIntroLogo{width:min(210px,52vw);height:auto;display:block;margin:0 auto 20px;filter:drop-shadow(0 15px 40px rgba(0,0,0,.35))}
+.uzIntroText{color:#fff;font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.uzIntroLine{width:46px;height:2px;margin:16px auto 0;background:var(--red);animation:uzLine 1.25s ease-in-out infinite alternate}
+@keyframes uzIntroIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes uzLine{from{transform:scaleX(.35);opacity:.55}to{transform:scaleX(1);opacity:1}}
+
+@media(max-width:900px){.progressPanel{position:relative;top:auto}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 
-<body>
+<body class="intro-lock">
+<div class="uzIntro" id="uzIntro" aria-hidden="true">
+  <div class="uzIntroInner">
+    <img class="uzIntroLogo" src="uz-logo.png.PNG" alt="UZ Industry">
+    <div class="uzIntroText">In-House Sportswear Manufacturer</div>
+    <div class="uzIntroLine"></div>
+  </div>
+</div>
 
 <!-- =========================================================
      HEADER
@@ -1364,8 +1484,8 @@ footer{
       </div>
 
       <div class="heroFact">
-        <strong>26+</strong>
-        <span>Product Categories</span>
+        <strong>70+</strong>
+        <span>Custom Products</span>
       </div>
 
       <div class="heroFact">
@@ -3327,5 +3447,33 @@ showStep(1);
 
 </script>
 
+<script>
+
+/* UZ CUSTOM ORDER — PREMIUM UI */
+(function(){
+  const intro=document.getElementById("uzIntro");
+  if(intro){
+    window.addEventListener("load",function(){
+      setTimeout(function(){
+        intro.classList.add("hide");
+        document.body.classList.remove("intro-lock");
+        setTimeout(function(){intro.remove()},650);
+      },2000);
+    });
+  }
+
+  const header=document.querySelector(".siteHeader");
+  const headerState=()=>header&&header.classList.toggle("scrolled",window.scrollY>18);
+  headerState(); window.addEventListener("scroll",headerState,{passive:true});
+
+  document.querySelectorAll(".heroGrid,.progressPanel,.formPanel,.sideCard,.helpCard")
+    .forEach(el=>el.classList.add("premiumReveal"));
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("inView");io.unobserve(e.target)}})
+  },{threshold:.08});
+  document.querySelectorAll(".premiumReveal").forEach(el=>io.observe(el));
+})();
+
+</script>
 </body>
 </html>
