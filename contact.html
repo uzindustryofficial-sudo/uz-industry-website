@@ -1628,11 +1628,63 @@ body{
   }
 }
 
+
+/* ===== UZ SIGNATURE CONTACT — LIGHT/DARK PREMIUM SYSTEM ===== */
+:root{--paper:#f5f4f1;--ink:#161619;--lightline:#e1dfe0}
+::selection{background:#ef1b24;color:white}
+.siteHeader{transition:background .25s,box-shadow .25s}
+.siteHeader.scrolled{background:rgba(5,5,6,.97);box-shadow:0 12px 34px rgba(0,0,0,.18)}
+.hero{background:radial-gradient(circle at 78% 14%,rgba(239,27,36,.21),transparent 34%),linear-gradient(135deg,#070708,#19191e 63%,#09090b)}
+.heroQuickItem{box-shadow:0 12px 36px rgba(0,0,0,.14)}
+.trust{background:#fff;border-color:var(--lightline);color:var(--ink)}
+.trustItem{border-color:var(--lightline)}
+.trustItem span{color:#74747b}
+.contactChoice,.contactSection,.prepareSection,.faqSection{background:var(--paper);color:var(--ink)}
+.contactChoice .choiceIntro p,.contactSection .sectionText{color:#66666d}
+.choiceCard{background:#fff;color:var(--ink);border-color:var(--lightline);box-shadow:0 10px 30px rgba(0,0,0,.04)}
+.choiceCard.featured{background:#17171b;color:#fff;border-color:#17171b}
+.choiceCard p{color:#74747b}.choiceCard.featured p{color:#aaaab1}
+.formPanel{background:#fff;color:var(--ink);border-color:var(--lightline);box-shadow:0 22px 55px rgba(20,20,25,.07)}
+.formTop p{color:#6c6c72}
+.field label{color:#43434a}
+.field input,.field select,.field textarea{background:#faf9f7;color:#18181c;border-color:#d9d7da}
+.field input:focus,.field select:focus,.field textarea:focus{background:white;box-shadow:0 0 0 3px rgba(239,27,36,.09)}
+.field select option{background:white;color:#18181c}
+.fieldHint,.formNotice{color:#77777d}
+.quickCard{background:#fff;color:var(--ink);border-color:var(--lightline);box-shadow:0 10px 30px rgba(0,0,0,.035)}
+.quickCard p{color:#74747b}.quickValue{color:#18181c}.quickIcon{border-color:var(--lightline)}
+.businessCard{background:#17171b;color:white;border-color:#17171b}
+.businessRow{border-color:#34343a}
+.prepareGrid{background:#e3e1e2;border-color:#e3e1e2}
+.prepareCard{background:#fff;color:var(--ink)}
+.prepareCard:hover{background:#faf8f7}
+.prepareNo{color:#d6d4d5}.prepareCard p{color:#6f6f76}
+.faqItem{background:#fff;border-color:var(--lightline)}
+.faqQuestion{color:var(--ink)}.faqAnswer{color:#696970}
+.btn{position:relative;overflow:hidden}
+.btn:before{content:'';position:absolute;inset:0;transform:translateX(-130%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);transition:transform .55s}
+.btn:hover:before{transform:translateX(130%)}
+.contactSection,.prepareSection,.faqSection{border-top:1px solid var(--lightline)}
+.premiumReveal{opacity:0;transform:translateY(23px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.premiumReveal.inView{opacity:1;transform:none}
+body.uzIntroLock{overflow:hidden}
+.uzIntro{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#050506;transition:opacity .55s ease,visibility .55s ease}
+.uzIntro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.uzIntroInner{text-align:center;animation:uzIntroIn .75s ease both}
+.uzIntroLogo{width:min(210px,52vw);height:auto;display:block;margin:0 auto 20px}
+.uzIntroText{color:white;font-size:10px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}
+.uzIntroLine{height:2px;width:48px;background:#ef1b24;margin:16px auto 0;animation:uzIntroLine 1.25s ease-in-out infinite alternate}
+@keyframes uzIntroIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes uzIntroLine{from{transform:scaleX(.35)}to{transform:scaleX(1)}}
+@media(max-width:650px){.choiceCard{min-height:205px}.formPanel{padding:26px 19px}.heroQuickItem{padding:18px}}
+@media(prefers-reduced-motion:reduce){.premiumReveal{opacity:1;transform:none}}
+
 </style>
 
 </head>
 
-<body>
+<body class="uzIntroLock">
+<div class="uzIntro" id="uzIntro" aria-hidden="true"><div class="uzIntroInner"><img class="uzIntroLogo" src="uz-logo.png.PNG" alt="UZ Industry"><div class="uzIntroText">In-House Sportswear Manufacturer</div><div class="uzIntroLine"></div></div></div>
 
 <!-- =========================================================
      HEADER
@@ -3169,5 +3221,23 @@ document
 
 </script>
 
+
+<script>
+/* UZ premium presentation; existing form and FAQ scripts remain unchanged */
+(function(){
+ const intro=document.getElementById('uzIntro');
+ const dismiss=()=>{if(!intro)return;intro.classList.add('hide');document.body.classList.remove('uzIntroLock');setTimeout(()=>intro.remove(),650)};
+ // Hold splash for a full two seconds, then fade.
+ setTimeout(dismiss,2550);
+ const header=document.querySelector('.siteHeader');
+ const onScroll=()=>header&&header.classList.toggle('scrolled',window.scrollY>18);
+ onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+ const els=document.querySelectorAll('.heroGrid,.trustGrid,.choiceGrid,.sectionHeader,.formPanel,.contactSidebar,.bridgeBox,.prepareGrid,.channelGrid,.faqWrap,.finalCtaInner');
+ if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('inView');observer.unobserve(e.target)}}),{threshold:.06});
+   els.forEach(el=>{el.classList.add('premiumReveal');observer.observe(el)});
+ }
+})();
+</script>
 </body>
 </html>
