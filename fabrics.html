@@ -1436,10 +1436,147 @@ footer{
   }
 }
 
+
+/* =========================================================
+   UZ INDUSTRY — FABRICS / SIGNATURE PREMIUM EDITION
+   ========================================================= */
+:root{
+  --paper:#f3f1ec;
+  --paper2:#ffffff;
+  --ink:#111115;
+  --softInk:#696970;
+  --lightLine:#dedde0;
+}
+::selection{background:var(--red);color:#fff}
+body{background:var(--paper);color:var(--ink)}
+.siteHeader{background:rgba(5,5,6,.90);transition:.3s ease}
+.siteHeader.scrolled{background:rgba(5,5,6,.98);box-shadow:0 12px 38px rgba(0,0,0,.2)}
+
+.hero{
+  min-height:740px;color:#fff;
+  background:
+    radial-gradient(circle at 80% 28%,rgba(239,27,36,.25),transparent 28%),
+    linear-gradient(128deg,#050506 0%,#15151a 62%,#050506 100%);
+}
+.hero::after{content:"FABRIC";font-size:14vw;opacity:.8}
+.hero p{color:#c3c3ca}
+.heroContent>*{opacity:0;transform:translateY(24px);animation:fabricHeroIn .7s cubic-bezier(.2,.8,.2,1) forwards}
+.heroContent>*:nth-child(1){animation-delay:.08s}.heroContent>*:nth-child(2){animation-delay:.16s}.heroContent>*:nth-child(3){animation-delay:.24s}.heroContent>*:nth-child(4){animation-delay:.32s}
+@keyframes fabricHeroIn{to{opacity:1;transform:none}}
+.stat{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.14);backdrop-filter:blur(10px)}
+
+.fabricSection{background:var(--paper);color:var(--ink)}
+.sectionHeader p{color:var(--softInk)}
+.fabricGrid{gap:22px}
+.fabricCard{
+  position:relative;isolation:isolate;
+  border:1px solid var(--lightLine);
+  background:#fff;color:#111115;
+  box-shadow:0 8px 28px rgba(17,17,20,.055);
+  border-radius:4px;
+}
+.fabricCard:hover{
+  transform:translateY(-8px);
+  border-color:#c9c8cc;
+  box-shadow:0 28px 60px rgba(17,17,20,.14);
+}
+.fabricCard::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:var(--red);transform:scaleX(0);transform-origin:left;transition:.35s ease
+}
+.fabricCard:hover::after{transform:scaleX(1)}
+.fabricImage{height:340px;background:#ececee}
+.fabricImage img{transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.fabricCard:hover .fabricImage img{transform:scale(1.055)}
+.fabricImage::before{
+  content:"EXPLORE FABRIC";position:absolute;right:14px;bottom:14px;z-index:3;
+  padding:9px 11px;background:rgba(255,255,255,.92);color:#111;
+  font-size:8px;font-weight:900;letter-spacing:.12em;
+  opacity:0;transform:translateY(7px);transition:.3s;backdrop-filter:blur(8px)
+}
+.fabricCard:hover .fabricImage::before{opacity:1;transform:none}
+.fabricNo{background:rgba(8,8,10,.88);color:#fff;border-color:rgba(255,255,255,.18);border-radius:999px}
+.fabricInfo{border-top:1px solid #e4e3e6}
+.fabricInfo h3{color:#111115}.fabricInfo p{color:#6d6d74}.view{color:var(--red)}
+
+.ctaBanner{
+  color:#fff;border:0;border-radius:4px;
+  background:radial-gradient(circle at 88% 25%,rgba(239,27,36,.34),transparent 28%),linear-gradient(120deg,#09090b,#18181d);
+  box-shadow:0 28px 70px rgba(0,0,0,.16)
+}
+.ctaBanner p{color:#c3c3ca}
+
+.selectionGuide{
+  color:#fff;background:
+  radial-gradient(circle at 12% 12%,rgba(239,27,36,.09),transparent 25%),#09090b
+}
+.guideIntro p{color:#a5a5ad}
+.guideMatrix{border-color:#2b2b31;background:#2b2b31}
+.guideItem{background:#0e0e12}.guideItem:hover{background:#15151a;transform:translateY(-3px)}
+.guideItem{transition:.3s ease}
+
+.fabricWhy{background:var(--paper2);color:var(--ink);border-color:var(--lightLine)}
+.fabricWhy .sectionHeader p{color:var(--softInk)}
+.whyGrid{background:#dedde0;border-color:#dedde0}
+.whyCard{background:#fff}
+.whyCard strong{color:#e1e0e3}
+.whyCard h3{color:#111115}
+.whyCard p{color:#707077}
+
+.fabricNote{background:var(--paper2)}
+.noteInner{background:#f5f4f1;border-color:#dedde0;color:#111115;box-shadow:0 15px 45px rgba(17,17,20,.06)}
+.noteInner p{color:#6c6c73}
+
+.modal{background:rgba(6,6,8,.88)}
+.modalBox{background:#fff;color:#111;border:0;border-radius:5px;overflow:auto}
+.modal.show .modalBox{animation:fabricModalIn .38s cubic-bezier(.2,.8,.2,1) both}
+@keyframes fabricModalIn{from{opacity:0;transform:translateY(22px) scale(.985)}to{opacity:1;transform:none}}
+.modalImage{background:radial-gradient(circle at center,rgba(239,27,36,.06),transparent 55%),#f0f0f1}
+.modalContent{background:#fff}.modalDescription{color:#696970}
+.detail{background:#f6f5f3;border-color:#dfdee1}.detail span{color:#65656c}
+.close{background:#fff;color:#111;border-color:#d6d5d8;border-radius:50%}
+.close:hover{transform:rotate(90deg);background:#111;color:#fff;border-color:#111}
+
+.btn{position:relative;overflow:hidden}
+.btn::before{content:"";position:absolute;inset:0;transform:translateX(-115%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);transition:.55s}
+.btn:hover::before{transform:translateX(115%)}
+
+.premiumReveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.premiumReveal.inView{opacity:1;transform:none}
+
+/* Same UZ opening language as Products, timed to a full 2 seconds */
+body.intro-lock{overflow:hidden}
+.uzIntro{
+  position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
+  background:#050506;transition:opacity .55s ease,visibility .55s ease
+}
+.uzIntro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.uzIntroInner{text-align:center;animation:uzIntroIn .75s cubic-bezier(.2,.8,.2,1) both}
+.uzIntroLogo{width:min(210px,52vw);height:auto;display:block;margin:0 auto 20px;filter:drop-shadow(0 15px 40px rgba(0,0,0,.35))}
+.uzIntroText{color:#fff;font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}
+.uzIntroLine{width:46px;height:2px;margin:16px auto 0;background:var(--red);animation:uzLine 1.25s ease-in-out infinite alternate}
+@keyframes uzIntroIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes uzLine{from{transform:scaleX(.35);opacity:.55}to{transform:scaleX(1);opacity:1}}
+
+@media(max-width:600px){
+  .fabricImage::before{display:none}
+  .fabricCard:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 
-<body>
+<body class="intro-lock">
+<div class="uzIntro" id="uzIntro" aria-hidden="true">
+  <div class="uzIntroInner">
+    <img class="uzIntroLogo" src="uz-logo.png.PNG" alt="UZ Industry">
+    <div class="uzIntroText">In-House Sportswear Manufacturer</div>
+    <div class="uzIntroLine"></div>
+  </div>
+</div>
 
 <header class="siteHeader">
 
@@ -1483,7 +1620,7 @@ footer{
   <div class="wrap heroContent">
 
     <div class="eyebrow">
-      UZ Industry • Performance Materials
+      Sialkot Manufacturing • Performance Materials
     </div>
 
     <h1>
@@ -1536,7 +1673,7 @@ footer{
       <div>
 
         <div class="eyebrow">
-          Fabric Collection
+          Material Library
         </div>
 
         <h2>
@@ -2217,6 +2354,41 @@ document.addEventListener("keydown",function(e){
   }
 
 });
+
+
+/* UZ FABRICS — PREMIUM UI */
+(function(){
+  const intro=document.getElementById("uzIntro");
+  if(intro){
+    window.addEventListener("load",function(){
+      /* Full 2 seconds visible, then premium fade */
+      setTimeout(function(){
+        intro.classList.add("hide");
+        document.body.classList.remove("intro-lock");
+        setTimeout(function(){intro.remove()},650);
+      },2000);
+    });
+  }
+
+  const header=document.querySelector(".siteHeader");
+  function headerState(){if(header) header.classList.toggle("scrolled",window.scrollY>18)}
+  headerState();
+  window.addEventListener("scroll",headerState,{passive:true});
+
+  document.querySelectorAll(".fabricCard,.sectionHeader,.ctaBanner,.guideIntro,.guideItem,.whyCard,.noteInner")
+    .forEach(function(el){el.classList.add("premiumReveal")});
+
+  const observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add("inView");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
+
+  document.querySelectorAll(".premiumReveal").forEach(function(el){observer.observe(el)});
+})();
 
 </script>
 
