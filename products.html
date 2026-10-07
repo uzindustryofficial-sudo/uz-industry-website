@@ -1013,6 +1013,84 @@ footer{
 
 }
 
+
+/* PREMIUM PRODUCT PAGE REDESIGN */
+:root{--paper:#f4f2ed;--paper2:#fff;--ink:#101014;--softInk:#68686f;--lightLine:#dedde0}
+body{background:var(--paper);color:var(--ink)}
+.siteHeader{background:rgba(5,5,6,.91)}
+.hero{min-height:690px;display:flex;align-items:center;color:#fff;border-bottom:0;background:radial-gradient(circle at 84% 28%,rgba(239,27,36,.25),transparent 27%),linear-gradient(125deg,#050506,#15151a 62%,#050506)}
+.hero::after{content:"SPORT";font-size:19vw;right:-2%;bottom:-3%}
+.heroContent{padding-right:min(29vw,380px)}
+.hero p{color:#c7c7cd}.stat{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.14);backdrop-filter:blur(10px)}
+.catalog{background:var(--paper);color:var(--ink)}.catalogHeader p{color:var(--softInk)}
+.toolbar{position:sticky;top:78px;z-index:50;padding:15px 0;background:rgba(244,242,237,.93);backdrop-filter:blur(15px);border-top:1px solid var(--lightLine);border-bottom:1px solid var(--lightLine)}
+.filterBtn{border-color:#d1d0d3;background:#fff;color:#4c4c54;border-radius:999px;transition:.25s}
+.filterBtn.active,.filterBtn:hover{background:#101014;border-color:#101014;color:#fff}
+.search input{background:#fff;color:#101014;border-color:#d1d0d3;border-radius:999px;padding-left:18px}
+.productGrid{gap:22px}.productCard{border:1px solid #dedde0;background:#fff;color:#101014;border-radius:4px;box-shadow:0 7px 28px rgba(17,17,20,.055)}
+.productCard:hover{transform:translateY(-8px);border-color:#c7c6ca;box-shadow:0 25px 55px rgba(17,17,20,.13)}
+.productImage{height:350px;background:radial-gradient(circle at 50% 45%,rgba(239,27,36,.055),transparent 45%),linear-gradient(145deg,#fafafa,#eeeeef)}
+.productImage img{padding:4px}.category{color:#fff;background:rgba(8,8,10,.88);border-color:rgba(255,255,255,.2);border-radius:999px;backdrop-filter:blur(8px)}
+.productInfo{border-top:1px solid #e4e3e6;min-height:190px}.productInfo h3{color:#111115;font-size:18px}.productInfo p{color:#6c6c73}
+.noResults{background:#fff;border-color:#ddd;color:#111}.ctaBanner{border:0;border-radius:4px;color:#fff;background:radial-gradient(circle at 88% 25%,rgba(239,27,36,.32),transparent 27%),linear-gradient(120deg,#09090b,#17171c);box-shadow:0 25px 70px rgba(0,0,0,.16)}
+.ctaBanner p{color:#c0c0c6}.modal{background:rgba(7,7,9,.86)}.modalBox{border:0;background:#fff;color:#111;border-radius:5px}.modalImage{background:radial-gradient(circle at center,rgba(239,27,36,.06),transparent 55%),#f1f1f2}.modalContent{background:#fff}.modalDescription{color:#696970}.detail{border-color:#e0dfe2;background:#f6f5f3}.detail span{color:#626269}.close{border:1px solid #d7d6d9;background:#fff;color:#111;border-radius:50%}
+.catalogCount{margin:0 0 18px;color:#77777e;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.revealCard{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.revealCard.revealed{opacity:1;transform:none}
+@media(max-width:900px){.heroContent{padding-right:0}.toolbar{top:70px}}
+@media(max-width:600px){.hero{min-height:auto}.toolbar{position:relative;top:auto}.productImage{height:350px}}
+
+
+/* =========================================================
+   FINAL PREMIUM MOTION + INTERACTION POLISH
+   ========================================================= */
+::selection{background:var(--red);color:#fff}
+body{animation:pageIn .65s ease both}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+
+.siteHeader{transition:background .3s ease,box-shadow .3s ease}
+.siteHeader.scrolled{background:rgba(5,5,6,.97);box-shadow:0 10px 35px rgba(0,0,0,.18)}
+
+.heroContent>*{opacity:0;transform:translateY(24px);animation:heroRise .7s cubic-bezier(.2,.7,.2,1) forwards}
+.heroContent>*:nth-child(1){animation-delay:.08s}
+.heroContent>*:nth-child(2){animation-delay:.16s}
+.heroContent>*:nth-child(3){animation-delay:.24s}
+.heroContent>*:nth-child(4){animation-delay:.32s}
+.heroContent>*:nth-child(5){animation-delay:.40s}
+@keyframes heroRise{to{opacity:1;transform:none}}
+
+.hero::before{animation:heroGlow 8s ease-in-out infinite alternate}
+@keyframes heroGlow{from{opacity:.48;transform:scale(1)}to{opacity:.78;transform:scale(1.035)}}
+
+.btn{position:relative;overflow:hidden}
+.btn::before{content:"";position:absolute;inset:0;transform:translateX(-110%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.17),transparent);transition:transform .55s ease}
+.btn:hover::before{transform:translateX(110%)}
+
+.productCard{position:relative;isolation:isolate}
+.productCard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.productCard:hover::after{transform:scaleX(1)}
+.productImage::after{content:"VIEW PRODUCT";position:absolute;right:14px;bottom:14px;padding:9px 11px;background:rgba(255,255,255,.9);color:#111;font-size:8px;font-weight:900;letter-spacing:.12em;opacity:0;transform:translateY(7px);transition:.3s;backdrop-filter:blur(8px)}
+.productCard:hover .productImage::after{opacity:1;transform:none}
+.productCard:hover .productImage img{transform:scale(1.055)}
+
+.filterBtn,.search input{transition:.25s ease}
+.filterBtn:hover{transform:translateY(-2px)}
+.search input:focus{box-shadow:0 0 0 4px rgba(239,27,36,.09)}
+
+.modal.show .modalBox{animation:modalEnter .38s cubic-bezier(.2,.8,.2,1) both}
+@keyframes modalEnter{from{opacity:0;transform:translateY(20px) scale(.985)}to{opacity:1;transform:none}}
+.close{transition:.25s ease}.close:hover{transform:rotate(90deg);border-color:var(--red);color:var(--red)}
+
+.catalogHeader,.ctaBanner{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.catalogHeader.inView,.ctaBanner.inView{opacity:1;transform:none}
+
+@media(max-width:600px){
+  .productImage::after{display:none}
+  .productCard:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 
@@ -1070,7 +1148,7 @@ footer{
   <div class="wrap heroContent">
 
     <div class="eyebrow">
-      UZ Industry • Custom Sportswear
+      Sialkot Manufacturing • Custom Sportswear
     </div>
 
     <h1>
@@ -1099,7 +1177,7 @@ footer{
     <div class="heroStats">
 
       <div class="stat">
-        <strong>26+</strong>
+        <strong>70+</strong>
         <span>Product Categories</span>
       </div>
 
@@ -1138,7 +1216,7 @@ footer{
       <div>
 
         <div class="eyebrow">
-          Complete Product Range
+          UZ Product Catalogue
         </div>
 
         <h2>
@@ -1200,6 +1278,8 @@ footer{
 
     </div>
 
+
+    <div class="catalogCount" id="catalogCount"></div>
 
     <div class="productGrid" id="productGrid"></div>
 
@@ -1867,6 +1947,579 @@ benefit:"Stretch, durability, moisture management and secure fit.",
 construction:"Reinforced heel and toe with ribbed performance construction.",
 customization:"Colors, knitted designs, logos, sizing and packaging."
 }
+,
+
+{
+name:"Lacrosse Uniforms",
+image:"lacrosse-uniform.jpg.png",
+category:"team",
+tag:"Team Sports",
+subtitle:"Fully Customizable",
+description:"Custom lacrosse uniforms developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Field Hockey Uniforms",
+image:"field-hockey-uniform.jpg.png",
+category:"team",
+tag:"Team Sports",
+subtitle:"Fully Customizable",
+description:"Custom field hockey uniforms developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Handball Uniforms",
+image:"handball-uniform.jpg.png",
+category:"team",
+tag:"Team Sports",
+subtitle:"Fully Customizable",
+description:"Custom handball uniforms developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Netball Uniforms",
+image:"netball-uniform.jpg.png",
+category:"team",
+tag:"Team Sports",
+subtitle:"Fully Customizable",
+description:"Custom netball uniforms developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Flag Football Uniforms",
+image:"flag-football-uniform.jpg.png",
+category:"team performance",
+tag:"Team Sports",
+subtitle:"Fully Customizable",
+description:"Custom flag football uniforms developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Pickleball Apparel",
+image:"pickleball-apparel.jpg.png",
+category:"performance",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom pickleball apparel developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Compression Tights & Leggings",
+image:"ompression-tights-leggings.jpg.png",
+category:"performance activewear",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom compression tights & leggings developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Sleeveless Performance Top",
+image:"sleeveless-performance-top.jpg.png",
+category:"performance activewear",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom sleeveless performance top developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Sports Bra",
+image:"sports-bra.jpg.png",
+category:"activewear performance",
+tag:"Activewear",
+subtitle:"Fully Customizable",
+description:"Custom sports bra developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Sports Leggings",
+image:"sports-leggings.jpg.png",
+category:"activewear performance",
+tag:"Activewear",
+subtitle:"Fully Customizable",
+description:"Custom sports leggings developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Cycling Bib Shorts",
+image:"cycling-bib-shorts.jpg.png",
+category:"performance activewear",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom cycling bib shorts developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Running Singlet",
+image:"running-singlet.jpg.png",
+category:"performance",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom running singlet developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Windbreaker",
+image:"windbreaker.jpg.png",
+category:"teamwear performance",
+tag:"Teamwear",
+subtitle:"Fully Customizable",
+description:"Custom windbreaker developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Quarter-Zip Training Top",
+image:"quarter-zip-training-top.jpg.png",
+category:"teamwear performance",
+tag:"Teamwear",
+subtitle:"Fully Customizable",
+description:"Custom quarter-zip training top developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Reversible Practice Jersey",
+image:"reversible-practice-jersey.jpg.png",
+category:"team teamwear",
+tag:"Teamwear",
+subtitle:"Fully Customizable",
+description:"Custom reversible practice jersey developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Sports Towel",
+image:"sports-towel.jpg.png",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom sports towel developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Sports Bucket Hat",
+image:"sports-bucket-hat.jpg.png",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom sports bucket hat developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Sports Beanie",
+image:"sports-beanie.jpg.png",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom sports beanie developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Sports Cap",
+image:"sports-cap.jpg.png",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom sports cap developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Training Bib / Scrimmage Vest",
+image:"raining-bib-scrimmage-vest.jpg.png",
+category:"accessories teamwear",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom training bib / scrimmage vest developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Captain Armband",
+image:"captain-armband.jpg.png",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom captain armband developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Neck Gaiter",
+image:"neck-gaiter.jpg.png",
+category:"accessories",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom neck gaiter developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Arm Sleeves",
+image:"arm-sleeves.jpg.png",
+category:"accessories performance",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom arm sleeves developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Kickboxing Shorts",
+image:"kickboxing-shorts.jpg.png",
+category:"combat",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom kickboxing shorts developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Muay Thai Shorts",
+image:"muay-thai-shorts.jpg.png",
+category:"combat",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom muay thai shorts developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Boxing Competition Vest",
+image:"boxing-competition-vest.jpg.png",
+category:"combat",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom boxing competition vest developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Custom Boxing Robe",
+image:"custom-boxing-robe.jpg.png",
+category:"combat",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom custom boxing robe developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Compression Leg Sleeves",
+image:"compression-leg-sleeves.jpg.png",
+category:"performance accessories",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom compression leg sleeves developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Performance Sports Headband",
+image:"performance-sports-headband.jpg.png",
+category:"accessories performance",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom performance sports headband developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Performance Wrist Sweatbands",
+image:"performance-wrist-sweatbands.jpg.png",
+category:"accessories performance",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom performance wrist sweatbands developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Performance Sports Waist Belt",
+image:"performance-sports-waist-belt.jpg.png",
+category:"accessories performance",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom performance sports waist belt developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Performance Elbow Sleeves",
+image:"performance-elbow-sleeves.jpg.png",
+category:"performance accessories",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom performance elbow sleeves developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"BJJ Gi",
+image:"bjj-gi.jpg.png",
+category:"combat",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom bjj gi developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Wrestling Warm-Up Jacket",
+image:"wrestling-warm-up-jacket.jpg.png",
+category:"combat teamwear",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom wrestling warm-up jacket developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Wrestling Warm-Up Pants",
+image:"wrestling-warm-up-pants.jpg.png",
+category:"combat teamwear",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom wrestling warm-up pants developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Boxing Corner Jacket",
+image:"boxing-corner-jacket.jpg.png",
+category:"combat teamwear",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom boxing corner jacket developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Grappling Fight Shorts",
+image:"grappling-fight-shorts.jpg.png",
+category:"combat performance",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom grappling fight shorts developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Boxing Hand Wraps",
+image:"boxing-hand-wraps.jpg.png",
+category:"combat accessories",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom boxing hand wraps developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Martial Arts Training Jacket",
+image:"martial-arts-training-jacket.jpg.png",
+category:"combat teamwear",
+tag:"Combat",
+subtitle:"Fully Customizable",
+description:"Custom martial arts training jacket developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Triathlon Suit",
+image:"triathlon-suit.jpg.png",
+category:"performance activewear",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom triathlon suit developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Performance Shooting Sleeve",
+image:"performance-shooting-sleeve.jpg.png",
+category:"performance accessories",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom performance shooting sleeve developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Performance Ankle Sleeves",
+image:"performance-ankle-sleeves.jpg.png",
+category:"performance accessories",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom performance ankle sleeves developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Thermal Sports Neck Warmer",
+image:"thermal-sports-neck-warmer.jpg.png",
+category:"accessories performance",
+tag:"Accessories",
+subtitle:"Fully Customizable",
+description:"Custom thermal sports neck warmer developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+},
+
+{
+name:"Performance Calf Sleeves",
+image:"performance-calf-sleeves.jpg.png",
+category:"performance accessories",
+tag:"Performance",
+subtitle:"Fully Customizable",
+description:"Custom performance calf sleeves developed for teams, clubs, athletes and private-label programs.",
+fabric:"Selected according to product use, performance needs and buyer specification.",
+benefit:"Developed around comfort, movement, durability and intended sports use.",
+construction:"Construction and fit can be adjusted according to the product, sport and buyer requirements.",
+customization:"Custom colors, logos, graphics, sizing, branding and private-label options."
+}
 
 ];
 
@@ -1886,10 +2539,10 @@ function renderProducts(){
     return `
 
       <article
-        class="productCard"
+        class="productCard revealCard"
         data-index="${index}"
         data-category="${product.category}"
-        data-name="${product.name.toLowerCase()}">
+        data-name="${(product.name + " " + product.tag + " " + product.subtitle + " " + product.category).toLowerCase()}">
 
         <div class="productImage">
 
@@ -1946,6 +2599,15 @@ function renderProducts(){
 
 
 renderProducts();
+
+const catalogCount=document.getElementById("catalogCount");
+if(catalogCount) catalogCount.textContent=products.length+" custom products • click any product for details";
+const revealObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){entry.target.classList.add("revealed");revealObserver.unobserve(entry.target);}
+  });
+},{threshold:.08});
+document.querySelectorAll(".revealCard").forEach(function(card){revealObserver.observe(card);});
 
 
 /* =========================================================
@@ -2142,6 +2804,25 @@ document.addEventListener("keydown",function(e){
   }
 
 });
+
+
+/* FINAL UI POLISH */
+const siteHeader=document.querySelector(".siteHeader");
+function updateHeader(){
+  if(siteHeader) siteHeader.classList.toggle("scrolled",window.scrollY>18);
+}
+updateHeader();
+window.addEventListener("scroll",updateHeader,{passive:true});
+
+const sectionObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add("inView");
+      sectionObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll(".catalogHeader,.ctaBanner").forEach(function(el){sectionObserver.observe(el);});
 
 </script>
 
