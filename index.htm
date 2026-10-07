@@ -2830,10 +2830,62 @@ footer{
   .factoryStoryGrid figure{min-height:280px;}
 }
 
+
+
+/* =========================================================
+   UZ INDUSTRY — PREMIUM INTRO + BALANCED MEDIA SIZING
+   ========================================================= */
+body.intro-lock{overflow:hidden}
+.uzIntro{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:#050506;opacity:1;visibility:visible;transition:opacity .55s cubic-bezier(.4,0,.2,1),visibility .55s}
+.uzIntro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.uzIntroInner{text-align:center;transform:translateY(8px);animation:uzIntroRise .8s cubic-bezier(.2,.75,.2,1) forwards}
+.uzIntroLogo{width:clamp(125px,16vw,205px);height:auto;display:block;margin:0 auto 18px;filter:drop-shadow(0 18px 45px rgba(0,0,0,.48));animation:uzLogoBreath 1.65s ease-in-out both}
+.uzIntroTitle{color:#fff;font-size:clamp(11px,1.15vw,15px);font-weight:900;letter-spacing:.22em;text-transform:uppercase}
+.uzIntroLine{width:0;height:2px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--red),transparent);animation:uzIntroLine 1.55s .18s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes uzIntroRise{to{transform:translateY(0)}}
+@keyframes uzLogoBreath{0%{opacity:0;transform:scale(.94)}35%{opacity:1;transform:scale(1)}100%{opacity:1;transform:scale(1.015)}}
+@keyframes uzIntroLine{to{width:min(190px,48vw)}}
+
+/* Premium proportions: strong visual impact without oversized media */
+.heroPremium{min-height:auto;padding-top:118px;padding-bottom:62px}
+.premiumSlider{min-height:540px;max-height:540px}
+.factoryVideoFeature{grid-template-columns:1.22fr .78fr;max-width:1180px;margin-inline:auto}
+.mainVideoWrap{min-height:430px;height:430px}
+.mainVideoWrap video{min-height:0;height:100%;object-fit:cover}
+
+@media(max-width:1000px){
+  .premiumSlider{min-height:500px;max-height:500px}
+  .mainVideoWrap{min-height:400px;height:400px}
+}
+@media(max-width:760px){
+  .heroPremium{padding-top:98px;padding-bottom:50px}
+  .premiumSlider{min-height:430px;max-height:430px}
+  .mainVideoWrap{min-height:330px;height:330px}
+  .mainVideoWrap video{min-height:0;height:100%}
+}
+@media(max-width:520px){
+  .premiumSlider{min-height:390px;max-height:390px}
+  .mainVideoWrap{min-height:285px;height:285px}
+  .uzIntroLogo{width:138px}
+  .uzIntroTitle{font-size:10px;letter-spacing:.17em}
+}
+@media(prefers-reduced-motion:reduce){
+  .uzIntroInner,.uzIntroLogo,.uzIntroLine{animation:none}
+  .uzIntro{transition:opacity .2s ease}
+}
+
 </style>
 </head>
 
-<body>
+<body class="intro-lock">
+<div class="uzIntro" id="uzIntro" aria-hidden="true">
+  <div class="uzIntroInner">
+    <img class="uzIntroLogo" src="./uz-logo.png.PNG" alt="UZ Industry">
+    <div class="uzIntroTitle">In-House Sportswear Manufacturer</div>
+    <div class="uzIntroLine"></div>
+  </div>
+</div>
+
 
 <header class="siteHeader">
 
@@ -5111,41 +5163,28 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+
+
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.getElementById("premiumSlider");
-  if (!slider) return;
-  const slides = Array.from(slider.querySelectorAll(".premiumSlide"));
-  const dots = Array.from(slider.querySelectorAll(".sliderDot"));
-  const prev = slider.querySelector(".sliderPrev");
-  const next = slider.querySelector(".sliderNext");
-  let current = 0, timer = null, touchStartX = 0;
-
-  function showSlide(index){
-    current = (index + slides.length) % slides.length;
-    slides.forEach((slide,i)=>slide.classList.toggle("active",i===current));
-    dots.forEach((dot,i)=>dot.classList.toggle("active",i===current));
+(function(){
+  const intro = document.getElementById("uzIntro");
+  if(!intro){ document.body.classList.remove("intro-lock"); return; }
+  const started = performance.now();
+  const minimumIntro = 1900;
+  function revealSite(){
+    const elapsed = performance.now() - started;
+    const wait = Math.max(0, minimumIntro - elapsed);
+    window.setTimeout(function(){
+      intro.classList.add("hide");
+      document.body.classList.remove("intro-lock");
+      window.setTimeout(function(){ intro.remove(); }, 650);
+    }, wait);
   }
-  function startAuto(){
-    clearInterval(timer);
-    timer = setInterval(()=>showSlide(current + 1), 4000);
-  }
-  if(prev) prev.addEventListener("click",()=>{showSlide(current-1);startAuto();});
-  if(next) next.addEventListener("click",()=>{showSlide(current+1);startAuto();});
-  dots.forEach((dot,i)=>dot.addEventListener("click",()=>{showSlide(i);startAuto();}));
-  slider.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});
-  slider.addEventListener("touchend",e=>{
-    const diff=e.changedTouches[0].screenX-touchStartX;
-    if(Math.abs(diff)>45){showSlide(current+(diff<0?1:-1));startAuto();}
-  },{passive:true});
-
-  document.querySelectorAll("video").forEach(video=>{
-    video.muted=true; video.defaultMuted=true; video.volume=0;
-  });
-
-  showSlide(0);
-  startAuto();
-});
+  if(document.readyState === "complete") revealSite();
+  else window.addEventListener("load", revealSite, {once:true});
+  window.setTimeout(revealSite, 3200);
+})();
 </script>
 
 </body>
