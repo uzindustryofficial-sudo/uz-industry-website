@@ -1091,10 +1091,12 @@ body{animation:pageIn .65s ease both}
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+
+body.intro-lock{overflow:hidden}.uzIntro{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#050506;transition:opacity .55s ease,visibility .55s ease}.uzIntro.hide{opacity:0;visibility:hidden;pointer-events:none}.uzIntroInner{text-align:center;animation:uzIntroIn .75s cubic-bezier(.2,.8,.2,1) both}.uzIntroLogo{width:min(210px,52vw);height:auto;display:block;margin:0 auto 20px}.uzIntroText{color:#fff;font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}.uzIntroLine{width:46px;height:2px;margin:16px auto 0;background:var(--red);animation:uzLine 1.25s ease-in-out infinite alternate}@keyframes uzIntroIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}@keyframes uzLine{from{transform:scaleX(.35);opacity:.55}to{transform:scaleX(1);opacity:1}}
 </style>
 </head>
 
-<body>
+<body class="intro-lock"><div class="uzIntro" id="uzIntro" aria-hidden="true"><div class="uzIntroInner"><img class="uzIntroLogo" src="uz-logo.png.PNG" alt="UZ Industry"><div class="uzIntroText">In-House Sportswear Manufacturer</div><div class="uzIntroLine"></div></div></div>
 
 <!-- =========================================================
      HEADER
@@ -1567,6 +1569,8 @@ body{animation:pageIn .65s ease both}
 
 
 <script>
+(function(){const i=document.getElementById("uzIntro");if(!i)return;window.addEventListener("load",function(){setTimeout(function(){i.classList.add("hide");document.body.classList.remove("intro-lock");setTimeout(function(){i.remove()},650)},1450)})})();
+
 
 /* =========================================================
    MOBILE MENU
@@ -2172,7 +2176,7 @@ customization:"Custom colors, logos, graphics, sizing, branding and private-labe
 
 {
 name:"Sports Beanie",
-image:"sports-beanie.jpg.png",
+image:"performance-sports-beanie.jpg.png",
 category:"accessories",
 tag:"Accessories",
 subtitle:"Fully Customizable",
@@ -2185,7 +2189,7 @@ customization:"Custom colors, logos, graphics, sizing, branding and private-labe
 
 {
 name:"Sports Cap",
-image:"sports-cap.jpg.png",
+image:"performance-sports-cap.jpg.png",
 category:"accessories",
 tag:"Accessories",
 subtitle:"Fully Customizable",
@@ -2224,7 +2228,7 @@ customization:"Custom colors, logos, graphics, sizing, branding and private-labe
 
 {
 name:"Neck Gaiter",
-image:"neck-gaiter.jpg.png",
+image:"performance-neck-gaiter.jpg.png",
 category:"accessories",
 tag:"Accessories",
 subtitle:"Fully Customizable",
@@ -2237,7 +2241,7 @@ customization:"Custom colors, logos, graphics, sizing, branding and private-labe
 
 {
 name:"Arm Sleeves",
-image:"arm-sleeves.jpg.png",
+image:"performance-arm-sleeves.jpg.png",
 category:"accessories performance",
 tag:"Accessories",
 subtitle:"Fully Customizable",
