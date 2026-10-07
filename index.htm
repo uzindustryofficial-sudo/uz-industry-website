@@ -49,54 +49,6 @@
 ]
 }
 
-/* Premium hero slider */
-(function(){
-  const slider = document.getElementById("premiumSlider");
-  if(!slider) return;
-
-  const slides = Array.from(slider.querySelectorAll(".premiumSlide"));
-  const dots = Array.from(slider.querySelectorAll(".sliderDot"));
-  const prev = slider.querySelector(".sliderPrev");
-  const next = slider.querySelector(".sliderNext");
-  let current = 0;
-  let timer = null;
-  let touchStartX = 0;
-
-  function showSlide(index){
-    current = (index + slides.length) % slides.length;
-    slides.forEach((slide,i)=>slide.classList.toggle("active",i===current));
-    dots.forEach((dot,i)=>dot.classList.toggle("active",i===current));
-    slides.forEach((slide,i)=>{
-      const video = slide.querySelector("video");
-      if(!video) return;
-      if(i===current){
-        try{ video.currentTime = 0; video.play(); }catch(e){}
-      }else{
-        video.pause();
-      }
-    });
-  }
-
-  function restart(){
-    clearInterval(timer);
-    timer = setInterval(()=>showSlide(current + 1), 4000);
-  }
-
-  prev.addEventListener("click",()=>{showSlide(current - 1);restart();});
-  next.addEventListener("click",()=>{showSlide(current + 1);restart();});
-  dots.forEach((dot,i)=>dot.addEventListener("click",()=>{showSlide(i);restart();}));
-
-  slider.addEventListener("mouseenter",()=>clearInterval(timer));
-  slider.addEventListener("mouseleave",restart);
-  slider.addEventListener("touchstart",(e)=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});
-  slider.addEventListener("touchend",(e)=>{
-    const diff=e.changedTouches[0].screenX-touchStartX;
-    if(Math.abs(diff)>45){showSlide(current + (diff<0?1:-1));restart();}
-  },{passive:true});
-
-  showSlide(0);
-  restart();
-})();
 
 </script>
   <style>
@@ -2848,6 +2800,36 @@ footer{
   .privateVisual .privateBadge{right:14px;top:14px;width:82px;height:82px;border-width:5px;}
 }
 
+
+/* UZ final polish */
+.productImage .productTag{
+  color:#fff !important;
+  background:rgba(5,5,6,.82) !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.factoryStoryGrid{grid-template-columns:1.25fr 1fr 1fr !important;}
+.factoryStoryGrid figure{min-height:320px;}
+@media(max-width:760px){
+  .factoryStoryGrid{grid-template-columns:1fr !important;}
+  .factoryStoryGrid figure{min-height:280px;}
+}
+
+
+/* UZ final polish */
+.productImage .productTag{
+  color:#fff !important;background:rgba(5,5,6,.84) !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.factoryStoryGrid{grid-template-columns:1.25fr 1fr 1fr !important;}
+.factoryStoryGrid figure{min-height:320px;}
+@media(max-width:760px){
+  .factoryStoryGrid{grid-template-columns:1fr !important;}
+  .factoryStoryGrid figure{min-height:280px;}
+}
+
 </style>
 </head>
 
@@ -2927,69 +2909,41 @@ footer{
 
     </div>
 
-    <div class="premiumSlider fashionSlider" id="premiumSlider" aria-label="UZ Industry products and manufacturing">
-
+    <div class="premiumSlider fashionSlider" id="premiumSlider" aria-label="UZ Industry featured sportswear">
       <div class="premiumSlide active productSlide">
         <img src="american-football.jpg.jpeg" alt="Custom American Football Uniform by UZ Industry">
-        <div class="slideShade"></div>
-        <div class="slideIndex">01 / 04</div>
-        <div class="slideCopy">
-          <span>CORE SPECIALTY • CUSTOM TEAMWEAR</span>
-          <h2>American<br>Football</h2>
-          <p>Custom youth and adult football uniforms manufactured for teams, clubs and programs worldwide.</p>
-        </div>
+        <div class="slideShade"></div><div class="slideIndex">01 / 04</div>
+        <div class="slideCopy"><span>CORE SPECIALTY • CUSTOM TEAMWEAR</span><h2>American<br>Football</h2>
+        <p>Custom youth and adult football uniforms manufactured for teams, clubs and programs worldwide.</p></div>
       </div>
-
-      <div class="premiumSlide videoSlide">
-        <video autoplay muted loop playsinline preload="metadata" poster="cutting.jpg.jpeg">
-          <source src="cutting-process.mp4" type="video/mp4">
-        </video>
-        <div class="slideShade"></div>
-        <div class="slideIndex">02 / 04</div>
-        <div class="liveFactoryTag"><i></i> REAL PRODUCTION</div>
-        <div class="slideCopy">
-          <span>INSIDE UZ INDUSTRY • SIALKOT</span>
-          <h2>Cutting<br>Process</h2>
-          <p>Real in-house production footage from our manufacturing floor in Sialkot, Pakistan.</p>
-        </div>
-      </div>
-
       <div class="premiumSlide productSlide">
         <img src="tracksuit.jpg.jpeg" alt="Custom Tracksuit and Training Wear by UZ Industry">
-        <div class="slideShade"></div>
-        <div class="slideIndex">03 / 04</div>
-        <div class="slideCopy">
-          <span>TRAINING WEAR • PRIVATE LABEL</span>
-          <h2>Custom<br>Tracksuits</h2>
-          <p>Performance training wear with custom colors, branding, sizing and private-label options.</p>
-        </div>
+        <div class="slideShade"></div><div class="slideIndex">02 / 04</div>
+        <div class="slideCopy"><span>TRAINING WEAR • PRIVATE LABEL</span><h2>Custom<br>Tracksuits</h2>
+        <p>Performance training wear with custom colors, branding, sizing and private-label options.</p></div>
       </div>
-
-      <div class="premiumSlide videoSlide">
-        <video autoplay muted loop playsinline preload="metadata" poster="stitching.jpg.jpeg">
-          <source src="stitching-process.mp4" type="video/mp4">
-        </video>
-        <div class="slideShade"></div>
-        <div class="slideIndex">04 / 04</div>
-        <div class="liveFactoryTag"><i></i> FACTORY FLOOR</div>
-        <div class="slideCopy">
-          <span>IN-HOUSE MANUFACTURING • REAL TEAM</span>
-          <h2>Built by<br>Our Team</h2>
-          <p>A real view of our stitching floor and the people behind UZ Industry production.</p>
-        </div>
+      <div class="premiumSlide productSlide">
+        <img src="cheer-uniform.jpg.jpeg" alt="Custom Cheer Uniform by UZ Industry">
+        <div class="slideShade"></div><div class="slideIndex">03 / 04</div>
+        <div class="slideCopy"><span>CUSTOM TEAMWEAR • PERFORMANCE</span><h2>Cheer<br>Uniforms</h2>
+        <p>Custom cheer uniforms built around your team colors, identity, sizing and performance requirements.</p></div>
       </div>
-
+      <div class="premiumSlide productSlide">
+        <img src="basketball-uniform.jpg.jpeg" alt="Custom Basketball Uniform by UZ Industry">
+        <div class="slideShade"></div><div class="slideIndex">04 / 04</div>
+        <div class="slideCopy"><span>GAME UNIFORMS • FULL CUSTOMIZATION</span><h2>Basketball<br>Uniforms</h2>
+        <p>Lightweight custom basketball sets with coordinated jerseys, shorts and complete team customization.</p></div>
+      </div>
       <button class="sliderArrow sliderPrev" type="button" aria-label="Previous slide">←</button>
       <button class="sliderArrow sliderNext" type="button" aria-label="Next slide">→</button>
-
       <div class="sliderDots" aria-label="Choose slide">
         <button class="sliderDot active" type="button" aria-label="Slide 1"></button>
         <button class="sliderDot" type="button" aria-label="Slide 2"></button>
         <button class="sliderDot" type="button" aria-label="Slide 3"></button>
         <button class="sliderDot" type="button" aria-label="Slide 4"></button>
       </div>
-
-      <div class="heroMoq"><strong>10</strong><span>PCS MOQ</span></div>
+      <div class="heroMoq"><strong>10</strong><span>MOQ PCS</span></div>
+    </div>
 
     </div>
 
@@ -3273,7 +3227,7 @@ footer{
 
     <div class="factoryVideoFeature">
       <div class="mainVideoWrap">
-        <video controls playsinline preload="metadata" poster="factory.jpg.jpeg">
+        <video muted controls playsinline preload="metadata" poster="factory.jpg.jpeg">
           <source src="uz-industry-factory.mp4.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -3311,7 +3265,6 @@ footer{
         <figure class="factoryStoryLarge"><img src="cutting.jpg.jpeg" alt="UZ Industry factory environment"><figcaption>Factory Environment</figcaption></figure>
         <figure><img src="factory.jpg.jpeg" alt="UZ Industry production process"><figcaption>Production</figcaption></figure>
         <figure><img src="stitching.jpg.jpeg" alt="UZ Industry stitching and manufacturing"><figcaption>Stitching</figcaption></figure>
-        <figure><img src="quality-control.jpg.jpeg" alt="UZ Industry quality and garment handling"><figcaption>Quality & Handling</figcaption></figure>
       </div>
     </div>
 
@@ -5087,6 +5040,112 @@ document.addEventListener("keydown",function(e){
 
 });
 
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("premiumSlider");
+  if (!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll(".premiumSlide"));
+  const dots = Array.from(slider.querySelectorAll(".sliderDot"));
+  const prev = slider.querySelector(".sliderPrev");
+  const next = slider.querySelector(".sliderNext");
+  let current = 0;
+  let timer = null;
+  let touchStartX = 0;
+
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === current));
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === current));
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(function () {
+      showSlide(current + 1);
+    }, 4000);
+  }
+
+  if (prev) prev.addEventListener("click", function () {
+    showSlide(current - 1);
+    startAuto();
+  });
+
+  if (next) next.addEventListener("click", function () {
+    showSlide(current + 1);
+    startAuto();
+  });
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener("click", function () {
+      showSlide(i);
+      startAuto();
+    });
+  });
+
+  slider.addEventListener("touchstart", function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, {passive:true});
+
+  slider.addEventListener("touchend", function (e) {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(diff) > 45) {
+      showSlide(current + (diff < 0 ? 1 : -1));
+      startAuto();
+    }
+  }, {passive:true});
+
+  // Keep every factory/process video silent by default.
+  document.querySelectorAll("video").forEach(function(video){
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+  });
+
+  showSlide(0);
+  startAuto();
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("premiumSlider");
+  if (!slider) return;
+  const slides = Array.from(slider.querySelectorAll(".premiumSlide"));
+  const dots = Array.from(slider.querySelectorAll(".sliderDot"));
+  const prev = slider.querySelector(".sliderPrev");
+  const next = slider.querySelector(".sliderNext");
+  let current = 0, timer = null, touchStartX = 0;
+
+  function showSlide(index){
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide,i)=>slide.classList.toggle("active",i===current));
+    dots.forEach((dot,i)=>dot.classList.toggle("active",i===current));
+  }
+  function startAuto(){
+    clearInterval(timer);
+    timer = setInterval(()=>showSlide(current + 1), 4000);
+  }
+  if(prev) prev.addEventListener("click",()=>{showSlide(current-1);startAuto();});
+  if(next) next.addEventListener("click",()=>{showSlide(current+1);startAuto();});
+  dots.forEach((dot,i)=>dot.addEventListener("click",()=>{showSlide(i);startAuto();}));
+  slider.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});
+  slider.addEventListener("touchend",e=>{
+    const diff=e.changedTouches[0].screenX-touchStartX;
+    if(Math.abs(diff)>45){showSlide(current+(diff<0?1:-1));startAuto();}
+  },{passive:true});
+
+  document.querySelectorAll("video").forEach(video=>{
+    video.muted=true; video.defaultMuted=true; video.volume=0;
+  });
+
+  showSlide(0);
+  startAuto();
+});
 </script>
 
 </body>
