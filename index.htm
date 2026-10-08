@@ -2904,6 +2904,29 @@ body.intro-lock{overflow:hidden}
 @media(max-width:620px){.processVideoGrid{grid-template-columns:1fr}.processVideoMedia{height:260px}}
 @media(prefers-reduced-motion:reduce){.processVideoCard:hover{transform:none}}
 
+
+/* FINAL MOBILE FACTORY VIDEO REPAIR — overrides older desktop rules */
+.factoryVideoFeature{grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr)}
+.mainVideoWrap,.factoryVideoCopy,.processVideoCard{min-width:0}
+.mainVideoWrap video,.processVideoMedia video{display:block;width:100%;height:100%;object-fit:cover;pointer-events:auto}
+.factoryVideoPlay,.processVideoPlay{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(0,0,0,.74);color:#fff;font-size:24px;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px)}
+.factoryVideoPlay[hidden],.processVideoPlay[hidden]{display:none!important}
+@media(max-width:1000px){
+ .factoryVideoFeature{grid-template-columns:minmax(0,1fr)!important;gap:0;padding:12px}
+ .mainVideoWrap{width:100%;min-width:0;height:auto!important;min-height:0!important;aspect-ratio:16/9}
+ .mainVideoWrap video{min-height:0!important;height:100%!important;position:absolute;inset:0}
+ .factoryVideoCopy{padding:25px 12px 16px;min-width:0}
+ .factoryVideoCopy h3{font-size:clamp(30px,7vw,45px)}
+}
+@media(max-width:620px){
+ .factoryVideoFeature{padding:9px}
+ .mainVideoWrap{aspect-ratio:16/10}
+ .factoryFacts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .processVideoGrid{grid-template-columns:minmax(0,1fr)!important}
+ .processVideoMedia{height:auto!important;aspect-ratio:16/10}
+ .processVideoMedia video{position:absolute;inset:0}
+ .videoBadge{font-size:7px;max-width:calc(100% - 35px)}
+}
 </style>
 </head>
 
@@ -3308,7 +3331,7 @@ body.intro-lock{overflow:hidden}
 
     <div class="factoryVideoFeature">
       <div class="mainVideoWrap">
-        <video muted autoplay loop playsinline preload="none" poster="factory.jpg.jpeg">
+        <video muted autoplay loop playsinline webkit-playsinline preload="metadata" poster="factory.jpg.jpeg">
           <source src="uz-industry-factory.mp4.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -3353,7 +3376,7 @@ body.intro-lock{overflow:hidden}
 
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video muted autoplay loop playsinline preload="none" poster="cutting.jpg.jpeg">
+          <video muted autoplay loop playsinline webkit-playsinline preload="metadata" poster="cutting.jpg.jpeg">
             <source src="cutting-process.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">01</span>
@@ -3367,7 +3390,7 @@ body.intro-lock{overflow:hidden}
 
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg">
+          <video muted autoplay loop playsinline webkit-playsinline preload="metadata" poster="stitching.jpg.jpeg">
             <source src="stitching-process.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">02</span>
@@ -3381,7 +3404,7 @@ body.intro-lock{overflow:hidden}
 
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg">
+          <video muted autoplay loop playsinline webkit-playsinline preload="metadata" poster="stitching.jpg.jpeg">
             <source src="stitching-closeup.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">03</span>
@@ -3396,7 +3419,7 @@ body.intro-lock{overflow:hidden}
 
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video muted autoplay loop playsinline preload="none" poster="factory.jpg.jpeg" aria-label="UZ Industry Sublimation Printing video">
+          <video muted autoplay loop playsinline webkit-playsinline preload="metadata" poster="factory.jpg.jpeg" aria-label="UZ Industry Sublimation Printing video">
             <source src="sublimation-printing.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">04</span>
@@ -3408,7 +3431,7 @@ body.intro-lock{overflow:hidden}
       </article>
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg" aria-label="UZ Industry Embroidery Process video">
+          <video muted autoplay loop playsinline webkit-playsinline preload="metadata" poster="stitching.jpg.jpeg" aria-label="UZ Industry Embroidery Process video">
             <source src="embroidery-process.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">05</span>
@@ -3420,7 +3443,7 @@ body.intro-lock{overflow:hidden}
       </article>
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg" aria-label="UZ Industry Embroidery Close-Up video">
+          <video muted autoplay loop playsinline webkit-playsinline preload="metadata" poster="stitching.jpg.jpeg" aria-label="UZ Industry Embroidery Close-Up video">
             <source src="embroidery-closeup.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">06</span>
@@ -5258,45 +5281,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <script>
-/* Silent, visibility-aware factory footage: no controls, no audio, auto-loop. */
+/* Mobile-friendly muted playback, visible-only looping, accessible manual fallback. */
 (function(){
-  function initFactoryVideoAutoplay(){
-    const videos = Array.from(document.querySelectorAll('#manufacturing video'));
-    if (!videos.length) return;
-    videos.forEach(function(video){
-      video.muted = true;
-      video.defaultMuted = true;
-      video.volume = 0;
-      video.autoplay = true;
-      video.loop = true;
-      video.playsInline = true;
-      video.setAttribute('muted','');
-      video.setAttribute('playsinline','');
-      video.removeAttribute('controls');
-      video.addEventListener('volumechange',function(){if(!video.muted || video.volume!==0){video.muted=true;video.volume=0;}});
-    });
-    if (!('IntersectionObserver' in window)) {
-      videos.forEach(function(video){const p=video.play();if(p&&p.catch)p.catch(function(){});});
-      return;
-    }
-    const observer=new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        const video=entry.target;
-        if(entry.isIntersecting && !document.hidden){
-          const p=video.play();if(p&&p.catch)p.catch(function(){});
-        } else {video.pause();}
-      });
-    },{threshold:0.18,rootMargin:'120px 0px 120px 0px'});
-    videos.forEach(function(video){observer.observe(video);});
-    document.addEventListener('visibilitychange',function(){
-      videos.forEach(function(video){
-        if(document.hidden){video.pause();}
-        else if(video.getBoundingClientRect().top < window.innerHeight && video.getBoundingClientRect().bottom > 0){const p=video.play();if(p&&p.catch)p.catch(function(){});}
-      });
-    });
+ function init(){
+  const videos=Array.from(document.querySelectorAll('#manufacturing video'));
+  if(!videos.length)return;
+  const observer=('IntersectionObserver' in window)?new IntersectionObserver(function(entries){
+   entries.forEach(function(entry){
+    const v=entry.target;
+    if(entry.isIntersecting&&!document.hidden){tryPlay(v)}else{v.pause()}
+   });
+  },{threshold:0.12,rootMargin:'60px 0px 60px 0px'}):null;
+  function tryPlay(v){
+   if(document.hidden)return;
+   v.muted=true;v.defaultMuted=true;
+   const result=v.play();
+   if(result&&result.then){result.then(function(){setButton(v,false)}).catch(function(){setButton(v,true)})}
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initFactoryVideoAutoplay,{once:true});
-  else initFactoryVideoAutoplay();
+  function setButton(v,show){const b=v.parentElement.querySelector('.factoryVideoPlay,.processVideoPlay');if(b)b.hidden=!show}
+  videos.forEach(function(v){
+   v.muted=true;v.defaultMuted=true;v.autoplay=true;v.loop=true;v.playsInline=true;
+   v.setAttribute('muted','');v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');
+   v.setAttribute('preload','metadata');
+   v.removeAttribute('controls');
+   const b=document.createElement('button');b.type='button';
+   b.className=v.closest('.mainVideoWrap')?'factoryVideoPlay':'processVideoPlay';
+   b.setAttribute('aria-label','Play '+(v.getAttribute('aria-label')||'factory video'));
+   b.textContent='▶';b.hidden=true;
+   b.addEventListener('click',function(){tryPlay(v)});
+   v.parentElement.appendChild(b);
+   v.addEventListener('playing',function(){setButton(v,false)});
+   v.addEventListener('error',function(){setButton(v,true)});
+   v.addEventListener('stalled',function(){if(v.paused)setButton(v,true)});
+   if(observer)observer.observe(v);else tryPlay(v);
+  });
+  document.addEventListener('visibilitychange',function(){videos.forEach(function(v){
+   if(document.hidden)v.pause();else{const r=v.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)tryPlay(v)}
+  })});
+  document.addEventListener('touchstart',function unlock(){videos.forEach(function(v){
+   const r=v.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0&&v.paused)tryPlay(v)
+  })},{once:true,passive:true});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
 </script>
 
