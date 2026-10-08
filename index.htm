@@ -2874,6 +2874,36 @@ body.intro-lock{overflow:hidden}
   .uzIntro{transition:opacity .2s ease}
 }
 
+
+/* 2026 UZ FINAL HOMEPAGE: compact, fully visible desktop product slides */
+@media(min-width:1001px){
+  .heroPremium{padding-top:108px;padding-bottom:54px;min-height:0}
+  .heroPremium .heroGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3.5vw,54px)}
+  .premiumSlider{min-height:clamp(430px,37vw,515px);max-height:515px}
+  .premiumSlide img{object-fit:contain;object-position:center 35%;padding:6px 6px 54px}
+  .slideShade{background:linear-gradient(180deg,transparent 43%,rgba(0,0,0,.10) 58%,rgba(0,0,0,.96) 100%)}
+  .slideCopy{bottom:20px;left:24px;right:24px}
+  .slideCopy h2{font-size:clamp(25px,2.3vw,36px)}
+  .slideCopy p{font-size:11px;line-height:1.45}
+  .heroMoq{width:61px;height:61px;right:12px;bottom:13px;opacity:.96}
+  .heroMoq strong{font-size:19px}
+}
+@media(min-width:1001px) and (max-height:800px){.premiumSlider{min-height:420px;max-height:470px}}
+@media(max-width:1000px){.premiumSlide img{object-fit:contain;object-position:center 35%;padding:10px 10px 105px}.slideShade{background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.95) 100%)}}
+@media(max-width:620px){.premiumSlide img{padding:6px 6px 112px}.slideCopy{right:72px}}
+/* All original factory photos remain in the gallery. Six unique videos below. */
+.processVideoGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
+.processVideoCard{min-width:0;border-radius:3px;transition:transform .25s ease,border-color .25s ease}
+.processVideoCard:hover{transform:translateY(-3px);border-color:rgba(239,27,36,.48)}
+.processVideoMedia{height:250px;overflow:hidden}
+.processVideoMedia video{width:100%;height:100%;object-fit:cover;background:#08080a}
+.silentVideoLabel{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.75);border:1px solid rgba(255,255,255,.16);color:#fff;padding:7px 9px;font-size:9px;font-weight:800;letter-spacing:.06em}
+.mainVideoWrap video{pointer-events:none}
+.processVideoMedia video{pointer-events:none}
+@media(max-width:900px){.processVideoGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.processVideoMedia{height:250px}}
+@media(max-width:620px){.processVideoGrid{grid-template-columns:1fr}.processVideoMedia{height:260px}}
+@media(prefers-reduced-motion:reduce){.processVideoCard:hover{transform:none}}
+
 </style>
 </head>
 
@@ -3272,18 +3302,17 @@ body.intro-lock{overflow:hidden}
         </h2>
       </div>
       <p class="sectionText">
-        See real production inside UZ Industry in Sialkot, Pakistan — from cutting
-        and stitching to hands-on garment inspection and manufacturing.
+        See authentic production inside UZ Industry in Sialkot, Pakistan — cutting, stitching, sublimation printing, embroidery and the factory environment behind your teamwear.
       </p>
     </div>
 
     <div class="factoryVideoFeature">
       <div class="mainVideoWrap">
-        <video muted controls playsinline preload="metadata" poster="factory.jpg.jpeg">
+        <video muted autoplay loop playsinline preload="none" poster="factory.jpg.jpeg">
           <source src="uz-industry-factory.mp4.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
-        <div class="videoBadge">29 SEC • INSIDE UZ INDUSTRY</div>
+        <div class="videoBadge">REAL FOOTAGE • INSIDE UZ INDUSTRY</div>
       </div>
 
       <div class="factoryVideoCopy">
@@ -3324,7 +3353,7 @@ body.intro-lock{overflow:hidden}
 
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video controls playsinline preload="metadata" muted poster="cutting.jpg.jpeg">
+          <video muted autoplay loop playsinline preload="none" poster="cutting.jpg.jpeg">
             <source src="cutting-process.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">01</span>
@@ -3338,7 +3367,7 @@ body.intro-lock{overflow:hidden}
 
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video controls playsinline preload="metadata" muted poster="stitching.jpg.jpeg">
+          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg">
             <source src="stitching-process.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">02</span>
@@ -3352,7 +3381,7 @@ body.intro-lock{overflow:hidden}
 
       <article class="processVideoCard">
         <div class="processVideoMedia">
-          <video controls playsinline preload="metadata" muted poster="stitching.jpg.jpeg">
+          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg">
             <source src="stitching-closeup.mp4" type="video/mp4">
           </video>
           <span class="processVideoNo">03</span>
@@ -3364,6 +3393,43 @@ body.intro-lock{overflow:hidden}
         </div>
       </article>
 
+
+      <article class="processVideoCard">
+        <div class="processVideoMedia">
+          <video muted autoplay loop playsinline preload="none" poster="factory.jpg.jpeg" aria-label="UZ Industry Sublimation Printing video">
+            <source src="sublimation-printing.mp4" type="video/mp4">
+          </video>
+          <span class="processVideoNo">04</span>
+          <span class="silentVideoLabel" aria-hidden="true">MUTED • AUTO PLAY</span>
+        </div>
+        <div class="processVideoText">
+          <small>Custom Decoration</small><h3>Sublimation Printing</h3><p>Watch sublimation printing as designs are transferred onto performance sportswear.</p>
+        </div>
+      </article>
+      <article class="processVideoCard">
+        <div class="processVideoMedia">
+          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg" aria-label="UZ Industry Embroidery Process video">
+            <source src="embroidery-process.mp4" type="video/mp4">
+          </video>
+          <span class="processVideoNo">05</span>
+          <span class="silentVideoLabel" aria-hidden="true">MUTED • AUTO PLAY</span>
+        </div>
+        <div class="processVideoText">
+          <small>Custom Branding</small><h3>Embroidery Process</h3><p>See embroidery work in progress, adding stitched branding and detail to garments.</p>
+        </div>
+      </article>
+      <article class="processVideoCard">
+        <div class="processVideoMedia">
+          <video muted autoplay loop playsinline preload="none" poster="stitching.jpg.jpeg" aria-label="UZ Industry Embroidery Close-Up video">
+            <source src="embroidery-closeup.mp4" type="video/mp4">
+          </video>
+          <span class="processVideoNo">06</span>
+          <span class="silentVideoLabel" aria-hidden="true">MUTED • AUTO PLAY</span>
+        </div>
+        <div class="processVideoText">
+          <small>Detail & Finishing</small><h3>Embroidery Close-Up</h3><p>A closer view of embroidery stitching, texture and workmanship.</p>
+        </div>
+      </article>
     </div>
 
   </div>
@@ -5171,8 +5237,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const intro = document.getElementById("uzIntro");
   if(!intro){ document.body.classList.remove("intro-lock"); return; }
   const started = performance.now();
-  const minimumIntro = 1900;
+  const minimumIntro = 2000;
+  let revealScheduled = false;
   function revealSite(){
+    if(revealScheduled) return;
+    revealScheduled = true;
     const elapsed = performance.now() - started;
     const wait = Math.max(0, minimumIntro - elapsed);
     window.setTimeout(function(){
@@ -5184,6 +5253,50 @@ document.addEventListener("DOMContentLoaded", function () {
   if(document.readyState === "complete") revealSite();
   else window.addEventListener("load", revealSite, {once:true});
   window.setTimeout(revealSite, 3200);
+})();
+</script>
+
+
+<script>
+/* Silent, visibility-aware factory footage: no controls, no audio, auto-loop. */
+(function(){
+  function initFactoryVideoAutoplay(){
+    const videos = Array.from(document.querySelectorAll('#manufacturing video'));
+    if (!videos.length) return;
+    videos.forEach(function(video){
+      video.muted = true;
+      video.defaultMuted = true;
+      video.volume = 0;
+      video.autoplay = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute('muted','');
+      video.setAttribute('playsinline','');
+      video.removeAttribute('controls');
+      video.addEventListener('volumechange',function(){if(!video.muted || video.volume!==0){video.muted=true;video.volume=0;}});
+    });
+    if (!('IntersectionObserver' in window)) {
+      videos.forEach(function(video){const p=video.play();if(p&&p.catch)p.catch(function(){});});
+      return;
+    }
+    const observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        const video=entry.target;
+        if(entry.isIntersecting && !document.hidden){
+          const p=video.play();if(p&&p.catch)p.catch(function(){});
+        } else {video.pause();}
+      });
+    },{threshold:0.18,rootMargin:'120px 0px 120px 0px'});
+    videos.forEach(function(video){observer.observe(video);});
+    document.addEventListener('visibilitychange',function(){
+      videos.forEach(function(video){
+        if(document.hidden){video.pause();}
+        else if(video.getBoundingClientRect().top < window.innerHeight && video.getBoundingClientRect().bottom > 0){const p=video.play();if(p&&p.catch)p.catch(function(){});}
+      });
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initFactoryVideoAutoplay,{once:true});
+  else initFactoryVideoAutoplay();
 })();
 </script>
 
